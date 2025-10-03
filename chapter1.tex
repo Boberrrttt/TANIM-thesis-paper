@@ -1,7 +1,7 @@
 \chapter{INTRODUCTION}
 
-{\baselineskip=2\baselineskip}
-\begin{doublespace}
+{\baselineskip=2\baselineskip
+	
 \section{Background of the Study}
 
 Agriculture is important in the Philippines since it serves as the foundation of food security, livelihood, and rural development. In a traditional soil management practices in the Philippines, such as those endorsed by the Department of Agriculture (DA), it relies on generalized soil health monitoring and fertilizer recommendations; they are using manual tools like the Minus-One Element Technique (MOET) and Rapid Soil Test Device (RST). These approaches often fail to address field-specific variability, crop diversity, and seasonal dynamics, leading to suboptimal resource use based on the Department of Agriculture Region 10 (2023). Historically, the method of soil testing requires transporting soil samples to the nearest laboratories located in the office of the Department of Agriculture, which was supported by the article of Pagaduan, J.L. (2025) which states that the need for farmers to transport soil samples is often expensive, time-consuming, and inaccessible in some remote places. In relation to that, the Department of Agriculture - Regional Field Office 10 (Aggie 10) conducted a soil sampling drive for soil health monitoring sites of rice and corn production areas in the towns of Sugbongcogon, Binuangan, Magsaysay and Gingoog City last March 26-28, 2025. The Aggie 10 targets to muster soil sampling and testing in priority sites across Region 10 by May 2025, in time with the wet cropping calendar based on the article from the Aggie 10 site. With the mentioned traditional method of soil testing, farmers often rely on ocular observations which was supported by the study of Samaniego, A.L. \& Gallego, M. (2024) which states that only about 1.03\% use a soil‐test kit and another 1.03\% use government lab services, while the remaining 97.94\% rely on observational methods (eyeballing the soil or plant). According to Sarma, A. et. al. (2024) crop selection decisions are frequently based on historical practices rather than data-driven insights, limiting adaptability to changing soils and climate conditions. With the use of technological advancements such as IoT it would be a great aid for the farmers to have a better crop yield and reduce loss.
@@ -12,9 +12,7 @@ Advancements in Internet of Things (IoT) technologies and machine learning (ML) 
 
 This study proposes a Soil Health Monitoring and Recommendation System that leverages IoT sensors and a Multi-Criteria Decision Analysis (MCDA) algorithm to provide zone-specific, and season-specific recommendations for multi-cropping and fertilizer application in Region 10. Targeting key crops such as Maize (Corn), Mungbean (Mongo), Peanut, Soybean, Squash (Kalabasa), Sweet Potato (Camote), Cassava, Taro (Gabi), Eggplant, Tomato, Pechay, and Cabbage, the system integrates soil health data (NPK, pH, moisture, humidity and temperature) and agri-weather data, online data resources, and DA’s zoning maps to predict optimal crops for planting and recommend precise fertilizer strategies. By addressing field-specific variability and seasonal dynamics, the system aims to enhance agricultural productivity, reduce resource waste, and promote sustainable farming practices. Aligned with Sustainable Development Goals (SDGs) 2 (Zero Hunger), 12 (Responsible Consumption and Production), and 15 (Life on Land), this research contributes to food security, environmental conservation and goods production, and sustainable agriculture in the Philippines.
 
-%-----------------------------------------------------------------------------------------------
 
-%-----------------------------------------------------------------------------------------------------------------------------------
 \section{Statement of the Problem}
 
 Traditional soil management and crop selection practices in Region 10 lack precision, leading to reduced yields, resource waste, and environmental degradation (Lal. R., 20234. Generalized manual tools from Department of Agriculture tools lack accuracy to account for field-specific variability, crop diversity, and seasonal dynamics. Ultimately, the absence of data-driven fertilization recommendations and crop prediction systems limits optimal land use, particularly for Region 10’s diverse crops like Maize (Corn), Mungbean (Mongo), Peanut, Soybean, Squash (Kalabasa), Sweet Potato (Camote), Cassava, Taro (Gabi), Eggplant, Tomato, Pechay, and, Cabbage. Key challenges include:
@@ -61,12 +59,14 @@ This study is geographically limited to farms across Bukidnon, ensuring relevant
 
 In this section, the study’s conceptual framework is presented through an Input-Process-Output (IPO) model, which outlines the structure of the soil health monitoring, crop and fertilizer recommendation system. The framework integrates multiple components, each playing a vital role in developing an efficient, data-driven solution for sustainable agriculture.
 
-\textbf{Figure 1}\\
-\textit{Conceptual Framework}
+\begin{figure}[H]
+	\centering
+	\caption{IPO Model}
+	\label{fig:ipo}
+	\includegraphics[width=1\textwidth]{figures/IPO.pdf}
+\end{figure}
 
-*insert pdf image*
-
-Figure 1 outlines the input, process, and output for a system designed to process soil health data and support agricultural decision-making in Region 10, Philippines. The inputs include  readings from lot sensors (NPK levels, pH, moisture, salinity, and temperature) collected via ESP32 microcontroller and RS485 Modbus Soil Sensor, zoning data from Department of Agriculture (DA) maps, historical soil data from DA Region 10 reports, environmental and climate data, online data, and farmer-defined parameters.
+Figure 1 outlines the input, process, and output for a system designed to process soil health data and support agricultural decision-making in Region 10, Philippines. The inputs include  readings from lot sensors (NPK levels, pH, moisture, salinity, and temperature) collected via ESP32 microcontroller and Soil Sensor, zoning data from Department of Agriculture (DA) maps, historical soil data from DA Region 10 reports, environmental and climate data, online data, and farmer-defined parameters.
 
 These inputs are then processed through data capture, cleaning, and integration with external sources, followed by machine learning analysis using LightGBM and a multi-criteria decision analysis (AHP-TOPSIS) for crop and fertilizer recommendations. The system then produces outputs such as soil health insights, zone-specific crop recommendations, fertilizer recommendations, performance metrics, and a user-friendly dashboard with  analytics, alerts, and reports. This data-driven approach enables farmers to make informed decisions, improving efficiency, yield, and resource management while reducing waste.
 
@@ -76,19 +76,21 @@ This study utilized Precision Agriculture Theory, a strategy that gathers, proce
 
 With the integration of IoT sensors which will provide measurements of soil health parameters the precision agriculture theory will be fully operational. The soil parameters will serve as a foundation for the Multi-Criteria Decision Analysis methods to generate actionable recommendations for farmers. Moreover, machine learning boosting algorithms will be used to analyze soil and environmental patterns to predict crop suitability and yield potential. 
 
-\textbf{Figure 2}\\
-\textit{Precision Agriculture Theory by Pierre Robert}
-
-*insert pdf image*
-
 Figure 2 explains the Precision Agriculture Cycle on how farming decisions become data-driven. It starts with acquiring data through IoT sensors and other tools that measure soil and environmental conditions. This data is then processed into insights to understand soil fertility and crop needs. Using these insights, decisions are made with the help of Machine Learning (ML) for prediction and Multi-Criteria Decision Analysis (MCDA) for evaluating multiple factors like soil parameters, climate, and zoning. The next step is taking action, where farmers apply precise fertilizers, choose suitable crops, or adjust irrigation. Finally, the results and learnings feed back into the system, ensuring continuous improvement in productivity, efficiency, and sustainability.
 
-By combining ML’s predictive capability with MCDA’s structured decision-making process, the study applies the principles of precision agriculture in a holistic manner. This ensures that recommendations for crop selection and fertilizer application are data-driven, addressing the variability of soils and seasonal conditions in Region 10. Thus, Precision Agriculture Theory serves as the guiding lens that connects IoT-based data collection, Machine Learning prediction, and MCDA supported decision-making, ultimately promoting sustainable and efficient farming practices.
+\begin{figure}[H]
+	\centering
+	\caption{IPO Model}
+	\label{fig:precisionagriculture}
+	\includegraphics[width=0.7\textwidth]{figures/PrecisionAgriculture.pdf}
+\end{figure}
+
+By combining ML’s predictive capability with MCDA’s structured decision making process, the study applies the principles of precision agriculture in a holistic manner. This ensures that recommendations for crop selection and fertilizer application are data-driven, addressing the variability of soils and seasonal conditions in Region 10. Thus, Precision Agriculture Theory serves as the guiding lens that connects IoT-based data collection, Machine Learning prediction, and MCDA supported decision-making, ultimately promoting sustainable and efficient farming practices.
 
 \section{Definition of Terms}
 
 This study defined the following terms that are mentioned in this study.
-\begin{description}
+	\begin{description}
 	\item[Agriculture] 
 	The science, art, and practice of cultivating plants and livestock, serving as the foundation for food security, livelihoods, and rural development in regions like the Philippines.
 	\item[Agricultural Zoning] 
@@ -122,5 +124,5 @@ This study defined the following terms that are mentioned in this study.
 	\item[Sustainable Agriculture]
 	Farming practices that meet current food needs while preserving resources for future generations, balancing environmental health, economic viability, and social equity.
 	
-\end{description}
-\end{doublespace}
+	\end{description}
+}

@@ -2,7 +2,6 @@
 {\baselineskip=2\baselineskip
 This chapter presents some preliminary concepts and known results that are needed in this study.
 
-%-----------------------------------------------------------------------------------------------------------------------
 \section{Soil Health in Northern Mindanao}
 The literature underscores the critical role of soil health in sustainable agriculture and the limitations of traditional methods. Lal, R. (2024) emphasizes soil degradation's impact on global food security, while Morgan \& Connolly (2013) detail nutrient uptake mechanisms and challenges in imbalanced soils.  In the Philippine context, DA Region 10 (2023, 2024) highlights regional soil issues, such as acidity in Bukidnon and nutrient shortages in rice fields, alongside generalized zoning maps. According to the study of Timario, A., \& Lapoot, C. (2024), which assessed soil fertility in irrigated lowland areas across Northern Mindanao, revealing strongly to moderately acidic soils (pH 4.5-6.0) with variable organic matter content, peaking in Bukidnon at up to 3.5\%. The study employed soil sampling and laboratory analysis to monitor key parameters like pH, and NPK, highlighting deficiencies in phosphorus and potassium that limit rice yields. This underscores the need for regular soil health monitoring to track degradation trends and inform site-specific interventions in Region 10's rice-dominated landscapes; this is supported by the study of Sani et. al.(2023) which uses several factors of crops and uses those inputs for random forest algorithms.
 
@@ -30,7 +29,33 @@ In predicting fertilizer amounts and estimating crop inputs, Sani et al. (2023) 
 
 With the current technologies, Islam et. al.. (2023) developed an ML-enabled system for  soil nutrient monitoring, and crop recommendations, evaluated through field experiments to enhance productivity and sustainability. This approach supports multi-crop applications relevant to Region 10. Parganiha and Verma (2024) proposed an optimized LightGBM model for soil analysis and crop yield prediction, incorporating data preprocessing, feature selection, and hyperparameter tuning, achieving up to 97\% predictive accuracy. LightGBM’s efficiency, as noted by Data Overload (2024), makes it ideal for large-scale agricultural tasks in Region 10.
 
-Figure 3 outlines the hyperparameters used for training the different gradient boosting algorithms considered in this study. Each model was configured with commonly used parameter settings based on literature benchmarks and preliminary tuning to balance performance and computational efficiency. For AdaBoost, the number of estimators was set to 200 with a relatively high learning rate of 0.5 to speed up convergence. CatBoost employed a maximum tree depth of 4, 300 boosting iterations, and a learning rate of 0.3. This reflects its ability to handle categorical features effectively. The Gradient Boosting Machine was configured with a learning rate of 0.3 and a tree depth of 3, alongside 300 estimators to control complexity while maintaining accuracy. LightGBM used a lower learning rate of 0.1 with 200 estimators and 31 leaves, capitalizing on its efficiency in handling large datasets. Lastly, XGBoost was set with 300 estimators, a learning rate of 0.3, and a maximum depth of 3, representing a balanced configuration widely adopted in classification tasks. 
+\begin{table}[ht]
+	\centering
+	\caption{Parameters for Different Gradient Boosting Algorithms \cite{Salvador, 2024}}
+	\label{tab:BoostingAlgortihms}
+	\begin{tabular}{l c r}
+		\toprule
+		\textbf{Algorithm} & \textbf{Parameter} & \textbf{Value} \\
+		\midrule
+		Adaptive Boosting (AdaBoost) & learning\_rate & 0.5 \\
+									 &n\_estimators & 200 \\
+		\\Cat Boosting (CatBoost) & depth & 4 \\
+								&iterations & 300 \\
+								&iterations & 300 \\
+		\\Gradient Boosting Machine (GBM) & learning\_rate & 0.3 \\
+										&max\_depth & 3 \\
+										&n\_estimators & 300 \\
+		\\Light Gradient Boosting Machine (LightGBM) & learning\_rate & 0.1 \\
+								&n\_estimators & 200 \\
+								&num\_leaves & 31 \\
+		\\Extreme Gradient Boosting (XGBoost) & learning\_rate & 0.3 \\
+		&max\_depth & 3 \\
+		&n\_estimators & 300 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Table 1 outlines the hyperparameters used for training the different gradient boosting algorithms considered in this study. Each model was configured with commonly used parameter settings based on literature benchmarks and preliminary tuning to balance performance and computational efficiency. For AdaBoost, the number of estimators was set to 200 with a relatively high learning rate of 0.5 to speed up convergence. CatBoost employed a maximum tree depth of 4, 300 boosting iterations, and a learning rate of 0.3. This reflects its ability to handle categorical features effectively. The Gradient Boosting Machine was configured with a learning rate of 0.3 and a tree depth of 3, alongside 300 estimators to control complexity while maintaining accuracy. LightGBM used a lower learning rate of 0.1 with 200 estimators and 31 leaves, capitalizing on its efficiency in handling large datasets. Lastly, XGBoost was set with 300 estimators, a learning rate of 0.3, and a maximum depth of 3, representing a balanced configuration widely adopted in classification tasks. 
 
 \subsection{Decision Tree Analysis}
 Decision tree analysis is a supervised machine learning approach that uses a tree-like model of decisions and their possible consequences to classify or predict outcomes. It is widely applied in agriculture because of its simplicity, interpretability, and ability to handle both categorical and numerical data. By splitting data into smaller subsets based on key attributes such as soil nutrients, moisture, pH, and climatic conditions, decision trees can provide farmers with clear and actionable recommendations.
