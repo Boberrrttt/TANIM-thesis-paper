@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.25)  27 SEP 2025 23:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.3)  3 OCT 2025 12:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -310,9 +310,6 @@ Package: xparse 2023-10-10 L3 Experimental document command parser
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count284
 ))
-(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
-Package: setspace 2022/12/04 v6.7b set line spacing
-)
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2023-11-26 v7.01g Hypertext links for LaTeX
 
@@ -522,44 +519,85 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@dimlist=\toks28
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)))
-(basicinfo.tex) (thesis.aux (chapter1.aux) (chapter2.aux) (chapter3.aux)
-(chapter4.aux) (chapter5.aux) (appendix.aux) (bibliography.aux) (cv.aux)
-(caa.aux))
+(basicinfo.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count310
+\float@exts=\toks29
+\float@box=\box62
+\@float@everytoks=\toks30
+\@floatcapt=\box63
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/topiclongtable\topiclong
+table.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.sty
+Package: zref-abspage 2025-06-08 v2.36 Module abspage for zref (HO)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-base.sty
+Package: zref-base 2025-06-08 v2.36 Module base for zref (HO)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count311
+Package zref Info: New property: abspage on input line 67.
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip109
+\multirow@cntb=\count312
+\multirow@dima=\skip110
+\bigstrutjot=\dimen190
+)
+Package: topiclongtable 2020/04/12 v1.3.2 Renders autocollapsing cells in longt
+ables
+\g_tlt_row_idx_int=\count313
+\g_tlt_col_idx_int=\count314
+\g_tlt_col_tot_int=\count315
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/chngcntr\chngcntr.sty
+Package: chngcntr 2018/04/09 v1.1a change counter resetting
+Package chngcntr Info: \counterwithout already defined.
+(chngcntr)             Quitting chngcntr on input line 21.
+) (thesis.aux (chapter1.aux) (chapter2.aux) (chapter3.aux) (appendix.aux)
+(bibliography.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
 i
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count310
-\scratchdimen=\dimen190
-\scratchbox=\box62
-\nofMPsegments=\count311
-\nofMParguments=\count312
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count313
-\MPscratchDim=\dimen191
-\MPnumerator=\count314
-\makeMPintoPDFobject=\count315
-\everyMPtoPDFconversion=\toks30
+\scratchcounter=\count316
+\scratchdimen=\dimen191
+\scratchbox=\box64
+\nofMPsegments=\count317
+\nofMParguments=\count318
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count319
+\MPscratchDim=\dimen192
+\MPnumerator=\count320
+\makeMPintoPDFobject=\count321
+\everyMPtoPDFconversion=\toks32
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
 se.sty
@@ -571,20 +609,21 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 g
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-\c@maskedRefs=\count316
+\c@maskedRefs=\count322
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/apacite\english.apc
 File: english.apc 2013/07/21 v6.03 apacite language file
 LaTeX Info: Redefining \BPBI on input line 129.
 LaTeX Info: Redefining \BHBI on input line 130.
 )
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 19.
+Package hyperref Info: Link coloring OFF on input line 41.
 
 (thesis.out) (thesis.out)
 \@outlinefile=\write3
@@ -625,176 +664,318 @@ Package hyperref Info: Link coloring OFF on input line 19.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+\g_tlt_stream_iow=\write4
+\openout4 = `thesis.tlt'.
+
 (titlepage.tex) [1
 
 
-{C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (approval.tex
-
-! Argument of \author  has an extra }.
-<inserted text> 
-                \par 
-l.7 ...tle''}, prepared and submitted by {\author}
-                                                   in partial fulfillment of...
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \author  was complete.
-<to be read again> 
-                   \par 
-l.7 ...tle''}, prepared and submitted by {\author}
-                                                   in partial fulfillment of...
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-
- []
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
+{C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (thesis.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 15
-.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 2.
+
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 15
-.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 2.
+
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 15
-.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 2.
+
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-))
+)
 [2
 
-] (abstract.tex) [3] (dedication.tex) [4] (acknowledgment.tex [5]) [6]
-(thesis.toc [7
-
 ])
-\tf@toc=\write4
-\openout4 = `thesis.toc'.
+\tf@toc=\write5
+\openout5 = `thesis.toc'.
 
- [8] (thesis.lot)
-\tf@lot=\write5
-\openout5 = `thesis.lot'.
+ [3] (thesis.lot
 
- [9
+Package natbib Warning: Citation `Salvador' on page iv undefined on input line 
+4.
 
-] (thesis.lof)
-\tf@lof=\write6
-\openout6 = `thesis.lof'.
 
- [10
+Package natbib Warning: Citation `2024' on page iv undefined on input line 4.
+
+
+Overfull \hbox (6.68303pt too wide) in paragraph at lines 4--4
+ [][] [][]\OT1/cmr/m/n/12 Parameters for Dif-fer-ent Gra-di-ent Boost-ing Al-go
+-rithms 
+ []
+
+)
+\tf@lot=\write6
+\openout6 = `thesis.lot'.
+
+ [4
+
+] (thesis.lof
+Overfull \hbox (5.1622pt too wide) in paragraph at lines 12--12
+ [][] [][]\OT1/cmr/m/n/12 Context-Level Di-a-gram Be-tween the Sys-tem And Agri
+- 
+ []
+
+
+Overfull \hbox (9.5705pt too wide) in paragraph at lines 13--13
+ [][] [][]\OT1/cmr/m/n/12 Context-Level Di-a-gram Be-tween the Sys-tem And Farm
+- 
+ []
+
+)
+\tf@lof=\write7
+\openout7 = `thesis.lof'.
+
+ [5
 
 ] (thesis.exp)
-\tf@exp=\write7
-\openout7 = `thesis.exp'.
+\tf@exp=\write8
+\openout8 = `thesis.exp'.
 
- [11
+ [6
 
 ]
 \openout2 = `chapter1.aux'.
 
-
-(chapter1.tex
+ (chapter1.tex
 Chapter 1.
 [1
 
 
-] [2] [3] [4] [5] [6] [7] [8] [9] [10]
-Overfull \hbox (17.98912pt too wide) in paragraph at lines 86--87
-[]\OT1/cmr/m/n/12 By com-bin-ing ML's pre-dic-tive ca-pa-bil-ity with MCDA's st
-ruc-tured decision-
- []
+] [2] [3] [4] [5] [6] [7] [8] [9]
 
-[11]
-Overfull \hbox (7.93819pt too wide) in paragraph at lines 105--106
+pdfTeX warning: pdflatex.exe (file ./figures/IPO.pdf): PDF inclusion: found PDF
+ version <1.7>, but at most version <1.5> allowed
+<figures/IPO.pdf, id=325, 449.76028pt x 153.6942pt>
+File: figures/IPO.pdf Graphic file (type pdf)
+<use figures/IPO.pdf>
+Package pdftex.def Info: figures/IPO.pdf  used on input line 66.
+(pdftex.def)             Requested size: 397.48502pt x 135.8329pt.
+[10 <./figures/IPO.pdf>] [11] [12]
+<figures/PrecisionAgriculture.pdf, id=353, 1244.65pt x 1229.25642pt>
+File: figures/PrecisionAgriculture.pdf Graphic file (type pdf)
+<use figures/PrecisionAgriculture.pdf>
+Package pdftex.def Info: figures/PrecisionAgriculture.pdf  used on input line 8
+5.
+(pdftex.def)             Requested size: 278.2383pt x 274.78885pt.
+ [13 <./figures/PrecisionAgriculture.pdf>]
+[14]
+Overfull \hbox (7.93819pt too wide) in paragraph at lines 107--108
 []\OT1/cmr/m/n/12 The in-te-gra-tion of con-nected sen-
  []
 
 
-Overfull \hbox (0.72195pt too wide) in paragraph at lines 111--112
+Overfull \hbox (0.72195pt too wide) in paragraph at lines 113--114
 []\OT1/cmr/m/n/12 A decision-making ap-proach
  []
 
-[12] [13]) [14]
+[15] [16]) [17]
 \openout2 = `chapter2.aux'.
 
  (chapter2.tex
 Chapter 2.
-) [15
+[18
 
 
 
 
-]
+] [19] [20] [21] [22]
+
+Package natbib Warning: Citation `Salvador' on page 23 undefined on input line 
+34.
+
+
+Package natbib Warning: Citation `2024' on page 23 undefined on input line 34.
+
+[23] [24] [25] [26] [27] [28] [29] [30] [31] [32]) [33]
 \openout2 = `chapter3.aux'.
 
  (chapter3.tex
 Chapter 3.
-<figures/sinegraph.jpg, id=287, 713.66624pt x 471.7625pt>
-File: figures/sinegraph.jpg Graphic file (type jpg)
-<use figures/sinegraph.jpg>
-Package pdftex.def Info: figures/sinegraph.jpg  used on input line 30.
-(pdftex.def)             Requested size: 278.2383pt x 183.92184pt.
-<figures/cosinegraph.jpg, id=288, 713.66624pt x 471.7625pt>
-File: figures/cosinegraph.jpg Graphic file (type jpg)
-<use figures/cosinegraph.jpg>
-Package pdftex.def Info: figures/cosinegraph.jpg  used on input line 37.
-(pdftex.def)             Requested size: 260.7528pt x 172.36563pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) [16
+File: figures/PrecisionAgriculture.pdf Graphic file (type pdf)
+<use figures/PrecisionAgriculture.pdf>
+Package pdftex.def Info: figures/PrecisionAgriculture.pdf  used on input line 1
+1.
+(pdftex.def)             Requested size: 397.48502pt x 392.56355pt.
+[34
 
 
 
 
-] [17 <./figures/sinegraph.jpg> <./figures/cosinegraph.jpg>]
-\openout2 = `chapter4.aux'.
+] [35] [36] [37] [38] [39] [40]
+Underfull \hbox (badness 10000) in paragraph at lines 61--64
 
- (chapter4.tex
-Chapter 4.
-) [18
+ []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
+
+ []
+
+[41]
+Underfull \hbox (badness 1052) in paragraph at lines 90--94
+\OT1/cmr/m/n/12 data from in-te-grated sen-sors or ex-ter-nal
+ []
 
 
-]
-\openout2 = `chapter5.aux'.
-
- (chapter5.tex
-Chapter 5.
-[19
+Underfull \hbox (badness 2253) in paragraph at lines 90--94
+\OT1/cmr/m/n/12 from the sen-sor as in-put for hard-ware
+ []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 90--94
+
+ []
 
 
-] [20]) [21]
+Underfull \hbox (badness 2799) in paragraph at lines 98--101
+\OT1/cmr/m/n/12 and farmer-provided data into a sin-gle
+ []
+
+
+Underfull \hbox (badness 2680) in paragraph at lines 98--101
+\OT1/cmr/m/n/12 - The sys-tem shall ap-ply multi-criteria
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--101
+
+ []
+
+
+Underfull \hbox (badness 2418) in paragraph at lines 114--116
+[]\OT1/cmr/m/n/12 - The sys-tem shall an-a-lyze data-driven
+ []
+
+
+Underfull \hbox (badness 2111) in paragraph at lines 114--116
+\OT1/cmr/m/n/12 in-sights to bal-ance yield po-ten-tial with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--116
+
+ []
+
+
+Underfull \hbox (badness 1024) in paragraph at lines 120--129
+\OT1/cmr/m/n/12 - The sys-tem shall dis-play a list of all
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[42]
+
+LaTeX Warning: Text page 43 contains only floats.
+
+[43] [44]
+File: figures/IPO.pdf Graphic file (type pdf)
+<use figures/IPO.pdf>
+Package pdftex.def Info: figures/IPO.pdf  used on input line 169.
+(pdftex.def)             Requested size: 397.48502pt x 135.8329pt.
+ [45] [46]
+File: figures/IPO.pdf Graphic file (type pdf)
+<use figures/IPO.pdf>
+Package pdftex.def Info: figures/IPO.pdf  used on input line 184.
+(pdftex.def)             Requested size: 397.48502pt x 135.8329pt.
+ [47] [48] [49]
+File: figures/IPO.pdf Graphic file (type pdf)
+<use figures/IPO.pdf>
+Package pdftex.def Info: figures/IPO.pdf  used on input line 199.
+(pdftex.def)             Requested size: 397.48502pt x 135.8329pt.
+ [50] [51] [52]
+File: figures/IPO.pdf Graphic file (type pdf)
+<use figures/IPO.pdf>
+Package pdftex.def Info: figures/IPO.pdf  used on input line 212.
+(pdftex.def)             Requested size: 397.48502pt x 135.8329pt.
+ [53] [54]
+Overfull \hbox (8.16283pt too wide) in paragraph at lines 222--223
+[]\OT1/cmr/m/n/12 The Context-Level Di-a-gram pro-vides a high-level view of ho
+w the TANIM
+ []
+
+File: figures/IPO.pdf Graphic file (type pdf)
+<use figures/IPO.pdf>
+Package pdftex.def Info: figures/IPO.pdf  used on input line 228.
+(pdftex.def)             Requested size: 397.48502pt x 135.8329pt.
+[55]
+File: figures/IPO.pdf Graphic file (type pdf)
+<use figures/IPO.pdf>
+Package pdftex.def Info: figures/IPO.pdf  used on input line 237.
+(pdftex.def)             Requested size: 397.48502pt x 135.8329pt.
+ [56]
+File: figures/IPO.pdf Graphic file (type pdf)
+<use figures/IPO.pdf>
+Package pdftex.def Info: figures/IPO.pdf  used on input line 249.
+(pdftex.def)             Requested size: 397.48502pt x 135.8329pt.
+ [57]
+File: figures/IPO.pdf Graphic file (type pdf)
+<use figures/IPO.pdf>
+Package pdftex.def Info: figures/IPO.pdf  used on input line 261.
+(pdftex.def)             Requested size: 397.48502pt x 135.8329pt.
+
+
+LaTeX Warning: Reference `fig:UseCase' on page 58 undefined on input line 264.
+
+[58]
+File: figures/IPO.pdf Graphic file (type pdf)
+<use figures/IPO.pdf>
+Package pdftex.def Info: figures/IPO.pdf  used on input line 270.
+(pdftex.def)             Requested size: 397.48502pt x 135.8329pt.
+ [59]
+File: figures/IPO.pdf Graphic file (type pdf)
+<use figures/IPO.pdf>
+Package pdftex.def Info: figures/IPO.pdf  used on input line 280.
+(pdftex.def)             Requested size: 397.48502pt x 135.8329pt.
+ [60]
+File: figures/IPO.pdf Graphic file (type pdf)
+<use figures/IPO.pdf>
+Package pdftex.def Info: figures/IPO.pdf  used on input line 292.
+(pdftex.def)             Requested size: 397.48502pt x 135.8329pt.
+ [61] [62] [63] [64] [65] [66] [67] [68] [69] [70]) [71]
 \openout2 = `appendix.aux'.
 
- (appendix.tex) [22
+
+(appendix.tex) [72
 
 
 
@@ -802,62 +983,56 @@ Chapter 5.
 ]
 \openout2 = `bibliography.aux'.
 
- (bibliography.tex)
-\openout2 = `cv.aux'.
+ (bibliography.tex (thesis.bbl
 
- (cv.tex) [23
+Package natbib Warning: Empty `thebibliography' environment on input line 3.
 
-
+)) [73
 
 
 
 
 ]
-\openout2 = `caa.aux'.
 
- (caa.tex
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
+Package natbib Warning: There were undefined citations.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
-
- []
-
-) [24
-
-
-
-] (thesis.aux (chapter1.aux) (chapter2.aux) (chapter3.aux) (chapter4.aux)
-(chapter5.aux) (appendix.aux) (bibliography.aux) (cv.aux) (caa.aux))
+(thesis.aux (chapter1.aux) (chapter2.aux) (chapter3.aux) (appendix.aux)
+(bibliography.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 0ACA0011E46EAA10543512FB6EC6420A;4503.
+
+
+LaTeX Warning: There were undefined references.
+
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: D2EEE1FD499DF0600D715A4E1B604D66;6569
+(rerunfilecheck)             After:  FF485B78AC0D69A5474EC1D903422004;8493.
  ) 
 Here is how much of TeX's memory you used:
- 14964 strings out of 474486
- 240022 string characters out of 5744227
+ 15312 strings out of 474486
+ 245692 string characters out of 5744227
  1936542 words of memory out of 5000000
- 36850 multiletter control sequences out of 15000+600000
- 570090 words of font info for 84 fonts, out of 8000000 for 9000
+ 37125 multiletter control sequences out of 15000+600000
+ 566036 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,10n,82p,2235b,640s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,12n,82p,2236b,616s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx1
-200.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmbx10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmbxti10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/User/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on thesis.pdf (35 pages, 263154 bytes).
+200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcrm1200.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmti12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on thesis.pdf (79 pages, 4924278 bytes).
 PDF statistics:
- 381 PDF objects out of 1000 (max. 8388607)
- 74 named destinations out of 1000 (max. 500000)
- 267 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 711 PDF objects out of 1000 (max. 8388607)
+ 162 named destinations out of 1000 (max. 500000)
+ 347 words of extra memory for PDF output out of 10000 (max. 10000000)
 
