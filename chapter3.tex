@@ -166,7 +166,7 @@
 		\centering
 		\caption{System Architecture}
 		\label{fig:SystemArchitecture}
-		\includegraphics[width=1\textwidth]{figures/IPO.pdf}
+		\includegraphics[width=1\textwidth]{figures/SYSARCH.pdf}
 	\end{figure}
 	
 	The figure \ref{fig:SystemArchitecture} illustrates the system architecture of Soil Health Monitoring, Fertilizer and Crop Recommendation for Greater Crop Yield. The system begins with a solar-powered IoT sensing unit deployed in the field. A solar panel, managed by a solar charge controller, supplies power to the entire device, ensuring continuous operation even in remote areas. The core sensing component is a soil sensor, which measures parameters such as NPK, pH, electrical conductivity, soil moisture, and temperature. Data from the sensor is transmitted through a TTL MAX485 module, which converts soil sensor signals to TTL levels readable by the ESP32 microcontroller. The ESP32 serves as the central processor, collecting sensor data, performing basic preprocessing such as averaging and sorting, attaching metadata like timestamp and location, and preparing the data for wireless transmission. For communication, the ESP32 uses a LoRa module, which allows the data to be sent over long distances to a gateway with minimal power consumption.
@@ -196,7 +196,7 @@
 		\centering
 		\caption{Software Mobile Application}
 		\label{fig:MobileFlowchart}
-		\includegraphics[width=1\textwidth]{figures/IPO.pdf}
+		\includegraphics[width=1\textwidth]{figures/soft flow.pdf}
 	\end{figure}
 	
 	The figure \ref{fig:MobileFlowchart} illustrates the workflow of the farming recommendation system, highlighting the interaction between farmers and the application in obtaining crop suggestions tailored to soil and weather conditions. The process begins with user authentication, wherein the farmer logs into the system using their credentials. The application validates these credentials against the stored records in the database, ensuring secure access. If the credentials are incorrect, the system prompts the user to re-enter valid information, thereby safeguarding the platform against unauthorized access. Upon successful login, the farmer is redirected to the dashboard, which serves as the central interface for accessing personalized farm data and system functionalities.
@@ -209,7 +209,7 @@
 		\centering
 		\caption{Web Application Flowchart}
 		\label{fig:WebFlowchart}
-		\includegraphics[width=1\textwidth]{figures/IPO.pdf}
+		\includegraphics[width=1\textwidth]{figures/web flow.pdf}
 	\end{figure}
 	
 	Figure \ref{fig:WebFlowchart} illustrates the workflow of the Farm Management Web Application, which is specifically designed to support agriculture administrators in managing and monitoring farming activities at a broader scale. The process begins with a secure login mechanism, wherein the administrator is required to enter valid credentials. The system validates these credentials against stored records to ensure authorized access. If the login attempt is unsuccessful, the administrator is prompted to re-enter the correct credentials, thereby maintaining both system integrity and data security. Once authenticated, the administrator is directed to the main dashboard, which functions as the central control panel for the application.
@@ -225,7 +225,7 @@
 		\centering
 		\caption{Context-Level Diagram Between the System And Agricultural Authorities}
 		\label{fig:CLDSystem&AgriAuthorities}
-		\includegraphics[width=1\textwidth]{figures/IPO.pdf}
+		\includegraphics[width=1\textwidth]{figures/cldWEB.pdf}
 	\end{figure}
 	
 	The Figure \ref{fig:CLDSystem&AgriAuthorities} presents the interaction between Agricultural Authorities and the TANIM Web 	Application from the perspective of informational input and decision-making output. While authorities do not directly generate the raw data, they receive processed insights derived from IoT devices deployed in the field. These insights include soil analysis reports, GIS-based farm visualization, farmer profiles, and crop recommendation results. Each of these outputs enables corresponding benefits such as evidence-based policy-making, targeted resource allocation, compliance tracking, and improved agricultural planning. In this way, TANIM translates raw field data into actionable intelligence, empowering authorities to make informed, timely, and sustainable decisions that support both farmers and national food security goals.
@@ -234,7 +234,7 @@
 		\centering
 		\caption{Context-Level Diagram Between the System And Farmers}
 		\label{fig:CLDSystem&Farmers}
-		\includegraphics[width=1\textwidth]{figures/IPO.pdf}
+		\includegraphics[width=1\textwidth]{figures/cldMOB.pdf}
 	\end{figure}
 	
 	The figure \ref{fig:CLDSystem&Farmers} illustrates the interaction of the TANIM Mobile Application with farmers and IoT devices. IoT devices act as data sources, providing soil and environmental information to the system, which then processes the data to deliver outputs such as soil analysis reports, planting schedules, fertilizer guidance, crop recommendations, and farming practice records. Farmers, as external entities, contribute by supplying inputs like crop yield feedback, farming activity logs, fertilizer usage records, and crop preferences. This exchange of data ensures that the system can generate accurate recommendations, supporting sustainable farming practices and helping farmers improve productivity and decision-making
@@ -246,7 +246,7 @@
 		\centering
 		\caption{Data Flow Diagram}
 		\label{fig:DFD}
-		\includegraphics[width=1\textwidth]{figures/IPO.pdf}
+		\includegraphics[width=1\textwidth]{figures/DFD.pdf}
 	\end{figure}
 	
 	Figure \ref{fig:DFD} shows the Data Flow Diagram (DFD) of the TANIM system. The data flow between the user and the system is divided into two main processes: retrieval and analysis. The “retrieve” process is responsible for collecting soil and farm data from IoT devices, as well as crop and fertilizer inputs from the users. These data are then stored in the system’s database for access and processing. The “analysis” process uses the stored data to assess soil health conditions and generate crop or fertilizer recommendations. Finally, the processed results are delivered to farmers or agricultural authorities in the form of soil data analysis reports and practical recommendations to support better agricultural decision-making.
