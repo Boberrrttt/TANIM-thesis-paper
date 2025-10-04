@@ -8,9 +8,8 @@
 		\centering
 		\caption{Modified Waterfall Model}
 		\label{fig:ResearchDesign}
-		\includegraphics[width=1\textwidth]{figures/PrecisionAgriculture.pdf}
+		\includegraphics[width=0.7\textwidth]{figures/ResearchDesign.pdf}
 	\end{figure}
-	\textbf{temporary}
 	
 	This study follows a modified waterfall research model to guide the development of the IoT-MCDA system shown in figure 4. The process begins with the requirements gathering, in which the system will collect comprehensive data from the Department of Agriculture (DA) and credible online datasets. The datasets include zoning information and soil parameters, as well as crop-specific requirements for growth conditions. Moreover, all datasets will be integrated with the DA’s zoning information.
 	 
@@ -30,7 +29,12 @@
 	In preparation for system integration, the data will undergo a series of preprocessing steps. Missing sensor readings and data gaps will be addressed through interpolation, while noisy or incorrect data will be identified and removed to maintain integrity. Soil and climate parameters will be normalized into uniform ranges to enhance the performance of predictive models. Once cleaned and standardized, all datasets will be integrated with the Department of Agriculture’s zoning information to ensure that recommendations are localized and relevant to the specific conditions in Bukidnon.
 	
 	\subsection{Research Setting}
-	put figure here .pdf
+	\begin{figure}[H]
+		\centering
+		\caption{System Architecture}
+		\label{fig:SystemSetting}
+		\includegraphics[width=1\textwidth]{figures/ResearchSetting.pdf}
+	\end{figure}
 	
 	The study will be conducted on specific farms in Region 10, specifically farms in Bukidnon, Philippines. The region is mostly agricultural, with vast lands focused on the cultivation of high-value crops such as Maize (Corn), Mungbean (Mongo), Peanut, Soybean, Squash (Kalabasa), Sweet Potato (Camote), Cassava, Taro (Gabi), Eggplant, Tomato, Pechay, and Cabbage The farms in this region typically employ conventional and semi-modern farming practices, which offers a realistic setting to monitor and assess crop performance under actual farming conditions.
 	
@@ -181,7 +185,7 @@
 		\centering
 		\caption{System Flowchart}
 		\label{fig:SystemFlowchart}
-		\includegraphics[width=1\textwidth]{figures/IPO.pdf}
+		\includegraphics[width=1\textwidth]{figures/SystemFlowchart.pdf}
 	\end{figure}
 	
 	The figure \ref{fig:SystemFlowchart} presents the operational workflow of the proposed soil health monitoring and recommendation system, highlighting the data flow from the field device to the end-user applications. The process initiates at the sensing stage, where the ESP32 microcontroller, powered through a solar energy management unit, interfaces with soil sensors to capture essential soil parameters, including Nitrogen, Phosphorus, and Potassium (NPK), pH, moisture, temperature, and soil salinity. These parameters are critical indicators of soil fertility and crop suitability. Once collected, the data is processed locally by the ESP32 to ensure efficient packaging before transmission. Leveraging LoRa technology, the device transmits the data wirelessly over long distances to a gateway, which serves as the intermediary link between the sensing unit and the cloud infrastructure. The gateway then forwards the collected data to a cloud database, ensuring reliable and scalable data storage for subsequent analysis.
@@ -256,18 +260,18 @@
 	
 	\begin{figure}[H]
 		\centering
-		\caption{Use Case Diagram}
+		\caption{Farmer Use Case Diagram}
 		\label{fig:FarmerUseCase}
-		\includegraphics[width=1\textwidth]{figures/IPO.pdf}
+		\includegraphics[width=0.5\textwidth]{figures/FarmerUseCase.pdf}
 	\end{figure}
 	
-	Figure \ref{fig:UseCase} shows how Farmers interact with the system. Farmers can use the system to view a list of their own farms, which helps them keep track of their agricultural activities in an organized manner. They are also able to check the status of their crops in the corresponding farm. This allows them to stay updated on growth progress and overall crop status. In addition, the system enables farmers to monitor soil health, Farmers can also access weather updates directly through the platform, which is essential for planning day-to-day tasks and preparing for potential challenges. Lastly, the system provides personalized crop recommendations, giving farmers guidance that is tailored to their specific conditions and needs. Together, these features create a comprehensive tool that supports farmers in managing their farms more effectively.
+	Figure \ref{fig:FarmerUseCase} shows how Farmers interact with the system. Farmers can use the system to view a list of their own farms, which helps them keep track of their agricultural activities in an organized manner. They are also able to check the status of their crops in the corresponding farm. This allows them to stay updated on growth progress and overall crop status. In addition, the system enables farmers to monitor soil health, Farmers can also access weather updates directly through the platform, which is essential for planning day-to-day tasks and preparing for potential challenges. Lastly, the system provides personalized crop recommendations, giving farmers guidance that is tailored to their specific conditions and needs. Together, these features create a comprehensive tool that supports farmers in managing their farms more effectively.
 	
 	\begin{figure}[H]
 		\centering
-		\caption{Use Case Diagram}
+		\caption{Use Case Diagram of Department of Agriculture}
 		\label{fig:DAUseCase}
-		\includegraphics[width=1\textwidth]{figures/IPO.pdf}
+		\includegraphics[width=1\textwidth]{figures/DAUseCase.pdf}
 	\end{figure}
 	
 	Figure \ref{fig:DAUseCase} shows how the Department of Agriculture interacts with the system. The Department of Agriculture can access everything the farmer has access to, in addition, the Department of Agriculture can utilize a comprehensive dashboard that provides weather insights, which gives a clear overview of conditions that may affect multiple farms at once.  It also has the ability to manage all farm listings. Another important function is the use of GIS maps to view farm locations, allowing for a view of agricultural activity across different areas. Lastly, the Department can oversee crop-related regulations, ensuring that standards are properly implemented.
@@ -289,7 +293,7 @@
 		\centering
 		\caption{3D Container Design}
 		\label{fig:3D}
-		\includegraphics[width=1\textwidth]{figures/IPO.pdf}
+		\includegraphics[width=0.5\textwidth]{figures/3D.pdf}
 	\end{figure}
 	
 	Figure \ref{fig:3D} displays the 3D container design that will be 3D printed for the container of the hardware. This will contain the hardware components which are etched in a PCB board that will be used in this system. The container should be durable to ensure that it can secure the hardware components inside of it.
