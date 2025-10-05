@@ -32,24 +32,24 @@
 \contentsline {subsection}{\numberline {3.3.2}System Requirements}{42}{subsection.3.3.2}%
 \contentsline {section}{\numberline {3.4}System Design}{45}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}System Architecture}{46}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Flowchart}{49}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Context Level Diagram}{57}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Data Flow Diagram}{59}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}Use Case Diagram}{60}{subsection.3.4.5}%
-\contentsline {subsection}{\numberline {3.4.6}Hardware Design Flowchart}{64}{subsection.3.4.6}%
-\contentsline {subsection}{\numberline {3.4.7}3D Design}{65}{subsection.3.4.7}%
-\contentsline {subsection}{\numberline {3.4.8}Materials and Cost}{66}{subsection.3.4.8}%
-\contentsline {section}{\numberline {3.5}Implementation}{66}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Software Implementation}{67}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Hardware Implementation}{67}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Data Acquisition and Storage}{68}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Machine Learning Model}{69}{subsection.3.5.4}%
-\contentsline {section}{\numberline {3.6}Test and Evaluation}{69}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Hardware Testing and Calibration}{70}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Functional Testing}{71}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}System Integration Testing}{72}{subsection.3.6.3}%
-\contentsline {subsection}{\numberline {3.6.4}Performance Testing}{73}{subsection.3.6.4}%
+\contentsline {subsection}{\numberline {3.4.2}Flowchart}{48}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Context Level Diagram}{56}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Data Flow Diagram}{58}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Use Case Diagram}{59}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.4.6}Hardware Design Flowchart}{63}{subsection.3.4.6}%
+\contentsline {subsection}{\numberline {3.4.7}3D Design}{64}{subsection.3.4.7}%
+\contentsline {subsection}{\numberline {3.4.8}Materials and Cost}{65}{subsection.3.4.8}%
+\contentsline {section}{\numberline {3.5}Implementation}{65}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Software Implementation}{66}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Hardware Implementation}{66}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Data Acquisition and Storage}{67}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Machine Learning Model}{68}{subsection.3.5.4}%
+\contentsline {section}{\numberline {3.6}Test and Evaluation}{68}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Hardware Testing and Calibration}{69}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Functional Testing}{70}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}System Integration Testing}{71}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}Performance Testing}{72}{subsection.3.6.4}%
 \contentsline {subsection}{\numberline {3.6.5}Usability Testing}{74}{subsection.3.6.5}%
-\contentsline {chapter}{APPENDICES}{76}{chapter*.27}%
-\contentsline {chapter}{REFERENCES}{77}{chapter*.27}%
+\contentsline {chapter}{APPENDICES}{75}{chapter*.22}%
+\contentsline {chapter}{REFERENCES}{76}{chapter*.22}%
 \contentsfinish 
