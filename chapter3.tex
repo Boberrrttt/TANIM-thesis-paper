@@ -8,7 +8,7 @@
 		\centering
 		\caption{Modified Waterfall Model}
 		\label{fig:ResearchDesign}
-		\includegraphics[width=0.7\textwidth]{figures/ResearchDesign.pdf}
+		\includegraphics[width=1\textwidth]{figures/ResearchDesign.pdf}
 	\end{figure}
 	
 	This study follows a modified waterfall research model to guide the development of the IoT-MCDA system shown in figure 4. The process begins with the requirements gathering, in which the system will collect comprehensive data from the Department of Agriculture (DA) and credible online datasets. The datasets include zoning information and soil parameters, as well as crop-specific requirements for growth conditions. Moreover, all datasets will be integrated with the DA’s zoning information.
@@ -52,113 +52,83 @@
 	
 	The specific user requirements are summarized in Table 1.
 	
-	\begin{table}[h!]
-		\centering
-		\caption{User Requirements}
-		\label{tab:UserRequirements}
-		\begin{tabular}{ll}
-			\hline
-			\textbf{User} & \textbf{Requirements} \\
-			\hline
-			Farmer & 
-			\begin{minipage}[t]{8cm}
-				- Access soil health insights (pH, moisture, nutrients) through a mobile app. \\[0.5em]
-				- Receive crop suitability scores and multi-cropping recommendations. \\[0.5em]
-				- Get fertilizer schedules tailored to soil condition and crop type.\\
-			\end{minipage} \\
-			\hline
-			Department of Agriculture & 
-			\begin{minipage}[t]{8cm}
-				- Provide zoning maps, soil datasets, and crop profiles to the system. \\[0.5em]
-				- Access a centralized web dashboard to visualize soil health, nutrient trends, and farmer data across Region 10.\\
-			\end{minipage} \\
-			\hline
-		\end{tabular}
-	\end{table}
+	\begin{longtable}{p{3cm} p{10cm}}
+		\caption{User Requirements} \label{tab:UserRequirements} \\
+		\toprule
+		\textbf{User} & \textbf{Requirements} \\
+		\midrule
+		\endfirsthead
+		
+		\toprule
+		\textbf{User} & \textbf{Requirements} \\
+		\midrule
+		\endhead
+		
+		\bottomrule
+		\endfoot
+		
+		Farmer & - Access soil health insights (pH, moisture, nutrients) through a mobile app. \\
+		& - Receive crop suitability scores and multi-cropping recommendations. \\
+		& - Get fertilizer schedules tailored to soil condition and crop type. \\
+		\midrule
+		
+		Department of Agriculture & - Provide zoning maps, soil datasets, and crop profiles to the system. \\
+		& - Access a centralized web dashboard to visualize soil health, nutrient trends, and farmer data across Region 10. \\
+	\end{longtable}
 	
 	This table summarizes the requirements of the system’s two main users. Farmers need accessible insights and recommendations to guide timely crop and fertilizer decisions, while the Department of Agriculture requires integrated data and analytics to support monitoring, reporting, and regional agricultural planning. 
 	
 	\subsection{System Requirements}
 	The system requirements shown in Table 2,  were categorized into Process, Output, Control, and Performance specifications to aid the system design and implementation.
 	
-	\begin{table}[h!]
-		\centering
-		\caption{System Requirements}
-		\label{tab:SystemRequirements}
-		\begin{tabular}{ll}
-			\hline
-			\textbf{Category} & \textbf{System Requirement} \\
-			\hline
-			Input Requirements & 
-			\begin{minipage}[t]{8cm}
-				- The system shall accept input data directly from farmers and agricultural authorities through the designated interface. \\[0.5em]
-				- The system shall acquire and process soil data from integrated sensors or external data sources. \\[0.5em]
-				- The system shall accept soil health data from the sensor as input for hardware operation. \\[0.5em]
-				- The system shall retrieve weather information from external APIs.\\
-			\end{minipage} \\
-			\hline
-			Process Requirements & 
-			\begin{minipage}[t]{8cm}
-				- The system shall combine weather, soil, and farmer-provided data into a single decision-making framework. \\[0.5em]
-				- The system shall employ boosting algorithms to enhance the accuracy of predictive crop recommendations. \\[0.5em]
-				- The system shall apply multi-criteria decision analysis methods to evaluate and rank potential crop options. \\[0.5em]
-				
-			\end{minipage} \\
-			\hline
-		\end{tabular}
-	\end{table}
-	\begin{table}[h!]
-		\centering
-		\begin{tabular}{ll}
-			\hline
-			\textbf{Category} & \textbf{System Requirement} \\
-			\hline
-			&
-			\begin{minipage}[1]{8cm}
-				- The system shall analyze data-driven insights to balance yield potential with resource availability. \\[0.5em]
-				- The system shall determine an appropriate planting timeline based on environmental conditions and crop growth requirements.\\
-			\end{minipage}\\
-			\hline
-			Output Requirements &
-			\begin{minipage}[t]{8cm}
-				- The system shall present crop recommendations via a visual interface on mobile and web applications. \\[0.5em]
-				- The system shall display multi-cropping options, which shows compatible crop pairings. \\[0.5em]
-				- The system shall present localized weather forecasts. \\[0.5em]
-				- The system shall provide soil health reports with clear visual indicators.\\
-				- The system shall display information on current crops cultivated by the farmer. \\[0.5em]
-				- The system shall display farm details of the farmer. \\[0.5em]
-				- The system shall display the locations and overview of registered farms. \\[0.5em]
-				- The system shall display a list of all farmers registered. \\[0.5em]
-				- The system shall present crop rules, including crop rotation guidelines, and companion planting practices.\\
-			\end{minipage} \\
-			\hline
-			Control Requirements &
-			\begin{minipage}[t]{8cm}
-				- The system shall provide secure login and authentication for farmers and agricultural authorities. \\[0.5em]
-			\end{minipage}\\
-			\hline
-		\end{tabular}
-	\end{table}
-	
-	\begin{table} [h!]
-		\centering
-		\begin{tabular}{ll}
-			\hline
-			\textbf{Category} & \textbf{System Requirement} \\
-			\hline
-			&
-			\begin{minipage}[t]{8cm}
-				- The system shall restrict access to sensitive data based on user roles and permissions. \\[0.5em]
-				- The system shall allow administrators to update crop rules and farm locations.\\
-			\end{minipage} \\
-			\hline				
-			Performance Requirements &
-			\begin{minipage}[t]{8cm}
-				- The system shall scale efficiently to accommodate growth in registered farmers and farms without requiring major redesign. \\[0.5em]
-				- The system must be able to have offline syncing for farmer features. \\[0.5em]					- The system must provide accurate crop recommendations for farmers.\\
-			\end{minipage} \\
-		\end{tabular}
-	\end{table}
+	\begin{longtable}{p{4cm} p{9cm}}
+		\caption{System Requirements} \label{tab:SystemRequirements} \\
+		\toprule
+		\textbf{Category} & \textbf{System Requirement} \\
+		\midrule
+		\endfirsthead
+		
+		\toprule
+		\textbf{Category} & \textbf{System Requirement} \\
+		\midrule
+		\endhead
+		
+		\bottomrule
+		\endfoot
+		
+		Input Requirements & - The system shall accept input data directly from farmers and agricultural authorities through the designated interface. \\
+		& - The system shall acquire and process soil data from integrated sensors or external data sources. \\
+		& - The system shall accept soil health data from the sensor as input for hardware operation. \\
+		& - The system shall retrieve weather information from external APIs. \\
+		\midrule
+		
+		Process Requirements & - The system shall combine weather, soil, and farmer-provided data into a single decision-making framework. \\
+		& - The system shall employ boosting algorithms to enhance the accuracy of predictive crop recommendations. \\
+		& - The system shall apply multi-criteria decision analysis methods to evaluate and rank potential crop options. \\
+		& - The system shall analyze data-driven insights to balance yield potential with resource availability. \\
+		& - The system shall determine an appropriate planting timeline based on environmental conditions and crop growth requirements. \\
+		\midrule
+		
+		Output Requirements & - The system shall present crop recommendations via a visual interface on mobile and web applications. \\
+		& - The system shall display multi-cropping options, which shows compatible crop pairings. \\
+		& - The system shall present localized weather forecasts. \\
+		& - The system shall provide soil health reports with clear visual indicators. \\
+		& - The system shall display information on current crops cultivated by the farmer. \\
+		& - The system shall display farm details of the farmer. \\
+		& - The system shall display the locations and overview of registered farms. \\
+		& - The system shall display a list of all farmers registered. \\
+		& - The system shall present crop rules, including crop rotation guidelines, and companion planting practices. \\
+		\midrule
+		
+		Control Requirements & - The system shall provide secure login and authentication for farmers and agricultural authorities. \\
+		& - The system shall restrict access to sensitive data based on user roles and permissions. \\
+		& - The system shall allow administrators to update crop rules and farm locations. \\
+		\midrule
+		
+		Performance Requirements & - The system shall scale efficiently to accommodate growth in registered farmers and farms without requiring major redesign. \\
+		& - The system must be able to have offline syncing for farmer features. \\
+		& - The system must provide accurate crop recommendations for farmers. \\
+	\end{longtable} 
 	
 	The system requirements were defined to ensure the effective collection processing, and presentation of farm and soil data to support informed crop management decisions. The primary objective of the system is to assist farmers by integrating farm-specific information, and soil health metrics to generate accurate and actionable crop recommendations. Input requirements focus on collecting data from farmers and sensors, while process requirements involve advanced algorithms. This includes boosting algorithms, and multi-criteria-decision analysis, to evaluate and rank crop options. Outputs are delivered through mobile and web applications, to provide farmers and administrators with visualized recommendations. Control requirements ensure secure access, role-based permissions, and administrative capabilities for managing crop rules and farm records. Lastly, performance requirements address scalability, offline syncing, and recommendation accuracy, to ensure effective decision support in diverse agricultural contexts.
 	
@@ -281,7 +251,7 @@
 		\centering
 		\caption{Hardware Design Flowchart}
 		\label{fig:HardwareFlowchart}
-		\includegraphics[width=1\textwidth]{figures/IPO.pdf}
+		\includegraphics[width=1\textwidth]{figures/hardwarediagram.pdf}
 	\end{figure}
 	
 	Figure \ref{fig:HardwareFlowchart} illustrates the workflow of the hardware components. Figure 15 illustrates the workflow of the hardware components. The process begins at the "Start" node, followed by the initialization of the central microcontroller. Next, the sensor is initialized to prepare for data collection. Once the sensor retrieves data, the process moves to the transceiver module, which handles the transmission of the collected data. The transmitter module then processes and sends the data, concluding the workflow at the "End" node.
@@ -299,33 +269,33 @@
 	Figure \ref{fig:3D} displays the 3D container design that will be 3D printed for the container of the hardware. This will contain the hardware components which are etched in a PCB board that will be used in this system. The container should be durable to ensure that it can secure the hardware components inside of it.
 	
 	\subsection{Materials and Cost}
-	\begin{table}[h!]
-		\centering
-		\caption{Hardware Components and Cost}
-		\label{tab:MaterialsAndCost}
-		\begin{tabular}{ll}
-			\toprule
-			\textbf{Component} & \textbf{Price} \\ 
-			\midrule
-			Microprocessor & \textpeso 150 \\ 
-			\hline
-			Soil Sensor & \textpeso 1,654.90 \\
-			\hline
-			Solar Power Manager & \textpeso 860 \\
-			\hline
-			Solar Panel & \textpeso 320 \\
-			\hline
-			Lithium Ion Battery & \textpeso 120 \\
-			\hline
-			Transceiver Module & \textpeso 163 \\
-			\hline
-			Transmitter Module & \textpeso 180 \\
-			\hline
-			Miscellaneous (Cable, Mounts) & \textpeso 1,500 \\
-			\textbf{Total} & \textbf{\textpeso 4,947.90} \\
-			\bottomrule
-		\end{tabular}
-	\end{table}
+	
+	\begin{longtable}{p{6cm} p{4cm}}
+		\caption{Hardware Components and Cost} \label{tab:MaterialsAndCost} \\
+		\toprule
+		\textbf{Component} & \textbf{Price} \\ 
+		\midrule
+		\endfirsthead
+		
+		\toprule
+		\textbf{Component} & \textbf{Price} \\ 
+		\midrule
+		\endhead
+		
+		\bottomrule
+		\endfoot
+		
+		Microprocessor & \textpeso 150 \\ 
+		Soil Sensor & \textpeso 1,654.90 \\
+		Solar Power Manager & \textpeso 860 \\
+		Solar Panel & \textpeso 320 \\
+		Lithium Ion Battery & \textpeso 120 \\
+		Transceiver Module & \textpeso 163 \\
+		Transmitter Module & \textpeso 180 \\
+		Miscellaneous (Cable, Mounts) & \textpeso 1,500 \\
+		\midrule
+		\textbf{Total} & \textbf{\textpeso 4,947.90} \\
+	\end{longtable}
 	
 	\section{Implementation}
 	The Implementation phase involves developing the software and hardware components. Each function was ensured to function according to the design specifications.This phase intends to transform the conceptual design into a working prototype that can perform data acquisition, processing, and output for TANIM.
@@ -349,9 +319,10 @@
 	Hardware testing and calibration will ensure that the IoT sensors will provide accurate measurements of soil health parameters such as nitrogen, phosphorus, potassium, pH, moisture, salinity, and temperature. To conduct this testing, the sensors will be deployed in field testing on the actual farms in Region 10, also to ensure consistency under varying field conditions the readings will be recorded at different time and day. Cross checking will be applied by using the Department of Agriculture’s soil testing laboratory and soil test kits of the same soil samples from the same farms to ensure reliability and accuracy.
 	
 	Through statistical measures such as Mean Absolute Error (MAE) the sensor readings will be compared against laboratory results. a maximum allowable error threshold of ±5 will be set, if the difference between the sensor and laboratory values exceeds this threshold error, calibration adjustments will be applied to the sensors until acceptable accuracy will be achieved. It will be calculated by:
-	
-	
-	\textbf{EQUATION DIRI}
+	\begin{equation}
+		\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+		\label{eq:mae}
+	\end{equation}
 	
 	This process ensures that the data generated by the hardware is reliable enough to be used in machine learning models and the recommendation system.
 	
@@ -372,7 +343,34 @@
 	
 	For the crop recommendation, the machine learning models will be evaluated using accuracy, precision, recall, F1-score, and confusion matrices to determine the effectiveness of the system. The following formulas are going to be use:
 	
-	\textbf{TANAN FORMULA}
+	\begin{equation}
+		\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
+		\label{eq:accuracy}
+	\end{equation}
+	
+	\begin{equation}
+		\text{Precision} = \frac{TP}{TP + FP}
+		\label{eq:precision}
+	\end{equation}
+	
+	\begin{equation}
+		\text{Recall} = \frac{TP}{TP + FN}
+		\label{eq:recall}
+	\end{equation}
+	
+	\begin{equation}
+		\text{F1-Score} = \frac{2 \times \text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
+		\label{eq:f1score}
+	\end{equation}
+	
+	\begin{equation}
+		\text{Confusion Matrix} = 
+		\begin{bmatrix}
+			TN & FP \\
+			FN & TP
+		\end{bmatrix}
+		\label{eq:confusionmatrix}
+	\end{equation}
 	
 	The Multi-Criteria Decision Analysis (MCDA) process will be tested by computing the Analytic Hierarchy Process (AHP) consistency ratio, which was required to be less than 0.1 for validity, and by checking the stability of crop rankings produced through TOPSIS. These evaluation steps confirm that the machine learning models not only provide scientifically sound predictions but also deliver recommendations that are consistent and stable under different scenarios.
 	
