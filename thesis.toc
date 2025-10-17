@@ -51,5 +51,5 @@
 \contentsline {subsection}{\numberline {3.6.4}Performance Testing}{72}{subsection.3.6.4}%
 \contentsline {subsection}{\numberline {3.6.5}Usability Testing}{74}{subsection.3.6.5}%
 \contentsline {chapter}{APPENDICES}{75}{chapter*.22}%
-\contentsline {chapter}{REFERENCES}{76}{chapter*.22}%
+\contentsline {chapter}{REFERENCES}{92}{table.caption.27}%
 \contentsfinish 
