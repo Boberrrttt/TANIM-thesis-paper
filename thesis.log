@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.5)  5 OCT 2025 19:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.5)  17 OCT 2025 13:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -781,7 +781,7 @@ Chapter 1.
 
 pdfTeX warning: pdflatex.exe (file ./figures/IPO.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.5> allowed
-<figures/IPO.pdf, id=382, 449.76028pt x 153.6942pt>
+<figures/IPO.pdf, id=383, 449.76028pt x 153.6942pt>
 File: figures/IPO.pdf Graphic file (type pdf)
 <use figures/IPO.pdf>
 Package pdftex.def Info: figures/IPO.pdf  used on input line 66.
@@ -793,7 +793,7 @@ Package pdftex.def Info: figures/IPO.pdf  used on input line 66.
 [11]
 
 [12]
-<figures/PrecisionAgriculture.pdf, id=410, 1244.65pt x 1229.25642pt>
+<figures/PrecisionAgriculture.pdf, id=411, 1244.65pt x 1229.25642pt>
 File: figures/PrecisionAgriculture.pdf Graphic file (type pdf)
 <use figures/PrecisionAgriculture.pdf>
 Package pdftex.def Info: figures/PrecisionAgriculture.pdf  used on input line 8
@@ -878,7 +878,7 @@ Chapter 3.
 
 pdfTeX warning: pdflatex.exe (file ./figures/ResearchDesign.pdf): PDF inclusion
 : found PDF version <1.7>, but at most version <1.5> allowed
-<figures/ResearchDesign.pdf, id=507, 439.33134pt x 240.66914pt>
+<figures/ResearchDesign.pdf, id=508, 439.33134pt x 240.66914pt>
 File: figures/ResearchDesign.pdf Graphic file (type pdf)
 <use figures/ResearchDesign.pdf>
 Package pdftex.def Info: figures/ResearchDesign.pdf  used on input line 11.
@@ -900,7 +900,7 @@ Package pdftex.def Info: figures/ResearchDesign.pdf  used on input line 11.
 
 pdfTeX warning: pdflatex.exe (file ./figures/ResearchSetting.pdf): PDF inclusio
 n: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/ResearchSetting.pdf, id=534, 845.1575pt x 597.23125pt>
+<figures/ResearchSetting.pdf, id=535, 845.1575pt x 597.23125pt>
 File: figures/ResearchSetting.pdf Graphic file (type pdf)
 <use figures/ResearchSetting.pdf>
 Package pdftex.def Info: figures/ResearchSetting.pdf  used on input line 36.
@@ -926,7 +926,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--75
 
 pdfTeX warning: pdflatex.exe (file ./figures/SYSARCH.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<figures/SYSARCH.pdf, id=570, 1011.78pt x 325.215pt>
+<figures/SYSARCH.pdf, id=571, 1011.78pt x 325.215pt>
 File: figures/SYSARCH.pdf Graphic file (type pdf)
 <use figures/SYSARCH.pdf>
 Package pdftex.def Info: figures/SYSARCH.pdf  used on input line 143.
@@ -941,7 +941,7 @@ Package pdftex.def Info: figures/SYSARCH.pdf  used on input line 143.
 
 pdfTeX warning: pdflatex.exe (file ./figures/SystemFlowchart.pdf): PDF inclusio
 n: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/SystemFlowchart.pdf, id=623, 564.73987pt x 324.82352pt>
+<figures/SystemFlowchart.pdf, id=624, 564.73987pt x 324.82352pt>
 File: figures/SystemFlowchart.pdf Graphic file (type pdf)
 <use figures/SystemFlowchart.pdf>
 Package pdftex.def Info: figures/SystemFlowchart.pdf  used on input line 158.
@@ -956,7 +956,7 @@ Package pdftex.def Info: figures/SystemFlowchart.pdf  used on input line 158.
 
 pdfTeX warning: pdflatex.exe (file ./figures/soft flow.pdf): PDF inclusion: fou
 nd PDF version <1.7>, but at most version <1.5> allowed
-<figures/soft flow.pdf, id=653, 505.89pt x 361.35pt>
+<figures/soft flow.pdf, id=654, 505.89pt x 361.35pt>
 File: figures/soft flow.pdf Graphic file (type pdf)
 <use figures/soft flow.pdf>
 Package pdftex.def Info: figures/soft flow.pdf  used on input line 173.
@@ -969,7 +969,7 @@ Package pdftex.def Info: figures/soft flow.pdf  used on input line 173.
 
 pdfTeX warning: pdflatex.exe (file ./figures/web flow.pdf): PDF inclusion: foun
 d PDF version <1.7>, but at most version <1.5> allowed
-<figures/web flow.pdf, id=672, 505.89pt x 325.215pt>
+<figures/web flow.pdf, id=673, 505.89pt x 325.215pt>
 File: figures/web flow.pdf Graphic file (type pdf)
 <use figures/web flow.pdf>
 Package pdftex.def Info: figures/web flow.pdf  used on input line 186.
@@ -990,7 +990,7 @@ w the TANIM
 
 pdfTeX warning: pdflatex.exe (file ./figures/cldWEB.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<figures/cldWEB.pdf, id=696, 542.025pt x 216.81pt>
+<figures/cldWEB.pdf, id=697, 542.025pt x 216.81pt>
 File: figures/cldWEB.pdf Graphic file (type pdf)
 <use figures/cldWEB.pdf>
 Package pdftex.def Info: figures/cldWEB.pdf  used on input line 202.
@@ -1001,7 +1001,7 @@ Package pdftex.def Info: figures/cldWEB.pdf  used on input line 202.
 
 pdfTeX warning: pdflatex.exe (file ./figures/cldMOB.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<figures/cldMOB.pdf, id=716, 542.025pt x 216.81pt>
+<figures/cldMOB.pdf, id=717, 542.025pt x 216.81pt>
 File: figures/cldMOB.pdf Graphic file (type pdf)
 <use figures/cldMOB.pdf>
 Package pdftex.def Info: figures/cldMOB.pdf  used on input line 211.
@@ -1012,7 +1012,7 @@ Package pdftex.def Info: figures/cldMOB.pdf  used on input line 211.
 
 pdfTeX warning: pdflatex.exe (file ./figures/DFD.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.5> allowed
-<figures/DFD.pdf, id=736, 505.89pt x 216.81pt>
+<figures/DFD.pdf, id=737, 505.89pt x 216.81pt>
 File: figures/DFD.pdf Graphic file (type pdf)
 <use figures/DFD.pdf>
 Package pdftex.def Info: figures/DFD.pdf  used on input line 223.
@@ -1023,7 +1023,7 @@ Package pdftex.def Info: figures/DFD.pdf  used on input line 223.
 
 pdfTeX warning: pdflatex.exe (file ./figures/FarmerUseCase.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<figures/FarmerUseCase.pdf, id=751, 227.63042pt x 393.86148pt>
+<figures/FarmerUseCase.pdf, id=752, 227.63042pt x 393.86148pt>
 File: figures/FarmerUseCase.pdf Graphic file (type pdf)
 <use figures/FarmerUseCase.pdf>
 Package pdftex.def Info: figures/FarmerUseCase.pdf  used on input line 235.
@@ -1036,7 +1036,7 @@ Package pdftex.def Info: figures/FarmerUseCase.pdf  used on input line 235.
 
 pdfTeX warning: pdflatex.exe (file ./figures/DAUseCase.pdf): PDF inclusion: fou
 nd PDF version <1.7>, but at most version <1.5> allowed
-<figures/DAUseCase.pdf, id=770, 397.39467pt x 390.11748pt>
+<figures/DAUseCase.pdf, id=771, 397.39467pt x 390.11748pt>
 File: figures/DAUseCase.pdf Graphic file (type pdf)
 <use figures/DAUseCase.pdf>
 Package pdftex.def Info: figures/DAUseCase.pdf  used on input line 244.
@@ -1049,7 +1049,7 @@ Package pdftex.def Info: figures/DAUseCase.pdf  used on input line 244.
 
 pdfTeX warning: pdflatex.exe (file ./figures/hardwarediagram.pdf): PDF inclusio
 n: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/hardwarediagram.pdf, id=795, 501.36308pt x 176.33879pt>
+<figures/hardwarediagram.pdf, id=796, 501.36308pt x 176.33879pt>
 File: figures/hardwarediagram.pdf Graphic file (type pdf)
 <use figures/hardwarediagram.pdf>
 Package pdftex.def Info: figures/hardwarediagram.pdf  used on input line 254.
@@ -1057,7 +1057,7 @@ Package pdftex.def Info: figures/hardwarediagram.pdf  used on input line 254.
 
 
 [63 <./figures/hardwarediagram.pdf>]
-<figures/3D.pdf, id=810, 159.52298pt x 218.685pt>
+<figures/3D.pdf, id=811, 159.52298pt x 218.685pt>
 File: figures/3D.pdf Graphic file (type pdf)
 <use figures/3D.pdf>
 Package pdftex.def Info: figures/3D.pdf  used on input line 266.
@@ -1087,7 +1087,7 @@ Package pdftex.def Info: figures/3D.pdf  used on input line 266.
 [74]
 \openout2 = `appendix.aux'.
 
- (appendix.tex)
+ (appendix.tex
 
 [75
 
@@ -1095,6 +1095,183 @@ Package pdftex.def Info: figures/3D.pdf  used on input line 266.
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[]|\OT1/cmr/bx/n/12 Test
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+\OT1/cmr/bx/n/12 Case
+ []
+
+
+Underfull \hbox (badness 5175) in paragraph at lines 24--24
+[]|\OT1/cmr/m/n/12 Sensor ac-ti-vates and
+ []
+
+
+Underfull \hbox (badness 7907) in paragraph at lines 25--25
+[]|\OT1/cmr/m/n/12 The sen-sor cap-tures
+ []
+
+
+Underfull \hbox (badness 1127) in paragraph at lines 26--26
+[]|\OT1/cmr/m/n/12 Multiple read-ings un-
+ []
+
+
+Underfull \hbox (badness 1117) in paragraph at lines 27--27
+[]|\OT1/cmr/m/n/12 Data pack-ets suc-cess-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--28
+[]|\OT1/cmr/m/n/12 The LoRa mod-ule
+ []
+
+
+Underfull \hbox (badness 4291) in paragraph at lines 28--28
+[]|\OT1/cmr/m/n/12 Data suc-cess-fully re-
+ []
+
+
+Underfull \hbox (badness 1412) in paragraph at lines 29--29
+[]|\OT1/cmr/m/n/12 Database shows com-
+ []
+
+
+Overfull \hbox (140.03749pt too wide) in paragraph at lines 19--31
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+[]|\OT1/cmr/m/n/12 Crop rec-om-men-da-tion
+ []
+
+
+Underfull \hbox (badness 1097) in paragraph at lines 44--44
+[]|\OT1/cmr/m/n/12 App sug-gests ap-pro-pri-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]|\OT1/cmr/m/n/12 Fertilizer rec-om-men-da-
+ []
+
+
+Underfull \hbox (badness 4096) in paragraph at lines 45--45
+\OT1/cmr/m/n/12 tion with dosage and
+ []
+
+
+Underfull \hbox (badness 7344) in paragraph at lines 45--45
+[]|\OT1/cmr/m/n/12 Correct fer-til-izer type
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 47--47
+[]|\OT1/cmr/m/n/12 Offline mode and data
+ []
+
+
+Underfull \hbox (badness 7576) in paragraph at lines 48--48
+[]|\OT1/cmr/m/n/12 Farm in-for-ma-tion up-
+ []
+
+
+Underfull \hbox (badness 7925) in paragraph at lines 48--48
+[]|\OT1/cmr/m/n/12 Farmers can add/edit
+ []
+
+
+Overfull \hbox (205.8175pt too wide) in paragraph at lines 37--50
+ [][] 
+ []
+
+
+
+[76]
+Underfull \hbox (badness 10000) in paragraph at lines 62--62
+[]|\OT1/cmr/m/n/12 Real-time soil health
+ []
+
+
+Underfull \hbox (badness 1377) in paragraph at lines 62--62
+[]|\OT1/cmr/m/n/12 Data from sen-sors up-
+ []
+
+
+Underfull \hbox (badness 1783) in paragraph at lines 64--64
+[]|\OT1/cmr/m/n/12 Officials can view and
+ []
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 65--65
+[]|\OT1/cmr/m/n/12 Crop rules and rec-om-
+ []
+
+
+Overfull \hbox (205.8175pt too wide) in paragraph at lines 56--68
+ [][] 
+ []
+
+
+
+[77]
+Underfull \hbox (badness 2269) in paragraph at lines 79--79
+[]|\OT1/cmr/m/n/12 Data moves seam-lessly
+ []
+
+
+Underfull \hbox (badness 1226) in paragraph at lines 80--80
+[]|\OT1/cmr/m/n/12 System dis-plays proper
+ []
+
+
+Underfull \hbox (badness 5954) in paragraph at lines 81--81
+[]|\OT1/cmr/m/n/12 Only au-tho-rized users
+ []
+
+
+Overfull \hbox (205.8175pt too wide) in paragraph at lines 74--84
+ [][] 
+ []
+
+
+
+[78]
+Overfull \hbox (5.03146pt too wide) in paragraph at lines 94--110
+ [][] 
+ []
+
+
+
+[79]
+
+[80]
+
+[81]
+
+[82]
+
+[83]
+
+[84]
+
+[85]
+
+[86]
+
+[87]
+
+[88]
+
+[89]
+
+[90])
+
+[91]
 \openout2 = `bibliography.aux'.
 
  (bibliography.tex (thesis.bbl
@@ -1103,7 +1280,7 @@ Package natbib Warning: Empty `thebibliography' environment on input line 3.
 
 ))
 
-[76
+[92
 
 
 
@@ -1119,16 +1296,16 @@ LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 679C0B9E16306D0CF86626CBE4B9A1E0;8493.
+(rerunfilecheck)             Checksum: D6A06C7183D891E35DD01AA12482AE9C;8498.
  ) 
 Here is how much of TeX's memory you used:
- 15491 strings out of 468130
- 249006 string characters out of 5431117
+ 15515 strings out of 468130
+ 249243 string characters out of 5431117
  676579 words of memory out of 5000000
- 43636 multiletter control sequences out of 15000+600000
+ 43639 multiletter control sequences out of 15000+600000
  634792 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,10n,82p,2236b,650s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,11n,82p,2236b,650s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx1
 200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
 tcrm1200.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
@@ -1142,9 +1319,9 @@ Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Use
 rs/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb
 >
-Output written on thesis.pdf (82 pages, 16141464 bytes).
+Output written on thesis.pdf (98 pages, 16158982 bytes).
 PDF statistics:
- 971 PDF objects out of 1000 (max. 8388607)
- 170 named destinations out of 1000 (max. 500000)
+ 1048 PDF objects out of 1200 (max. 8388607)
+ 191 named destinations out of 1000 (max. 500000)
  500 words of extra memory for PDF output out of 10000 (max. 10000000)
 
