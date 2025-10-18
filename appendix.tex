@@ -1,7 +1,172 @@
 \chapter*{APPENDICES}
 \addcontentsline{toc}{chapter}{APPENDICES}
+
 {\baselineskip=1\baselineskip
-
-Type your appendix here.
-
+	\centering
+	
+	\textbf{APPENDIX A}\\[1em]
+	\textbf{GANTT CHART}
+	
+	\newpage
+	
+	\textbf{APPENDIX B}\\[1em]
+	\textbf{FUNCTIONAL TESTING FORM}
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand{\arraystretch}{1.3}
+		\caption*{\textbf{A. Hardware and Data Capture}}
+		\begin{tabular}{|p{1.2cm}|p{4.2cm}|p{4.2cm}|p{2cm}|p{2cm}|}
+			\hline
+			\textbf{Test Case No.} & \textbf{Test Description} & \textbf{Expected Result} &
+			\multicolumn{2}{|c|}{\textbf{Does it achieve the expected result?}} \\ \cline{4-5}
+			& & & \textbf{Yes} & \textbf{No} \\ \hline
+			1 & Sensor powers on and initializes correctly. & Sensor activates and displays readiness. & & \\ \hline
+			2 & The sensor captures soil parameters (N, P, K, pH, salinity, temperature, moisture). & Accurate readings displayed on serial monitor or app. & & \\ \hline
+			3 & Multiple readings under the same conditions are consistent. & Readings show minimal variance (±5\%). & & \\ \hline
+			4 & ESP32 collects and processes sensor data properly. & Data packets successfully generated. & & \\ \hline
+			5 & The LoRa module transmits data to the gateway. & Data successfully received at gateway. & & \\ \hline
+			6 & Data stored correctly in the Firebase database. & Database shows complete and valid entries. & & \\ \hline
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand{\arraystretch}{1.3}
+		\caption*{\textbf{B. Mobile Application (Farmer Side)}}
+		\begin{tabular}{|c|p{4.5cm}|p{4.5cm}|c|c|}
+			\hline
+			\textbf{Test Case No.} & \textbf{Test Description} & \textbf{Expected Result} &
+			\multicolumn{2}{|c|}{\textbf{Does it achieve the expected result?}} \\ \cline{4-5}
+			& & & \textbf{Yes} & \textbf{No} \\ \hline
+			1 & User login and authentication. & Users can log in using valid credentials. & & \\ \hline
+			2 & Soil health readings display correctly. & Dashboard shows latest sensor readings. & & \\ \hline
+			3 & Crop recommendation generation. & App suggests appropriate crops based on soil data. & & \\ \hline
+			4 & Fertilizer recommendation with dosage and schedule. & Correct fertilizer type and amount displayed. & & \\ \hline
+			5 & Multiple crop recommendations work without error. & The system handles multiple queries smoothly. & & \\ \hline
+			6 & Offline mode and data synchronization. & Data syncs automatically once reconnected. & & \\ \hline
+			7 & Farm information update. & Farmers can add/edit farm details successfully. & & \\ \hline
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand{\arraystretch}{1.3}
+		\caption*{\textbf{C. Web Application (DA / Administrator Side)}}
+		\begin{tabular}{|c|p{4.5cm}|p{4.5cm}|c|c|}
+			\hline
+			\textbf{Test Case No.} & \textbf{Test Description} & \textbf{Expected Result} &
+			\multicolumn{2}{|c|}{\textbf{Does it achieve the expected result?}} \\ \cline{4-5}
+			& & & \textbf{Yes} & \textbf{No} \\ \hline
+			1 & Admin login and authentication. & DA officials can securely log in. & & \\ \hline
+			2 & Real-time soil health dashboard. & Data from sensors updates in real time. & & \\ \hline
+			3 & GIS mapping visualization. & Farm locations shown accurately on the map. & & \\ \hline
+			4 & Farmer profile management. & Officials can view and edit farmer data. & & \\ \hline
+			5 & Crop rules and recommendation management. & Admins can modify rules and save updates. & & \\ \hline
+			6 & Web responsiveness. & The system is accessible and functional on all devices. & & \\ \hline
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand{\arraystretch}{1.3}
+		\caption*{\textbf{D. System-Wide Features}}
+		\begin{tabular}{|c|p{4.5cm}|p{4.5cm}|c|c|}
+			\hline
+			\textbf{Test Case No.} & \textbf{Test Description} & \textbf{Expected Result} &
+			\multicolumn{2}{|c|}{\textbf{Does it achieve the expected result?}} \\ \cline{4-5}
+			& & & \textbf{Yes} & \textbf{No} \\ \hline
+			1 & End-to-end data flow. & Data moves seamlessly from sensor → gateway → Firebase → apps. & & \\ \hline
+			2 & Error handling for missing/corrupt data. & System displays proper error messages or retries. & & \\ \hline
+			3 & Security and access control. & Only authorized users can access restricted features. & & \\ \hline
+			4 & Multi-user capability. & Multiple users can operate simultaneously without system crash. & & \\ \hline
+		\end{tabular}
+	\end{table}
+	
+	\newpage
+	
+	\textbf{APPENDIX C}\\[1em]
+	\textbf{USABILITY TESTING SCALE}
+	
+	\begin{table}[H]
+		\centering
+		\renewcommand{\arraystretch}{1.3}
+		\begin{tabular}{|c|p{8cm}|c|c|c|c|c|}
+			\hline
+			\multicolumn{7}{|c|}{\textbf{System Usability Scale (SUS) Questionnaire}} \\ \hline
+			\textbf{No.} & \centering\textbf{Item} & \multicolumn{5}{c|}{\textbf{Frequency}} \\ \hline
+			&  & \textbf{SD} & \textbf{D} & \textbf{N} & \textbf{A} & \textbf{SA} \\ \hline
+			1 & I think that I would like to use this system frequently. & & & & & \\ \hline
+			2 & I found the system unnecessarily complex. & & & & & \\ \hline
+			3 & I think the system was easy to use. & & & & & \\ \hline
+			4 & I think that I would need the support of a technical person to be able to use this system. & & & & & \\ \hline
+			5 & I found the various functions in this system were well integrated. & & & & & \\ \hline
+			6 & I thought there was too much inconsistency in this system. & & & & & \\ \hline
+			7 & I would imagine that most people would learn to use this system very quickly. & & & & & \\ \hline
+			8 & I found it difficult to navigate the system. & & & & & \\ \hline
+			9 & I felt very confident using the system. & & & & & \\ \hline
+			10 & I needed to learn a lot of things before I could get going with this system. & & & & & \\ \hline
+		\end{tabular}
+	\end{table}
+	
+	\newpage
+	
+	\textbf{APPENDIX D}\\[1em]
+	\textbf{TESTING CONDUCTED}
+	
+	\newpage
+	
+	\textbf{APPENDIX E}\\[1em]
+	\textbf{LETTER OF CONSENT FOR INTERVIEW}
+	
+	\newpage
+	
+	\textbf{APPENDIX F}\\[1em]
+	\textbf{LETTER OF REQUEST FOR SOIL TESTING KIT}
+	
+	\newpage
+	
+	\textbf{APPENDIX G}\\[1em]
+	\textbf{DOCUMENTS REVIEWED}
+	
+	\newpage
+	
+	\textbf{APPENDIX H}\\[1em]
+	\textbf{INTERVIEW QUESTIONS}
+	
+	\newpage
+	
+	\textbf{APPENDIX I}\\[1em]
+	\textbf{CALIBRATION OF SOIL SENSOR USING SOIL TESTING KIT}
+	
+	\newpage
+	
+	\textbf{APPENDIX J}\\[1em]
+	\textbf{DOCUMENTATION OF THE IMPLEMENTATION}
+	
+	\newpage
+	
+	\textbf{APPENDIX K}\\[1em]
+	\textbf{FUNCTIONAL AND USABILITY TESTING CONDUCTED}
+	
+	\newpage
+	
+	\textbf{APPENDIX L}\\[1em]
+	\textbf{SOIL LABORATORY RESULTS}
+	
+	\newpage
+	
+	\textbf{APPENDIX M}\\[1em]
+	\textbf{SENSOR DATA SHEET}
+	
+	\newpage
+	
+	\textbf{APPENDIX N}\\[1em]
+	\textbf{TURNITIN RESULTS}
+	
+	\newpage
+	
+	\textbf{APPENDIX O}\\[1em]
+	\textbf{GRAMMARIAN RESULTS}
+	
 }
