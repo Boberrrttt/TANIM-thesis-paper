@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.5)  17 OCT 2025 13:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.19)  19 OCT 2025 09:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -135,7 +135,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 149.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx
 ))
 \everycr=\toks24
@@ -306,7 +306,7 @@ Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 Package: xparse 2024-08-16 L3 Experimental document command parser
 )
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
-Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count306
 ))
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
@@ -1095,157 +1095,132 @@ Package pdftex.def Info: figures/3D.pdf  used on input line 266.
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
+Underfull \hbox (badness 10000) in paragraph at lines 32--32
 []|\OT1/cmr/bx/n/12 Test
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
+Underfull \hbox (badness 10000) in paragraph at lines 32--32
 \OT1/cmr/bx/n/12 Case
  []
 
 
-Underfull \hbox (badness 5175) in paragraph at lines 24--24
+Underfull \hbox (badness 5175) in paragraph at lines 32--32
 []|\OT1/cmr/m/n/12 Sensor ac-ti-vates and
  []
 
 
-Underfull \hbox (badness 7907) in paragraph at lines 25--25
+Underfull \hbox (badness 7907) in paragraph at lines 32--32
 []|\OT1/cmr/m/n/12 The sen-sor cap-tures
  []
 
 
-Underfull \hbox (badness 1127) in paragraph at lines 26--26
+Underfull \hbox (badness 1127) in paragraph at lines 32--32
 []|\OT1/cmr/m/n/12 Multiple read-ings un-
  []
 
 
-Underfull \hbox (badness 1117) in paragraph at lines 27--27
+Underfull \hbox (badness 1117) in paragraph at lines 32--32
 []|\OT1/cmr/m/n/12 Data pack-ets suc-cess-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
+Underfull \hbox (badness 10000) in paragraph at lines 32--32
 []|\OT1/cmr/m/n/12 The LoRa mod-ule
  []
 
 
-Underfull \hbox (badness 4291) in paragraph at lines 28--28
+Underfull \hbox (badness 4291) in paragraph at lines 32--32
 []|\OT1/cmr/m/n/12 Data suc-cess-fully re-
  []
 
 
-Underfull \hbox (badness 1412) in paragraph at lines 29--29
+Underfull \hbox (badness 1412) in paragraph at lines 32--32
 []|\OT1/cmr/m/n/12 Database shows com-
  []
 
 
-Overfull \hbox (140.03749pt too wide) in paragraph at lines 19--31
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
 []|\OT1/cmr/m/n/12 Crop rec-om-men-da-tion
  []
 
 
-Underfull \hbox (badness 1097) in paragraph at lines 44--44
+Underfull \hbox (badness 1097) in paragraph at lines 53--53
 []|\OT1/cmr/m/n/12 App sug-gests ap-pro-pri-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--45
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
 []|\OT1/cmr/m/n/12 Fertilizer rec-om-men-da-
  []
 
 
-Underfull \hbox (badness 4096) in paragraph at lines 45--45
+Underfull \hbox (badness 4096) in paragraph at lines 53--53
 \OT1/cmr/m/n/12 tion with dosage and
  []
 
 
-Underfull \hbox (badness 7344) in paragraph at lines 45--45
+Underfull \hbox (badness 7344) in paragraph at lines 53--53
 []|\OT1/cmr/m/n/12 Correct fer-til-izer type
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 47--47
+Underfull \hbox (badness 1038) in paragraph at lines 53--53
 []|\OT1/cmr/m/n/12 Offline mode and data
  []
 
 
-Underfull \hbox (badness 7576) in paragraph at lines 48--48
+Underfull \hbox (badness 7576) in paragraph at lines 53--53
 []|\OT1/cmr/m/n/12 Farm in-for-ma-tion up-
  []
 
 
-Underfull \hbox (badness 7925) in paragraph at lines 48--48
+Underfull \hbox (badness 7925) in paragraph at lines 53--53
 []|\OT1/cmr/m/n/12 Farmers can add/edit
- []
-
-
-Overfull \hbox (205.8175pt too wide) in paragraph at lines 37--50
- [][] 
  []
 
 
 
 [76]
-Underfull \hbox (badness 10000) in paragraph at lines 62--62
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
 []|\OT1/cmr/m/n/12 Real-time soil health
  []
 
 
-Underfull \hbox (badness 1377) in paragraph at lines 62--62
+Underfull \hbox (badness 1377) in paragraph at lines 73--73
 []|\OT1/cmr/m/n/12 Data from sen-sors up-
  []
 
 
-Underfull \hbox (badness 1783) in paragraph at lines 64--64
+Underfull \hbox (badness 1783) in paragraph at lines 73--73
 []|\OT1/cmr/m/n/12 Officials can view and
  []
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 65--65
+Underfull \hbox (badness 1102) in paragraph at lines 73--73
 []|\OT1/cmr/m/n/12 Crop rules and rec-om-
  []
 
 
-Overfull \hbox (205.8175pt too wide) in paragraph at lines 56--68
- [][] 
+Underfull \hbox (badness 2269) in paragraph at lines 91--91
+[]|\OT1/cmr/m/n/12 Data moves seam-lessly
+ []
+
+
+Underfull \hbox (badness 1226) in paragraph at lines 91--91
+[]|\OT1/cmr/m/n/12 System dis-plays proper
+ []
+
+
+Underfull \hbox (badness 5954) in paragraph at lines 91--91
+[]|\OT1/cmr/m/n/12 Only au-tho-rized users
  []
 
 
 
 [77]
-Underfull \hbox (badness 2269) in paragraph at lines 79--79
-[]|\OT1/cmr/m/n/12 Data moves seam-lessly
- []
-
-
-Underfull \hbox (badness 1226) in paragraph at lines 80--80
-[]|\OT1/cmr/m/n/12 System dis-plays proper
- []
-
-
-Underfull \hbox (badness 5954) in paragraph at lines 81--81
-[]|\OT1/cmr/m/n/12 Only au-tho-rized users
- []
-
-
-Overfull \hbox (205.8175pt too wide) in paragraph at lines 74--84
- [][] 
- []
-
-
 
 [78]
-Overfull \hbox (5.03146pt too wide) in paragraph at lines 94--110
- [][] 
- []
-
-
 
 [79]
 
@@ -1299,13 +1274,13 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D6A06C7183D891E35DD01AA12482AE9C;8498.
  ) 
 Here is how much of TeX's memory you used:
- 15515 strings out of 468130
- 249243 string characters out of 5431117
- 676579 words of memory out of 5000000
- 43639 multiletter control sequences out of 15000+600000
- 634792 words of font info for 73 fonts, out of 8000000 for 9000
+ 15519 strings out of 468081
+ 249106 string characters out of 5426272
+ 678640 words of memory out of 5000000
+ 43692 multiletter control sequences out of 15000+600000
+ 635688 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,11n,82p,2236b,650s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,12n,82p,2236b,650s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx1
 200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
 tcrm1200.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
@@ -1319,7 +1294,7 @@ Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Use
 rs/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb
 >
-Output written on thesis.pdf (98 pages, 16158982 bytes).
+Output written on thesis.pdf (98 pages, 16159793 bytes).
 PDF statistics:
  1048 PDF objects out of 1200 (max. 8388607)
  191 named destinations out of 1000 (max. 500000)
