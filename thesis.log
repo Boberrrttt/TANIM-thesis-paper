@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.3)  19 OCT 2025 21:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.3)  19 OCT 2025 23:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1024,54 +1024,60 @@ Package pdftex.def Info: figures/DFD.pdf  used on input line 233.
 (pdftex.def)             Requested size: 397.48502pt x 170.35501pt.
 
 
-[60 <./figures/DFD.pdf>]
+[60]
+Overfull \hbox (1.7465pt too wide) in paragraph at lines 238--239
+\OT1/cmr/m/n/12 po-ten-tial crop yields. Af-ter-ward, the Multi-Criteria De-ci-
+sion Anal-y-sis (MCDA)
+ []
+
+
+
+[61 <./figures/DFD.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./figures/FarmerUseCase.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<figures/FarmerUseCase.pdf, id=760, 227.63042pt x 393.86148pt>
+<figures/FarmerUseCase.pdf, id=764, 227.63042pt x 393.86148pt>
 File: figures/FarmerUseCase.pdf Graphic file (type pdf)
 <use figures/FarmerUseCase.pdf>
-Package pdftex.def Info: figures/FarmerUseCase.pdf  used on input line 245.
+Package pdftex.def Info: figures/FarmerUseCase.pdf  used on input line 249.
 (pdftex.def)             Requested size: 198.74251pt x 343.88272pt.
 
 
-[61]
+[62]
 
-[62 <./figures/FarmerUseCase.pdf>]
+[63 <./figures/FarmerUseCase.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./figures/DAUseCase.pdf): PDF inclusion: fou
 nd PDF version <1.7>, but at most version <1.5> allowed
-<figures/DAUseCase.pdf, id=780, 397.39467pt x 390.11748pt>
+<figures/DAUseCase.pdf, id=783, 397.39467pt x 390.11748pt>
 File: figures/DAUseCase.pdf Graphic file (type pdf)
 <use figures/DAUseCase.pdf>
-Package pdftex.def Info: figures/DAUseCase.pdf  used on input line 254.
+Package pdftex.def Info: figures/DAUseCase.pdf  used on input line 258.
 (pdftex.def)             Requested size: 397.48502pt x 390.22366pt.
 
 
-[63]
+[64]
 
-[64 <./figures/DAUseCase.pdf>]
+[65 <./figures/DAUseCase.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./figures/hardwarediagram.pdf): PDF inclusio
 n: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/hardwarediagram.pdf, id=804, 501.36308pt x 176.33879pt>
+<figures/hardwarediagram.pdf, id=807, 501.36308pt x 176.33879pt>
 File: figures/hardwarediagram.pdf Graphic file (type pdf)
 <use figures/hardwarediagram.pdf>
-Package pdftex.def Info: figures/hardwarediagram.pdf  used on input line 264.
+Package pdftex.def Info: figures/hardwarediagram.pdf  used on input line 268.
 (pdftex.def)             Requested size: 397.48502pt x 139.80658pt.
 
 
-[65 <./figures/hardwarediagram.pdf>]
-<figures/3D.pdf, id=819, 159.52298pt x 218.685pt>
+[66 <./figures/hardwarediagram.pdf>]
+<figures/3D.pdf, id=822, 159.52298pt x 218.685pt>
 File: figures/3D.pdf Graphic file (type pdf)
 <use figures/3D.pdf>
-Package pdftex.def Info: figures/3D.pdf  used on input line 276.
+Package pdftex.def Info: figures/3D.pdf  used on input line 280.
 (pdftex.def)             Requested size: 198.74251pt x 272.46129pt.
 
 
-[66 <./figures/3D.pdf>]
-
-[67]
+[67 <./figures/3D.pdf>]
 
 [68]
 
@@ -1087,14 +1093,18 @@ Package pdftex.def Info: figures/3D.pdf  used on input line 276.
 
 [74]
 
-[75])
+[75]
 
 [76]
+
+[77])
+
+[78]
 \openout2 = `appendix.aux'.
 
  (appendix.tex
 
-[77
+[79
 
 
 
@@ -1186,7 +1196,7 @@ Underfull \hbox (badness 7925) in paragraph at lines 53--53
 
 
 
-[78]
+[80]
 Underfull \hbox (badness 10000) in paragraph at lines 73--73
 []|\OT1/cmr/m/n/12 Real-time soil health
  []
@@ -1223,10 +1233,6 @@ Underfull \hbox (badness 5954) in paragraph at lines 91--91
 
 
 
-[79]
-
-[80]
-
 [81]
 
 [82]
@@ -1249,9 +1255,13 @@ Underfull \hbox (badness 5954) in paragraph at lines 91--91
 
 [91]
 
-[92])
+[92]
 
 [93]
+
+[94])
+
+[95]
 \openout2 = `bibliography.aux'.
 
  (bibliography.tex (thesis.bbl
@@ -1260,7 +1270,7 @@ Package natbib Warning: Empty `thebibliography' environment on input line 3.
 
 ))
 
-[94
+[96
 
 
 
@@ -1279,8 +1289,8 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D6A06C7183D891E35DD01AA12482AE9C;8498.
  ) 
 Here is how much of TeX's memory you used:
- 15517 strings out of 468130
- 250306 string characters out of 5429629
+ 15519 strings out of 468130
+ 250320 string characters out of 5429629
  678582 words of memory out of 5000000
  43639 multiletter control sequences out of 15000+600000
  634792 words of font info for 73 fonts, out of 8000000 for 9000
@@ -1299,9 +1309,9 @@ s/Nitro 5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb
 /cmsy10.pfb><C:/Users/Nitro 5/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmti12.pfb><C:/Users/Nitro 5/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmtt12.pfb>
-Output written on thesis.pdf (100 pages, 16162847 bytes).
+Output written on thesis.pdf (102 pages, 16165240 bytes).
 PDF statistics:
- 1057 PDF objects out of 1200 (max. 8388607)
- 193 named destinations out of 1000 (max. 500000)
+ 1064 PDF objects out of 1200 (max. 8388607)
+ 195 named destinations out of 1000 (max. 500000)
  500 words of extra memory for PDF output out of 10000 (max. 10000000)
 
