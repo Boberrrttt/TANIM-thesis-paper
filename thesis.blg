@@ -15,47 +15,173 @@ Reallocating 'name_of_file' (item size: 1) to 4 items.
 The style file: apa.bst
 Reallocating 'name_of_file' (item size: 1) to 10 items.
 Database file #1: telemetry.bib
-Warning--I didn't find a database entry for "Salvador"
-Warning--I didn't find a database entry for "2024"
-You've used 0 entries,
+I was expecting an "="---line 3 of file telemetry.bib
+ : <<<<<<< 
+ :         Updated upstream
+I'm skipping whatever remains of this entry
+You're missing a field name---line 803 of file telemetry.bib
+ : 
+ : =======
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 873 of file telemetry.bib
+ : @article{Calalang2014
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 893 of file telemetry.bib
+ : @article{article
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 951 of file telemetry.bib
+ : @misc{DARegion10
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1029 of file telemetry.bib
+ : @misc{DARegionX2023
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1041 of file telemetry.bib
+ : @article{Elbasi2023
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1075 of file telemetry.bib
+ : @article{Islam2023
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1139 of file telemetry.bib
+ : @misc{Kumar2024
+ :                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1153 of file telemetry.bib
+ : @article{KumarR2024
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1203 of file telemetry.bib
+ : @article{Lal2024
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1223 of file telemetry.bib
+ : @inproceedings{Lavanya2024
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1285 of file telemetry.bib
+ : @article{Morgan2013
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1331 of file telemetry.bib
+ : @article{Patil2023
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1387 of file telemetry.bib
+ : @article{Samaniego
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1429 of file telemetry.bib
+ : @misc{Pagaduan2025
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1465 of file telemetry.bib
+ : @article{Bato2018
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1505 of file telemetry.bib
+ : @article{Watson2025
+ :                    ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Sani2023"
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1048 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1123 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1123 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1123 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1123 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1123 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1123 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1123 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1123 of file apa.bst
+Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
+while executing---line 1123 of file apa.bst
+You've used 30 entries,
             1940 wiz_defined-function locations,
-            481 strings with 3775 characters,
-and the built_in function-call counts, 17 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
-int.to.chr$ -- 1
+            659 strings with 9830 characters,
+and the built_in function-call counts, 10909 in all, are:
+= -- 1038
+> -- 516
+< -- 19
++ -- 178
+- -- 174
+* -- 947
+:= -- 1995
+add.period$ -- 90
+call.type$ -- 30
+change.case$ -- 236
+chr.to.int$ -- 28
+cite$ -- 30
+duplicate$ -- 403
+empty$ -- 674
+format.name$ -- 219
+if$ -- 2051
+int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+missing$ -- 25
+newline$ -- 153
+num.names$ -- 90
+pop$ -- 175
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 236
 quote$ -- 0
-skip$ -- 1
+skip$ -- 335
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 553
+swap$ -- 69
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 180
 warning$ -- 0
-while$ -- 0
+while$ -- 76
 width$ -- 0
-write$ -- 2
-(There were 2 warnings)
+write$ -- 383
+(There were 45 error messages)
