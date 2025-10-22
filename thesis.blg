@@ -19,72 +19,72 @@ I was expecting an "="---line 3 of file telemetry.bib
  : <<<<<<< 
  :         Updated upstream
 I'm skipping whatever remains of this entry
-You're missing a field name---line 803 of file telemetry.bib
+You're missing a field name---line 817 of file telemetry.bib
  : 
  : =======
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Repeated entry---line 873 of file telemetry.bib
+Repeated entry---line 887 of file telemetry.bib
  : @article{Calalang2014
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 893 of file telemetry.bib
+Repeated entry---line 907 of file telemetry.bib
  : @article{article
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 951 of file telemetry.bib
+Repeated entry---line 965 of file telemetry.bib
  : @misc{DARegion10
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1029 of file telemetry.bib
+Repeated entry---line 1043 of file telemetry.bib
  : @misc{DARegionX2023
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1041 of file telemetry.bib
+Repeated entry---line 1055 of file telemetry.bib
  : @article{Elbasi2023
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1075 of file telemetry.bib
+Repeated entry---line 1089 of file telemetry.bib
  : @article{Islam2023
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1139 of file telemetry.bib
+Repeated entry---line 1153 of file telemetry.bib
  : @misc{Kumar2024
  :                ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1153 of file telemetry.bib
+Repeated entry---line 1167 of file telemetry.bib
  : @article{KumarR2024
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1203 of file telemetry.bib
+Repeated entry---line 1217 of file telemetry.bib
  : @article{Lal2024
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1223 of file telemetry.bib
+Repeated entry---line 1237 of file telemetry.bib
  : @inproceedings{Lavanya2024
  :                           ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1285 of file telemetry.bib
+Repeated entry---line 1299 of file telemetry.bib
  : @article{Morgan2013
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1331 of file telemetry.bib
+Repeated entry---line 1345 of file telemetry.bib
  : @article{Patil2023
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1387 of file telemetry.bib
+Repeated entry---line 1401 of file telemetry.bib
  : @article{Samaniego
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1429 of file telemetry.bib
+Repeated entry---line 1441 of file telemetry.bib
  : @misc{Pagaduan2025
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1465 of file telemetry.bib
+Repeated entry---line 1477 of file telemetry.bib
  : @article{Bato2018
  :                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1505 of file telemetry.bib
+Repeated entry---line 1517 of file telemetry.bib
  : @article{Watson2025
  :                    ,
 I'm skipping whatever remains of this entry
@@ -125,6 +125,7 @@ Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M
 while executing---line 1048 of file apa.bst
 Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
 while executing---line 1048 of file apa.bst
+Warning--empty year in PhilAtlasBukidnon
 Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
 while executing---line 1123 of file apa.bst
 Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
@@ -143,45 +144,46 @@ Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M
 while executing---line 1123 of file apa.bst
 Too many commas in name 1 of "Sarma, H., Das, B., Deka, T., Rahman, S., Medhi, M., Kakoti, K." for entry Sarma2024
 while executing---line 1123 of file apa.bst
-You've used 30 entries,
+Warning--empty journal in Sarma2024
+You've used 31 entries,
             1940 wiz_defined-function locations,
-            659 strings with 9830 characters,
-and the built_in function-call counts, 10909 in all, are:
-= -- 1038
-> -- 516
-< -- 19
-+ -- 178
-- -- 174
-* -- 947
-:= -- 1995
-add.period$ -- 90
-call.type$ -- 30
-change.case$ -- 236
-chr.to.int$ -- 28
-cite$ -- 30
-duplicate$ -- 403
-empty$ -- 674
-format.name$ -- 219
-if$ -- 2051
+            663 strings with 9903 characters,
+and the built_in function-call counts, 11154 in all, are:
+= -- 1063
+> -- 523
+< -- 20
++ -- 180
+- -- 176
+* -- 962
+:= -- 2042
+add.period$ -- 93
+call.type$ -- 31
+change.case$ -- 242
+chr.to.int$ -- 29
+cite$ -- 33
+duplicate$ -- 413
+empty$ -- 689
+format.name$ -- 222
+if$ -- 2095
 int.to.chr$ -- 3
 int.to.str$ -- 0
 missing$ -- 25
-newline$ -- 153
-num.names$ -- 90
-pop$ -- 175
+newline$ -- 158
+num.names$ -- 93
+pop$ -- 182
 preamble$ -- 1
-purify$ -- 236
+purify$ -- 242
 quote$ -- 0
-skip$ -- 335
+skip$ -- 342
 stack$ -- 0
-substring$ -- 553
+substring$ -- 565
 swap$ -- 69
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 180
-warning$ -- 0
-while$ -- 76
+type$ -- 186
+warning$ -- 2
+while$ -- 78
 width$ -- 0
-write$ -- 383
+write$ -- 393
 (There were 45 error messages)

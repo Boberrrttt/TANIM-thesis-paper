@@ -102,6 +102,11 @@ Patil, P., Athavale, P., Bothara, M., Tambolkar, S., and More, A. (2023).
 \newblock Crop selection and yield prediction using machine learning approach.
 \newblock {\em Current Agriculture Research Journal}, 11(3):968--980.
 
+\bibitem[\protect\astroncite{{PhilAtlas}}{}]{PhilAtlasBukidnon}
+{PhilAtlas}.
+\newblock Bukidnon profile.
+\newblock \url{https://www.philatlas.com/mindanao/r10/bukidnon.html}.
+
 \bibitem[\protect\astroncite{Poliquit et~al.}{2019a}]{Poliquit}
 Poliquit, D., Tangaran, L., and Labrador, M. (2019a).
 \newblock Soil fertility evaluation and crop suitability assessment of
@@ -145,7 +150,7 @@ Sarma, H., D. B. D. T. R. S. M. M. K.~K. (2024).
 \newblock Data-driven agriculture: Software innovations for enhanced soil
   health, crop nutrients, disease detection, weather forecasting and fertilizer
   optimization in agriculture.
-\newblock {\em Journal of Advances in Biology \& Biotechnology}, 27.
+\newblock 27.
 
 \bibitem[\protect\astroncite{Sondhiya and Singh}{2024}]{Sondhiya2024}
 Sondhiya, R.~R. and Singh, V.~K. (2024).
