@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.5)  23 OCT 2025 02:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.5)  23 OCT 2025 14:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -858,16 +858,18 @@ Package natbib Warning: Citation `Sani2023' on page 22 undefined on input line
 
 [30]
 
-Package natbib Warning: Citation `Sani2023' on page 31 undefined on input line 
+[31]
+
+Package natbib Warning: Citation `Sani2023' on page 32 undefined on input line 
 92.
 
 
 
-[31]
+[32]
 
-[32])
+[33])
 
-[33]
+[34]
 \openout2 = `chapter3.aux'.
 
  (chapter3.tex
@@ -876,112 +878,116 @@ Chapter 3.
 
 pdfTeX warning: pdflatex.exe (file ./figures/ResearchDesign.pdf): PDF inclusion
 : found PDF version <1.7>, but at most version <1.5> allowed
-<figures/ResearchDesign.pdf, id=682, 439.33134pt x 240.66914pt>
+<figures/ResearchDesign.pdf, id=685, 439.33134pt x 240.66914pt>
 File: figures/ResearchDesign.pdf Graphic file (type pdf)
 <use figures/ResearchDesign.pdf>
 Package pdftex.def Info: figures/ResearchDesign.pdf  used on input line 12.
 (pdftex.def)             Requested size: 397.48502pt x 217.75333pt.
 
 
-[34
+[35
 
 
 
 
 ]
 
-[35 <./figures/ResearchDesign.pdf>]
-
-[36]
+[36 <./figures/ResearchDesign.pdf>]
 
 [37]
 
+[38]
+
 pdfTeX warning: pdflatex.exe (file ./figures/ResearchSetting.pdf): PDF inclusio
 n: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/ResearchSetting.pdf, id=710, 845.1575pt x 597.23125pt>
+<figures/ResearchSetting.pdf, id=713, 845.1575pt x 597.23125pt>
 File: figures/ResearchSetting.pdf Graphic file (type pdf)
 <use figures/ResearchSetting.pdf>
 Package pdftex.def Info: figures/ResearchSetting.pdf  used on input line 37.
 (pdftex.def)             Requested size: 397.48502pt x 280.89009pt.
 
 
-[38]
+[39]
 
-[39 <./figures/ResearchSetting.pdf>]
-
-[40]
+[40 <./figures/ResearchSetting.pdf>]
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
+
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
 []|\OT1/cmr/m/n/12 Department of
  []
 
-[42] [43] [44]
 
-[45]
 
-pdfTeX warning: pdflatex.exe (file ./figures/SYSARCH.pdf): PDF inclusion: found
- PDF version <1.7>, but at most version <1.5> allowed
-<figures/SYSARCH.pdf, id=749, 1011.78pt x 325.215pt>
-File: figures/SYSARCH.pdf Graphic file (type pdf)
-<use figures/SYSARCH.pdf>
-Package pdftex.def Info: figures/SYSARCH.pdf  used on input line 151.
-(pdftex.def)             Requested size: 397.48502pt x 127.76627pt.
+[43]
 
+[44] [45]
 
 [46]
 
-[47 <./figures/SYSARCH.pdf>]
+pdfTeX warning: pdflatex.exe (file ./figures/SYSARCH.pdf): PDF inclusion: found
+ PDF version <1.7>, but at most version <1.5> allowed
+<figures/SYSARCH.pdf, id=752, 1011.78pt x 325.215pt>
+File: figures/SYSARCH.pdf Graphic file (type pdf)
+<use figures/SYSARCH.pdf>
+Package pdftex.def Info: figures/SYSARCH.pdf  used on input line 153.
+(pdftex.def)             Requested size: 397.48502pt x 127.76627pt.
 
-[48]
+
+[47]
+
+[48 <./figures/SYSARCH.pdf>]
 
 [49]
 
+[50]
+
 pdfTeX warning: pdflatex.exe (file ./figures/SystemFlowchart.pdf): PDF inclusio
 n: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/SystemFlowchart.pdf, id=807, 564.73987pt x 324.82352pt>
+<figures/SystemFlowchart.pdf, id=810, 564.73987pt x 324.82352pt>
 File: figures/SystemFlowchart.pdf Graphic file (type pdf)
 <use figures/SystemFlowchart.pdf>
-Package pdftex.def Info: figures/SystemFlowchart.pdf  used on input line 171.
+Package pdftex.def Info: figures/SystemFlowchart.pdf  used on input line 173.
 (pdftex.def)             Requested size: 397.48502pt x 228.62888pt.
 
 
-[50]
+[51]
 
-[51 <./figures/SystemFlowchart.pdf>]
-
-[52]
-
-pdfTeX warning: pdflatex.exe (file ./figures/soft flow.pdf): PDF inclusion: fou
-nd PDF version <1.7>, but at most version <1.5> allowed
-<figures/soft flow.pdf, id=836, 505.89pt x 361.35pt>
-File: figures/soft flow.pdf Graphic file (type pdf)
-<use figures/soft flow.pdf>
-Package pdftex.def Info: figures/soft flow.pdf  used on input line 186.
-(pdftex.def)             Requested size: 397.48502pt x 283.92503pt.
-
+[52 <./figures/SystemFlowchart.pdf>]
 
 [53]
 
-[54 <./figures/soft flow.pdf>]
+pdfTeX warning: pdflatex.exe (file ./figures/soft flow.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<figures/soft flow.pdf, id=839, 505.89pt x 361.35pt>
+File: figures/soft flow.pdf Graphic file (type pdf)
+<use figures/soft flow.pdf>
+Package pdftex.def Info: figures/soft flow.pdf  used on input line 188.
+(pdftex.def)             Requested size: 397.48502pt x 283.92503pt.
 
-[55]
 
-pdfTeX warning: pdflatex.exe (file ./figures/web flow.pdf): PDF inclusion: foun
-d PDF version <1.7>, but at most version <1.5> allowed
-<figures/web flow.pdf, id=860, 505.89pt x 325.215pt>
-File: figures/web flow.pdf Graphic file (type pdf)
-<use figures/web flow.pdf>
-Package pdftex.def Info: figures/web flow.pdf  used on input line 203.
-(pdftex.def)             Requested size: 397.48502pt x 255.53253pt.
+[54]
 
+[55 <./figures/soft flow.pdf>]
 
 [56]
 
-[57 <./figures/web flow.pdf>]
+pdfTeX warning: pdflatex.exe (file ./figures/web flow.pdf): PDF inclusion: foun
+d PDF version <1.7>, but at most version <1.5> allowed
+<figures/web flow.pdf, id=863, 505.89pt x 325.215pt>
+File: figures/web flow.pdf Graphic file (type pdf)
+<use figures/web flow.pdf>
+Package pdftex.def Info: figures/web flow.pdf  used on input line 205.
+(pdftex.def)             Requested size: 397.48502pt x 255.53253pt.
 
-[58]
-Overfull \hbox (8.16283pt too wide) in paragraph at lines 213--214
+
+[57]
+
+[58 <./figures/web flow.pdf>]
+
+[59]
+Overfull \hbox (8.16283pt too wide) in paragraph at lines 215--216
 []\OT1/cmr/m/n/12 The Context-Level Di-a-gram pro-vides a high-level view of ho
 w the TANIM
  []
@@ -990,91 +996,89 @@ w the TANIM
 
 pdfTeX warning: pdflatex.exe (file ./figures/cldWEB.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<figures/cldWEB.pdf, id=883, 542.025pt x 216.81pt>
+<figures/cldWEB.pdf, id=886, 542.025pt x 216.81pt>
 File: figures/cldWEB.pdf Graphic file (type pdf)
 <use figures/cldWEB.pdf>
-Package pdftex.def Info: figures/cldWEB.pdf  used on input line 219.
+Package pdftex.def Info: figures/cldWEB.pdf  used on input line 221.
 (pdftex.def)             Requested size: 397.48502pt x 158.99779pt.
 
 
-[59 <./figures/cldWEB.pdf>]
+[60 <./figures/cldWEB.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./figures/cldMOB.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<figures/cldMOB.pdf, id=903, 542.025pt x 216.81pt>
+<figures/cldMOB.pdf, id=906, 542.025pt x 216.81pt>
 File: figures/cldMOB.pdf Graphic file (type pdf)
 <use figures/cldMOB.pdf>
-Package pdftex.def Info: figures/cldMOB.pdf  used on input line 228.
+Package pdftex.def Info: figures/cldMOB.pdf  used on input line 230.
 (pdftex.def)             Requested size: 397.48502pt x 158.99779pt.
 
 
-[60 <./figures/cldMOB.pdf>]
+[61 <./figures/cldMOB.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./figures/DFD.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.5> allowed
-<figures/DFD.pdf, id=923, 505.89pt x 216.81pt>
+<figures/DFD.pdf, id=927, 505.89pt x 216.81pt>
 File: figures/DFD.pdf Graphic file (type pdf)
 <use figures/DFD.pdf>
-Package pdftex.def Info: figures/DFD.pdf  used on input line 240.
+Package pdftex.def Info: figures/DFD.pdf  used on input line 242.
 (pdftex.def)             Requested size: 397.48502pt x 170.35501pt.
 
 
-[61]
-Overfull \hbox (1.7465pt too wide) in paragraph at lines 245--246
+[62]
+Overfull \hbox (1.7465pt too wide) in paragraph at lines 247--248
 \OT1/cmr/m/n/12 po-ten-tial crop yields. Af-ter-ward, the Multi-Criteria De-ci-
 sion Anal-y-sis (MCDA)
  []
 
 
 
-[62 <./figures/DFD.pdf>]
+[63 <./figures/DFD.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./figures/FarmerUseCase.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<figures/FarmerUseCase.pdf, id=942, 227.63042pt x 393.86148pt>
+<figures/FarmerUseCase.pdf, id=945, 227.63042pt x 393.86148pt>
 File: figures/FarmerUseCase.pdf Graphic file (type pdf)
 <use figures/FarmerUseCase.pdf>
-Package pdftex.def Info: figures/FarmerUseCase.pdf  used on input line 256.
+Package pdftex.def Info: figures/FarmerUseCase.pdf  used on input line 258.
 (pdftex.def)             Requested size: 198.74251pt x 343.88272pt.
 
 
-[63]
+[64]
 
-[64 <./figures/FarmerUseCase.pdf>]
+[65 <./figures/FarmerUseCase.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./figures/DAUseCase.pdf): PDF inclusion: fou
 nd PDF version <1.7>, but at most version <1.5> allowed
-<figures/DAUseCase.pdf, id=961, 397.39467pt x 390.11748pt>
+<figures/DAUseCase.pdf, id=964, 397.39467pt x 390.11748pt>
 File: figures/DAUseCase.pdf Graphic file (type pdf)
 <use figures/DAUseCase.pdf>
-Package pdftex.def Info: figures/DAUseCase.pdf  used on input line 265.
+Package pdftex.def Info: figures/DAUseCase.pdf  used on input line 267.
 (pdftex.def)             Requested size: 397.48502pt x 390.22366pt.
 
 
-[65]
+[66]
 
-[66 <./figures/DAUseCase.pdf>]
+[67 <./figures/DAUseCase.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./figures/hardwarediagram.pdf): PDF inclusio
 n: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/hardwarediagram.pdf, id=985, 501.36308pt x 176.33879pt>
+<figures/hardwarediagram.pdf, id=989, 501.36308pt x 176.33879pt>
 File: figures/hardwarediagram.pdf Graphic file (type pdf)
 <use figures/hardwarediagram.pdf>
-Package pdftex.def Info: figures/hardwarediagram.pdf  used on input line 275.
+Package pdftex.def Info: figures/hardwarediagram.pdf  used on input line 277.
 (pdftex.def)             Requested size: 397.48502pt x 139.80658pt.
 
 
-[67 <./figures/hardwarediagram.pdf>]
-<figures/3D.pdf, id=1001, 159.52298pt x 218.685pt>
+[68 <./figures/hardwarediagram.pdf>]
+<figures/3D.pdf, id=1004, 159.52298pt x 218.685pt>
 File: figures/3D.pdf Graphic file (type pdf)
 <use figures/3D.pdf>
-Package pdftex.def Info: figures/3D.pdf  used on input line 287.
+Package pdftex.def Info: figures/3D.pdf  used on input line 289.
 (pdftex.def)             Requested size: 198.74251pt x 272.46129pt.
 
 
-[68 <./figures/3D.pdf>]
-
-[69]
+[69 <./figures/3D.pdf>]
 
 [70]
 
@@ -1096,14 +1100,16 @@ Package pdftex.def Info: figures/3D.pdf  used on input line 287.
 
 [79]
 
-[80])
+[80]
 
-[81]
+[81])
+
+[82]
 \openout2 = `bibliography.aux'.
 
  (bibliography.tex (thesis.bbl
 
-[82
+[83
 
 
 
@@ -1134,171 +1140,19 @@ ines.
 
 
 
-[83]))
+[84]))
 
-[84]
+[85]
 \openout2 = `appendix.aux'.
 
  (appendix.tex
 
-[85
+[86
 
 
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
-[]|\OT1/cmr/bx/n/12 Test
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
-\OT1/cmr/bx/n/12 Case
- []
-
-
-Underfull \hbox (badness 5175) in paragraph at lines 32--32
-[]|\OT1/cmr/m/n/12 Sensor ac-ti-vates and
- []
-
-
-Underfull \hbox (badness 7907) in paragraph at lines 32--32
-[]|\OT1/cmr/m/n/12 The sen-sor cap-tures
- []
-
-
-Underfull \hbox (badness 1127) in paragraph at lines 32--32
-[]|\OT1/cmr/m/n/12 Multiple read-ings un-
- []
-
-
-Underfull \hbox (badness 1117) in paragraph at lines 32--32
-[]|\OT1/cmr/m/n/12 Data pack-ets suc-cess-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
-[]|\OT1/cmr/m/n/12 The LoRa mod-ule
- []
-
-
-Underfull \hbox (badness 4291) in paragraph at lines 32--32
-[]|\OT1/cmr/m/n/12 Data suc-cess-fully re-
- []
-
-
-Underfull \hbox (badness 1412) in paragraph at lines 32--32
-[]|\OT1/cmr/m/n/12 Database shows com-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--53
-[]|\OT1/cmr/m/n/12 Crop rec-om-men-da-tion
- []
-
-
-Underfull \hbox (badness 1097) in paragraph at lines 53--53
-[]|\OT1/cmr/m/n/12 App sug-gests ap-pro-pri-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--53
-[]|\OT1/cmr/m/n/12 Fertilizer rec-om-men-da-
- []
-
-
-Underfull \hbox (badness 4096) in paragraph at lines 53--53
-\OT1/cmr/m/n/12 tion with dosage and
- []
-
-
-Underfull \hbox (badness 7344) in paragraph at lines 53--53
-[]|\OT1/cmr/m/n/12 Correct fer-til-izer type
- []
-
-
-Underfull \hbox (badness 1038) in paragraph at lines 53--53
-[]|\OT1/cmr/m/n/12 Offline mode and data
- []
-
-
-Underfull \hbox (badness 7576) in paragraph at lines 53--53
-[]|\OT1/cmr/m/n/12 Farm in-for-ma-tion up-
- []
-
-
-Underfull \hbox (badness 7925) in paragraph at lines 53--53
-[]|\OT1/cmr/m/n/12 Farmers can add/edit
- []
-
-
-
-[86]
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-[]|\OT1/cmr/m/n/12 Real-time soil health
- []
-
-
-Underfull \hbox (badness 1377) in paragraph at lines 73--73
-[]|\OT1/cmr/m/n/12 Data from sen-sors up-
- []
-
-
-Underfull \hbox (badness 1783) in paragraph at lines 73--73
-[]|\OT1/cmr/m/n/12 Officials can view and
- []
-
-
-Underfull \hbox (badness 1102) in paragraph at lines 73--73
-[]|\OT1/cmr/m/n/12 Crop rules and rec-om-
- []
-
-
-Underfull \hbox (badness 2269) in paragraph at lines 91--91
-[]|\OT1/cmr/m/n/12 Data moves seam-lessly
- []
-
-
-Underfull \hbox (badness 1226) in paragraph at lines 91--91
-[]|\OT1/cmr/m/n/12 System dis-plays proper
- []
-
-
-Underfull \hbox (badness 5954) in paragraph at lines 91--91
-[]|\OT1/cmr/m/n/12 Only au-tho-rized users
- []
-
-
-
-[87]
-
-[88]
-
-[89]
-
-[90]
-
-[91]
-
-[92]
-
-[93]
-
-[94]
-
-[95]
-
-[96]
-
-[97]
-
-[98]
-
-[99]
-
-[100])
-
-[101]
+])
 
 Package natbib Warning: There were undefined citations.
 
@@ -1312,13 +1166,13 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: FDB40B05D716E38D129AD4BF0F937ADD;8634.
  ) 
 Here is how much of TeX's memory you used:
- 15649 strings out of 468130
- 251484 string characters out of 5431117
- 680657 words of memory out of 5000000
- 43733 multiletter control sequences out of 15000+600000
+ 15627 strings out of 468130
+ 251270 string characters out of 5431117
+ 678699 words of memory out of 5000000
+ 43731 multiletter control sequences out of 15000+600000
  634792 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,12n,82p,2182b,650s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,10n,82p,2182b,650s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx1
 200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
 tcrm1200.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
@@ -1332,9 +1186,9 @@ Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Use
 rs/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb
 >
-Output written on thesis.pdf (107 pages, 16217082 bytes).
+Output written on thesis.pdf (92 pages, 16211016 bytes).
 PDF statistics:
- 1271 PDF objects out of 1440 (max. 8388607)
- 231 named destinations out of 1000 (max. 500000)
+ 1196 PDF objects out of 1200 (max. 8388607)
+ 211 named destinations out of 1000 (max. 500000)
  508 words of extra memory for PDF output out of 10000 (max. 10000000)
 
