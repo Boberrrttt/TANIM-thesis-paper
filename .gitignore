@@ -1,5 +1,5 @@
+# LaTeX build files
 *.log
-*.pdf
 *.aux
 *.bbl
 *.blg
@@ -14,3 +14,7 @@
 *.nav
 *.snm
 *.vrb
+
+thesis.pdf
+
+
