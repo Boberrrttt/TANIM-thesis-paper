@@ -1,5 +1,5 @@
+# LaTeX build files
 *.log
-*.pdf
 *.aux
 *.bbl
 *.blg
@@ -14,5 +14,6 @@
 *.nav
 *.snm
 *.vrb
--e "*.aux\n*.toc\n*.out\n*.synctex.gz\n*.log\n*.bbl\n*.blg" 
--e "*.aux\n*.toc\n*.log\n*.out\n*.synctex.gz\n*.bbl\n*.blg\n*.pdf" 
+
+thesis.pdf
+
