@@ -25,11 +25,11 @@
 \contentsline {section}{\numberline {2.5}Synthesis}{30}{section.2.5}%
 \contentsline {chapter}{\numberline {3}METHODOLOGY}{34}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Research Design}{35}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Requirements Gathering}{37}{section.3.2}%
+\contentsline {section}{\numberline {3.2}Requirements Gathering}{38}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Research Setting}{39}{subsection.3.2.1}%
 \contentsline {section}{\numberline {3.3}Requirements Analysis}{40}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}User Definition}{41}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}System Requirements}{42}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.2}System Requirements}{43}{subsection.3.3.2}%
 \contentsline {section}{\numberline {3.4}System Design}{45}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}System Architecture}{46}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Flowchart}{50}{subsection.3.4.2}%
@@ -51,5 +51,5 @@
 \contentsline {subsection}{\numberline {3.6.4}Performance Testing}{75}{subsection.3.6.4}%
 \contentsline {subsection}{\numberline {3.6.5}Usability Testing}{77}{subsection.3.6.5}%
 \contentsline {chapter}{APPENDICES}{79}{chapter*.22}%
-\contentsline {chapter}{REFERENCES}{96}{table.caption.27}%
+\contentsline {chapter}{REFERENCES}{96}{table.caption.28}%
 \contentsfinish 
