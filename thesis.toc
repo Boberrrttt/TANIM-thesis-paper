@@ -10,7 +10,7 @@
 \contentsline {section}{\numberline {1.4}Significance of the Study}{7}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Scope and Limitations}{9}{section.1.5}%
 \contentsline {subsection}{\numberline {1.5.1}Conceptual Framework}{10}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Theoretical Framework}{11}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.2}Theoretical Framework}{12}{subsection.1.5.2}%
 \contentsline {section}{\numberline {1.6}Definition of Terms}{14}{section.1.6}%
 \contentsline {chapter}{\numberline {2}REVIEW OF RELATED LITERATURE}{18}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Soil Health in Northern Mindanao}{18}{section.2.1}%
