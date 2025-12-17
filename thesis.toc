@@ -37,19 +37,19 @@
 \contentsline {subsection}{\numberline {3.4.4}Data Flow Diagram}{58}{subsection.3.4.4}%
 \contentsline {subsection}{\numberline {3.4.5}Use Case Diagram}{60}{subsection.3.4.5}%
 \contentsline {subsection}{\numberline {3.4.6}Hardware Design Flowchart}{64}{subsection.3.4.6}%
-\contentsline {subsection}{\numberline {3.4.7}3D Design}{65}{subsection.3.4.7}%
+\contentsline {subsection}{\numberline {3.4.7}3D Design}{66}{subsection.3.4.7}%
 \contentsline {subsection}{\numberline {3.4.8}Materials and Cost}{66}{subsection.3.4.8}%
-\contentsline {section}{\numberline {3.5}Implementation}{66}{section.3.5}%
+\contentsline {section}{\numberline {3.5}Implementation}{67}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Software Implementation}{67}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Hardware Implementation}{68}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.2}Hardware Implementation}{69}{subsection.3.5.2}%
 \contentsline {subsection}{\numberline {3.5.3}Data Acquisition and Storage}{69}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Machine Learning Model}{69}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.4}Machine Learning Model}{70}{subsection.3.5.4}%
 \contentsline {section}{\numberline {3.6}Test and Evaluation}{70}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Hardware Testing and Calibration}{71}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Functional Testing}{72}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}System Integration Testing}{72}{subsection.3.6.3}%
-\contentsline {subsection}{\numberline {3.6.4}Performance Testing}{73}{subsection.3.6.4}%
-\contentsline {subsection}{\numberline {3.6.5}Usability Testing}{75}{subsection.3.6.5}%
+\contentsline {subsection}{\numberline {3.6.3}System Integration Testing}{73}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}Performance Testing}{74}{subsection.3.6.4}%
+\contentsline {subsection}{\numberline {3.6.5}Usability Testing}{76}{subsection.3.6.5}%
 \contentsline {chapter}{APPENDICES}{77}{chapter*.21}%
 \contentsline {chapter}{REFERENCES}{94}{table.caption.26}%
 \contentsfinish 
