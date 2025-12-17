@@ -145,7 +145,7 @@
 	
 	The figure \ref{fig:SystemArchitecture} illustrates the system architecture of the proposed Soil Health Monitoring, Fertilizer, and Crop Recommendation System. The system will begin with a solar-powered IoT sensing unit deployed in the field. A solar panel, regulated by a solar charge controller, will supply continuous power to the device, enabling reliable operation even in remote agricultural areas.
 	
-	At the core of the sensing unit will be a soil sensor designed to measure key parameters such as NPK, pH, salinity, moisture, and temperature. Since the sensor outputs RS-485 differential signals, a MAX485 module will be used to convert these signals into TTL levels readable by the microcontroller. The MAX485 is selected for its ability to support long-distance and noise-resistant communication, which is essential in outdoor environments where sensor cables may be long and exposed to interference. Its low power consumption will further support the solar-powered architecture of the system.
+		At the core of the sensing unit will be a soil sensor designed to measure key parameters such as NPK, pH, salinity, moisture, and temperature. Since the sensor outputs RS-485 differential signals, a MAX485 module will be used to convert these signals into TTL levels readable by the microcontroller. The MAX485 is selected for its ability to support long-distance and noise-resistant communication, which is essential in outdoor environments where sensor cables may be long and exposed to interference. Its low power consumption will further support the solar-powered architecture of the system.
 	
 	The ESP32 microcontroller will serve as the main processing unit. It is chosen for its high processing capability, dual-core architecture, low power consumption, and support for multiple communication protocols. In addition to collecting sensor readings, the ESP32 will perform filtering and averaging on the raw data. Although the sensor will provide direct measurements, these readings may fluctuate due to electrical noise, environmental interference, soil inconsistencies, or transient signal spikes. Filtering will remove noise and outliers, while averaging multiple samples will reduce jitter and produce stable, reliable values. This data refinement process will ensure that the information sent to the cloud is consistent and accurate, which is crucial for dependable machine learning analysis.
 	
@@ -179,7 +179,7 @@
 		\centering
 		\caption{Software Mobile Application}
 		\label{fig:MobileFlowchart}
-		\includegraphics[width=1\textwidth]{figures/soft flow.pdf}
+		\includegraphics[width=1\textwidth]{figures/softFlow.pdf}
 	\end{figure}
 	
 	The figure \ref{fig:MobileFlowchart} illustrates the workflow of the farming recommendation system, highlighting the interaction between farmers and the application in obtaining crop suggestions tailored to soil and weather conditions. The process begins with user authentication, wherein the farmer logs into the system using their credentials. The application validates these credentials against the stored records in the database, ensuring secure access. If the credentials are incorrect, the system prompts the user to re-enter valid information, thereby safeguarding the platform against unauthorized access. Upon successful login, the farmer is redirected to the dashboard, which serves as the central interface for accessing personalized farm data and system functionalities.
