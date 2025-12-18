@@ -236,25 +236,20 @@ Through the integration of IoT hardware, renewable energy, cloud services, and m
 	Finally, the processed results are delivered to farmers and agricultural authorities through a user-friendly interface in the form of soil data analysis reports, visual dashboards, and actionable recommendations. These outputs facilitate practical decision-making, support strategic crop planning, and contribute to more efficient and sustainable agricultural practices across Region~10.
 	
 	\subsection{Use Case Diagram}
-	The Use Case Diagram visually represents how different actors interact with the system of TANIM. It illustrates both passive and active engagements that facilitate data collection and system utilization.
+	The Use Case Diagram illustrates how different actors interact with the TANIM system. It presents the system’s primary functionalities and shows how users access and utilize agricultural data for farm management and monitoring. The diagram emphasizes the roles of both Farmers and the Department of Agriculture in supporting efficient and data-driven agricultural practices.
 	
 	\begin{figure}[H]
 		\centering
 		\caption{Farmer Use Case Diagram}
-		\label{fig:FarmerUseCase}
-		\includegraphics[width=0.5\textwidth]{figures/FarmerUseCase.pdf}
+		\label{fig:UseCase}
+		\includegraphics[width=1\textwidth]{figures/usecase.pdf}
 	\end{figure}
 	
-	Figure \ref{fig:FarmerUseCase} shows how Farmers interact with the system. Farmers can use the system to view a list of their own farms, which helps them keep track of their agricultural activities in an organized manner. They are also able to check the status of their crops in the corresponding farm. This allows them to stay updated on growth progress and overall crop status. In addition, the system enables farmers to monitor soil health, Farmers can also access weather updates directly through the platform, which is essential for planning day-to-day tasks and preparing for potential challenges. Lastly, the system provides personalized crop recommendations, giving farmers guidance that is tailored to their specific conditions and needs. Together, these features create a comprehensive tool that supports farmers in managing their farms more effectively.
+	Figure \ref{fig:UseCase} shows the interactions of the Farmer with the system. Farmers can view a list of their own farms, which includes information about the current crops being cultivated. This feature helps farmers organize and monitor their farming activities. Farmers are also able to view the soil health status of their farms, allowing them to assess land condition and make informed decisions regarding crop management. In addition, the system provides access to weather forecasts, enabling farmers to plan daily operations and prepare for potential weather-related risks. The system also offers crop recommendations tailored to soil health data, weather conditions, and existing farm information to support improved agricultural productivity.
 	
-	\begin{figure}[H]
-		\centering
-		\caption{Use Case Diagram of Department of Agriculture}
-		\label{fig:DAUseCase}
-		\includegraphics[width=1\textwidth]{figures/DAUseCase.pdf}
-	\end{figure}
+	The figure also illustrates the interactions of the Department of Agriculture with the system. The Department can access an overview dashboard that presents soil health trends and weather conditions, providing insights into agricultural conditions across different farms. Farm information is integrated into the dashboard to support monitoring and analysis. The Department can also view farm locations through the Farm GIS feature, enabling spatial visualization of agricultural areas. Furthermore, the system allows the Department to view registered farmers and oversee crop rules and regulations, ensuring compliance with established agricultural policies and standards.
 	
-	Figure \ref{fig:DAUseCase} shows how the Department of Agriculture interacts with the system. The Department of Agriculture can access everything the farmer has access to, in addition, the Department of Agriculture can utilize a comprehensive dashboard that provides weather insights, which gives a clear overview of conditions that may affect multiple farms at once.  It also has the ability to manage all farm listings. Another important function is the use of GIS maps to view farm locations, allowing for a view of agricultural activity across different areas. Lastly, the Department can oversee crop-related regulations, ensuring that standards are properly implemented.
+	The Use Case Diagram demonstrates how TANIM supports both farm-level management and institutional oversight. By providing relevant tools and information to different users, the system enhances coordination, monitoring, and decision-making in agricultural management.
 	
 	\subsection{Hardware Design Flowchart}
 	\begin{figure}[H]
@@ -295,11 +290,12 @@ Through the integration of IoT hardware, renewable energy, cloud services, and m
 		\bottomrule
 		\endfoot
 		
-		Microprocessor & \textpeso 150 \\ 
+		ESP32 Microprocessor & \textpeso 150 \\ 
 		Soil Sensor & \textpeso 1,654.90 \\
 		Solar Power Manager & \textpeso 860 \\
 		Solar Panel & \textpeso 320 \\
 		Lithium Ion Battery & \textpeso 120 \\
+		GPS Module & \textpeso 255 \\
 		Transceiver Module & \textpeso 163 \\
 		Transmitter Module & \textpeso 180 \\
 		Miscellaneous (Cable, Mounts) & \textpeso 1,500 \\
@@ -325,6 +321,13 @@ Through the integration of IoT hardware, renewable energy, cloud services, and m
 	
 	\subsection{Machine Learning Model}
 	The TANIM system will use a boosting algorithm as the core of its predictive model, chosen for its efficiency, scalability, and high accuracy in handling large and complex datasets. This machine learning approach analyzes multiple factors, including soil type, environmental conditions, and historical yield data, to generate accurate predictions of soil health, crop suitability, and potential yield. By leveraging the predictive power of boosting algorithms, the system is able to deliver personalized and data-driven crop and fertilizer recommendations that optimize productivity and promote efficient resource utilization.
+	
+	\subsection{Security} 
+	To enhance the security of the TANIM system, Employ Role-Based Access Control (RBAC) will be strictly enforced at the API level so a Farmer cannot accidentally or maliciously access DA-level administrative rules. Two-Factor Authentication (2FA) will also be implemented during the login process for both Farmers and Agricultural Authorities. After entering valid credentials in the mobile or web application, users will be required to provide a secondary verification code sent to their registered email or mobile number. This adds a critical layer of protection against unauthorized access to sensitive farm data and regional soil health insights.
+	
+	The TANIM system secures the exchange of information across multiple layers of the architecture. For the long-range link between the field sensors and the gateway, AES-128 encryption is a standard feature of LoRa technology that is utilized to ensure that soil parameters remain confidential during wireless transmission. Furthermore, communication between the Flask backend and the user applications is conducted over HTTPS (TLS/SSL) to prevent data interception or man-in-the-middle attacks. This ensures that real-time insights, such as fertilizer recommendations and crop suitability scores, are delivered securely to the end-user.
+	
+	Data integrity begins at the collection point, where the ESP32 microcontroller handles localized processing and filtering to prevent signal spikes from being recorded as valid data. The hardware is protected by a durable 3D-printed container, designed to secure the PCB and sensors from physical tampering in remote agricultural settings. On the cloud side, Firebase Security Rules are configured to ensure data isolation; Farmers are only permitted to write data associated with their specific accounts, while the Department of Agriculture is granted read-only access to regional soil health trends for monitoring purposes. Regular database backups and encryption-at-rest further safeguard the repository of environmental and farmer-defined parameters.
 	
 	\section{Test and Evaluation}
 	Testing and evaluation will be conducted to verify the system’s effectiveness, accuracy, and usability for crop recommendation and soil health monitoring. This process will be designed to ensure that the hardware components, software components, and machine learning models will function according to what we aim for this study, which involves hardware testing and calibration, functional testing, system integration testing, performance testing, and usability testing. Hardware testing and calibration will focus on verifying the accuracy of the sensors to ensure reliable soil data. Functional testing will examine whether the mobile and web applications operate correctly and deliver the expected outputs of each feature. To ensure that the hardware, cloud database, machine learning, and applications works together with proper data flow and error handling, system integration will be implemented. For measuring the responsiveness of the system and to evaluate the system’s predictive accuracy of the machine learning models using various performance metrics we will be conducting performance testing. Moreover, usability testing will assess the practicality and user-friendliness of the system by involving farmers and agricultural experts in field trial and feedback collection.
