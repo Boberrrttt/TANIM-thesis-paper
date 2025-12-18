@@ -12,6 +12,15 @@ In this chapter, the researchers outlined the methodology used to develop a soil
 		\includegraphics[width=1\textwidth]{figures/ResearchDesign.pdf}
 	\end{figure}
 	
+	This study follows a modified waterfall research model to guide the development of the IoT-based crop and fertilizer recommendation system shown in Figure ~4. The process begins with the requirements gathering phase, in which the system collects comprehensive data from the Department of Agriculture (DA) and credible online datasets. These datasets include zoning information, soil parameters, and crop-specific growth requirements. All collected datasets are integrated with the DA’s zoning information to provide spatial context for agricultural analysis.
+	
+	The study then proceeds to the requirements analysis phase, which identifies the need for soil health monitoring, crop prediction, and fertilizer recommendation in selected agricultural fields in Region\~{}10. A gradient boosting algorithm is employed using both sensor-derived soil data and zoning information as inputs. Soil health prediction focuses on classifying soil quality levels, while crop suitability and yield forecasting utilize an optimized machine learning model to estimate expected productivity based on soil and environmental conditions. Fertilizer recommendations are generated based on predicted soil nutrient deficiencies and crop requirements derived from the machine learning analysis.
+	
+	The next phase is system design, where the overall system workflow is defined, providing detailed descriptions of how the IoT-based machine learning integration operates. This phase presents the system architecture, hardware and software flowcharts, and the design of the web and mobile interfaces. The design ensures seamless integration of hardware components for data acquisition, software modules for data preprocessing and prediction, and user interfaces for monitoring and decision support.
+	
+	This is followed by the implementation phase, which involves the development of the IoT system, training and testing of the machine learning model, and configuration of the required hardware and software components. Field nodes collect and preprocess soil data before transmitting it to a central server for storage and predictive analytics. The system generates crop suitability and fertilizer recommendations, which are displayed through a web-based dashboard that visualizes soil health status, nutrient trends, weather information, farmer data, and zoning maps.
+	
+	Once implementation is completed, the testing phase is conducted in the selected study area, where soil data are collected and prediction accuracy is evaluated. Zoning-based crop and fertilizer recommendations are validated against reference data and observed field conditions. The validation phase ensures system reliability through quantitative accuracy assessment and qualitative feedback on usability. Finally, the deployment and maintenance phase outlines potential large-scale application across Region\~{}10, including recommendations for system improvement, scalability, and long-term sustainability.
 
 	This study follows a modified waterfall research model to guide the development of the IoT-MCDA system shown in figure 4. The modified waterfall model allows an iteration to the previous phase for verification and validation, intended mainly for connecting stages. The process begins with the requirements gathering, in which the system will collect comprehensive data from the Department of Agriculture (DA) and credible online datasets. The datasets include zoning information and soil parameters, as well as crop-specific requirements for growth conditions. Moreover, all datasets will be integrated with the DA’s zoning information.
 	 
@@ -111,7 +120,6 @@ The specific user requirements are summarized in Table 1.
 		
 		Process Requirements & - The system shall combine weather, soil, and farmer-provided data into a single decision-making framework. \\
 		& - The system shall employ boosting algorithms to enhance the accuracy of predictive crop recommendations. \\
-		& - The system shall apply multi-criteria decision analysis methods to evaluate and rank potential crop options. \\
 		& - The system shall analyze data-driven insights to balance yield potential with resource availability. \\
 		& - The system shall determine an appropriate planting timeline based on environmental conditions and crop growth requirements. \\
 		\midrule
@@ -139,7 +147,8 @@ The specific user requirements are summarized in Table 1.
 		& - The system shall synchronize data reliably between mobile and web platforms.\\
 	\end{longtable} 
 	
-The system requirements were defined to ensure the effective collection processing, and presentation of farm and soil data to support informed crop management decisions. The primary objective of the system is to assist farmers by integrating farm-specific information, and soil health metrics to generate accurate and actionable crop recommendations. Input requirements focus on collecting data from farmers and sensors, while process requirements involve advanced algorithms. This includes boosting algorithms, and multi-criteria-decision analysis, to evaluate and rank crop options. Output requirements are delivered through mobile and web applications, to provide farmers and administrators with visualized recommendations. Control requirements ensure secure access, role-based permissions, and administrative capabilities for managing crop rules and farm records. Lastly, performance requirements address scalability, offline syncing, and recommendation accuracy, to ensure effective decision support in diverse agricultural contexts.
+
+	The system requirements were defined to ensure the effective collection, processing, and presentation of farm and soil data to support informed crop management decisions. The primary objective of the system is to assist farmers by integrating farm-specific information and soil health metrics to generate accurate and actionable crop and fertilizer recommendations. Input requirements focus on collecting data from farmers and IoT-based sensors, while process requirements involve the use of advanced machine learning techniques, particularly gradient boosting algorithms, to analyze soil conditions, predict crop suitability, and estimate potential yield performance. Outputs are delivered through mobile and web applications to provide farmers and administrators with clear, visualized recommendations and reports. Control requirements ensure secure access through role-based permissions and administrative functions for managing crop data and farm records. Lastly, performance requirements address scalability, offline data synchronization, and recommendation accuracy to ensure reliable decision support across diverse agricultural environments.
 	
 \section{System Design}
 In this section, the flow of the overall system is defined with detailed descriptions on how the system will work on implementing the IoT-based ML integration system. This involves a comprehensive overview of the system design and architecture, and the flowchart of the hardware and software that will be used in this system. The design ensures seamless integration of hardware components for  data acquisition, software modules for data analysis and prediction, and user interfaces for monitoring and control.
@@ -149,20 +158,24 @@ In this section, the flow of the overall system is defined with detailed descrip
 		\centering
 		\caption{System Architecture}
 		\label{fig:SystemArchitecture}
-		\includegraphics[width=1\textwidth]{figures/SYSARCH.pdf}
+		\includegraphics[width=1\textwidth]{figures/finalSYSARCH.pdf}
 	\end{figure}
 	
-The figure \ref{fig:SystemArchitecture} illustrates the system architecture of the Soil Health Monitoring, Fertilizer, and Crop Recommendation for Greater Crop Yield. The system begins with a solar-powered IoT sensing unit deployed in the field. A solar panel, managed by a solar charge controller, supplies power to the entire device, ensuring continuous operation even in remote areas. The core sensing component is a soil sensor, which measures parameters such as NPK, pH, salinity, moisture, and temperature. Data from the sensor is transmitted through a MAX485 module, which was chosen for its ability to convert RS-485 differential signals from the soil sensor into TTL levels that can be read by the microcontroller. The use of MAX485 ensures reliable and noise-resistant long-distance data communication, a critical feature for outdoor agricultural environments where sensors may be placed far from the main processing unit. Its low power consumption also makes it well-suited for the solar-powered design of the system.
-	
-The converted sensor data is then processed by the ESP32 microcontroller, which serves as the central processing unit of the system. The ESP32 was selected for its high processing capability, low power consumption, and built-in communication features. Its dual-core architecture allows it to efficiently handle multiple tasks such as collecting sensor readings, preprocessing data through filtering and averaging, and appending metadata like timestamps and GPS coordinates. Furthermore, its versatility in supporting various communication protocols (UART, SPI, I²C) makes it highly compatible with both the MAX485 and LoRa modules. The ESP32’s cost-effectiveness and energy efficiency make it an ideal choice for a continuously operating IoT device powered by renewable energy.
-	
-For wireless data transmission, the LoRa (Long Range) module was integrated into the system to enable long-distance, low-power communication between the field device and the gateway. LoRa was specifically chosen for its ability to cover several kilometers while consuming minimal energy, making it perfect for wide agricultural areas with limited network infrastructure. Its robustness against interference ensures stable data transmission, even in rural settings. The combination of low data rate, wide coverage, and low power usage allows the system to transmit soil data efficiently without depending on cellular or Wi-Fi connectivity in the field.
-	
-The gateway acts as a bridge between the field device and the cloud, receiving LoRa packets and forwarding them to the internet via Wi-Fi, Ethernet, or cellular connectivity. From there, the data is securely transmitted to Firebase, which serves as the cloud database for real-time storage and access. In this pipeline, Multi-Criteria Decision Analysis (MCDA) is incorporated to compare various soil parameters like NPK, pH, salinity, temperature and moisture on a weighted basis of importance. MCDA helps the system balance various soil criteria to deliver precise fertilizer and crop recommendations based on both analytical data and agronomic principles.	 
-	
-Once in the cloud, the raw sensor readings undergo preprocessing, validation, and enrichment with additional context such as weather or crop stage information. This cleaned data is then passed to the machine learning engine, which analyzes soil health and generates actionable outputs. Using both agronomic rules and predictive models, the system provides fertilizer recommendations, crop suggestions, and soil health scores tailored to specific field conditions.
-	
-The results are delivered through two applications: the TANIM Web App and the TANIM Mobile App. The Web application is designed for agricultural authorities, providing dashboards, maps, and analytics tools to monitor soil conditions across regions and guide agricultural programs. Meanwhile, the Mobile application is aimed at farmers, offering simple and actionable insights such as soil health insights, crop recommendations, and fertilizer optimization for multi-cropping. Both apps also support real-time notifications for critical issues like soil stress or device malfunctions. Importantly, farmers can provide feedback through the app, reporting crop outcomes and applied practices. This feedback, together with sensor data, is fed back into the system to retrain machine learning models and refine recommendations, creating a continuous improvement loop. Through this integration of IoT, cloud computing, and machine learning with multi-criteria decision analysis, the system enables data-driven decision-making that supports both farmers and agricultural authorities in achieving higher crop yields and sustainable farming practices.
+The figure \textbackslash{}ref\{fig:SystemArchitecture\} illustrates the system architecture of the proposed Soil Health Monitoring, Fertilizer, and Crop Recommendation System. The system will begin with a solar-powered IoT sensing unit deployed in the field. A solar panel, regulated by a solar charge controller, will supply continuous power to the device, enabling reliable operation even in remote agricultural areas. In addition to powering the sensing unit, the energy subsystem will continuously monitor the battery level to ensure uninterrupted operation and early detection of power-related issues.
+
+At the core of the sensing unit will be a soil sensor designed to measure key parameters such as NPK, pH, salinity, moisture, and temperature. Since the sensor outputs RS-485 differential signals, a MAX485 module will be used to convert these signals into TTL levels readable by the microcontroller. The MAX485 is selected for its ability to support long-distance and noise-resistant communication, which is essential in outdoor environments where sensor cables may be long and exposed to interference. Its low power consumption further supports the solar-powered architecture of the system.
+
+The ESP32 microcontroller will serve as the main processing unit. It is chosen for its high processing capability, dual-core architecture, low power consumption, and support for multiple communication protocols. In addition to collecting soil sensor readings, the ESP32 will also monitor the battery voltage of each sensing probe through an analog input connected to a voltage divider circuit. This allows the system to estimate the battery charge level in real time. The ESP32 will perform filtering and averaging on both sensor and battery readings to minimize noise and transient fluctuations.
+
+Although the sensor provides direct measurements, these readings may fluctuate due to electrical noise, environmental interference, soil inconsistencies, or transient signal spikes. Filtering will remove noise and outliers, while averaging multiple samples will reduce jitter and produce stable, reliable values. The same data refinement approach will be applied to battery measurements to ensure accurate reporting of device power status. This processed data, including soil parameters and corresponding battery status per probe—will then be packaged for transmission.
+
+For long-range data transmission, the system will integrate a LoRa module. LoRa technology will enable low-power, long-distance communication, making it suitable for large agricultural fields where Wi-Fi or cellular connectivity may be limited. Sensor data packets transmitted via LoRa will include soil measurements, device identifiers, timestamps, and battery status information for each probe, allowing remote monitoring of both soil health and device power conditions.
+
+The LoRa gateway will receive transmitted packets and forward them to the cloud using Wi-Fi, Ethernet, or cellular connectivity. Firebase will serve as the cloud database, providing real-time storage and retrieval of sensor data and battery status logs. Once received in the cloud, the data will undergo preprocessing and validation before being passed to the machine learning model. The machine learning engine will analyze soil patterns, detect nutrient or moisture deficiencies, and generate fertilizer recommendations, crop suggestions, and soil health indicators based on learned relationships from historical and real-time data, while battery data will be used for system health monitoring and maintenance planning.
+
+System outputs will be delivered through the TANIM Web App and the TANIM Mobile App. The Web App will provide agricultural authorities with dashboards, maps, and analytical tools for monitoring soil conditions and device status across regions. The Mobile App will be designed for farmers, presenting information in a clear and accessible format, including soil health insights, fertilizer recommendations, crop suggestions, battery status indicators, and critical alerts such as low-battery warnings. Farmers will also be able to submit feedback through the app regarding crop performance and field practices. This feedback, combined with continuous sensor and battery data, will be incorporated into the machine learning workflow to enhance the accuracy and reliability of future recommendations.
+
+Through the integration of IoT hardware, renewable energy, cloud services, and machine learning, the proposed system will support data-driven decision-making for both farmers and agricultural authorities, while also enabling proactive monitoring of device power health, ultimately contributing to improved crop yield and sustainable farming practices.
 	
 	\subsection{Flowchart}
 	\begin{figure}[H]
@@ -184,7 +197,7 @@ An integral component of the workflow is the feedback mechanism incorporated wit
 		\centering
 		\caption{Software Mobile Application}
 		\label{fig:MobileFlowchart}
-		\includegraphics[width=1\textwidth]{figures/soft flow.pdf}
+		\includegraphics[width=1\textwidth]{figures/softFlow.pdf}
 	\end{figure}
 	
 The figure \ref{fig:MobileFlowchart} illustrates the workflow of the farming recommendation system, highlighting the interaction between farmers and the application in obtaining crop suggestions tailored to soil and weather conditions. The process begins with user authentication, wherein the farmer logs into the system using their credentials. The application validates these credentials against the stored records in the database, ensuring secure access. If the credentials are incorrect, the system prompts the user to re-enter valid information, thereby safeguarding the platform against unauthorized access. Upon successful login, the farmer is redirected to the dashboard, which serves as the central interface for accessing personalized farm data and system functionalities.
@@ -201,35 +214,26 @@ The final stage of the workflow involves the farmer applying the recommendations
 		\centering
 		\caption{Web Application Flowchart}
 		\label{fig:WebFlowchart}
-		\includegraphics[width=1\textwidth]{figures/web flow.pdf}
+		\includegraphics[width=1\textwidth]{figures/webFlow.pdf}
 	\end{figure}
 	
-Figure \ref{fig:WebFlowchart} illustrates the workflow of the Farm Management Web Application, which is specifically designed to support agriculture administrators in managing and monitoring farming activities at a broader scale. The process begins with a secure login mechanism, wherein the administrator is required to enter valid credentials. The system validates these credentials against stored records to ensure authorized access. If the login attempt is unsuccessful, the administrator is prompted to re-enter the correct credentials, thereby maintaining both system integrity and data security. Once authenticated, the administrator is directed to the main dashboard, which functions as the central control panel for the application.
+	Figure \ref{fig:WebFlowchart} illustrates the workflow of the Farm Management Web Application, which is designed to support agricultural administrators in managing and monitoring farming activities at a regional scale. The process begins with a secure login mechanism, where the administrator is required to enter valid credentials. The system verifies these credentials against stored records to ensure authorized access. If the credentials are invalid, the administrator is redirected back to the login page to re-enter the correct information. Upon successful authentication, the administrator is directed to the dashboard, which serves as the central navigation interface of the system.
 	
-From the dashboard, administrators are provided with access to several key modules, each serving a distinct role in farm management. The Farms module enables the management of farm records, including details such as farm size, location, and soil health data. The GIS Map module provides geospatial visualization, allowing administrators to monitor farm distribution, analyze spatial patterns, and make data-driven decisions at the regional level. The Farmers module consolidates and manages farmer profiles, enabling oversight of farmer registration, activity logs, and engagement with advisory services. The Crop Rules module supports the definition, modification, and enforcement of agricultural guidelines, such as fertilizer application standards, crop suitability rules, and sustainability practices. These modules are seamlessly integrated with the dashboard, ensuring smooth navigation and centralized administration. 
+	From the dashboard, the administrator can access four primary modules represented by the decision nodes in the flowchart. The GIS Map module provides geospatial visualization of registered farms, enabling spatial analysis and regional monitoring. The Farms module supports the management of farm-related information, including farm locations and farm overviews, ensuring accurate documentation of farm records. The Farmers module focuses on farmer management, allowing administrators to organize farmer profiles and maintain farmer-related data. The Crop Rules module facilitates the administration of agricultural policies by enabling the addition of new crop rules and the review of existing crop regulations.
 	
-Additionally, the system provides administrators with the option to securely terminate their session at any point through the logout function, further reinforcing data protection and privacy. By integrating secure access control with comprehensive management modules, the Farm Management Web Application ensures that administrators maintain full oversight of agricultural data, farmer engagement, and policy implementation. Furthermore, the inclusion of analytics and visualization features enables the Department of Agriculture (DA) to interpret complex soil and farm data more effectively, supporting evidence-based decision-making, strategic planning, and resource allocation. This workflow demonstrates how the system empowers administrators to efficiently coordinate farm-level operations while promoting data-driven governance, regional monitoring, and sustainable agricultural development.
+	Each module is seamlessly integrated with the dashboard, allowing administrators to navigate efficiently between system functions. After completing tasks within a selected module, the administrator may return to the dashboard or securely terminate the session through the logout function. This workflow highlights the system’s structured approach to access control, centralized administration, and policy management, supporting effective monitoring, data-driven decision-making, and sustainable agricultural governance for the Department of Agriculture.
 	
 \subsection{Context Level Diagram}
 The Context-Level Diagram provides a high-level view of how the TANIM system interacts with its primary stakeholders: Agricultural Authorities and Farmers. It illustrates how data flows into and out of the system without detailing internal processes.
 	
 	\begin{figure}[H]
 		\centering
-		\caption{Context-Level Diagram Between the System And Agricultural Authorities}
-		\label{fig:CLDSystem&AgriAuthorities}
-		\includegraphics[width=1\textwidth]{figures/cldWEB.pdf}
+		\caption{Context-Level Diagram Between the System And The External Entities}
+		\label{fig:CLDSystem&Entities}
+		\includegraphics[width=1\textwidth]{figures/CFD_FINAL.pdf}
 	\end{figure}
 	
-The Figure \ref{fig:CLDSystem&AgriAuthorities} presents the interaction between Agricultural Authorities and the TANIM Web 	Application from the perspective of informational input and decision-making output. While authorities do not directly generate the raw data, they receive processed insights derived from IoT devices deployed in the field. These insights include soil analysis reports, GIS-based farm visualization, farmer profiles, and crop recommendation results. Each of these outputs enables corresponding benefits such as evidence-based policy-making, targeted resource allocation, compliance tracking, and improved agricultural planning. In this way, TANIM translates raw field data into actionable intelligence, empowering authorities to make informed, timely, and sustainable decisions that support both farmers and national food security goals.
-	
-	\begin{figure}[H]
-		\centering
-		\caption{Context-Level Diagram Between the System And Farmers}
-		\label{fig:CLDSystem&Farmers}
-		\includegraphics[width=1\textwidth]{figures/cldMOB.pdf}
-	\end{figure}
-	
-The figure \ref{fig:CLDSystem&Farmers} illustrates the interaction of the TANIM Mobile Application with farmers and IoT devices. IoT devices act as data sources, providing soil and environmental information to the system, which then processes the data to deliver outputs such as soil analysis reports, planting schedules, fertilizer guidance, crop recommendations, and farming practice records. Farmers, as external entities, contribute by supplying inputs like crop yield feedback, farming activity logs, fertilizer usage records, and crop preferences. This exchange of data ensures that the system can generate accurate recommendations, supporting sustainable farming practices and helping farmers improve productivity and decision-making
+	The Context-Level Diagram illustrates the integrated interaction of the TANIM system with both Agricultural Authorities and Farmers through its unified web and mobile applications. Agricultural Authorities do not directly generate raw data, instead, they receive processed insights derived from IoT devices deployed in the field, including soil analysis reports, GIS-based farm visualizations, farmer profiles, and crop recommendation results. These outputs support evidence-based policymaking, targeted resource allocation, compliance monitoring, and improved agricultural planning. At the same time, IoT devices serve as primary data sources by providing soil and environmental information to the system, while farmers contribute essential inputs such as crop yield feedback, farming activity logs, fertilizer usage records, and crop preferences. TANIM processes this continuous exchange of data to produce actionable outputs such as planting schedules, fertilizer guidance, crop recommendations, and farming practice records. Through this unified data flow, the system transforms raw field data into actionable intelligence that supports sustainable farming practices, enhances farmer productivity, and enables informed, timely decision-making that contributes to national food security goals.
 	
 \subsection{Data Flow Diagram}
 The Data Flow Diagram visually represents how data flows within the TANIM system. It highlights the interactions between IoT devices, farmers/agricultural authorities, and the system’s core processes, demonstrating how data is retrieved, stored, and analyzed to provide soil health insights and crop/fertilizer recommendations.
@@ -241,32 +245,30 @@ The Data Flow Diagram visually represents how data flows within the TANIM system
 		\includegraphics[width=1\textwidth]{figures/DFD.pdf}
 	\end{figure}
 	
-Figure 3.9 shows the Data Flow Diagram (DFD) of the TANIM system. The data flow between the user and the system is divided into two main processes: retrieval and analysis. The “retrieve” process is responsible for collecting soil and farm data from IoT devices, as well as crop and fertilizer inputs from the users. These data are then stored in the system’s database for access and processing.
+
+	Figure 3.9 shows the Data Flow Diagram (DFD) of the TANIM system. The data flow between the user and the system is divided into two main processes which is the retrieval and analysis process. The “retrieve” process is responsible for collecting soil and farm data from IoT devices, including sensor readings of NPK levels, pH, moisture, salinity, and temperature, as well as crop and fertilizer inputs provided by the users. These data are validated, preprocessed, and stored in the system’s database to ensure consistency, accuracy, and ease of access for subsequent processing.
 	
-In the “analysis” process, the system utilizes machine learning algorithms to evaluate the stored data, generating predictions on soil health and potential crop yields. Afterward, the Multi-Criteria Decision Analysis (MCDA) component evaluates these outputs by weighing various factors such as  NPK, pH, salinity, moisture, and temperature. This process ensures that the system’s recommendations are not solely based on data patterns but also take into account agronomic balance and practicality. Through MCDA, the system determines the most suitable crop and fertilizer recommendations that align with both environmental conditions and productivity goals.
+	In the “analysis” process, the system applies machine learning algorithms to evaluate the stored data, identifying patterns and relationships among soil properties, environmental factors, and crop performance. The outputs of this analysis include predictions on soil health status, crop suitability, and potential yield. Based on these predictions, the system generates tailored crop and fertilizer recommendations that consider both environmental conditions and expected productivity, enabling farmers to make informed decisions that optimize resource utilization.
 	
-Finally, the processed results are delivered to farmers or agricultural authorities in the form of soil data analysis reports and practical recommendations to support better agricultural decision-making.
+	Finally, the processed results are delivered to farmers and agricultural authorities through a user-friendly interface in the form of soil data analysis reports, visual dashboards, and actionable recommendations. These outputs facilitate practical decision-making, support strategic crop planning, and contribute to more efficient and sustainable agricultural practices across Region~10.
 	
-\subsection{Use Case Diagram}
-The Use Case Diagram visually represents how different actors interact with the system of TANIM. It illustrates both passive and active engagements that facilitate data collection and system utilization.
+	\subsection{Use Case Diagram}
+	The Use Case Diagram illustrates how different actors interact with the TANIM system. It presents the system’s primary functionalities and shows how users access and utilize agricultural data for farm management and monitoring. The diagram emphasizes the roles of both Farmers and the Department of Agriculture in supporting efficient and data-driven agricultural practices.
 	
 	\begin{figure}[H]
 		\centering
 		\caption{Farmer Use Case Diagram}
-		\label{fig:FarmerUseCase}
-		\includegraphics[width=0.5\textwidth]{figures/FarmerUseCase.pdf}
+		\label{fig:UseCase}
+		\includegraphics[width=1\textwidth]{figures/usecase.pdf}
 	\end{figure}
 	
-Figure \ref{fig:FarmerUseCase} shows how Farmers interact with the system. Farmers can use the system to view a list of their own farms, which helps them keep track of their agricultural activities in an organized manner. They are also able to check the status of their crops in the corresponding farm. This allows them to stay updated on growth progress and overall crop status. In addition, the system enables farmers to monitor soil health, Farmers can also access weather updates directly through the platform, which is essential for planning day-to-day tasks and preparing for potential challenges. Lastly, the system provides personalized crop recommendations, giving farmers guidance that is tailored to their specific conditions and needs. Together, these features create a comprehensive tool that supports farmers in managing their farms more effectively.
+
+	Figure \ref{fig:UseCase} shows the interactions of the Farmer with the system. Farmers can view a list of their own farms, which includes information about the current crops being cultivated. This feature helps farmers organize and monitor their farming activities. Farmers are also able to view the soil health status of their farms, allowing them to assess land condition and make informed decisions regarding crop management. In addition, the system provides access to weather forecasts, enabling farmers to plan daily operations and prepare for potential weather-related risks. The system also offers crop recommendations tailored to soil health data, weather conditions, and existing farm information to support improved agricultural productivity.
 	
-	\begin{figure}[H]
-		\centering
-		\caption{Use Case Diagram of Department of Agriculture}
-		\label{fig:DAUseCase}
-		\includegraphics[width=1\textwidth]{figures/DAUseCase.pdf}
-	\end{figure}
+	The figure also illustrates the interactions of the Department of Agriculture with the system. The Department can access an overview dashboard that presents soil health trends and weather conditions, providing insights into agricultural conditions across different farms. Farm information is integrated into the dashboard to support monitoring and analysis. The Department can also view farm locations through the Farm GIS feature, enabling spatial visualization of agricultural areas. Furthermore, the system allows the Department to view registered farmers and oversee crop rules and regulations, ensuring compliance with established agricultural policies and standards.
 	
-Figure \ref{fig:DAUseCase} shows how the Department of Agriculture interacts with the system. The Department of Agriculture can access everything the farmer has access to, in addition, the Department of Agriculture can utilize a comprehensive dashboard that provides weather insights, which gives a clear overview of conditions that may affect multiple farms at once.  It also has the ability to manage all farm listings. Another important function is the use of GIS maps to view farm locations, allowing for a view of agricultural activity across different areas. Lastly, the Department can oversee crop-related regulations, ensuring that standards are properly implemented.
+
+	The Use Case Diagram demonstrates how TANIM supports both farm-level management and institutional oversight. By providing relevant tools and information to different users, the system enhances coordination, monitoring, and decision-making in agricultural management.
 	
 \subsection{Hardware Design Flowchart}
 	\begin{figure}[H]
@@ -306,11 +308,12 @@ Figure \ref{fig:3D} displays the 3D container design that will be 3D printed for
 		\bottomrule
 		\endfoot
 		
-		Microprocessor & \textpeso 150 \\ 
+		ESP32 Microprocessor & \textpeso 150 \\ 
 		Soil Sensor & \textpeso 1,654.90 \\
 		Solar Power Manager & \textpeso 860 \\
 		Solar Panel & \textpeso 320 \\
 		Lithium Ion Battery & \textpeso 120 \\
+		GPS Module & \textpeso 255 \\
 		Transceiver Module & \textpeso 163 \\
 		Transmitter Module & \textpeso 180 \\
 		Miscellaneous (Cable, Mounts) & \textpeso 1,500 \\
@@ -333,7 +336,15 @@ The hardware implementation of the TANIM system is centered on an IoT-based devi
 	
 A soil sensor is used to measure key soil parameters such as pH, NPK, moisture, temperature, and salinity. This sensor was chosen because it provides accurate and real-time soil data essential for evaluating soil health and guiding fertilizer and crop recommendations.
 	
-The TTL MAX485 module is integrated to ensure stable and reliable communication between the soil sensor and the ESP32. It converts RS485 signals to TTL levels, allowing long-distance and noise-resistant data transmission which an important feature for outdoor environments where interference is common.
+	\subsection{Machine Learning Model}
+	The TANIM system will use a boosting algorithm as the core of its predictive model, chosen for its efficiency, scalability, and high accuracy in handling large and complex datasets. This machine learning approach analyzes multiple factors, including soil type, environmental conditions, and historical yield data, to generate accurate predictions of soil health, crop suitability, and potential yield. By leveraging the predictive power of boosting algorithms, the system is able to deliver personalized and data-driven crop and fertilizer recommendations that optimize productivity and promote efficient resource utilization.
+	
+	\subsection{Security} 
+	To enhance the security of the TANIM system, Employ Role-Based Access Control (RBAC) will be strictly enforced at the API level so a Farmer cannot accidentally or maliciously access DA-level administrative rules. Two-Factor Authentication (2FA) will also be implemented during the login process for both Farmers and Agricultural Authorities. After entering valid credentials in the mobile or web application, users will be required to provide a secondary verification code sent to their registered email or mobile number. This adds a critical layer of protection against unauthorized access to sensitive farm data and regional soil health insights.
+	
+	The TANIM system secures the exchange of information across multiple layers of the architecture. For the long-range link between the field sensors and the gateway, AES-128 encryption is a standard feature of LoRa technology that is utilized to ensure that soil parameters remain confidential during wireless transmission. Furthermore, communication between the Flask backend and the user applications is conducted over HTTPS (TLS/SSL) to prevent data interception or man-in-the-middle attacks. This ensures that real-time insights, such as fertilizer recommendations and crop suitability scores, are delivered securely to the end-user.
+	
+	Data integrity begins at the collection point, where the ESP32 microcontroller handles localized processing and filtering to prevent signal spikes from being recorded as valid data. The hardware is protected by a durable 3D-printed container, designed to secure the PCB and sensors from physical tampering in remote agricultural settings. On the cloud side, Firebase Security Rules are configured to ensure data isolation; Farmers are only permitted to write data associated with their specific accounts, while the Department of Agriculture is granted read-only access to regional soil health trends for monitoring purposes. Regular database backups and encryption-at-rest further safeguard the repository of environmental and farmer-defined parameters.
 	
 For wireless communication, the system uses a LoRa (Long Range) module, selected for its ability to transmit data over several kilometers with very low power consumption. This makes it suitable for rural agricultural zones with limited internet access or unstable connectivity.
 	
@@ -415,7 +426,8 @@ For the crop recommendation, the machine learning models will be evaluated using
 	\end{equation}
 	\myequation{Confusion Matrix}
 	
-The Multi-Criteria Decision Analysis (MCDA) process will be tested by computing the Analytic Hierarchy Process (AHP) consistency ratio, which was required to be less than 0.1 for validity, and by checking the stability of crop rankings produced through TOPSIS. These evaluation steps confirm that the machine learning models not only provide scientifically sound predictions but also deliver recommendations that are consistent and stable under different scenarios.
+
+	These evaluation steps confirm that the machine learning models provide scientifically sound predictions and deliver crop and fertilizer recommendations that are consistent, reliable, and effective under different scenarios.
 	
 \subsection{Usability Testing}
 The usability testing will assess the practicality, accessibility, and user satisfaction of the system. For this, farmers will be asked to log into the mobile application, review soil health data, view crop and fertilizer recommendations, and simulate updating their farm records. Meanwhile, DA officials will use the web dashboard to access farmer profiles, view GIS-based maps, and manage crop rules.
