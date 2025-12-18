@@ -54,3 +54,10 @@ _minted*
 # Allow thesis PDF ONLY if you want:
 # !thesis.pdf
 
+# LaTeX build files
+*.aux
+*.lof
+*.lot
+*.out
+*.toc
+*.synctex.gz
