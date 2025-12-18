@@ -270,6 +270,22 @@ The Data Flow Diagram visually represents how data flows within the TANIM system
 
 	The Use Case Diagram demonstrates how TANIM supports both farm-level management and institutional oversight. By providing relevant tools and information to different users, the system enhances coordination, monitoring, and decision-making in agricultural management.
 	
+	\subsection{Entity Relationship Diagram}
+	The Entity Relationship Diagram (ERD) illustrates the structural design of the database system that supports the TANIM platform. It defines the relationships between the core entities—Department of Agriculture, Farmer, Farm, Crop Recommendation, and Crops—and outlines how data is organized to support agricultural management and decision-making processes. The diagram emphasizes data integrity, relational links, and the flow of information between administrative, user, and farm-level components.
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Entity Relationship Diagram}
+		\label{fig:ERD}
+		\includegraphics[width=1\textwidth]{figures/erd.pdf}
+	\end{figure}
+	
+	Figure \ref{fig:ERD} shows the core entities and their relationships within the system. The \textit{Department of Agriculture} entity acts as the administrative unit, storing credentials for system oversight and policy management. The \textit{Farmer} entity represents system users, each linked to one or more farms through the foreign key \texttt{farm\_id}. The \textit{Farm} entity serves as the central data hub, containing identifiers, location data, and a structured \texttt{soil\_health} attribute that records key agronomic parameters such as Nitrogen (N), Phosphorus (P), Potassium (K), pH, moisture, and temperature. Each farm is associated with multiple crops through an array of \texttt{crop\_ids} and is linked to a customized \textit{Crop Recommendation} based on real-time environmental and soil data.
+	
+	The \textit{Crop Recommendation} entity stores data-driven advisories (\texttt{recommendations}) that are linked to specific crops via \texttt{crop\_id}. The \textit{Crops} entity catalogs available crop types and references the farms where they are cultivated. These relationships ensure that farm data, crop information, and recommendations are logically connected, enabling efficient queries and consistent data retrieval.
+	
+	The ERD demonstrates how TANIM structures agricultural data to support both operational and strategic functions. By maintaining clear relational links between farmers, farms, crops, and recommendations, the system ensures data coherence, supports scalable analysis, and facilitates informed agricultural decision-making at both individual and institutional levels.
+	
 \subsection{Hardware Design Flowchart}
 	\begin{figure}[H]
 		\centering
