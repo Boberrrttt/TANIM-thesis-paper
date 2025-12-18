@@ -14,3 +14,12 @@
 *.nav
 *.snm
 *.vrb
+
+# LaTeX build files
+*.aux
+*.lof
+*.lot
+*.out
+*.toc
+*.synctex.gz
+
