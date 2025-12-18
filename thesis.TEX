@@ -44,10 +44,10 @@
 	\pagenumbering{roman}
 	\setcounter{page}{1}
 	\input{titlepage}\newpage
-	%	\input{approval}\newpage
-	%	\input{abstract}\newpage
-	%	\input{dedication}\newpage
-	%	\input{acknowledgment}\newpage
+	%\input{approval}\newpage
+	%\input{abstract}\newpage
+	%\input{dedication}\newpage
+	%\input{acknowledgment}\newpage
 	\addcontentsline{toc}{chapter}{TABLE OF CONTENTS}
 	\tableofcontents\newpage
 	\addcontentsline{toc}{chapter}{LIST OF TABLES}
@@ -55,6 +55,7 @@
 	%\input{listofnotations}\newpage
 	\addcontentsline{toc}{chapter}{LIST OF FIGURES} 
 	\listoffigures\newpage
+	\addcontentsline{toc}{chapter}{LIST OF EQUATIONS} 
 	\listofmyequations \newpage
 	%\input{listofequations}\newpage
 	%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -68,8 +69,8 @@
 	%\include{chapter5}
 	%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	% back matter
-	\include{appendix}
 	\include{bibliography}
+	\include{appendix}
 	%	\include{cv}
 	%	\include{caa}
 \end{document}
