@@ -367,9 +367,11 @@ The Data Flow Diagram visually represents how data flows within the TANIM system
 		\includegraphics[width=1\textwidth]{figures/hardwarediagram.pdf}
 	\end{figure}
 	
-Figure \ref{fig:HardwareFlowchart} illustrates the workflow of the hardware components. Figure 15 illustrates the workflow of the hardware components. The process begins at the "Start" node, followed by the initialization of the central microcontroller. Next, the sensor is initialized to prepare for data collection. Once the sensor retrieves data, the process moves to the transceiver module, which handles the transmission of the collected data. The transmitter module then processes and sends the data, concluding the workflow at the "End" node.
-	
-The flowchart represents a sequential hardware operation where each step is dependent on the successful completion of the previous one. The microcontroller acts as the brain, controlling the sensor initialization and data retrieval. The transceiver module facilitates communication, while the transmitter module ensures the data is sent effectively, completing the hardware cycle.
+Figure \textbackslash{}ref\{fig:HardwareFlowchart\} illustrates the workflow of the hardware components. The process begins with the initialization of the ESP32 microcontroller, which serves as the central control unit of the system. The GPS module provides location data to the ESP32, while the sensor module collects environmental data required for monitoring.
+
+Once the sensor data is acquired, it is passed to the transceiver module, which facilitates communication between the sensing unit and the ESP32. The ESP32 processes the received data and forwards it to the transmitter module. Finally, the transmitter module sends the processed data to the designated external system, completing the hardware operation cycle.
+
+The flowchart represents a sequential hardware process in which each stage depends on the successful execution of the previous step. The ESP32 coordinates sensor data acquisition, GPS integration, and communication control, while the transceiver and transmitter modules ensure reliable data transmission.
 	
 \subsection{3D Design}
 	\begin{figure}[H]
