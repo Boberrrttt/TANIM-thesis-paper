@@ -14,7 +14,6 @@
 *.vrb
 *.tlt
 *.xdv
-*.pdf   
 *.gz
 
 *.dvi
@@ -61,3 +60,5 @@ _minted*
 *.out
 *.toc
 *.synctex.gz
+
+thesis.pdf

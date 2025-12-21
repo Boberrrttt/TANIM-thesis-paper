@@ -171,7 +171,7 @@ Although the sensor provides direct measurements, these readings may fluctuate d
 
 For long-range data transmission, the system will integrate a LoRa module. LoRa technology will enable low-power, long-distance communication, making it suitable for large agricultural fields where Wi-Fi or cellular connectivity may be limited. Sensor data packets transmitted via LoRa will include soil measurements, device identifiers, timestamps, and battery status information for each probe, allowing remote monitoring of both soil health and device power conditions.
 
-The LoRa gateway will receive transmitted packets and forward them to the cloud using Wi-Fi, Ethernet, or cellular connectivity. Firebase will serve as the cloud database, providing real-time storage and retrieval of sensor data and battery status logs. Once received in the cloud, the data will undergo preprocessing and validation before being passed to the machine learning model. The machine learning engine will analyze soil patterns, detect nutrient or moisture deficiencies, and generate fertilizer recommendations, crop suggestions, and soil health indicators based on learned relationships from historical and real-time data, while battery data will be used for system health monitoring and maintenance planning.
+The LoRa gateway receives the transmitted packets and forwards the data to the Firebase cloud database via Wi-Fi connectivity. Firebase will serve as the cloud database, providing real-time storage and retrieval of sensor data and battery status logs. Once received in the cloud, the data will undergo preprocessing and validation before being passed to the machine learning model. The machine learning engine will analyze soil patterns, detect nutrient or moisture deficiencies, and generate fertilizer recommendations, crop suggestions, and soil health indicators based on learned relationships from historical and real-time data, while battery data will be used for system health monitoring and maintenance planning.
 
 System outputs will be delivered through the TANIM Web App and the TANIM Mobile App. The Web App will provide agricultural authorities with dashboards, maps, and analytical tools for monitoring soil conditions and device status across regions. The Mobile App will be designed for farmers, presenting information in a clear and accessible format, including soil health insights, fertilizer recommendations, crop suggestions, battery status indicators, and critical alerts such as low-battery warnings. Farmers will also be able to submit feedback through the app regarding crop performance and field practices. This feedback, combined with continuous sensor and battery data, will be incorporated into the machine learning workflow to enhance the accuracy and reliability of future recommendations.
 
@@ -257,7 +257,7 @@ The Data Flow Diagram visually represents how data flows within the TANIM system
 	
 	\begin{figure}[H]
 		\centering
-		\caption{Farmer Use Case Diagram}
+		\caption{Use Case Diagram}
 		\label{fig:UseCase}
 		\includegraphics[width=1\textwidth]{figures/usecase.pdf}
 	\end{figure}
@@ -269,6 +269,79 @@ The Data Flow Diagram visually represents how data flows within the TANIM system
 	
 
 	The Use Case Diagram demonstrates how TANIM supports both farm-level management and institutional oversight. By providing relevant tools and information to different users, the system enhances coordination, monitoring, and decision-making in agricultural management.
+	
+	\subsection{Use Case Table}
+	
+	The Use Case Table provides a structured and detailed representation of the functionalities presented in the Use Case Diagram. It enumerates each system function, identifies the primary actor involved, and describes the purpose of each interaction. In addition, the table highlights relationships among use cases through included or related functionalities. 
+	
+	The use cases associated with the \textit{Farmer} focus on farm-level management and decision support. These include viewing a list of registered farms and current crops, monitoring soil health status, accessing weather forecasts, and receiving crop recommendations. These functionalities enable farmers to effectively manage their farming activities, assess environmental conditions, and make informed decisions to improve agricultural productivity. Certain use cases depend on related system features, such as soil health and weather data, which support the generation of crop recommendations.
+	
+	The use cases associated with the \textit{Department of Agriculture} emphasize monitoring, analysis, and regulatory oversight. These include viewing an overview dashboard that integrates soil health trends, weather conditions, and farm information, accessing farm locations through the Farm GIS feature, and viewing registered farmers. The Department may also view crop rules to ensure compliance with agricultural standards and policies. 
+	
+	\begin{table}[H]
+		\centering
+		\caption{Primary Use Cases of the TANIM System}
+		\label{tab:outer_usecases}
+		\renewcommand{\arraystretch}{1.3}
+		\resizebox{\textwidth}{!}{%
+			\begin{tabular}{|p{5cm}|p{7cm}|
+					>{\centering\arraybackslash}p{3.5cm}|
+					>{\centering\arraybackslash}p{3.5cm}|}
+				\hline
+				\textbf{Use Case Name} & \textbf{Description} &
+				\multicolumn{2}{|c|}{\textbf{Primary Actor}} \\ \cline{3-4}
+				& & \textbf{Farmer} & \textbf{Department of Agriculture} \\ \hline
+				
+				List Own Farms & Enables farmers to view their registered farms. & \checkmark &  \\ \hline
+				
+				View Soil Health Status & Allows users to view soil condition data such as nutrients, fertility, and health indicators. & \checkmark &  \\ \hline
+				
+				View Weather Forecast & Provides weather forecasts relevant to farm locations. & \checkmark &  \\ \hline
+				
+				Get Crop Recommendations & Provides crop recommendations based on soil health, weather, and farm data. & \checkmark &  \\ \hline
+				
+				View Dashboard Overview & Allows users to view a summarized overview of agricultural data for monitoring and analysis. & & \checkmark \\ \hline
+				
+				View Farm GIS & Displays geographic locations of farms through a GIS interface. & & \checkmark \\ \hline
+				
+				View Registered Farmers & Allows the Department of Agriculture to view all registered farmers in the system. &  & \checkmark \\ \hline
+				
+				View Crop Rules & Allows the Department to view and manage crop rules and regulations. &  & \checkmark \\ \hline
+				
+				
+			\end{tabular}
+		}
+	\end{table}
+	
+		
+	\begin{table}[H]
+		\centering
+		\caption{Included Use Cases of the TANIM System}
+		\label{tab:inner_usecases}
+		\renewcommand{\arraystretch}{1.3}
+		\resizebox{\textwidth}{!}{%
+			\begin{tabular}{|p{5cm}|p{7cm}|
+					>{\centering\arraybackslash}p{3.5cm}|
+					>{\centering\arraybackslash}p{3.5cm}|}
+				\hline
+				\textbf{Use Case Name} & \textbf{Description} &
+				\multicolumn{2}{|c|}{\textbf{Primary Actor}} \\ \cline{3-4}
+				& & \textbf{Farmer} & \textbf{Department of Agriculture} \\ \hline
+				
+				View Current Crops & Allows farmers to view crops currently cultivated on their farms. & \checkmark &  \\ \hline
+				
+				View Soil Health Trends & Enables monitoring of soil health changes over time across regions. &  & \checkmark \\ \hline
+				
+				View Weather Conditions & Allows the Department to view current and historical weather data. &  & \checkmark \\ \hline
+			
+				View Farm Information & Enables the Department to access detailed information about farms. &  & \checkmark \\ \hline
+				
+			\end{tabular}
+		}
+	\end{table}
+	
+
+	
 	
 	\subsection{Entity Relationship Diagram}
 	The Entity Relationship Diagram (ERD) illustrates the structural design of the database system that supports the TANIM platform. It defines the relationships between the core entities—Department of Agriculture, Farmer, Farm, Crop Recommendation, and Crops—and outlines how data is organized to support agricultural management and decision-making processes. The diagram emphasizes data integrity, relational links, and the flow of information between administrative, user, and farm-level components.
@@ -294,9 +367,11 @@ The Data Flow Diagram visually represents how data flows within the TANIM system
 		\includegraphics[width=1\textwidth]{figures/hardwarediagram.pdf}
 	\end{figure}
 	
-Figure \ref{fig:HardwareFlowchart} illustrates the workflow of the hardware components. Figure 15 illustrates the workflow of the hardware components. The process begins at the "Start" node, followed by the initialization of the central microcontroller. Next, the sensor is initialized to prepare for data collection. Once the sensor retrieves data, the process moves to the transceiver module, which handles the transmission of the collected data. The transmitter module then processes and sends the data, concluding the workflow at the "End" node.
-	
-The flowchart represents a sequential hardware operation where each step is dependent on the successful completion of the previous one. The microcontroller acts as the brain, controlling the sensor initialization and data retrieval. The transceiver module facilitates communication, while the transmitter module ensures the data is sent effectively, completing the hardware cycle.
+Figure \textbackslash{}ref\{fig:HardwareFlowchart\} illustrates the workflow of the hardware components. The process begins with the initialization of the ESP32 microcontroller, which serves as the central control unit of the system. The GPS module provides location data to the ESP32, while the sensor module collects environmental data required for monitoring.
+
+Once the sensor data is acquired, it is passed to the transceiver module, which facilitates communication between the sensing unit and the ESP32. The ESP32 processes the received data and forwards it to the transmitter module. Finally, the transmitter module sends the processed data to the designated external system, completing the hardware operation cycle.
+
+The flowchart represents a sequential hardware process in which each stage depends on the successful execution of the previous step. The ESP32 coordinates sensor data acquisition, GPS integration, and communication control, while the transceiver and transmitter modules ensure reliable data transmission.
 	
 \subsection{3D Design}
 	\begin{figure}[H]
@@ -334,7 +409,7 @@ Figure \ref{fig:3D} displays the 3D container design that will be 3D printed for
 		Transmitter Module & \textpeso 180 \\
 		Miscellaneous (Cable, Mounts) & \textpeso 1,500 \\
 		\midrule
-		\textbf{Total} & \textbf{\textpeso 4,947.90} \\
+		\textbf{Total} & \textbf{\textpeso 5,202.90} \\
 	\end{longtable}
 	
 \section{Implementation}
