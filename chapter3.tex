@@ -242,15 +242,17 @@ The Data Flow Diagram visually represents how data flows within the TANIM system
 		\centering
 		\caption{Data Flow Diagram}
 		\label{fig:DFD}
-		\includegraphics[width=1\textwidth]{figures/DFD.pdf}
+		\includegraphics[width=1\textwidth]{figures/DFD-Final.pdf}
 	\end{figure}
 	
 
-	Figure 3.9 shows the Data Flow Diagram (DFD) of the TANIM system. The data flow between the user and the system is divided into two main processes which is the retrieval and analysis process. The “retrieve” process is responsible for collecting soil and farm data from IoT devices, including sensor readings of NPK levels, pH, moisture, salinity, and temperature, as well as crop and fertilizer inputs provided by the users. These data are validated, preprocessed, and stored in the system’s database to ensure consistency, accuracy, and ease of access for subsequent processing.
+	Figure 3.8 shows the Data Flow Diagram (DFD) of the TANIM system. The data flow is divided into two main processes: Server Integration and the Analysis Engine.
 	
-	In the “analysis” process, the system applies machine learning algorithms to evaluate the stored data, identifying patterns and relationships among soil properties, environmental factors, and crop performance. The outputs of this analysis include predictions on soil health status, crop suitability, and potential yield. Based on these predictions, the system generates tailored crop and fertilizer recommendations that consider both environmental conditions and expected productivity, enabling farmers to make informed decisions that optimize resource utilization.
+	The Server Integration process is responsible for collecting environmental data directly from the IoT devices. This includes specific sensor readings for moisture, temperature, soil pH, salinity, and NPK levels. Once received, this raw information is passed as continuous soil data and stored within the system's Cache Storage.
 	
-	Finally, the processed results are delivered to farmers and agricultural authorities through a user-friendly interface in the form of soil data analysis reports, visual dashboards, and actionable recommendations. These outputs facilitate practical decision-making, support strategic crop planning, and contribute to more efficient and sustainable agricultural practices across Region~10.
+	From the Cache Storage, the data flow branches into two distinct paths to serve the end users. First, it directly supplies a Soil Data Analysis Report to the Farmers and Agricultural Authorities. Second, it feeds “Real-time Metrics” into the system's Analysis Engine process.
+	
+	In the Analysis Engine process, the system evaluates these real-time metrics to generate actionable agricultural insights. The direct output of this process is a tailored Crop and Fertilizer Recommendation Report, which is subsequently delivered to the Farmers and Agricultural Authorities. Together, these reporting outputs enable farmers to make informed, data-driven decisions that optimize resource utilization and support strategic crop planning.
 	
 	\subsection{Use Case Diagram}
 	The Use Case Diagram illustrates how different actors interact with the TANIM system. It presents the system’s primary functionalities and shows how users access and utilize agricultural data for farm management and monitoring. The diagram emphasizes the roles of both Farmers and the Department of Agriculture in supporting efficient and data-driven agricultural practices.
