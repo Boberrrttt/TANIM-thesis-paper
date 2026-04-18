@@ -47,7 +47,7 @@ In preparation for system integration, the data will undergo a series of preproc
 		\includegraphics[width=1\textwidth]{figures/ResearchSetting.pdf}
 	\end{figure}
 	
-The study will be conducted on specific farms in Region 10, specifically farms in Bukidnon, Philippines. The region is mostly agricultural, with vast lands focused on the cultivation of high-value crops such as Maize (Corn), Mungbean (Mongo), Peanut, Soybean, Squash (Kalabasa), Sweet Potato (Camote), Cassava, Taro (Gabi), Eggplant, Tomato, Pechay, and Cabbage. The farms in this region typically employ conventional and semi-modern farming practices, which offers a realistic setting to monitor and assess crop performance under actual farming conditions.
+The study will be conducted on specific farms in Region 10, specifically farms in Bukidnon, Philippines. The region is mostly agricultural, with vast lands focused on the cultivation of high-value crops such as maize (corn), mungbean (mongo), soybean, squash (kalabasa), sweet potato (camote), cassava, eggplant, tomato. The farms in this region typically employ conventional and semi-modern farming practices, which offers a realistic setting to monitor and assess crop performance under actual farming conditions.
 	
 \section{Requirements Analysis}
 The system requires the development and implementation of a machine learning component capable of performing soil health prediction, and  crop recommendation. Machine Learning boosting algorithms will be employed for these tasks, using both sensor and zoning data. The sensors will collect important soil information such as Nitrogen (N), Phosphorus (P), Potassium (K), pH level, moisture, temperature, and salinity. At the same time, zoning data from the Department of Agriculture will provide information about the type of land, elevation, and climate conditions of the area. By combining these two data sources, the system can better understand the relationship between soil condition and the environment. Based on the collected data, the machine learning model will classify soil quality levels, while crop yield forecasting will leverage an optimized machine learning model by identifying patterns and relationships between soil parameters and environmental factors. To make predictions more accurate, the model will use a metaheuristic-based feature selection that focuses on the most relevant data and removes unnecessary or less useful information. 
@@ -149,6 +149,47 @@ The specific user requirements are summarized in Table 1.
 	
 
 	The system requirements were defined to ensure the effective collection, processing, and presentation of farm and soil data to support informed crop management decisions. The primary objective of the system is to assist farmers by integrating farm-specific information and soil health metrics to generate accurate and actionable crop and fertilizer recommendations. Input requirements focus on collecting data from farmers and IoT-based sensors, while process requirements involve the use of advanced machine learning techniques, particularly gradient boosting algorithms, to analyze soil conditions, predict crop suitability, and estimate potential yield performance. Outputs are delivered through mobile and web applications to provide farmers and administrators with clear, visualized recommendations and reports. Control requirements ensure secure access through role-based permissions and administrative functions for managing crop data and farm records. Lastly, performance requirements address scalability, offline data synchronization, and recommendation accuracy to ensure reliable decision support across diverse agricultural environments.
+
+\section{Data Collection and Processing}
+	This section describes the procedures and methods used to gather, integrate, and prepare data for the system's operation and machine learning components. It covers the collection of soil, environmental, and geographical data from various sources, as well as the acquisition of historical datasets. Furthermore, it outlines the processes involved in data integration, preprocessing, feature engineering, and dataset preparation to ensure data quality and suitability for analysis. The section also presents how the processed data is stored and managed, and how it flows through the system to support accurate crop and fertilizer recommendations.
+	
+\subsection{Soil Data Collection}
+	
+
+\subsection{Environmental and Weather Data Collection}
+
+
+\subsection{Zoning and Geographical Data Collection}
+
+\subsection{Historical and External Data Acquisition}
+
+\subsection{Data Integration}
+
+\subsection{Data Preprocessing}
+
+\subsection{Feature Engineering}
+
+\subsection{Dataset Preparation for Machine Learning}
+
+\subsection{Data Storage and Management}
+
+\subsection{Data Processing Workflow}
+	The TANIM system employs a multi-stage data pipelining designed to transform raw environmental signals into actionable agricultural intelligence. This workflow integrates physical sensing, cloud-based data management, and advanced machine learning analytics to provide decision-support tools for both farmers and regional agricultural authorities. The comprehensive data flow,from initial acquisition to end-user dissemination, follows a logical progression through hardware interfacing, cloud integration, and predictive modeling.
+
+\begin{figure}[H]
+	\centering
+	\caption{TANIM Data Processing Workflow Pipeline}
+	\label{fig:DataProcessingWorkflow}
+	\includegraphics[width=1\textwidth]{figures/DataProcessingWorkflow.png}
+\end{figure}
+	
+	The primary stage of the workflow involves the high-fidelity collection of soil parameters at the physical layer. The system utilizes a multi-parameter soil sensor to monitor Nitrogen (N), Phosphorus (P), Potassium (K), pH, moisture, salinity, and temperature, all of which are interfaced with an ESP32 microcontroller. To ensure data integrity during local transmission, a MAX485 module is employed to convert RS-485 differential signals to TTL-compatible logic for the microcontroller. These data packets are subsequently encapsulated and transmitted via LoRa (Long Range) protocol to a central gateway. This modulation technique is specifically selected to ensure reliable connectivity in topographically challenging or remote agricultural zones where traditional cellular infrastructure is often insufficient. 
+	
+	Upon receipt at the gateway, the data is forwarded to a Firebase cloud database for centralized management and refinement. During this phase, the system performs rigorous data cleaning by executing filtering algorithms to mitigate electrical noise and remove statistical outliers from the raw sensor readings, Furthermore, a data fusion process contextualizes the real-time sensor data by integrating it with secondary datasets. These includes meteorological information, such as precipitation and humidity acquired via external APIs, and a geospatial zoning maps provided by the Department of Agriculture (DA) Region 10
+	
+	The analytical core of the system leverages a LightGBM algorithm, a gradient boosting framework utilized for its high efficiency and superior performance with tabular agricultural datasets. The process begins with metaheuristic-based feature selection to identify the most significant soil and climatic variables, thereby reducing dimensionality and improving model generalization. The predictive engine then performs dual-task analytics, which include classifying soil health status based on established agronomic thresholds and forecasting crop suitability to optimize regional yield performance. 
+	
+	The analytical core of the system leverages a LightGBM algorithm, a gradient boosting framework utilized for its high efficiency and superior performance with tabular agricultural datasets. The process begins with metaheuristic-based feature selection to identify the most significant soil and climatic variables, thereby reducing dimensionality and improving model generalization. The predictive engine then performs dual-task analytics, which include classifying soil health status based on established agronomic thresholds and forecasting crop suitability to optimize regional yield performance.
 	
 \section{System Design}
 In this section, the flow of the overall system is defined with detailed descriptions on how the system will work on implementing the IoT-based ML integration system. This involves a comprehensive overview of the system design and architecture, and the flowchart of the hardware and software that will be used in this system. The design ensures seamless integration of hardware components for  data acquisition, software modules for data analysis and prediction, and user interfaces for monitoring and control.
@@ -440,9 +481,6 @@ A soil sensor is used to measure key soil parameters such as pH, NPK, moisture, 
 For wireless communication, the system uses a LoRa (Long Range) module, selected for its ability to transmit data over several kilometers with very low power consumption. This makes it suitable for rural agricultural zones with limited internet access or unstable connectivity.
 	
 The entire system is powered by a solar panel managed through a solar panel controller, ensuring a sustainable and uninterrupted power source even in off-grid farming locations. The modular design of the hardware also makes the system scalable and adaptable, allowing additional sensors or communication modules to be integrated easily as agricultural requirements evolve.
-	
-\subsection{Data Acquisition and Storage}
-The sensor is tasked with acquiring data by measuring a variety of critical indicators of soil health. The collected data is then sent to a cloud storage, which provides a secure, scalable, and easily accessible repository for large volumes of environmental data. This cloud-based storage solution not only ensures data integrity and reliability but also facilitates seamless integration with processing stages. The stored data is then utilized as input for the trained machine learning model, which analyzes the information to generate precise insights, predictions, and recommendations regarding soil conditions. Overall, this supports informed decision-making for agricultural management.
 	
 \subsection{Machine Learning Model}
 The TANIM system will use a boosting algorithm as the core of its predictive model, chosen for its efficiency, scalability, and high accuracy in handling large and complex datasets. This machine learning approach analyzes multiple factors such as soil type, weather conditions, and historical yield data to support data-driven decision-making. The model first predicts soil health and potential crop performance based on numerical and environmental inputs. The outputs of the model, including soil quality classification and crop suitability predictions, are then used to generate recommendations for appropriate crops and fertilizer applications. These recommendations are further guided by crop nutrient requirements, soil parameter thresholds, and environmental considerations. By leveraging the predictive capability of machine learning with real-time IoT-based data, the system produces accurate, context-aware, and data-driven crop recommendations that help optimize productivity and support sustainable farming practices.

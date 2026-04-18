@@ -1,7 +1,7 @@
 {\bfseries No.\hfill \hfill Equation\hspace {3in} Page No.\vspace \bigskipamount \par }
-\contentsline {myequations}{\numberline {1}Mean Absolute Error (MAE)}{80}{equation.3.1}%
-\contentsline {myequations}{\numberline {2}Accuracy}{83}{equation.3.2}%
-\contentsline {myequations}{\numberline {3}Precision}{84}{equation.3.3}%
-\contentsline {myequations}{\numberline {4}Recall}{84}{equation.3.4}%
-\contentsline {myequations}{\numberline {5}F1 - Score}{84}{equation.3.5}%
-\contentsline {myequations}{\numberline {6}Confusion Matrix}{84}{equation.3.6}%
+\contentsline {myequations}{\numberline {1}Mean Absolute Error (MAE)}{83}{equation.3.1}%
+\contentsline {myequations}{\numberline {2}Accuracy}{87}{equation.3.2}%
+\contentsline {myequations}{\numberline {3}Precision}{87}{equation.3.3}%
+\contentsline {myequations}{\numberline {4}Recall}{87}{equation.3.4}%
+\contentsline {myequations}{\numberline {5}F1 - Score}{87}{equation.3.5}%
+\contentsline {myequations}{\numberline {6}Confusion Matrix}{88}{equation.3.6}%
