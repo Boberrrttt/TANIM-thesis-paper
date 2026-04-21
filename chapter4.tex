@@ -59,25 +59,44 @@ The resulting dataset reached a balanced state with approximately 2,400 samples 
 \subsection{Feature Engineering Outcomes}
 The feature engineering phase resulted in the expansion of the dataset from four original soil properties to eight total predictive variables through the derivation of four new features grounded in established agronomic relationships. These algorithmically derived features, summarized in \textbf{Table \ref{tab:feature_engineering}}, mirror physiological nutrient constraints and bio-availability dynamics that are critical for accurate soil-health assessment.
 
-\begin{table}[ht]
+\begin{table}[H]
 	\centering
 	\caption{Feature Engineering Outcomes and Agronomic Justifications}
 	\label{tab:feature_engineering}
-	\begin{adjustbox}{max width=\textwidth}
-		\begin{tabular}{lll}
-			\toprule
-			\textbf{Engineered Feature Name} & \textbf{Mathematical Formulation} & \textbf{Agronomic Justification} \\ 
-			\midrule
-			Phosphorus-Potassium Ratio & $\dfrac{\text{Phosphorus (ppm)}}{\text{Potassium (ppm)} + 1}$ & \begin{tabular}[c]{@{}l@{}}Evaluates the internal root development-to-fruiting\\ energy balance. A severe imbalance indicates a localized\\ deficiency incapable of supporting advanced botanical maturity.\end{tabular} \\ 
-			\addlinespace[10pt]
-			Phosphorus-Organic Load & $\dfrac{\text{Phosphorus (ppm)}}{\text{Organic Matter (\%)} + 1}$ & \begin{tabular}[c]{@{}l@{}}Quantifies the availability of Phosphorus relative to the\\ baseline organic mass, identifying environments where high\\ raw nutrients are inaccessible due to poor soil degradation.\end{tabular} \\ 
-			\addlinespace[10pt]
-			pH-Gated Nitrogen Bio-availability & $\text{Organic Matter (\%)} \times pH$ & \begin{tabular}[c]{@{}l@{}}Synthesizes an intuition for real-world Nitrogen uptake.\\ Because organic nitrogen conversion is strictly mediated by\\ microbiological activity, this vector encodes active bio-availability.\end{tabular} \\ 
-			\addlinespace[10pt]
-			pH-Gated Potassium Bio-availability & $\text{Potassium (ppm)} \times pH$ & \begin{tabular}[c]{@{}l@{}}Simulates real-world Potassium fixing limitations. In highly\\ acidic environments, absolute Potassium lock-up occurs;\\ this parameter forces the model to acknowledge acidity constraints.\end{tabular} \\ 
-			\bottomrule
-		\end{tabular}
-	\end{adjustbox}
+	
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	
+	\begin{tabularx}{\textwidth}{p{3.5cm} p{4.5cm} X}
+		\toprule
+		\textbf{Engineered Feature Name} & \textbf{Mathematical Formulation} & \textbf{Agronomic Justification} \\
+		\midrule
+		
+		Phosphorus-Potassium Ratio &
+		$\dfrac{\text{Phosphorus (ppm)}}{\text{Potassium (ppm)} + 1}$ &
+		Evaluates the internal root development-to-fruiting energy balance. A severe imbalance indicates a localized deficiency incapable of supporting advanced botanical maturity. \\
+		
+		\addlinespace[6pt]
+		
+		Phosphorus-Organic Load &
+		$\dfrac{\text{Phosphorus (ppm)}}{\text{Organic Matter (\%)} + 1}$ &
+		Quantifies the availability of Phosphorus relative to the baseline organic mass, identifying environments where high raw nutrients are inaccessible due to poor soil degradation. \\
+		
+		\addlinespace[6pt]
+		
+		pH-Gated Nitrogen Bio-availability &
+		$\text{Organic Matter (\%)} \times pH$ &
+		Synthesizes an intuition for real-world Nitrogen uptake. Because organic nitrogen conversion is mediated by microbiological activity, this encodes active bio-availability. \\
+		
+		\addlinespace[6pt]
+		
+		pH-Gated Potassium Bio-availability &
+		$\text{Potassium (ppm)} \times pH$ &
+		Simulates real-world Potassium fixing limitations. In highly acidic environments, absolute Potassium lock-up occurs; this forces the model to acknowledge acidity constraints. \\
+		
+		\bottomrule
+	\end{tabularx}
+	
 \end{table}
 
 Two ratio-based features were successfully computed: the Phosphorus-to-Potassium ratio ($P\_K\_ratio$) and the Phosphorus-to-Organic Load ratio ($P\_OM\_ratio$). As detailed in \textbf{Table \ref{tab:feature_engineering}}, the $P\_K\_ratio$ evaluates the internal balance between root development and fruiting energy, while the $P\_OM\_ratio$ identifies environments where raw nutrients are inaccessible due to poor soil degradation. These features enable the model to evaluate relative nutrient proportions, which often carry more discriminative power in tropical soil profiles than absolute concentrations alone. 
@@ -268,7 +287,7 @@ The website was evaluated across multiple screen sizes, including desktop, table
 
 \subsection{Accessibility Assessment}
 
-\subsection{Performance Metrics}
+\subsection{Performance Evaluation}
 
 \subsection{Discussion}
 

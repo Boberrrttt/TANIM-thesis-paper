@@ -263,7 +263,7 @@ The explicit encoding of these soil-crop relationships reduced the computational
 \subsection{Dataset Preparation for Machine Learning}
 The primary objective of dataset preparation is to establish the final structural configuration of the preprocessed data, ensuring it is partitioned and formatted for the iterative training and evaluation cycles of the machine learning models. This phase represents the transition from static data storage to an active learning format, where information is structured to minimize bias and maximize the model's ability to generalize across diverse agricultural scenarios.
 
-A fundamental component of this phase is dataset splitting, where the unified data is stratified to maintain representative class distributions across all subsets. As illustrated in \textbf{Figure \ref{fig:data_split}}, the dataset is divided into three definitive partitions: 70\% of the data is allocated for direct model training, 15\% is utilized for validation to systematically tune hyperparameters, and the remaining 15\% is strictly reserved for blind testing to evaluate final real-world performance.
+A fundamental component of this phase is dataset splitting, where the unified data is stratified to maintain representative class distributions across all subsets. As illustrated in \textbf{Figure \ref{fig:DataSplit}}, the dataset is divided into three definitive partitions: 70\% of the data is allocated for direct model training, 15\% is utilized for validation to systematically tune hyperparameters, and the remaining 15\% is strictly reserved for blind testing to evaluate final real-world performance.
 
 \begin{figure}[H]
 	\centering
