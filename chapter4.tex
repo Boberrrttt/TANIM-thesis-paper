@@ -1,63 +1,40 @@
 \chapter{RESULTS AND DISCUSSION}
 %{\kill{\section{ffff}}}
 {\baselineskip=2\baselineskip
-
+	
 This chapter presents the findings from the research conducted and provides a thorough analysis and interpretation of these results. 
 
-\section{Sensor Hardware Testing and Calibration}
-This section presents the results of the sensor hardware testing and calibration conducted to evaluate the accuracy, reliability, and consistency of the developed IoT-based soil sensing unit. As described in Chapter 3, the system measures key soil parameters including pH, nitrogen (N), phosphorus (P), potassium (K), soil moisture, temperature, and salinity. The accuracy of these parameters is critical since they directly influence the crop recommendation and fertilizer advisory outputs of the system.
+\section{Hardware System}
 
-The testing phase aimed to (1) verify the correctness of sensor readings, (2) calibrate the sensors against reference values, and (3) evaluate the performance of the sensing unit under controlled conditions. The results obtained from this phase serve as the foundation for validating the reliability of the entire system.
+\subsection{Hardware and Specifications}
+\subsection{Accuracy and Reliability Evaluation}
 
-\subsection{Testing Setup and Environment}
+\section{Machine Learning Model}
+This section describes the data processing pipeline and predictive model used for crop recommendation. The model takes processed soil measurements as input and outputs a recommended crop and fertilizer guidance.
 
-\subsection{Sensor Calibration Procedure}
-
-\subsection{Accuracy Evaluation Metrics}
-
-\subsection{Results and Analysis}
-
-\subsection{Discussion of Findings}
-
-\newpage
-\section{Data Processing and Preparation Results}
-This section presents the results of the data processing and preparation procedures applied to the collected datasets. Multiple data sources such as soil sensor readings, environmental data, zoning information, and historical agricultural records were consolidated and transformed into a structured format suitable for analysis.
-
-The primary objective of this phase was to ensure that the dataset is accurate, consistent, and representative of real-world agricultural conditions in Bukidnon. Various techniques such as data integration, cleaning, preprocessing, and feature engineering were applied to improve data quality and usability.
-
-The results discussed in this section demonstrate how raw and heterogeneous data were refined into a reliable dataset that supports effective machine learning modeling and accurate crop and fertilizer recommendations.
-
-\subsection{Data Integration Results}
-The data integration phase yielded a structured and machine-readable dataset derived from the Consolidated Soil Info (RSL) 2023--2025 repository. As illustrated in \textbf{Figure \ref{fig:integrated_data}}, the finalized dataset consists of validated soil profiles defined by key agricultural parameters: soil pH, organic matter percentage, and nutrient concentrations of phosphorus and potassium in parts per million (ppm). Following the integration process, irrelevant metadata and unstructured annotations were removed to produce a clean dataset centered on agronomic variables. The processed data was subsequently mapped to a predefined set of ten target crops---including Corn, Tomato, and Cassava---ensuring categorical consistency across the repository.
+\subsection{Data Integration and Cleaning}
+Multiple data sources were consolidated to form the training dataset. Historical records (the Consolidated Soil Info RSL 2023–2025) provided soil profiles (pH, organic matter \%, phosphorus ppm, potassium ppm) linked to crops previously grown on those farms. These records were combined with simulated IoT sensor samples to create a uniform table. Irrelevant metadata and text annotations were removed so that each entry consists only of the agronomic variables and a single target crop label. For example, entries RSL-001 through RSL-005 in \textbf{Figure \ref{fig:integrated_data}} show specific soil chemical properties aligned with their zoned crops (Corn, Eggplant, etc.), demonstrating how fragmented spreadsheet data was transformed into a structured format for learning.
 
 \begin{figure}[H]
 	\centering
 	\caption{Sample Integrated Soil Data Records}
 	\includegraphics[width=1\textwidth]{figures/IntegratedData.pdf}
 	\label{fig:integrated_data}
-\end{figure}
+\end{figure}	
 
-The resulting dataset is composed of structured entries where each row represents a complete soil profile linked to a specific crop classification. For instance, entries such as RSL-001 through RSL-005 in \textbf{Figure \ref{fig:integrated_data}} demonstrate the alignment of specific chemical properties with zoned target crops like Corn and Eggplant. This structural transformation converted fragmented spreadsheet data into a uniform format suitable for machine learning model training. Ultimately, the integration phase produced a reliable baseline that bridges historical agricultural records with the data structures required for real-time Internet of Things (IoT) sensor simulation.
+Data cleaning ensured dataset quality: entries with missing or invalid values (non-numeric, out-of-range) were dropped. Numerical features were bounded to agronomically realistic limits (e.g. soil pH restricted to 3–9) to eliminate outliers. A critical issue was class imbalance. In the raw data, common crops like Corn had thousands of records while rare crops (Ampalaya, Sweet Pepper) had very few. To prevent bias, synthetic oversampling was applied to minority classes. Using a K-Means–based approach, we grouped minority samples and generated perturbed examples around each cluster center. This produced a balanced dataset, as visualized in \textbf{Figure \ref{fig:data_augmentation}}. Before augmentation (red), the class distribution is skewed; after augmentation (green), each of the 10 crops has roughly 2,400 samples, yielding about 8,694 total records (1,191 original + 7,503 synthetic).
 
-\subsection{Data Cleaning and Preprocessing Results}
-The preprocessing stage resulted in a significantly improved dataset in terms of completeness, consistency, and class distribution. All missing and invalid entries, including non-numeric errors and incomplete sensor readings, were successfully eliminated, producing a fully clean dataset with no null or corrupted values. This rigorous cleaning process ensured that the secondary data ingested from historical records remained structurally consistent with the real-time telemetry captured by the sensor node.
-
-Noise and outlier reduction further enhanced the dataset quality. All numerical features were constrained within realistic agricultural limits, ensuring physically valid values across all parameters. For instance, soil pH values were maintained strictly within the acceptable agronomic range of 3 to 9, preventing the presence of unrealistic or extreme measurements that could skew model convergence. This normalization resulted in a more stable and reliable data distribution, effectively preparing the feature space for gradient-based learning.
-
-A major improvement was observed in the class distribution of the target variables. Prior to preprocessing, the dataset exhibited severe class imbalance, as shown in the original (red) bars in \textbf{Figure \ref{fig:data_augmentation}}, where common crops like Corn significantly outnumbered minority categories such as Ampalaya and Sweet Pepper. This disparity posed a high risk of producing a biased model that favored majority class predictions. After the application of synthetic data balancing, the dataset achieved a uniform class distribution, as illustrated by the augmented (green) bars in \textbf{Figure \ref{fig:data_augmentation}}. 
-
-\begin{figure}[ht]
+\begin{figure}[H]
 	\centering
 	\caption{Data Distribution Comparison Between Original and Augmented Datasets}
 	\includegraphics[width=1\textwidth]{figures/DataAugmentation.pdf}
 	\label{fig:data_augmentation}
-	\small \\ \textit{Note.} The figure demonstrates the resolution of class imbalances through synthetic augmentation, resulting in a uniform sample count of approximately 2,400 across all target crops.
 \end{figure}
 
-The resulting dataset reached a balanced state with approximately 2,400 samples per crop category, providing a statistically stable foundation that improves the reliability and generalization of the subsequent machine learning training. Overall, the preprocessing phase successfully transformed the raw inputs into a clean, balanced, and statistically stable dataset, effectively eliminating sources of bias and ensuring the integrity of the predictive engine.
+\subsection{Feature Engineering}
+In addition to the four raw inputs, four derived features were computed to capture agronomic relationships. Two features are ratios: the Phosphorus-to-Potassium ratio $P/K$ and the Phosphorus-to-Organic Matter ratio $P/\mathrm{OM}$. The other two are interaction terms: $\mathrm{OM} \times \mathrm{pH}$ and $K \times \mathrm{pH}$. These encode how nutrient availability changes with soil acidity or organic content. For instance, a low $K \times \mathrm{pH}$ simulates potassium lock-up in acidic soils. The engineered features substantially improved model insight: in the trained LightGBM, the $K \times \mathrm{pH}$ term was the third most important feature, and the phosphorus ratios together contributed nearly $20\%$ of total importance.
 
-\subsection{Feature Engineering Outcomes}
-The feature engineering phase resulted in the expansion of the dataset from four original soil properties to eight total predictive variables through the derivation of four new features grounded in established agronomic relationships. These algorithmically derived features, summarized in \textbf{Table \ref{tab:feature_engineering}}, mirror physiological nutrient constraints and bio-availability dynamics that are critical for accurate soil-health assessment.
+These algorithmically derived features, summarized in \textbf{Table \ref{tab:feature_engineering}}, mirror physiological nutrient constraints and bio-availability dynamics that are critical for accurate soil-health assessment.
 
 \begin{table}[H]
 	\centering
@@ -99,58 +76,11 @@ The feature engineering phase resulted in the expansion of the dataset from four
 	
 \end{table}
 
-Two ratio-based features were successfully computed: the Phosphorus-to-Potassium ratio ($P\_K\_ratio$) and the Phosphorus-to-Organic Load ratio ($P\_OM\_ratio$). As detailed in \textbf{Table \ref{tab:feature_engineering}}, the $P\_K\_ratio$ evaluates the internal balance between root development and fruiting energy, while the $P\_OM\_ratio$ identifies environments where raw nutrients are inaccessible due to poor soil degradation. These features enable the model to evaluate relative nutrient proportions, which often carry more discriminative power in tropical soil profiles than absolute concentrations alone. 
+\subsection{Model Configuration and Training}
+The prediction engine is a Light Gradient Boosting Machine (LightGBM) classifier. LightGBM is an efficient gradient-boosting framework optimized for speed and handling complex feature interactions. It was chosen for its ability to train quickly and run on modest hardware, making it suitable for IoT integration. The eight features (4 raw + 4 engineered) are fed into the classifier, which outputs probabilities for each of the 10 crop classes. Data splits were 70\% training, 15\% validation, 15\% testing (stratified to preserve class ratios). To fine-tune performance, we used Bayesian hyperpa- rameter optimization (Optuna, 50 trials) with 5-fold stratified cross-validation on the training set. We optimized tree depth, number of leaves, learning rate, feature/bagging fractions, and L1/L2 regularization. Early stopping was applied if validation log-loss did not improve for 20 rounds. This process ensured a well-generalized model without overfitting.
 
-Furthermore, two interaction features were generated: the pH-Gated Nitrogen Bio-availability ($OM\_pH\_interaction$) and the pH-Gated Potassium Bio-availability ($K\_pH\_interaction$). These variables mathematically encode the dependency of nutrient uptake on soil acidity. Specifically, these terms simulate real-world Potassium fixing limitations and Nitrogen conversion mediated by microbiological activity.
-
-The final set of eight features served as the basis for model training. Feature importance analysis via LightGBM split gain confirmed that the engineered features contributed meaningfully to the system's predictive capability, collectively accounting for approximately 42.4\% of the total feature importance. Notably, the $K\_pH\_interaction$ feature ranked as the third most important variable overall at 15.1\%, surpassing two raw soil measurements. The $P\_OM\_ratio$ (10.0\%) and $P\_K\_ratio$ (9.3\%) further demonstrated that relative nutrient proportions carry substantial power for crop classification. Overall, the feature engineering process produced a richer and more informative dataset that enabled the classifier to capture complex agronomic relationships.
-
-\subsection{Final Datasets Summary}
-The final dataset composition represents the culmination of rigorous cleaning, synthetic augmentation, and feature engineering, resulting in a repository optimized for high-fidelity predictive modeling. As illustrated in \textbf{Figure \ref{fig:final_composition}}, the K-Means augmentation protocol substantially expanded the data volume from an initial 1,191 original samples (13.7\%) to include 7,503 synthetic profiles (86.3\%). This expansion ensures that the crop classes are represented with statistical parity, effectively resolving the severe class imbalances present in the raw historical records.
-
-\begin{figure}[H]
-	\centering
-	\caption{Final Dataset Composition: Original vs. Synthesized Profiles}
-	\includegraphics[width=0.8\textwidth]{figures/DatasetComposition.pdf}
-	\label{fig:final_composition}
-\end{figure}
-
-Each of the 8,694 total records is defined by eight predictive features: the four primary parameters targeted for real-time sensor acquisition—Organic Matter, Phosphorus, Potassium, and pH—and the four mathematically derived agronomic interaction variables. Before being transitioned to the machine learning workflow, the dataset underwent a final standardization to neutralize scalar differences between chemical measurements and was encoded to transform categorical crop labels into discrete integers. This finalized, mathematically uniform environment is structurally prepared to train a robust classification model capable of interpreting active field telemetry within the TANIM framework.
-
-\newpage
-\section{Machine Learning Model Performance}
-This section presents the performance of the machine learning model used for crop recommendation based on soil health and environmental parameters. The evaluation focuses on how well the model predicts suitable crops using the processed dataset.
-
-The model was assessed using standard classification metrics to determine its accuracy, consistency, and reliability. The results provide insight into the effectiveness of the model in identifying patterns within the dataset and generating accurate predictions.
-
-\subsection{Model Configuration}
-The TANIM crop recommendation system utilizes a Light Gradient Boosting Machine (LightGBM) classifier as its predictive engine. The selection of this algorithm was based on its computational efficiency, rapid execution speed, and robust capability to model nonlinear interactions inherent in complex agricultural datasets. By employing a gradient boosting framework that constructs decision trees leaf-wise rather than depth-wise, the algorithm achieves maximized classification accuracy while simultaneously minimizing memory overhead. This represents a critical architectural advantage for subsequent integration into resource-constrained Internet of Things (IoT) deployments. Functioning as a robust multiclass classifier, the system is designed to map environmental parameters collected in real time to the most agronomically suitable crop from a predefined selection.
-
-The baseline input features ingested by the model are derived from critical soil physicochemical properties continuously collected via the sensor network. These include Organic Matter, expressed as a percentage and functioning as a proxy for Nitrogen; Phosphorus, measured in parts per million (ppm); Potassium, also in ppm; and soil pH levels. To augment the predictive depth of the system, a dedicated feature engineering pipeline introduces four derived agronomic features explicitly formulated to capture vital soil and crop interaction effects. These engineered variables encompass the Phosphorus-to-Potassium ratio ($P/K$), the Phosphorus-to-Organic Matter ratio ($P/OM$), and mathematical interaction terms between pH and nutrient availability, specifically $Organic\ Matter \times pH$ and $Potassium \times pH$. By synthesizing this set of eight total features, the model is equipped to discern profound agronomic phenomena, such as the manner in which pH variations modulate the physiological uptake of localized nutrients.
-
-To ensure representational fairness and mitigate predictive bias, a rigorous data preprocessing pipeline has been implemented. Empirical agricultural datasets frequently exhibit class imbalances, where the profiles of certain prevalent crop varieties substantially outnumber those of minority varieties. To address this issue, a synthetic data augmentation technique utilizing K-Means Clustering is applied. This methodology identifies dimensional clusters within the minority classes and generates targeted localized synthetic samples infused with Gaussian noise, thereby achieving a smooth balancing of the dataset. Subsequent to augmentation, features undergo standardization, and the categorical crop targets are mathematically transformed utilizing label encoding.
-
-Rather than relying on static heuristic parameters, the architecture of the classifier was systematically optimized using Bayesian hyperparameter optimization facilitated by the Optuna framework. The optimization process involved the execution of 50 independent trials evaluated under a rigorous five-fold stratified cross-validation protocol. This protocol ensured that the proportional representation of each crop class remained perfectly balanced across all training and holdout evaluation folds. The Optuna study was configured to minimize multiclass logarithmic loss by dynamically exploring an expansive parameter space. This optimization included parameters governing tree structural depth, specifically $max\_depth$ and $num\_leaves$; convergence pacing through $learning\_rate$; stochastic ensemble sampling techniques such as $feature\_fraction$ and $bagging\_fraction$ to counteract overfitting; and the fine-tuning of L1 and L2 regularization penalties, denoted as $\lambda_{l1}$ and $\lambda_{l2}$. The final model weights are a direct product of the parameters yielded by the best-performing trial.
-
-Upon deployment, the model generates a probability distribution across all candidate crop categories, algorithmically isolating the highest-scoring outcome as the primary crop recommendation alongside a calculated prediction confidence percentage. This primary inference seamlessly informs a secondary subsystem responsible for generating actionable crop-specific fertilizer recommendations. These recommendations are strictly based on the discrepancies observed between the current soil state and the ideal agronomic conditions for the chosen crop. Notwithstanding the sophistication of this pipeline, the system operates under specific technical assumptions necessitated by hardware constraints. Principally, standard commercial soil sensors often estimate explicit Nitrogen, Phosphorus, and Potassium values indirectly through broad surrogate measurements, such as electrical conductivity. Consequently, these inputs function as highly correlated proxies rather than precise laboratory-grade chemical extractions. The model natively accommodates this hardware limitation by assuming that the measured Organic Matter and resultant electrical conductivity metrics constitute sufficient and consistent correlative indicators for localized soil fertility.
-
-\subsection{Training and Validation Setup}
-The foundation of the TANIM crop recommendation framework is based on an empirical dataset obtained from the Consolidated Soil Information (RSL) repository covering the years 2023 to 2025. The dataset includes key soil physicochemical properties such as nitrogen derived from organic matter, phosphorus, potassium, and soil pH, which are associated with historical crop suitability. These parameters serve as the ground truth for training the machine learning model and for validating the data collected from the Internet of Things sensing unit.
-
-To systematically evaluate the predictive performance of the model, the dataset was divided into training, validation, and testing subsets using a 70 percent, 15 percent, and 15 percent split, respectively. A stratified sampling approach was applied to preserve the proportional distribution of crop classes across all subsets. This ensured that each crop category was properly represented during training, tuning, and final evaluation, thereby reducing sampling bias.
-
-A common challenge in agricultural datasets is class imbalance, where widely cultivated crops are overrepresented compared to less common varieties. To address this, a localized oversampling technique based on K-Means clustering was applied to the training dataset. This method groups minority class samples and generates synthetic data points near cluster centroids using controlled perturbation. This improves class balance while preserving the structure of the original data, allowing the model to learn more effectively across all crop categories.
-
-The model training process utilized a Light Gradient Boosting Machine algorithm, which was optimized using a Bayesian hyperparameter tuning framework implemented through Optuna. The optimization process consisted of 50 trials evaluated using five-fold stratified cross-validation within the training dataset. The validation subset was used to monitor model performance during tuning and to guide the selection of optimal hyperparameters. This approach ensured that the model achieved strong generalization while minimizing overfitting.
-
-During optimization, key parameters such as learning rate, number of leaves, and tree depth were adjusted. Regularization techniques, including L1 and L2 penalties, were applied to control model complexity. In addition, feature sampling and data bagging were incorporated to improve robustness and prevent over-reliance on specific data patterns.
-
-After determining the optimal hyperparameters, the final model was trained using a multiclass logarithmic loss objective function for up to 500 boosting iterations. An early stopping mechanism was implemented based on validation performance, where training was halted if no improvement was observed over 20 consecutive iterations. This ensured that the model parameters were captured at their optimal state without overfitting.
-
-The final model was evaluated using the unseen 15 percent testing dataset. Performance was measured using multiple evaluation metrics, including accuracy, precision, recall, and F1-score. These metrics provided a comprehensive assessment of the model’s predictive capability across all crop classes. The results indicate that the model is capable of generating accurate and balanced crop recommendations, even in the presence of class imbalance within the dataset.
-
-\subsection{Performance Metrics}
-To rigorously quantify the operational efficacy of the crop recommendation engine, the Light Gradient Boosting Machine (LightGBM) classifier was evaluated against the unseen holdout subset utilizing a multidimensional array of statistical performance metrics. As illustrated in \textbf{Figure \ref{fig:classification_report}}, the model achieved a global accuracy of 83.2\%, providing a robust baseline for its predictive capability. While standard global accuracy offers a general understanding of the overall prediction rate, it can occasionally misrepresent true performance in agricultural datasets. Consequently, balanced accuracy was prioritized to establish an equitable metric, functionally calculating the macro-average recall across each crop category. This approach ensures that synthetically augmented minority classes are predicted with the same fidelity as natively dominant ones, maintaining the integrity of the recommendation engine across all ten targeted crops.
+\subsection{Performance Metrics and Results}
+The final model achieved a test-set accuracy of 83.2\%. Its balanced accuracy (the macro-average recall across classes) was 82.5\%, indicating robust performance on both common and rare crops. The weighted F1-score was 0.831. \textbf{Figure \ref{fig:classification_report}} presents precision, recall, and F1-score per crop. The model performed particularly well on Tobacco ($F_1 \approx 0.96$) and Sorghum, while Eggplant was the most challenging ($F_1 \approx 0.66$), consistent with its confusion with similar crops.
 
 \begin{figure}[H]
 	\centering
@@ -159,10 +89,7 @@ To rigorously quantify the operational efficacy of the crop recommendation engin
 	\label{fig:classification_report}
 \end{figure}
 
-To analyze prediction granularity, the evaluation extracted precision, recall, and the resulting F1-score for each crop type. Precision quantified the exact proportion of positive crop recommendations that were agriculturally correct, while recall measured the proportion of actual viable instances that the model successfully identified. These characteristics were harmonized into a weighted F1-score of 0.831, which serves as the definitive harmonic mean of the classifier. As shown in \textbf{Figure \ref{fig:classification_report}}, the model demonstrated exceptional performance for Tobacco, yielding a near-perfect F1-score of 0.965, whereas Eggplant proved more challenging with an F1-score of 0.664. Within the specific operating context of an agricultural Internet of Things (IoT) system, optimizing this F1-score is paramount; it guarantees that the operational and financial resources of the end user are not expended on false positive recommendations while ensuring that highly viable, niche crop opportunities are systematically identified. Furthermore, localized multiclass logarithmic loss was utilized as the mathematical penalty benchmark during the Optuna hyperparameter trials, penalizing the algorithm for false classifications at an intensity proportional to unwarranted model confidence.
-
-\subsection{Results Presentation}
-To provide a clear and diagnostic overview of the classifier, the testing outcomes were synthesized into distinct analytical visual representations. A primary confusion matrix was generated to visualize the model’s predictive accuracy against ground truth data across all ten crop categories. As illustrated in \textbf{Figure \ref{fig:confusion_matrix}}, the heatmap reveals high classification fidelity, particularly for Tobacco and Sorghum, where the diagonal values indicate a high volume of correct predictions. Conversely, the matrix highlights specific misclassifications; for instance, Eggplant was occasionally confused with Tomato (81 instances) and Squash (45 instances), likely due to overlapping soil parameter profiles between these varieties.
+The confusion matrix as illustrated in \textbf{Figure\ref{fig:confusion_matrix}}shows the detailed prediction outcomes. Diagonal entries are highest, indicating correct predictions; only a few off- diagonal cells occur (e.g. 81 instances of Eggplant predicted as Tomato). Overall, the classifier’s predictions align well with ground truth, which is crucial for reliable recommendations.
 
 \begin{figure}[H]
 	\centering
@@ -171,7 +98,7 @@ To provide a clear and diagnostic overview of the classifier, the testing outcom
 	\label{fig:confusion_matrix}
 \end{figure}
 
-To supplement the text-based metrics, granular graphical representations were utilized to evaluate the consistency of the model. \textbf{Figure \ref{fig:per_class_metrics}} presents a per-class breakdown of the precision, recall, and F1-score variables. This bar chart confirms that the predictive success is uniform across most classes, with Tobacco and Sorghum maintaining the highest scores, while identifying the inherent complexity in classifying Eggplant, which exhibits the lowest metrics.
+\textbf{Figure\ref{fig:per_class_metrics}} confirms these metrics. All crop classes achieve reasonably high precision and recall, with Tobacco and Sorghum highest, and Eggplant lowest. The model thus successfully identifies both majority and minority crops.
 
 \begin{figure}[H]
 	\centering
@@ -180,151 +107,5 @@ To supplement the text-based metrics, granular graphical representations were ut
 	\label{fig:per_class_metrics}
 \end{figure}
 
-Furthermore, a feature importance analysis was conducted to identify which hardware variables—such as specific soil pH ranges or derived nutrient interaction equations—provided the most significant informational gain for the decision trees. These visual tools, combined with histograms assessing the overall prediction confidence distribution, facilitate a comprehensive understanding of how the system translates raw hardware telemetry into reliable agricultural recommendations.
-
-\subsection{Discussion of Results}
-The empirical results derived from executing the Optuna-optimized Light Gradient Boosting Machine (LightGBM) framework alongside K-Means synthetic augmentation demonstrate a profound operational improvement over standard baseline paradigms. Preliminary computational testing explicitly highlighted that algorithms subjected to raw and unaugmented imbalanced distributions inherently skewed toward majority crops, traditionally yielding unacceptably low and non-viable balanced accuracies. As illustrated in \textbf{Figure \ref{fig:performance_comparison}}, the integration of aggressive hyperparameter optimization and synthetic Gaussian interpolation of minority classes definitively neutralized this systemic bias, elevating balanced accuracy from 42.44\% in the baseline model to 82.51\% in the optimized framework.
-
-\begin{figure}[H]
-	\centering
-	\caption{Model Performance Comparison: Baseline vs. Optimized Framework}
-	\includegraphics[width=1\textwidth]{figures/PerformanceComparison.pdf}
-	\label{fig:performance_comparison}
-\end{figure}
-
-Furthermore, the explicit analysis of the feature importance extraction serves to validate the foundational hardware architecture characterizing the underlying Internet of Things (IoT) system. The evaluation presented in \textbf{Figure \ref{fig:feature_importance}} confirms that core attributes, specifically Potassium ($K\_ppm$), localized soil pH, and the intentionally engineered $K\_pH\_interaction$ term, act as the most deterministic mathematical indicators for overarching crop viability.
-
-\begin{figure}[H]
-	\centering
-	\caption{Feature Importance Analysis Measured by Information Gain}
-	\includegraphics[width=0.85\textwidth]{figures/FeatureImportance.pdf}
-	\label{fig:feature_importance}
-\end{figure}
-
-Crucially, the prediction confidence distribution visually verifies that the vast majority of the inferences made by the classifier are anchored at high certainty probability thresholds rather than marginal estimations. As shown in \textbf{Figure \ref{fig:confidence_distribution}}, the model maintains a mean confidence of 0.83, with a significant concentration of predictions reaching the 0.9 to 1.0 range. 
-
-\begin{figure}[H]
-	\centering
-	\caption{Prediction Confidence Distribution of the Optimized Classifier}
-	\includegraphics[width=0.9\textwidth]{figures/ConfidenceDistribution.pdf}
-	\label{fig:confidence_distribution}
-\end{figure}
-
-For the end-user managing an automated agricultural deployment, these results confirm that the integrated software functions natively as a robust decision-support tool. The pipeline is mathematically equipped to reliably identify optimized cultivation pathways and actively reject suboptimal environmental variables with measurable statistical certainty. Ultimately, this structural reliability ensures that any subsequent downstream sequences executed by the system, such as computing precise and dynamic fertilizer application schedules, are grounded upon recommendations that are consistently, dependably, and agronomically sound.
-
-
-\newpage
-\section{Crop Recommendation Validation}
-This section presents the validation of the crop recommendation outputs generated by the system. The purpose of this evaluation is to determine whether the recommendations produced by the machine learning model are accurate, reliable, and aligned with expected agricultural practices.
-
-The validation process involved comparing the system’s predicted crop recommendations with reference data derived from the dataset and domain knowledge. This ensures that the system provides meaningful and practical outputs for real-world agricultural use.
-
-
-\subsection{Validation Methodology}
-
-\subsection{Test Case Scenario}
-
-\subsection{Results Comparison}
-
-\subsection{Accuracy of Recommendations}
-
-\subsection{Discussion}
-
-\newpage
-\section{System Performance Evaluation}
-This section presents the evaluation of the overall system performance in terms of responsiveness, data processing efficiency, and reliability. The goal of this evaluation is to determine whether the developed system can operate effectively in real-world agricultural conditions and provide timely and consistent outputs to users.
-
-The performance of the system was assessed using key indicators such as response time, data processing speed, and system stability during operation. The results provide insight into how well the system handles data flow from sensor acquisition to recommendation output.
-
-\subsection{Response Time Analysis}
-The response times for the Application Programming Interface (API) were measured through client-side network diagnostics to evaluate the latency of the TANIM system architecture. As detailed in \textbf{Table \ref{tab:api_latency}}, the diagnostic log captures the status, data size, and round-trip time for each primary endpoint utilized during a standard user session. These metrics provide a quantifiable baseline for assessing the efficiency of the backend infrastructure in delivering real-time agricultural data.
-
-\begin{table}[ht]
-	\centering
-	\caption{TANIM System API Network Response and Latency Log}
-	\label{tab:api_latency}
-	\begin{adjustbox}{max width=\textwidth}
-		\begin{tabular}{l c c c r}
-			\toprule
-			\textbf{Endpoint Name} & \textbf{Status} & \textbf{Type} & \textbf{Size} & \textbf{Time} \\ 
-			\midrule
-			forecast?latitude=8.4542\&longitude=... & 200 & fetch & 0.8 kB & 373 ms \\ 
-			farm?select=farm\_id,farm\_name,... & 200 & fetch & 1.3 kB & 388 ms \\ 
-			tanim\_system?select=* & 200 & fetch & 1.0 kB & 512 ms \\ 
-			farmer?select=* & 200 & fetch & 1.3 kB & 509 ms \\ 
-			soil\_health\_test?select=* & 200 & fetch & 1.3 kB & 317 ms \\ 
-			farming\_session?select=*\&order=... & 200 & fetch & 2.8 kB & 325 ms \\ 
-			farming\_session?farm\_id=eq.8c & 200 & fetch & 0.8 kB & 325 ms \\ 
-			interactive\_balloon.css & 200 & fetch & 1.5 kB & 8 ms \\ 
-			farming\_session?select=*\&order=... & 200 & fetch & 2.8 kB & 350 ms \\ 
-			farming\_session?select=*\&order=... & 200 & fetch & 2.8 kB & 289 ms \\ 
-			\bottomrule
-		\end{tabular}
-	\end{adjustbox}
-	\small \\ \textit{Note.} Data retrieved from client-side browser network panel diagnostics.
-\end{table}
-
-Dynamic requests, including the weather forecast, farm metadata, and active farming sessions, successfully returned a status code of 200 (OK). As shown in \textbf{Table \ref{tab:api_latency}}, the latency for these dynamic calls typically ranged from 289 ms to 512 ms. Specifically, the \texttt{tanim\_system} and \texttt{farmer} endpoints recorded the highest latencies at 512 ms and 509 ms, respectively, while the \texttt{soil\_health\_test} endpoint responded in 317 ms. In contrast, the static resource \texttt{interactive\_balloon.css} was retrieved in only 8 ms. This substantial difference highlights the expected overhead associated with server-side processing and database queries required for dynamic endpoints compared to static assets. Overall, the API performance remains well within the sub-second threshold required for responsive web applications.
-
-\subsection{Data Processing Performance}
-
-
-\subsection{System Reliability}
-
-
-\subsection{Discussion}
-
-
-\newpage
-\section{Website Responsiveness and Accessibility}
-This section presents the evaluation of the website in terms of responsiveness and accessibility. The assessment focuses on how well the system adapts to different devices and how effectively it accommodates users with varying needs and abilities.
-
-The website was evaluated across multiple screen sizes, including desktop, tablet, and mobile devices, to determine its consistency in layout, readability, and navigation. In addition, accessibility features such as text readability, color contrast, and basic keyboard navigation were examined to ensure that users can interact with the system without difficulty. The results provide insight into the system’s ability to deliver a user-friendly and inclusive experience across different platforms.
-
-\subsection{Device Compatibility Testing}
-
-\subsection{Responsiveness Evaluation}
-
-\subsection{Accessibility Assessment}
-
-\subsection{Performance Evaluation}
-
-\subsection{Discussion}
-
-\newpage
-\section{System Testing}
-This section presents the results of the system testing conducted to evaluate the functionality, performance, and overall reliability of the developed system. The evaluation focuses on verifying whether the system meets the specified requirements and operates as intended.
-
-The system was assessed using different testing methods, including functional testing, usability testing, compatibility testing, and performance testing. These methods were used to identify errors, measure system efficiency, and evaluate user interaction with the system. The results provide insight into the system’s stability, responsiveness, and readiness for deployment.
-
-
-
-\subsection{Functional Testing}
-
-\subsection{Integration Testing}
-
-\subsection{Test Case Results}
-
-\subsection{Error Handling and Robustness}
-
-\subsection{Discussion}
-
-\newpage
-
-\section{Usability Evaluation}
-	This section presents a rigorous usability evaluation of the developed system, employing a structured, user-centered assessment framework to measure its effectiveness, efficiency, and user satisfaction across identified user groups. The evaluation was conducted using purposefully selected participants, consisting of a total of ten (10) respondents, specifically seven (7) farmers as primary end-users and three (3) Department of Agriculture (DA) officials as administrative users. This 7:3 distribution ensures adequate representation of both operational and managerial perspectives in system interaction.
-	
-	A standardized instrument, the System Usability Scale (SUS), was utilized to obtain quantifiable measures of perceived usability, complemented by qualitative feedback to capture user experience nuances. The collected data were systematically analyazed to compute usability scores, interpret acceptability thresholds, and identify potential usability issues. This approach ensures that the evaluation is methodologically sound and aligned with established Human-Computer Interaction (HCI) practices, providing a reliable basis for assessing overall system usability and guiding subsequent design improvements.
-	
-\subsection{Respondent Profile}
-
-\subsection{Evaluation Instrument}
-
-\subsection{Evaluation Criteria}
-
-\subsection{Results and Analysis}
-
-\subsection{Interpretation}
-	
 
 }

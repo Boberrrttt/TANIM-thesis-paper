@@ -24,14 +24,10 @@
 \contentsline {figure}{\numberline {3.18}{\ignorespaces Hardware Design Flowchart}}{94}{figure.caption.29}%
 \contentsline {figure}{\numberline {3.19}{\ignorespaces 3D Container Design}}{96}{figure.caption.30}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Sample Integrated Soil Data Records}}{113}{figure.caption.31}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Data Distribution Comparison Between Original and Augmented Datasets}}{115}{figure.caption.32}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Final Dataset Composition: Original vs. Synthesized Profiles}}{120}{figure.caption.34}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Model Classification Report: Precision, Recall, and F1-Score Breakdown}}{128}{figure.caption.35}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Confusion Matrix of the LightGBM Classifier Across Ten Crop Varieties}}{131}{figure.caption.36}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Precision, Recall, and F1-Score Breakdown per Crop Category}}{132}{figure.caption.37}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Model Performance Comparison: Baseline vs. Optimized Framework}}{133}{figure.caption.38}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Feature Importance Analysis Measured by Information Gain}}{134}{figure.caption.39}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Prediction Confidence Distribution of the Optimized Classifier}}{135}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Sample Integrated Soil Data Records}}{111}{figure.caption.31}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Data Distribution Comparison Between Original and Augmented Datasets}}{112}{figure.caption.32}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Model Classification Report: Precision, Recall, and F1-Score Breakdown}}{116}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Confusion Matrix of the LightGBM Classifier Across Ten Crop Varieties}}{117}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Precision, Recall, and F1-Score Breakdown per Crop Category}}{118}{figure.caption.36}%
 \addvspace {10\p@ }
 \contentsfinish 
