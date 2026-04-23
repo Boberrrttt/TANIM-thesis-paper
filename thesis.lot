@@ -6,10 +6,16 @@
 \contentsline {table}{\numberline {2}{\ignorespaces User Requirements}}{46}{table.3.2}%
 \contentsline {table}{\numberline {3}{\ignorespaces System Requirements}}{47}{table.3.3}%
 \contentsline {table}{\numberline {4}{\ignorespaces Tabular Summary of Features Extracted from the RSL Dataset}}{54}{table.caption.11}%
-\contentsline {table}{\numberline {5}{\ignorespaces Primary Use Cases of the TANIM System}}{91}{table.caption.26}%
-\contentsline {table}{\numberline {6}{\ignorespaces Included Use Cases of the TANIM System}}{91}{table.caption.27}%
-\contentsline {table}{\numberline {7}{\ignorespaces Hardware Components and Cost}}{97}{table.3.7}%
+\contentsline {table}{\numberline {5}{\ignorespaces Primary Use Cases of the TANIM System}}{90}{table.caption.25}%
+\contentsline {table}{\numberline {6}{\ignorespaces Included Use Cases of the TANIM System}}{90}{table.caption.26}%
+\contentsline {table}{\numberline {7}{\ignorespaces Materials and Cost Breakdown of the Hardware System}}{101}{table.caption.35}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8}{\ignorespaces Feature Engineering Outcomes and Agronomic Justifications}}{114}{table.caption.33}%
+\contentsline {table}{\numberline {8}{\ignorespaces Feature Engineering Outcomes and Agronomic Justifications}}{120}{table.caption.39}%
+\contentsline {table}{\numberline {9}{\ignorespaces TANIM System API Network Response and Latency Log}}{154}{table.caption.60}%
+\contentsline {table}{\numberline {10}{\ignorespaces Official Quantitative Values Reference for Soil Nutrients}}{161}{table.caption.66}%
+\contentsline {table}{\numberline {11}{\ignorespaces Performance Metrics of the Crop Recommendation System}}{162}{table.caption.67}%
+\contentsline {table}{\numberline {12}{\ignorespaces Comparison of Baseline and Optimized Model Performance}}{163}{table.caption.68}%
+\contentsline {table}{\numberline {13}{\ignorespaces Validation Test Case Profiles Based on RSL Dataset (2023–2025)}}{164}{table.caption.69}%
+\contentsline {table}{\numberline {14}{\ignorespaces Validation Results: Expected Crop vs. System Output}}{165}{table.caption.70}%
 \addvspace {10\p@ }
 \contentsfinish 

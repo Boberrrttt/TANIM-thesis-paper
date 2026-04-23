@@ -47,7 +47,9 @@ In preparation for system integration, the data will undergo a series of preproc
 		\includegraphics[width=1\textwidth]{figures/ResearchSetting.pdf}
 	\end{figure}
 	
-The study will be conducted on specific farms in Region 10, specifically farms in Bukidnon, Philippines. The region is mostly agricultural, with vast lands focused on the cultivation of high-value crops such as maize (corn), mungbean (mongo), soybean, squash (kalabasa), sweet potato (camote), cassava, eggplant, tomato. The farms in this region typically employ conventional and semi-modern farming practices, which offers a realistic setting to monitor and assess crop performance under actual farming conditions.
+The study was conducted in selected farms in Bukidnon, particularly in Alae, Lingion, and Libona. These areas are known for their strong agricultural activity, with large portions of land dedicated to growing high-value crops such as maize (corn), mungbean (mongo), soybean, squash (kalabasa), sweet potato (camote), cassava, eggplant, and tomato.
+Farmers in these communities commonly use a mix of conventional and semi-modern farming practices. Because of this, the area provides a realistic and practical setting for the study, allowing crop performance to be monitored and evaluated under actual farming conditions rather than controlled environments.
+
 	
 \section{Requirements Analysis}
 The system requires the development and implementation of a machine learning component capable of performing soil health prediction, and  crop recommendation. Machine Learning boosting algorithms will be employed for these tasks, using both sensor and zoning data. The sensors will collect important soil information such as Nitrogen (N), Phosphorus (P), Potassium (K), pH level, moisture, temperature, and salinity. At the same time, zoning data from the Department of Agriculture will provide information about the type of land, elevation, and climate conditions of the area. By combining these two data sources, the system can better understand the relationship between soil condition and the environment. Based on the collected data, the machine learning model will classify soil quality levels, while crop yield forecasting will leverage an optimized machine learning model by identifying patterns and relationships between soil parameters and environmental factors. To make predictions more accurate, the model will use a metaheuristic-based feature selection that focuses on the most relevant data and removes unnecessary or less useful information. 
@@ -275,16 +277,6 @@ A fundamental component of this phase is dataset splitting, where the unified da
 
 Concurrent with this partitioning is the execution of precise data labeling. The feature space, which includes the eight engineered soil and environmental metrics, is distinctly separated from the target variables. This frames the system's objectives into two distinct paths: crop recommendation is treated as a discrete multiclass classification problem, while fertilizer recommendations are mapped as specific quantitative output variables.
 
-To address potential disparities in crop representation within the historical data, advanced class imbalance handling is applied. The system utilizes the K-Means Synthetic Minority Oversampling Technique (SMOTE) on the training subset to avoid predictive bias toward majority classes. The effect of this augmentation is clearly demonstrated in \textbf{Figure \ref{fig:smote_balance}}, where the imbalanced classes are synthetically oversampled to reach a uniform baseline of 1,200 samples per class, ensuring the model learns the characteristics of all crops with equal weight.
-
-\begin{figure}[H]
-	\centering
-	\caption{Target Class Distribution Before and After SMOTE Augmentation}
-	\label{fig:smote_balance}
-	\includegraphics[width=1\textwidth]{figures/SMOTE.pdf}
-	\small \\ \textit{Note.} SMOTE application resolves class imbalances by generating synthetic samples for minority classes like Cabbage and Ampalaya.
-\end{figure}
-
 \subsection{Data Storage and Management}
 The architecture of the proposed system necessitates a centralized and reliable repository to ensure data consistency across administrative and end-user platforms. This repository facilitates the management of diverse entities, including farmer and administrator accounts, farm records encompassing geographic coordinates and land area, active farming sessions, and soil test readings. Furthermore, the database stores the outputs of the machine learning engine, specifically crop and fertilizer recommendations, alongside system telemetry and device status updates. While machine learning models are maintained as distinct training artifacts, all operational and longitudinal data are housed within the database to ensure that the web dashboard, mobile application, and backend services utilize a unified source of truth.
 
@@ -320,7 +312,7 @@ In this section, the flow of the overall system is defined with detailed descrip
 		\includegraphics[width=1\textwidth]{figures/finalSYSARCH.pdf}
 	\end{figure}
 	
-The figure \ref{fig:SystemArchitecture} shows the updated system architecture for the Soil Health Monitoring, Fertilizer, and Crop Recommendation System (TANIM). The system goes from hardware in the field, through a LoRa link and a local gateway, into the cloud for storage and machine learning, and then out to a web app for agricultural authorities and a mobile app for farmers.
+The \textbf{Figure \ref{fig:SystemArchitecture}} shows the updated system architecture for the Soil Health Monitoring, Fertilizer, and Crop Recommendation System (TANIM). The system goes from hardware in the field, through a LoRa link and a local gateway, into the cloud for storage and machine learning, and then out to a web app for agricultural authorities and a mobile app for farmers.
 Field IoT device. The sensing unit is basically one IoT package in the field. A solar panel feeds a solar panel manager, which handles charging and power so the device can keep running in areas that are far from the grid. Inside the box, an ESP32 reads the sensors, does any simple processing on the readings, and builds the packets that will be sent out.
 
 A soil sensor measures things like NPK, pH, and moisture. The sensor talks over an industrial serial link that behaves like RS-485, which is good when the cable is long and the environment is noisy. A TTL MAX485 module turns that into a regular UART signal the ESP32 can read, so you get reliable communication without making the firmware too complicated.
@@ -523,8 +515,55 @@ Once the sensor data is acquired, it is passed to the transceiver module, which 
 The flowchart represents a sequential hardware process in which each stage depends on the successful execution of the previous step. The ESP32 coordinates sensor data acquisition, GPS integration, and communication control, while the transceiver and transmitter modules ensure reliable data transmission.
 
 \subsection{Hardware Design Layout}
+This section presents the overall arrangement of the system’s hardware components and how they are interconnected. It highlights the key elements used and how the layout supports efficient and reliable system operation.
 
+\begin{figure}[H]
+	\centering
+	\caption{Main System Hardware Layout}
+	\label{fig:main_system}
+	\includegraphics[width=1\textwidth]{figures/MainSystem.pdf}
+\end{figure}
 
+ \textbf{Figure \ref{fig:main_system}} shows the hardware layout of the transmitter unit. The transmitter circuit is powered by four 3.7V lithium-ion batteries, rechargeable via a three 5V 1A solar panels setup. The transmitter includes the ZTS-3001-TR-ECMOISTPHTEMPNPK-N01 Soil Health Sensor health sensor powered by the 4 batteries, then the sensor is connected to a transceiver which is the TTL to RS485 module the module serves as the bridge between the sensor and the ESP32 communication. Another component connected to the ESP32 is the GY-NEO6MV2 GPS module which provides the latitude and longitude of the tested area. The I2C-LCD is also connected to the ESP32 as its purpose is to show the real-time sensor reading, Latitude and Longitude, and the data transmission status. And  the last component is the LoRa-01 module which is used for wireless transmission of the sensor reading and the GPS reading and each packet will be sent every minute after the 5 minute soak time.
+ 
+ \begin{figure}[H]
+ 	\centering
+ 	\caption{Receiver System Hardware Layout}
+ 	\label{fig:receiver_system}
+ 	\includegraphics[width=0.85\textwidth]{figures/ReceiverSystem.pdf}
+ \end{figure}
+ 
+ \textbf{Figure \ref{fig:receiver_system}} shows the hardware layout of the receiver unit which is only connected to a LoRa-01 module. Its only purpose is to collect data from the three transmitter nodes then average it and the averaged data will be sent to the database. This unit requires Wi-Fi connection to send the averaged data to the database.
+ 
+ Building upon the hardware design layout, the schematic layout further details the electrical connections between components. It visualizes the signal paths and power distribution across the system, ensuring that each component is properly integrated for optimal performance and reliability.
+ 
+ \textbf{Figure \ref{fig:main_schematic}} shows the main transmitter circuit’s detailed schematic, illustrating the integration of the central processing unit with environmental sensors and positioning modules
+ 
+ \begin{figure}[H]
+ 	\centering
+ 	\caption{Main Transmitter Schematic Diagram}
+ 	\label{fig:main_schematic}
+ 	\includegraphics[width=0.85\textwidth]{figures/MainSchematic.pdf}
+ \end{figure}
+ 
+ \textbf{Figure \ref{fig:other_schematic}} shows the node 2 and 3 circuit’s detailed schematic, illustrating a modular design focused on localized environmental monitoring
+ 
+ \begin{figure}[H]
+ 	\centering
+ 	\caption{Node 2 and 3 Transmitter Schematic Diagram}
+ 	\label{fig:other_schematic}
+ 	\includegraphics[width=0.85\textwidth]{figures/OtherSchematic.pdf}
+ \end{figure}
+ 
+ \textbf{Figure \ref{fig:receiver_schematic}} shows the receiver circuit’s detailed schematic, illustrating the high-speed SPI connection between the ESP32 and the LoRa Ra-01 communication module.
+ 
+ \begin{figure}[H]
+ 	\centering
+ 	\caption{Node 2 and 3 Transmitter Schematic Diagram}
+ 	\label{fig:receiver_schematic}
+ 	\includegraphics[width=0.85\textwidth]{figures/ReceiverSchematic.pdf}
+ \end{figure}
+ 
 	
 \subsection{3D Design}
 	\begin{figure}[H]
@@ -534,38 +573,39 @@ The flowchart represents a sequential hardware process in which each stage depen
 		\includegraphics[width=1\textwidth]{figures/3D.pdf}
 	\end{figure}
 	
-Figure \ref{fig:3D} displays the 3D container design that will be 3D printed for the container of the hardware. This will contain the hardware components which are etched in a PCB board that will be used in this system. The container should be durable to ensure that it can secure the hardware components inside of it.
+\textbf{Figure \ref{fig:3D}} displays the 3D container design that will be 3D printed for the container of the hardware. This will contain the hardware components which are etched in a PCB board that will be used in this system. The container should be durable to ensure that it can secure the hardware components inside of it.
 
 \subsection{Graphical User Interface (GUI)}
 	
 \subsection{Materials and Cost}	
-	\begin{longtable}{p{6cm} p{4cm}}
-		\caption{Hardware Components and Cost} \label{tab:MaterialsAndCost} \\
-		\toprule
-		\textbf{Component} & \textbf{Price} \\ 
-		\midrule
-		\endfirsthead
+	\begin{table}[H]
+		\centering
+		\caption{Materials and Cost Breakdown of the Hardware System}
+		\label{tab:materials_cost}
 		
-		\toprule
-		\textbf{Component} & \textbf{Price} \\ 
-		\midrule
-		\endhead
+		\small
+		\renewcommand{\arraystretch}{1.2}
 		
-		\bottomrule
-		\endfoot
+		\begin{tabularx}{\textwidth}{p{5cm} p{3cm} c X}
+			\toprule
+			\textbf{Component} & \textbf{Quantity} & \textbf{Cost (PHP)} & \textbf{Amount (PHP)} \\ 
+			\midrule
+			ZTS-3001-TR-ECMOISTPHTEMPNPK-N01 Soil Health Sensor & 3 & 1,862 & 5,586 \\ 
+			ESP32 & 4 & 400 & 1,600 \\ 
+			TTL to RS485 Module & 3 & 57 & 171 \\ 
+			GY-NEO6MV2 NEO-6M GPS Module & 1 & 300 & 300 \\ 
+			SX1278 LoRa Ra-01 Module (433MHz) & 4 & 289 & 1,156 \\ 
+			I2C Serial Interface 1602 LCD Module & 3 & 400 & 1,200 \\ 
+			5V 1A Solar Panel & 9 & 220 & 1,980 \\ 
+			Solar Charge Controller & 3 & 145 & 435 \\ 
+			Lithium-Ion 18650 2500mAh Battery & 12 & 400 & 4,800 \\ 
+			Miscellaneous (Cables, Mounts) & -- & 3,000 & 3,000 \\ 
+			\midrule
+			\textbf{Total Cost} & & & \textbf{20,000} \\ 
+			\bottomrule
+		\end{tabularx}
 		
-		ESP32 Microprocessor & \textpeso 150 \\ 
-		Soil Sensor & \textpeso 1,654.90 \\
-		Solar Power Manager & \textpeso 860 \\
-		Solar Panel & \textpeso 320 \\
-		Lithium Ion Battery & \textpeso 120 \\
-		GPS Module & \textpeso 255 \\
-		Transceiver Module & \textpeso 163 \\
-		Transmitter Module & \textpeso 180 \\
-		Miscellaneous (Cable, Mounts) & \textpeso 1,500 \\
-		\midrule
-		\textbf{Total} & \textbf{\textpeso 5,202.90} \\
-	\end{longtable}
+	\end{table}
 	
 \section{Implementation}
 The Implementation phase involves developing the software and hardware components. Each function was ensured to function according to the design specifications.This phase intends to transform the conceptual design into a working prototype that can perform data acquisition, processing, and output for TANIM.
@@ -583,15 +623,18 @@ The hardware implementation of the TANIM system is centered on an IoT-based devi
 A soil sensor is used to measure key soil parameters such as pH, NPK, moisture, temperature, and salinity. This sensor was chosen because it provides accurate and real-time soil data essential for evaluating soil health and guiding fertilizer and crop recommendations.
 	
 \subsection{Machine Learning Model}
-The TANIM system will use a boosting algorithm as the core of its predictive model, chosen for its efficiency, scalability, and high accuracy in handling large and complex datasets. This machine learning approach analyzes multiple factors, including soil type, environmental conditions, and historical yield data, to generate accurate predictions of soil health, crop suitability, and potential yield. By leveraging the predictive power of boosting algorithms, the system is able to deliver personalized and data-driven crop and fertilizercapabilities of LightGBM with advanced synthetic data generation, the system outputs precise, site-specific agronomic recommendations thatdesigned to optimize pcroductivity and promote efficient resource utilizationp yield and maximize resource use efficiency.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          be strictly enforced at the o a Farmer cannot accidentally or maliciously access DA-level administrative rules. Two-Factor Authentication (2FA) will also beimplemented during the login process for both Farmers and Agriculentials in the mobile or web application, users will be required to provide a secondary verification code sent to their registered email or mobile number. This adds a critical layer of protection against unauthorized access to sensitive farm data and regional soil health insights.
-	
-The TANIM system secures the exchange of information across multiple layers of the architecture. For the long-range link between the field sensors and the gateway, AES-128 encryption is a standard feature of LoRa technology that is utilized to ensure that soil parameters remain confidential during wireless transmission. Furthermore, communication between the Flask backend and the user applications is conducted over HTTPS (TLS/SSL) to prevent data interception or man-in-the-middle attacks. This ensures that real-time insights, such as fertilizer recommendations and crop suitability scores, are delivered securely to the end-user.
-	
-Data integrity begins at the collection point, where the ESP32 microcontroller handles localized processing and filtering to prevent signal spikes from being recorded as valid data. The hardware is protected by a durable 3D-printed container, designed to secure the PCB and sensors from physical tampering in remote agricultural settings. On the cloud side, Firebase Security Rules are configured to ensure data isolation; Farmers are only permitted to write data associated with their specific accounts, while the Department of Agriculture is granted read-only access to regional soil health trends for monitoring purposes. Regular database backups and encryption-at-rest further safeguard the repository of environmental and farmer-defined parameters.
-	
-For wireless communication, the system uses a LoRa (Long Range) module, selected for its ability to transmit data over several kilometers with very low power consumption. This makes it suitable for rural agricultural zones with limited internet access or unstable connectivity.
-	
-The entire system is powered by a solar panel managed through a solar panel controller, ensuring a sustainable and uninterrupted power source even in off-grid farming locations. The modular design of the hardware also makes the system scalable and adaptable, allowing additional sensors or communication modules to be integrated easily as agricultural requirements evolve.
+The TANIM project uses a LightGBM model because it processes data quickly and accurately sorts information into different categories. Since regional soil data often has uneven amounts of information for various soil types, the system applies a K-Means method to address this imbalance. This method generates additional data for the underrepresented groups, creating a balanced dataset for the model to learn effectively.
+
+The program evaluates key soil elements, specifically organic matter, phosphorus, potassium, and pH levels, to assess soil health and predict the most suitable crops for a given area. By combining the LightGBM model with a balanced dataset, the system improves prediction performance and provides reliable agricultural recommendations.
+
+\begin{figure}[H]
+	\centering
+	\caption{LightGBM Model Architecture used in the TANIM system}
+	\includegraphics[width=1\textwidth]{figures/LightGBMModel.pdf}
+	\label{fig:lightgbm}
+\end{figure}
+
+The integration of LightGBM with a balanced dataset enhances classification accuracy and ensures fair representation of all soil categories. As shown in \textbf{Figure \ref{fig:lightgbm}}, the LightGBM architecture uses an ensemble of decision trees that aggregate predictions to produce final crop classifications. This structure allows the system to efficiently process soil parameters and generate accurate crop recommendations, ultimately helping improve harvest yields and optimize resource utilization.
 	
 \section{Test and Evaluation}
 Testing and evaluation will be conducted to verify the system’s effectiveness, accuracy, and usability for crop recommendation and soil health monitoring. This process will be designed to ensure that the hardware components, software components, and machine learning models will function according to what we aim for this study, which involves hardware testing and calibration, functional testing, system integration testing, performance testing, and usability testing. Hardware testing and calibration will focus on verifying the accuracy of the sensors to ensure reliable soil data. Functional testing will examine whether the mobile and web applications operate correctly and deliver the expected outputs of each feature. To ensure that the hardware, cloud database, machine learning, and applications works together with proper data flow and error handling, system integration will be implemented. For measuring the responsiveness of the system and to evaluate the system’s predictive accuracy of the machine learning models using various performance metrics we will be conducting performance testing. Moreover, usability testing will assess the practicality and user-friendliness of the system by involving farmers and agricultural experts in field trial and feedback collection.
