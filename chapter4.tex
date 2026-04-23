@@ -1,7 +1,111 @@
 \chapter{RESULTS AND DISCUSSION}
 %{\kill{\section{ffff}}}
 {\baselineskip=2\baselineskip
-
+	
 This chapter presents the findings from the research conducted and provides a thorough analysis and interpretation of these results. 
+
+\section{Hardware System}
+
+\subsection{Hardware and Specifications}
+\subsection{Accuracy and Reliability Evaluation}
+
+\section{Machine Learning Model}
+This section describes the data processing pipeline and predictive model used for crop recommendation. The model takes processed soil measurements as input and outputs a recommended crop and fertilizer guidance.
+
+\subsection{Data Integration and Cleaning}
+Multiple data sources were consolidated to form the training dataset. Historical records (the Consolidated Soil Info RSL 2023–2025) provided soil profiles (pH, organic matter \%, phosphorus ppm, potassium ppm) linked to crops previously grown on those farms. These records were combined with simulated IoT sensor samples to create a uniform table. Irrelevant metadata and text annotations were removed so that each entry consists only of the agronomic variables and a single target crop label. For example, entries RSL-001 through RSL-005 in \textbf{Figure \ref{fig:integrated_data}} show specific soil chemical properties aligned with their zoned crops (Corn, Eggplant, etc.), demonstrating how fragmented spreadsheet data was transformed into a structured format for learning.
+
+\begin{figure}[H]
+	\centering
+	\caption{Sample Integrated Soil Data Records}
+	\includegraphics[width=1\textwidth]{figures/IntegratedData.pdf}
+	\label{fig:integrated_data}
+\end{figure}	
+
+Data cleaning ensured dataset quality: entries with missing or invalid values (non-numeric, out-of-range) were dropped. Numerical features were bounded to agronomically realistic limits (e.g. soil pH restricted to 3–9) to eliminate outliers. A critical issue was class imbalance. In the raw data, common crops like Corn had thousands of records while rare crops (Ampalaya, Sweet Pepper) had very few. To prevent bias, synthetic oversampling was applied to minority classes. Using a K-Means–based approach, we grouped minority samples and generated perturbed examples around each cluster center. This produced a balanced dataset, as visualized in \textbf{Figure \ref{fig:data_augmentation}}. Before augmentation (red), the class distribution is skewed; after augmentation (green), each of the 10 crops has roughly 2,400 samples, yielding about 8,694 total records (1,191 original + 7,503 synthetic).
+
+\begin{figure}[H]
+	\centering
+	\caption{Data Distribution Comparison Between Original and Augmented Datasets}
+	\includegraphics[width=1\textwidth]{figures/DataAugmentation.pdf}
+	\label{fig:data_augmentation}
+\end{figure}
+
+\subsection{Feature Engineering}
+In addition to the four raw inputs, four derived features were computed to capture agronomic relationships. Two features are ratios: the Phosphorus-to-Potassium ratio $P/K$ and the Phosphorus-to-Organic Matter ratio $P/\mathrm{OM}$. The other two are interaction terms: $\mathrm{OM} \times \mathrm{pH}$ and $K \times \mathrm{pH}$. These encode how nutrient availability changes with soil acidity or organic content. For instance, a low $K \times \mathrm{pH}$ simulates potassium lock-up in acidic soils. The engineered features substantially improved model insight: in the trained LightGBM, the $K \times \mathrm{pH}$ term was the third most important feature, and the phosphorus ratios together contributed nearly $20\%$ of total importance.
+
+These algorithmically derived features, summarized in \textbf{Table \ref{tab:feature_engineering}}, mirror physiological nutrient constraints and bio-availability dynamics that are critical for accurate soil-health assessment.
+
+\begin{table}[H]
+	\centering
+	\caption{Feature Engineering Outcomes and Agronomic Justifications}
+	\label{tab:feature_engineering}
+	
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	
+	\begin{tabularx}{\textwidth}{p{3.5cm} p{4.5cm} X}
+		\toprule
+		\textbf{Engineered Feature Name} & \textbf{Mathematical Formulation} & \textbf{Agronomic Justification} \\
+		\midrule
+		
+		Phosphorus-Potassium Ratio &
+		$\dfrac{\text{Phosphorus (ppm)}}{\text{Potassium (ppm)} + 1}$ &
+		Evaluates the internal root development-to-fruiting energy balance. A severe imbalance indicates a localized deficiency incapable of supporting advanced botanical maturity. \\
+		
+		\addlinespace[6pt]
+		
+		Phosphorus-Organic Load &
+		$\dfrac{\text{Phosphorus (ppm)}}{\text{Organic Matter (\%)} + 1}$ &
+		Quantifies the availability of Phosphorus relative to the baseline organic mass, identifying environments where high raw nutrients are inaccessible due to poor soil degradation. \\
+		
+		\addlinespace[6pt]
+		
+		pH-Gated Nitrogen Bio-availability &
+		$\text{Organic Matter (\%)} \times pH$ &
+		Synthesizes an intuition for real-world Nitrogen uptake. Because organic nitrogen conversion is mediated by microbiological activity, this encodes active bio-availability. \\
+		
+		\addlinespace[6pt]
+		
+		pH-Gated Potassium Bio-availability &
+		$\text{Potassium (ppm)} \times pH$ &
+		Simulates real-world Potassium fixing limitations. In highly acidic environments, absolute Potassium lock-up occurs; this forces the model to acknowledge acidity constraints. \\
+		
+		\bottomrule
+	\end{tabularx}
+	
+\end{table}
+
+\subsection{Model Configuration and Training}
+The prediction engine is a Light Gradient Boosting Machine (LightGBM) classifier. LightGBM is an efficient gradient-boosting framework optimized for speed and handling complex feature interactions. It was chosen for its ability to train quickly and run on modest hardware, making it suitable for IoT integration. The eight features (4 raw + 4 engineered) are fed into the classifier, which outputs probabilities for each of the 10 crop classes. Data splits were 70\% training, 15\% validation, 15\% testing (stratified to preserve class ratios). To fine-tune performance, we used Bayesian hyperpa- rameter optimization (Optuna, 50 trials) with 5-fold stratified cross-validation on the training set. We optimized tree depth, number of leaves, learning rate, feature/bagging fractions, and L1/L2 regularization. Early stopping was applied if validation log-loss did not improve for 20 rounds. This process ensured a well-generalized model without overfitting.
+
+\subsection{Performance Metrics and Results}
+The final model achieved a test-set accuracy of 83.2\%. Its balanced accuracy (the macro-average recall across classes) was 82.5\%, indicating robust performance on both common and rare crops. The weighted F1-score was 0.831. \textbf{Figure \ref{fig:classification_report}} presents precision, recall, and F1-score per crop. The model performed particularly well on Tobacco ($F_1 \approx 0.96$) and Sorghum, while Eggplant was the most challenging ($F_1 \approx 0.66$), consistent with its confusion with similar crops.
+
+\begin{figure}[H]
+	\centering
+	\caption{Model Classification Report: Precision, Recall, and F1-Score Breakdown}
+	\includegraphics[width=0.85\textwidth]{figures/ClassificationReport.pdf}
+	\label{fig:classification_report}
+\end{figure}
+
+The confusion matrix as illustrated in \textbf{Figure\ref{fig:confusion_matrix}}shows the detailed prediction outcomes. Diagonal entries are highest, indicating correct predictions; only a few off- diagonal cells occur (e.g. 81 instances of Eggplant predicted as Tomato). Overall, the classifier’s predictions align well with ground truth, which is crucial for reliable recommendations.
+
+\begin{figure}[H]
+	\centering
+	\caption{Confusion Matrix of the LightGBM Classifier Across Ten Crop Varieties}
+	\includegraphics[width=0.85\textwidth]{figures/ConfusionMatrix.pdf}
+	\label{fig:confusion_matrix}
+\end{figure}
+
+\textbf{Figure\ref{fig:per_class_metrics}} confirms these metrics. All crop classes achieve reasonably high precision and recall, with Tobacco and Sorghum highest, and Eggplant lowest. The model thus successfully identifies both majority and minority crops.
+
+\begin{figure}[H]
+	\centering
+	\caption{Precision, Recall, and F1-Score Breakdown per Crop Category}
+	\includegraphics[width=1\textwidth]{figures/ClassMetrics.pdf}
+	\label{fig:per_class_metrics}
+\end{figure}
+
 
 }

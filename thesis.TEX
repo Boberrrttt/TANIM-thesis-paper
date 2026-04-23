@@ -26,6 +26,8 @@
 \usepackage{float}
 \usepackage{longtable, booktabs}
 \usepackage{topiclongtable}
+\usepackage{tabularx}
+\usepackage{adjustbox}
 
 \usepackage{chngcntr}
 \counterwithin{figure}{chapter}
@@ -39,6 +41,7 @@
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Document Starts Here
 \begin{document}
+	\raggedbottom
 	%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	% front matter
 	\pagenumbering{roman}
@@ -65,8 +68,8 @@
 	\include{chapter1}
 	\include{chapter2}
 	\include{chapter3}
-	%\include{chapter4}
-	%\include{chapter5}
+	\include{chapter4}
+	\include{chapter5}
 	%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	% back matter
 	\include{bibliography}
