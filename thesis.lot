@@ -6,16 +6,25 @@
 \contentsline {table}{\numberline {2}{\ignorespaces User Requirements}}{46}{table.3.2}%
 \contentsline {table}{\numberline {3}{\ignorespaces System Requirements}}{47}{table.3.3}%
 \contentsline {table}{\numberline {4}{\ignorespaces Tabular Summary of Features Extracted from the RSL Dataset}}{54}{table.caption.11}%
-\contentsline {table}{\numberline {5}{\ignorespaces Primary Use Cases of the TANIM System}}{90}{table.caption.25}%
-\contentsline {table}{\numberline {6}{\ignorespaces Included Use Cases of the TANIM System}}{90}{table.caption.26}%
-\contentsline {table}{\numberline {7}{\ignorespaces Materials and Cost Breakdown of the Hardware System}}{101}{table.caption.35}%
+\contentsline {table}{\numberline {5}{\ignorespaces Primary Use Cases of the TANIM System}}{89}{table.caption.25}%
+\contentsline {table}{\numberline {6}{\ignorespaces Included Use Cases of the TANIM System}}{89}{table.caption.26}%
+\contentsline {table}{\numberline {7}{\ignorespaces Materials and Cost Breakdown of the Hardware System}}{100}{table.caption.35}%
+\contentsline {table}{\numberline {8}{\ignorespaces pH Sensor Raw Readings and Required Corrections}}{109}{table.caption.39}%
+\contentsline {table}{\numberline {9}{\ignorespaces Applied Correction (Sensor + 0.5) and Resulting Residual Error}}{110}{table.caption.40}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8}{\ignorespaces Feature Engineering Outcomes and Agronomic Justifications}}{120}{table.caption.39}%
-\contentsline {table}{\numberline {9}{\ignorespaces TANIM System API Network Response and Latency Log}}{154}{table.caption.60}%
-\contentsline {table}{\numberline {10}{\ignorespaces Official Quantitative Values Reference for Soil Nutrients}}{161}{table.caption.66}%
-\contentsline {table}{\numberline {11}{\ignorespaces Performance Metrics of the Crop Recommendation System}}{162}{table.caption.67}%
-\contentsline {table}{\numberline {12}{\ignorespaces Comparison of Baseline and Optimized Model Performance}}{163}{table.caption.68}%
-\contentsline {table}{\numberline {13}{\ignorespaces Validation Test Case Profiles Based on RSL Dataset (2023–2025)}}{164}{table.caption.69}%
-\contentsline {table}{\numberline {14}{\ignorespaces Validation Results: Expected Crop vs. System Output}}{165}{table.caption.70}%
+\contentsline {table}{\numberline {10}{\ignorespaces Comparative Analysis of Soil Health Measurements}}{120}{table.caption.42}%
+\contentsline {table}{\numberline {11}{\ignorespaces Validation Assessment Summary}}{121}{table.caption.43}%
+\contentsline {table}{\numberline {12}{\ignorespaces Error Metrics for Soil Sensor Parameters}}{126}{table.caption.47}%
+\contentsline {table}{\numberline {13}{\ignorespaces Sample Integrated Soil Data Records}}{128}{table.caption.48}%
+\contentsline {table}{\numberline {14}{\ignorespaces Feature Engineering Outcomes and Agronomic Justifications}}{131}{table.caption.50}%
+\contentsline {table}{\numberline {15}{\ignorespaces API and Machine Learning Endpoint Performance Logs}}{151}{table.caption.64}%
+\contentsline {table}{\numberline {16}{\ignorespaces TANIM System API and Machine Learning Endpoint Response Times}}{164}{table.caption.72}%
+\contentsline {table}{\numberline {17}{\ignorespaces Official Quantitative Values Reference for Soil Nutrients}}{167}{table.caption.73}%
+\contentsline {table}{\numberline {18}{\ignorespaces Performance Metrics of the Crop Recommendation System}}{168}{table.caption.74}%
+\contentsline {table}{\numberline {19}{\ignorespaces Comparison of Baseline and Optimized Model Performance}}{169}{table.caption.75}%
+\contentsline {table}{\numberline {20}{\ignorespaces Validation Test Case Profiles Based on RSL Dataset (2023–2025)}}{170}{table.caption.76}%
+\contentsline {table}{\numberline {21}{\ignorespaces Validation Results: Expected Crop vs. System Output}}{171}{table.caption.77}%
+\contentsline {table}{\numberline {22}{\ignorespaces Summary of Usability Evaluation Results}}{177}{table.caption.81}%
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {23}{\ignorespaces Interview with DA Senior Agriculturist}}{202}{table.5.23}%
 \contentsfinish 

@@ -16,7 +16,21 @@ In the Philippine context, these global challenges are strongly reflected at the
 	
 Advancements in Internet of Things (IoT) technologies and machine learning (ML) offer promising solutions for precision agriculture. IoT-based sensors, including NPK, pH, moisture, and temperature probes, enable continuous soil health monitoring, while machine learning algorithms analyze large and complex datasets to generate data-driven insights and recommendations (Kumar et al., 2024 \& Lavanya et al., 2024). Modern farming systems leverage these technologies to optimize crop production, improve fertilizer efficiency, and reduce waste, ultimately enhancing yield and sustainability (Elbasi et al., 2023). By integrating Internet of Things (IoT) sensor data with historical records, and agricultural zoning data, intelligent systems can provide crop recommendations tailored to the agricultural conditions of Region 10.
 	
-This study proposes a Soil Health Monitoring and Recommendation System that leverages IoT sensors and machine learning techniques to provide recommendations for crop planting and fertilizer application in Bukidnon. Targeting key crops such as Ampalaya, Beans (Soybean), Cassava, Corn, Eggplant, Sorghum, Squash, Sweet Pepper, Tobacco, and Tomato, the system integrates soil health parameters (NPK, pH, moisture, humidity, and temperature), soil and crop data from the Department of Agriculture - Region 10, and additional online agricultural resources to predict suitable crops and recommend fertilizer application. By addressing field-specific variability and seasonal dynamics, the proposed system aims to enhance agricultural productivity, reduce resource waste, and promote sustainable farming practices. Aligned with the Sustainable Development Goals (SDGs) 2 (Zero Hunger), 12 (Responsible Consumption and Production), and 15 (Life on Land), this research contributes to food security, environmental conservation, and sustainable agricultural development in the Philippines.
+This study proposed a Soil Health Monitoring and Recommendation
+System that leveraged IoT sensors and machine learning techniques to pro
+vide recommendations for crop planting and fertilizer application in Bukid
+non. Targeting key crops such as Ampalaya, Beans (Soybean), Cassava, Corn,
+Eggplant, Sorghum, Squash, Sweet Pepper, Tobacco, and Tomato, the system
+integrated soil health parameters (NPK, pH, moisture, humidity, and tem
+perature), soil and crop data from the Department of Agriculture- Region
+10, and additional online agricultural resources to predict suitable crops and
+recommend fertilizer application. By addressing field-specific variability and
+seasonal dynamics, the proposed system aimed to enhance agricultural pro
+ductivity, reduce resource waste, and promote sustainable farming practices.
+Aligned with the Sustainable Development Goals (SDGs) 2 (Zero Hunger),
+12 (Responsible Consumption and Production), and 15 (Life on Land), this
+research contributed to food security, environmental conservation, and sustain
+able agricultural development in the Philippines.
 	
 	
 \section{Statement of the Problem}
@@ -69,7 +83,7 @@ This study focuses on agricultural areas located in Budkinon, Philippines, where
 	
 The study is geographically limited to selected farms across Bukidnon, ensuring relevance to local soil health characteristics. The system emphasizes the integration of IoT-based soil sensor and machine learning techniques for data analysis and recommendation generation. However, the soil sensor used in this study is limited to seven (7) soil parameters and does not include micronutrients or any soil organic matter. Additionally, real-time continuous soil monitoring is not implemented; instead, the system relies on periodic data collection and analysis. These limitations may affect the granularity of recommendations but are sufficient to demonstrate the feasibility and effectiveness of the proposed system within the defined scope.
 	
-\subsection{Conceptual Framework}
+\section{Conceptual Framework}
 	
 In this section, the study’s conceptual framework is presented through an Input-Process-Output (IPO) model, which outlines the structure of the soil health monitoring, crop and fertilizer recommendation system. The framework integrates multiple components, each playing a vital role in developing an efficient, data-driven solution for sustainable agriculture.
 	
@@ -86,22 +100,22 @@ Transitioning into the Process layer, these raw inputs undergo a rigorous and mu
 	
 Governed by this classification analysis, the Output phase is generated. The system delivers actionable soil health insights alongside high confidence and zone specific primary and alternative crop recommendations. These predictive classifications bridge seamlessly into secondary subsystems that formulate appropriate and crop specific fertilizer application strategies. The operational validity of the entire pipeline is continuously tracked via rigorous performance metrics, including analytical confusion matrices, prediction error monitoring, and F1 score dashboards, which are compiled natively into visual reports and delivered through an accessible user interface. Ultimately, this seamless and data driven cycle equips agricultural operators with the empirical insight required to optimize resource utilization, maximize productivity, and enforce sustainable farming practices.
 	
-\subsection{Theoretical Framework}
+\section{Theoretical Framework}
 	
-This study utilized Precision Agriculture Theory, a strategy that gathers, processes data driven insights to optimize farming practices based on conditions rather than relying on generalized farming practices recommendations, which is supported by the study of Pierre C. Robert states that an integrated farming approach designed to enhance long-term production efficiency, productivity, and profitability while minimizing environmental impacts. It involves using technology and data to optimize farming practices at a site-specific level. The theory highlights the importance of applying the right input, at the right place, at the right time, and in the right amount to maximize productivity while conserving resources. 
-	
-With the integration of IoT sensors which will provide measurements of soil health parameters the precision agriculture theory will be fully operational. The soil parameters will serve as a foundation for the Multi-Criteria Decision Analysis methods to generate actionable recommendations for farmers. Moreover, machine learning boosting algorithms will be used to analyze soil and environmental patterns to predict crop suitability and yield potential. 
-	
-Figure 2 explains the Precision Agriculture Cycle on how farming decisions become data-driven. It starts with acquiring data through IoT sensors and other tools that measure soil and environmental conditions. This data is then processed into insights to understand soil fertility and crop needs. Using these insights, decisions are made with the help of Machine Learning (ML) for prediction and Multi-Criteria Decision Analysis (MCDA) for evaluating multiple factors like soil parameters, climate, and zoning. The next step is taking action, where farmers apply precise fertilizers, choose suitable crops, or adjust irrigation. Finally, the results and learnings feed back into the system, ensuring continuous improvement in productivity, efficiency, and sustainability.
-	
+This study utilized Precision Agriculture Theory, a strategy that gathers, processes data driven insights to optimize farming practices based on conditions rather than relying on generalized farming practices recommendations, which is supported by the study of Pierre C. Robert states that an integrated farming approach designed to enhance long-term production efficiency, productivity, and profitability while minimizing environmental impacts. It involves using technology and data to optimize farming practices at a site-specific level. The theory highlights the importance of applying the right input, at the right place, at the right time, and in the right amount to maximize productivity while conserving resources.
+
+With the integration of IoT sensors which will provide measurements of soil health parameters the precision agriculture theory will be fully operational. The soil parameters will serve as a foundation to generate actionable recommendations for farmers. Moreover, machine learning boosting algorithms will be used to analyze soil and environmental patterns to predict crop suitability and yield potential.
+
+Figure \ref{fig:precisionagriculture} explains the Precision Agriculture Cycle on how farming decisions become data-driven. It starts with acquiring data through IoT sensors and other tools that measure soil and environmental conditions. This data is then processed into insights to understand soil fertility and crop needs. Using these insights, decisions are made with the help of Machine Learning (ML) for prediction. The next step is taking action, where farmers apply precise fertilizers, choose suitable crops, or adjust irrigation. Finally, the results and learnings feed back into the system, ensuring continuous improvement in productivity, efficiency, and sustainability.
+
 \begin{figure}[H]
 	\centering
 	\caption{Precision Agriculture Cycle}
 	\label{fig:precisionagriculture}
 	\includegraphics[width=0.7\textwidth]{figures/PrecisionAgriculture.pdf}
 \end{figure}
-	
-By combining Machine Learning’s predictive capability with MCDA’s structured decision making process, the study applies the principles of precision agriculture in a holistic manner. This ensures that recommendations for crop selection and fertilizer application are data-driven, addressing the variability of soils in Bukidnon. Thus, Precision Agriculture Theory serves as the guiding lens that connects IoT-based data collection and machine learning prediction to support decision-making, ultimately promoting sustainable and efficient farming practices.
+
+By combining Machine Learning’s predictive capability, the study applies the principles of precision agriculture in a holistic manner. This ensures that recommendations for crop selection and fertilizer application are data-driven, addressing the variability of soils in Bukidnon. Thus, Precision Agriculture Theory serves as the guiding lens that connects IoT-based data collection and machine learning prediction to support decision-making, ultimately promoting sustainable and efficient farming practices.
 	
 \section{Definition of Terms}
 	

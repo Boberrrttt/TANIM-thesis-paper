@@ -10,51 +10,53 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces System Architecture of the Data Integration Pipeline}}{57}{figure.caption.13}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Sequential Data Preprocessing Pipeline for Agricultural Soil Records}}{60}{figure.caption.14}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Comparison of Soil Parameter Distributions Before and After Preprocessing}}{62}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Machine Learning Dataset Partition Allocation}}{66}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces TANIM Data Processing Workflow Pipeline}}{70}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Machine Learning Dataset Partition Allocation}}{65}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces TANIM Data Processing Workflow Pipeline}}{69}{figure.caption.17}%
 \contentsline {figure}{\numberline {3.9}{\ignorespaces System Architecture}}{72}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces System Flowchart}}{75}{figure.caption.19}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Software Mobile Application}}{78}{figure.caption.20}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Web Application Flowchart}}{81}{figure.caption.21}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Context-Level Diagram Between the System And The External Entities}}{83}{figure.caption.22}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Data Flow Diagram}}{85}{figure.caption.23}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Use Case Diagram}}{87}{figure.caption.24}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Entity Relationship Diagram}}{92}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces System Flowchart}}{74}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Software Mobile Application}}{77}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Web Application Flowchart}}{80}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Context-Level Diagram Between the System And The External Entities}}{82}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Data Flow Diagram}}{84}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Use Case Diagram}}{86}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Entity Relationship Diagram}}{91}{figure.caption.27}%
 \contentsline {figure}{\numberline {3.17}{\ignorespaces Hardware Design Flowchart}}{93}{figure.caption.28}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Main System Hardware Layout}}{95}{figure.caption.29}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Receiver System Hardware Layout}}{96}{figure.caption.30}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Main Transmitter Schematic Diagram}}{97}{figure.caption.31}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Node 2 and 3 Transmitter Schematic Diagram}}{98}{figure.caption.32}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Node 2 and 3 Transmitter Schematic Diagram}}{99}{figure.caption.33}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces 3D Container Design}}{100}{figure.caption.34}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces LightGBM Model Architecture used in the TANIM system}}{105}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Main System Hardware Layout}}{94}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Receiver System Hardware Layout}}{95}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Main Transmitter Schematic Diagram}}{96}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Node 2 and 3 Transmitter Schematic Diagram}}{97}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Receiver Schematic Diagram}}{98}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces 3D Container Design}}{99}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Admin Dashboard}}{101}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Soil Health Analysis}}{102}{figure.caption.37}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces LightGBM Model Architecture used in the TANIM system}}{107}{figure.caption.38}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Sample Integrated Soil Data Records}}{117}{figure.caption.37}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Data Distribution Comparison Between Original and Augmented Datasets}}{118}{figure.caption.38}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Model Classification Report: Precision, Recall, and F1-Score Breakdown}}{122}{figure.caption.40}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Confusion Matrix of the LightGBM Classifier Across Ten Crop Varieties}}{123}{figure.caption.41}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Precision, Recall, and F1-Score Breakdown per Crop Category}}{124}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Prediction Confidence Distribution of the Optimized Classifier}}{125}{figure.caption.43}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Model Performance Comparison: Baseline vs. Optimized Framework}}{126}{figure.caption.44}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Feature Importance Analysis Measured by Information Gain}}{127}{figure.caption.45}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces TANIM Mobile Application Login Page}}{129}{figure.caption.46}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces TANIM Mobile Application My Farms Page}}{131}{figure.caption.47}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces TANIM Mobile Application Selected Farms Page}}{132}{figure.caption.48}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces TANIM Mobile Application Weather and Crop Selection}}{134}{figure.caption.49}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces TANIM Mobile Application Fertilizer Suggestion and Timeline}}{136}{figure.caption.50}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces TANIM Mobile Application Farm Summary and Option 1}}{138}{figure.caption.51}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces TANIM Mobile Application Option 2, Guide, and Start Button}}{140}{figure.caption.52}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces TANIM Web Application Login Page}}{144}{figure.caption.53}%
-\contentsline {figure}{\numberline {4.17}{\ignorespaces TANIM Web Application Dashboard}}{145}{figure.caption.54}%
-\contentsline {figure}{\numberline {4.18}{\ignorespaces TANIM Web Application Farms Management}}{148}{figure.caption.55}%
-\contentsline {figure}{\numberline {4.19}{\ignorespaces TANIM Web Application Farmers Management}}{149}{figure.caption.56}%
-\contentsline {figure}{\numberline {4.20}{\ignorespaces TANIM Web Application GIS Mapping}}{150}{figure.caption.57}%
-\contentsline {figure}{\numberline {4.21}{\ignorespaces TANIM Web Application Fertilizer Management}}{151}{figure.caption.58}%
-\contentsline {figure}{\numberline {4.22}{\ignorespaces TANIM Web Application Admin Management}}{152}{figure.caption.59}%
-\contentsline {figure}{\numberline {4.23}{\ignorespaces TANIM Web Application in Desktop}}{156}{figure.caption.61}%
-\contentsline {figure}{\numberline {4.24}{\ignorespaces TANIM Web Application in Laptop}}{156}{figure.caption.62}%
-\contentsline {figure}{\numberline {4.25}{\ignorespaces TANIM Web Application in Tablet}}{157}{figure.caption.63}%
-\contentsline {figure}{\numberline {4.26}{\ignorespaces TANIM Web Application in Android}}{158}{figure.caption.64}%
-\contentsline {figure}{\numberline {4.27}{\ignorespaces TANIM Web Application in IOS}}{159}{figure.caption.65}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Soil Health Monitoring Device}}{117}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Comparison of Calibrated Sensor Readings and Soil Test Kit Values}}{124}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Comparison of Calibrated Sensor Readings and Laboratory Reference Values}}{125}{figure.caption.46}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Data Distribution Comparison Between Original and Augmented Datasets}}{130}{figure.caption.49}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Model Classification Report: Precision, Recall, and F1-Score Breakdown}}{133}{figure.caption.51}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Confusion Matrix of the LightGBM Classifier Across Ten Crop Varieties}}{134}{figure.caption.52}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Precision, Recall, and F1-Score Breakdown per Crop Category}}{135}{figure.caption.53}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Prediction Confidence Distribution of the Optimized Classifier}}{136}{figure.caption.54}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Model Performance Comparison: Baseline vs. Optimized Framework}}{137}{figure.caption.55}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Feature Importance Analysis Measured by Information Gain}}{138}{figure.caption.56}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces TANIM Mobile Application Login Page}}{139}{figure.caption.57}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces TANIM Mobile Application My Farms Page}}{141}{figure.caption.58}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces TANIM Mobile Application Selected Farms Page}}{142}{figure.caption.59}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces TANIM Mobile Application Weather and Crop Selection}}{144}{figure.caption.60}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces TANIM Mobile Application Fertilizer Suggestion and Timeline}}{145}{figure.caption.61}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces TANIM Mobile Application Farm Summary and Option 1}}{146}{figure.caption.62}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces TANIM Mobile Application Option 2, Guide, and Start Button}}{148}{figure.caption.63}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces TANIM Web Application Login Page}}{154}{figure.caption.65}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces TANIM Web Application Dashboard}}{155}{figure.caption.66}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces TANIM Web Application Farms Management}}{158}{figure.caption.67}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces TANIM Web Application Farmers Management}}{159}{figure.caption.68}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces TANIM Web Application GIS Mapping}}{160}{figure.caption.69}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces TANIM Web Application Fertilizer Management}}{161}{figure.caption.70}%
+\contentsline {figure}{\numberline {4.24}{\ignorespaces TANIM Web Application Admin Management}}{162}{figure.caption.71}%
+\contentsline {figure}{\numberline {4.25}{\ignorespaces System Field Testing}}{173}{figure.caption.78}%
+\contentsline {figure}{\numberline {4.26}{\ignorespaces System Logs}}{174}{figure.caption.79}%
+\contentsline {figure}{\numberline {4.27}{\ignorespaces System Usability Scale (SUS) Evaluation Results}}{176}{figure.caption.80}%
 \addvspace {10\p@ }
 \contentsfinish 

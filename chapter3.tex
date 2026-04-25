@@ -22,22 +22,22 @@ In this chapter, the researchers outlined the methodology used to develop a soil
 	
 	Once implementation is completed, the testing phase is conducted in the selected study area, where soil data are collected and prediction accuracy is evaluated. Zoning-based crop and fertilizer recommendations are validated against reference data and observed field conditions. The validation phase ensures system reliability through quantitative accuracy assessment and qualitative feedback on usability. Finally, the deployment and maintenance phase outlines potential large-scale application across Region\~{}10, including recommendations for system improvement, scalability, and long-term sustainability.
 
-	This study follows a modified waterfall research model to guide the development of the IoT system shown in figure 4. The modified waterfall model allows an iteration to the previous phase for verification and validation, intended mainly for connecting stages. The process begins with the requirements gathering, in which the system will collect comprehensive data from the Department of Agriculture (DA) and credible online datasets. The datasets include zoning information and soil parameters, as well as crop-specific requirements for growth conditions. Moreover, all datasets will be integrated with the DA’s zoning information.
+	This study follows a modified waterfall research model to guide the development of the IoT system shown in figure 4. The modified waterfall model allows an iteration to the previous phase for verification and validation, intended mainly for connecting stages. The process begins with the requirements gathering, in which the system collected comprehensive data from the Department of Agriculture (DA) and credible online datasets. The datasets include zoning information and soil parameters, as well as crop-specific requirements for growth conditions. Moreover, all datasets was integrated with the DA’s zoning information.
 	 
-	It then proceeds to the requirements analysis, which identifies the need for soil health monitoring, crop prediction, and fertilizer recommendation in the selected field in Region 10. A gradient boosting algorithm will be employed using both sensor and zoning data inputs. Soil health prediction will classify soil quality levels, while crop yield forecasting will leverage an optimized machine learning model with metaheuristic-based feature selection to predict expected productivity. Fertilizer recommendations will be generated based on predicted soil nutrient deficiencies, crop requirements, and established agronomic thresholds derived from sensor and zoning data. Feedback in this stage may return to the requirements gathering phase if analysis reveals missing data, incorrect assumptions, or the need for additional crop or soil parameters to properly define system requirements.
+	It then proceeds to the requirements analysis, which identifies the need for soil health monitoring, crop prediction, and fertilizer recommendation in the selected field in Region 10. A gradient boosting algorithm was employed using both sensor and zoning data inputs. Soil health prediction classifies soil quality levels, while crop yield forecasting was used to leverage an optimized machine learning model with metaheuristic-based feature selection to predict expected productivity. Fertilizer recommendations was generated based on predicted soil nutrient deficiencies, crop requirements, and established agronomic thresholds derived from sensor and zoning data. Feedback in this stage may return to the requirements gathering phase if analysis reveals missing data, incorrect assumptions, or the need for additional crop or soil parameters to properly define system requirements.
 	
-	The next phase is the system design, where the flow of the overall system is defined with detailed descriptions on how the system will work on implementing the IoT-based ML Integration system.  This phase involves a comprehensive overview of the system design, architecture, the flowchart of the hardware and software that will be used in this system, as well as the web and mobile interfaces. The design ensures seamless integration of hardware components for data acquisition, software modules for data analysis and prediction, and user interfaces for monitoring control. The feedback may return to the requirements analysis stage if the proposed design cannot fully implement the defined requirements such as limitations in hardware integration or software module capabilities.
+	The next phase is the system design, where the flow of the overall system is defined with detailed descriptions on how the system works on implementing the IoT-based ML Integration system.  This phase involves a comprehensive overview of the system design, architecture, the flowchart of the hardware and software that was used in this system, as well as the web and mobile interfaces. The design ensures seamless integration of hardware components for data acquisition, software modules for data analysis and prediction, and user interfaces for monitoring control. The feedback may return to the requirements analysis stage if the proposed design cannot fully implement the defined requirements such as limitations in hardware integration or software module capabilities.
 	
 	This is followed by the implementation phase, which involves the development of the IoT system, training and testing of the machine learning model, in combination with multi-criteria decision analysis methods, and the configuration of hardware and software. Field nodes gather and preprocess soil data, then transmit it to a central server for storage, predictive analytics, and generation of crop suitability and fertilizer recommendations. A web dashboard visualizes soil health, farmer data, nutrient trends, weather, and zoning maps. The results in this stage can return to the system design phase if there are software or hardware integration challenges encountered, and it requires adjustments in design to ensure proper functionality.
 	
 	Once completed, the testing phase is carried out in the selected area where soil data is gathered and prediction accuracy is measured. In this phase, the zoning-based recommendations are also validated. The validation phase then ensures reliability through quantitative accuracy testing and qualitative feedback on usability. Feedback from testing may return to the implementation phase to correct software bugs, or adjust hardware configurations for better performance before validation.
 
 \section{Requirements Gathering}
-	The system requires comprehensive data collection to provide accurate, multi-cropping and fertilizer recommendation based on farming zoning in Budkinon, Philippines. Data will be sourced from the Department of Agriculture (DA), and credible online datasets. This includes detailed zoning information and soil parameters. To be included also are crop-specific requirements and growth conditions. Gathering these datasets ensures that the recommendation system is grounded in both environmental and agricultural best practices.
+	The system requires comprehensive data collection to provide accurate, multi-cropping and fertilizer recommendation based on farming zoning in Budkinon, Philippines. Data was sourced out from the Department of Agriculture (DA), and credible online datasets. This includes detailed zoning information and soil parameters. To be included also are crop-specific requirements and growth conditions. Gathering these datasets ensures that the recommendation system is grounded in both environmental and agricultural best practices.
 	 
 The types of data required encompass zoning information, and detailed crop profiles. Zoning data defines farming area, and land use classifications, while soil health parameters includes pH, NPK, salinity, moisture, and temperature. To be included as well is climate data such as historical rainfall, temperature, humidity, and forecast models which provide insights into environmental conditions that affect crop growth.
 	
-In preparation for system integration, the data will undergo a series of preprocessing steps. Missing sensor readings and data gaps will be addressed through interpolation, while noisy or incorrect data will be identified and removed to maintain integrity. Soil and climate parameters will be normalized into uniform ranges to enhance the performance of predictive models. Once cleaned and standardized, all datasets will be integrated with the Department of Agriculture’s zoning information to ensure that recommendations are localized and relevant to the specific conditions in Bukidnon.
+In preparation for system integration, the data undergoes a series of preprocessing steps. Missing sensor readings and data gaps was addressed through interpolation, while noisy or incorrect data was identified and removed to maintain integrity. Soil parameters was normalized into uniform ranges to enhance the performance of predictive models. Once cleaned and standardized, all datasets was integrated with the Department of Agriculture’s zoning information to ensure that recommendations are localized and relevant to the specific conditions in Bukidnon.
 	
 \subsection{Research Setting}
 	\begin{figure}[H]
@@ -52,11 +52,11 @@ Farmers in these communities commonly use a mix of conventional and semi-modern 
 
 	
 \section{Requirements Analysis}
-The system requires the development and implementation of a machine learning component capable of performing soil health prediction, and  crop recommendation. Machine Learning boosting algorithms will be employed for these tasks, using both sensor and zoning data. The sensors will collect important soil information such as Nitrogen (N), Phosphorus (P), Potassium (K), pH level, moisture, temperature, and salinity. At the same time, zoning data from the Department of Agriculture will provide information about the type of land, elevation, and climate conditions of the area. By combining these two data sources, the system can better understand the relationship between soil condition and the environment. Based on the collected data, the machine learning model will classify soil quality levels, while crop yield forecasting will leverage an optimized machine learning model by identifying patterns and relationships between soil parameters and environmental factors. To make predictions more accurate, the model will use a metaheuristic-based feature selection that focuses on the most relevant data and removes unnecessary or less useful information. 
+The system requires the development and implementation of a machine learning component capable of performing soil health prediction, and  crop recommendation. Machine Learning boosting algorithms was employed for these tasks, using both sensor and zoning data. The sensors collects important soil information such as Nitrogen (N), Phosphorus (P), Potassium (K), pH level, moisture, temperature, and salinity. By obtaining the data sources, the system can better understand the relationship between soil condition and the environment. Based on the collected data, the machine learning model classifies the soil quality levels, while crop yield forecasting will leverage an optimized machine learning model by identifying patterns and relationships between soil parameters and environmental factors. To make predictions more accurate, the model uses a metaheuristic-based feature selection that focuses on the most relevant data and removes unnecessary or less useful information. 
 	
-After analyzing the soil health parameters and producing crop recommendations, the system will generate fertilizer recommendations based on predicted soil nutrient deficiencies, crop nutrient requirements, and established agronomic guidelines. The system will determine the appropriate fertilizer type and application rate suited for specific field conditions. To make sure the machine learning model produces reliable results, the dataset will be divided into three parts: $70\%$ for training, $15\%$ for validation, and $15\%$ for testing. This ensures that the system learns effectively from the data, maintains accuracy, and avoids overfitting.
+After analyzing the soil health parameters and producing crop recommendations, the system generates fertilizer recommendations based on predicted soil nutrient deficiencies, crop nutrient requirements, and established agronomic guidelines. The system determines the appropriate fertilizer type and application rate suited for specific field conditions. To make sure the machine learning model produces reliable results, the dataset was divided into three parts: $70\%$ for training, $15\%$ for validation, and $15\%$ for testing. This ensures that the system learns effectively from the data, maintains accuracy, and avoids overfitting.
 	
-The system will undergo proper evaluation using both quantitative and qualitative approaches. Quantitative assessment will include metrics such as accuracy, precision, recall, and F1-score for soil health prediction. R², RMSE, and MAE for crop yield forecasting and consistency ratios and ranking stability indices for crop recommendation. Conducting these metric evaluations is important because they measure how well the machine learning model performs and how reliable its predictions are. By analyzing these values, the researchers can identify the model’s strengths, detect errors, and make adjustments to improve performance before deployment. Cross-validation will ensure model robustness across different crop zones.Meanwhile, qualitative evaluation will involve focus group discussions and structured interviews with farmers and agricultural technicians in Region 10 to assess usability, reliability, and practical value. Feedback from these sessions will guide further refinement of the system to ensure its effectiveness in real-world agricultural applications.
+The system undergoes proper evaluation using both quantitative and qualitative approaches. Quantitative assessment includes metrics such as accuracy, precision, recall, and F1-score for crop recommendation. RMSE, and MAE was used for consistency ratios and ranking stability for soil health readings. Conducting these metric evaluations is important because they measure how well the machine learning model performs and how reliable its predictions are. By analyzing these values, the researchers can identify the model’s strengths, detect errors, and make adjustments to improve performance before deployment. Cross-validation ensures model robustness across different crop zones.Meanwhile, qualitative evaluation involves focus group discussions and structured interviews with farmers and agricultural technicians in Region 10 to assess usability, reliability, and practical value. Feedback from these sessions will guide further refinement of the system to ensure its effectiveness in real-world agricultural applications.
 	
 \subsection{User Definition}
 Following the requirements analysis, the system’s users were defined as follows:
@@ -156,13 +156,12 @@ The specific user requirements are summarized in Table 1.
 	This section describes the procedures and methods used to gather, integrate, and prepare data for the system's operation and machine learning components. It covers the collection of soil, environmental, and geographical data from various sources, as well as the acquisition of historical datasets. Furthermore, it outlines the processes involved in data integration, preprocessing, feature engineering, and dataset preparation to ensure data quality and suitability for analysis. The section also presents how the processed data is stored and managed, and how it flows through the system to support accurate crop and fertilizer recommendations.
 	
 \subsection{Soil Data Collection}
-Soil data collection serves as the primary input of the system, providing essential information for crop recommendation and soil health analysis. In this study, soil data were collected through a combination of IoT-based sensors and secondary data from the Department of Agriculture (DA) Region 10 to ensure both real-time and historical coverage. 
+Soil data collection is the main input of the system, providing the information needed for crop recommendation and soil analysis. In this study, the primary dataset used for the machine learning model comes from the Department of Agriculture (DA) Region 10. This dataset includes recorded soil parameters such as nitrogen (N), phosphorus (P), potassium (K), soil pH, moisture, temperature, and salinity.
+These records are used to train the Light Gradient Boosting Machine (LGBM) model so it can learn patterns between soil conditions and suitable crops. Since the data comes from verified sources, it helps improve the accuracy and reliability of the model.
 
-The IoT sensing unit, integrated with an ESP32 microcontroller, measures key soil parameters such as nitrogen (N), phosphorus (P), potassium (K), soil pH, moisture, temperature, and salinity, which are critical in determining soil fertility and crop suitability. Data collection follows a periodic sampling approach, where readings are captured at set intervals and stored digitally for consistency and analysis. 
+In addition, the system is designed to support IoT-based soil data collection using sensors connected to an ESP32 microcontroller. These sensors can measure real-time soil conditions in the field. However, in the current implementation, this data is mainly intended for crop recommendation and for future dataset expansion rather than for training the model.
 
-To enhance data reliability and coverage, historical soil datasets and laboratory records from DA Region 10 were also incorporated. This combination of real-time sensor data and secondary sources ensures a more comprehensive and representative dataset for subsequent processing and machine learning tasks. 
-
-Overall, the collected soil data form the foundation of the system, enabling accurate analysis, crop prediction, and fertilizer recommendation. 
+Overall, the soil data collected from the DA serves as the foundation of the system, while IoT integration provides an opportunity to improve real-time analysis for crop recommendation and enhance the dataset in future developments.
 
 \subsection{Environmental and Weather Data Collection}
 Soil and simple environmental readings from the field are sent to the ML service as one list of numbers. The first values match what the crop model was trained on (organic matter, phosphorus, potassium, and pH). If the device sends more values, those can include things like temperature, moisture, and electrical conductivity. After each prediction, the system saves a pending snapshot that holds the numbers, the full request, an optional farm id, and optional latitude and longitude. The app can then pull that single snapshot instead of combining data from many separate calls.
@@ -180,7 +179,7 @@ In this study, the term “zoning” means organizing farms in space, not offici
 \subsection{Historical and External Data Acquisition}
 The main purpose of historical data collection is to build a strong foundation for training the machine learning models that control the crop and fertilizer recommendations of the system. While the Internet of Things (IoT) sensor network, powered by the ESP32 microcontroller, is highly capable of capturing local real-time data, machine learning algorithms need substantial historical context to recognize complex agricultural patterns. Therefore, additional historical data is collected directly from the primary dataset titled \textit{Consolidated Soil Info (RSL) 2023 to 2025 USTP CPE4}.
 
-This core document combines official soil analysis reports and agricultural data gathered by the Regional Soils Laboratory (RSL) of the Philippine Department of Agriculture spanning the years 2023 to 2025. The collected dataset contains vital features, specifically basic soil parameters such as Nitrogen, Phosphorus, Potassium levels, pH, moisture, and temperature. It also includes the corresponding crop types traditionally grown under those exact conditions and standard fertilizer baselines. The exact features extracted for the system database and their respective categories are detailed in \textbf{Table \ref{tab:rsl_features}}.
+This core document combines official soil analysis reports and agricultural data gathered by the Regional Soils Laboratory (RSL) of the Philippine Department of Agriculture spanning the years 2023 to 2025. The collected dataset contains vital features, specifically basic soil parameters such as Nitrogen, Phosphorus, Potassium levels, pH, moisture, and temperature. It also includes the corresponding crop types traditionally grown under those exact conditions and standard fertilizer baselines. The exact features extracted for the system database and their respective categories are detailed in Table \ref{tab:rsl_features}.
 
 \begin{table}[ht]
 	\caption{Tabular Summary of Features Extracted from the RSL Dataset}
@@ -196,7 +195,9 @@ This core document combines official soil analysis reports and agricultural data
 	\end{tabular}
 \end{table}
 
-To ensure the models can generalize well across local environmental conditions, the combined document includes a large number of distinct records to create a realistically sized data collection. Furthermore, strict data relevance rules built into this dataset guarantee that the information is restricted exclusively to Region 10 (Northern Mindanao). This focuses specifically on its provinces, including Bukidnon, Misamis Oriental, Lanao del Norte, Misamis Occidental, and Camiguin. As illustrated in \textbf{Figure \ref{fig:soil_distribution}}, the distribution of these records across the five provinces reflects the agricultural density of the region, with Bukidnon providing the most significant volume of data.
+To ensure the models can generalize well across local environmental conditions, the combined document includes a large number of distinct records to create a realistically sized data collection. Furthermore, strict data relevance rules built into this dataset guarantee that the information is restricted exclusively to Region 10 (Northern Mindanao). This focuses specifically on its provinces, including Bukidnon, Misamis Oriental, Lanao del Norte, Misamis Occidental, and Camiguin. 
+
+As illustrated in Figure \ref{fig:soil_distribution}, the distribution of these records across the five provinces reflects the agricultural density of the region, with Bukidnon providing the most significant volume of data.
 
 	\begin{figure}[H]
 	\centering
@@ -208,16 +209,15 @@ To ensure the models can generalize well across local environmental conditions, 
 Before the data is formally entered into the primary database of the system, early validation procedures are performed. These involve automated limit checking against the laboratory records to confirm structural correctness and data credibility. This process ensures that the dataset remains a high-quality reference for training the system's recommendation engine.
 
 \subsection{Data Integration}
-The primary objective of the data integration phase is to unify multiple, heterogeneous data streams into a single, cohesive dataset suitable for advanced computational analysis and machine learning training. By centralizing disparate information into a uniform structure, the system ensures that the predictive models can process environmental, historical, and real-time variables simultaneously. This integration is essential for creating a holistic representation of the agricultural environment, bridging the gap between local sensor observations and broader regional contexts.
+The primary objective of the data integration phase is to unify multiple, heterogeneous data streams into a single, cohesive dataset suitable for advanced computational analysis and machine learning training. By centralizing disparate information into a uniform structure, the system ensures that the predictive models can process environmental, and historical variables simultaneously. This integration is essential for creating a holistic representation of the agricultural environment, bridging the gap between local sensor observations and broader regional contexts.
 
-As illustrated in the integration pipeline in \textbf{Figure \ref{fig:integration_pipeline}}, the system aggregates data from both real-time and external sources. Real-time data is captured via an ESP32 IoT sensor node, which transmits continuous readings of Nitrogen (N), Phosphorus (P), Potassium (K), pH levels, soil moisture, and temperature. These hardware-derived metrics are combined with external data streams, including localized weather updates retrieved through HTTP/REST APIs and the validated Consolidated Soil Info (RSL) 2023--2025 historical dataset. This multi-source approach allows the framework to factor in both immediate soil conditions and long-term agricultural trends.
+As illustrated in the integration pipeline in Figure \ref{fig:integration_pipeline}, the system aggregates data from external sources. The pipeline depicts the convergence of LoRa-based sensor data, REST-based weather APIs, and batch-imported historical records into a unified dataset. Real-time data is captured via an ESP32 IoT sensor node, which transmits continuous readings of Nitrogen (N), Phosphorus (P), Potassium (K), pH levels, soil moisture, and temperature. These hardware-derived metrics are combined with external data streams, including localized weather updates retrieved through HTTP/REST APIs and the validated Consolidated Soil Info (RSL) 2023--2025 historical dataset. This multi-source approach allows the framework to factor in both immediate soil conditions and long-term agricultural trends.
 
 \begin{figure}[H]
 	\centering
 	\caption{System Architecture of the Data Integration Pipeline}
 	\includegraphics[width=0.8\textwidth]{figures/IntegrationPipeline.pdf}
 	\label{fig:integration_pipeline}
-	\small \\ \textit{Note.} The pipeline depicts the convergence of LoRa-based sensor data, REST-based weather APIs, and batch-imported historical records into a unified dataset.
 \end{figure}
 
 To ensure contextual accuracy, the system employs rigorous temporal and spatial synchronization. Data ingestion occurs through different protocols depending on the source: LoRa transmission for hardware sensors, RESTful requests for weather data, and batch imports for historical records. Once ingested, these data points are programmatically aligned based on matching timestamps and geographic coordinates. This synchronization forms a complete environmental snapshot, ensuring that a specific sensor reading is correctly paired with the weather conditions and historical soil health data relevant to that exact time and location.
@@ -229,7 +229,7 @@ The culmination of this pipeline is the creation of a Unified Target Dataset. Th
 \subsection{Data Preprocessing}
 The primary objective of data preprocessing within this framework is to systematically refine and clean the integrated dataset, thereby reducing algorithmic bias and ensuring high accuracy during the subsequent machine learning training phase. Given that the machine learning models rely on the structural integrity of the input data to generate reliable crop and fertilizer recommendations, this phase acts as a critical filter. It transforms raw, heterogeneous data into a standardized format that facilitates efficient mathematical computation and pattern recognition. 
 
-The initial stage involves rigorous data cleaning to address missing or empty values. As illustrated in the sequential pipeline in \textbf{Figure \ref{fig:SequentialPreprocessingPipeline}}, these gaps are handled based on the statistical variation of the feature. Depending on the feature's distribution, these gaps are addressed through mathematical substitution, such as applying the feature mean or using linear interpolation, or through the systematic removal of records showing excessive missing data to maintain dataset integrity. 
+The initial stage involves rigorous data cleaning to address missing or empty values. As illustrated in the sequential pipeline in Figure \ref{fig:SequentialPreprocessingPipeline}, these gaps are handled based on the statistical variation of the feature. Depending on the feature's distribution, these gaps are addressed through mathematical substitution, such as applying the feature mean or using linear interpolation, or through the systematic removal of records showing excessive missing data to maintain dataset integrity. 
 
 \begin{figure}[H]
 	\centering
@@ -240,7 +240,7 @@ The initial stage involves rigorous data cleaning to address missing or empty va
 
 Following the initial cleaning, noise and outlier handling mechanisms are applied to filter unusual data points generated by temporary sensor glitches or transmission errors. This process employs statistical limits, specifically Z-score thresholding, to identify and discard extreme values that could otherwise skew the decision boundaries of the model. The impact of this process is evident in Figure 3, where the "Before Preprocessing" box plots indicate several extreme outliers in the Nitrogen (N) and Phosphorus (P) features. By removing these points, the system ensures that the training process is grounded in realistic agricultural conditions rather than technical anomalies. 
 
-To ensure that variables with naturally wide numerical ranges do not disproportionately dominate the learning algorithm, normalization and scaling techniques are utilized. As shown in the comparison in \textbf{Figure \ref{fig:BoxplotComparison}}, soil parameters such as Potassium (K) and Nitrogen (N) often exist on scales significantly different from Temperature or Moisture. Using a standard scaler, these continuous numerical features are transformed into a common scale where the mean is 0 and the standard deviation is 1. This standardization is crucial for the stability and convergence of the machine learning algorithms, as it allows the model to assign appropriate weights to each feature without being influenced by its raw magnitude. 
+To ensure that variables with naturally wide numerical ranges do not disproportionately dominate the learning algorithm, normalization and scaling techniques are utilized. As shown in the comparison in Figure \ref{fig:BoxplotComparison}, soil parameters such as Potassium (K) and Nitrogen (N) often exist on scales significantly different from Temperature or Moisture. Using a standard scaler, these continuous numerical features are transformed into a common scale where the mean is 0 and the standard deviation is 1. This standardization is crucial for the stability and convergence of the machine learning algorithms, as it allows the model to assign appropriate weights to each feature without being influenced by its raw magnitude. 
 
 \begin{figure}[H]
 	\centering
@@ -265,15 +265,14 @@ The explicit encoding of these soil-crop relationships reduced the computational
 \subsection{Dataset Preparation for Machine Learning}
 The primary objective of dataset preparation is to establish the final structural configuration of the preprocessed data, ensuring it is partitioned and formatted for the iterative training and evaluation cycles of the machine learning models. This phase represents the transition from static data storage to an active learning format, where information is structured to minimize bias and maximize the model's ability to generalize across diverse agricultural scenarios.
 
-A fundamental component of this phase is dataset splitting, where the unified data is stratified to maintain representative class distributions across all subsets. As illustrated in \textbf{Figure \ref{fig:DataSplit}}, the dataset is divided into three definitive partitions: 70\% of the data is allocated for direct model training, 15\% is utilized for validation to systematically tune hyperparameters, and the remaining 15\% is strictly reserved for blind testing to evaluate final real-world performance.
-
 \begin{figure}[H]
 	\centering
 	\caption{Machine Learning Dataset Partition Allocation}
 	\label{fig:DataSplit}
-	\includegraphics[width=0.8\textwidth]{figures/DataSplit.pdf}
-	\small \\ \textit{Note.} The 70-15-15 split ensures sufficient data for training while maintaining independent sets for tuning and final evaluation.
+	\includegraphics[width=0.55\textwidth]{figures/DataSplit.pdf}
 \end{figure}
+
+A fundamental component of this phase is dataset splitting, where the unified data is stratified to maintain representative class distributions across all subsets. As illustrated in Figure \ref{fig:DataSplit}, the dataset is divided into three definitive partitions: 70\% of the data is allocated for direct model training, 15\% is utilized for validation to systematically tune hyperparameters, and the remaining 15\% is strictly reserved for blind testing to evaluate final real-world performance. The 70-15-15 split ensures sufficient data for training while maintaining independent sets for tuning and final evaluation.
 
 Concurrent with this partitioning is the execution of precise data labeling. The feature space, which includes the eight engineered soil and environmental metrics, is distinctly separated from the target variables. This frames the system's objectives into two distinct paths: crop recommendation is treated as a discrete multiclass classification problem, while fertilizer recommendations are mapped as specific quantitative output variables.
 
@@ -285,24 +284,25 @@ The system utilizes a standard relational database management system, specifical
 Security and scalability are integral to the data management strategy of the system. User authentication is secured through strong cryptographic hashing for passwords, while session management is handled via a dual-token system consisting of short-lived access tokens and longer-lived refresh tokens. These tokens are stored within secure on-device storage on the mobile platform and verified against secrets maintained in the server configuration. Furthermore, the hosting environment implements Row-Level Security (RLS) policies to ensure that users are restricted to accessing only their authorized data subsets. To accommodate increasing traffic and data volume, the system employs connection pooling, stateless API instances capable of horizontal scaling behind a load balancer, and paginated data retrieval to minimize latency and server overhead. Consistent data integrity is maintained through automated backup protocols managed by the database provider, ensuring recovery in the event of system failure.
 
 \subsection{Data Processing Workflow}
-	The TANIM system employs a multi-stage data pipeline designed to transform raw environmental signals into actionable agricultural intelligence. This workflow integrates physical sensing, cloud-based data management, and advanced machine learning analytics to provide decision-support tools for both farmers and regional agricultural authorities. As illustrated in \textbf{Figure \ref{fig:DataProcessingWorkflow}}, the comprehensive data flow, from initial acquisition to end-user dissemination, follows a logical progression through hardware interfacing, cloud integration, and predictive modeling.
+	The TANIM system employs a multi-stage data pipeline designed to transform raw environmental signals into actionable agricultural intelligence. This workflow integrates physical sensing, cloud-based data management, and advanced machine learning analytics to provide decision-support tools for both farmers and regional agricultural authorities. 
 	
 	\begin{figure}[H]
 		\centering
 		\caption{TANIM Data Processing Workflow Pipeline}
 		\includegraphics[width=0.7\textwidth]{figures/DataProcessingWorkflow.png}
 		\label{fig:DataProcessingWorkflow}
-		\small \\ \textit{Note.} The workflow demonstrates the transition from raw sensor acquisition to the generation of agricultural insights.
 	\end{figure}
 	
-	The primary stage of the workflow involves the high-fidelity collection of soil parameters at the physical layer. The system utilizes a multi-parameter soil sensor to monitor Nitrogen (N), Phosphorus (P), Potassium (K), pH, moisture, salinity, and temperature, all of which are interfaced with an ESP32 microcontroller. To ensure data integrity during local transmission, a MAX485 module is employed to convert RS-485 differential signals to TTL-compatible logic for the microcontroller. These data packets are subsequently encapsulated and transmitted via the LoRa (Long Range) protocol to a central gateway. This modulation technique is specifically selected to ensure reliable connectivity in topographically challenging or remote agricultural zones where traditional cellular infrastructure is often insufficient. 
+	Figure \ref{fig:DataProcessingWorkflow} illustrates the comprehensive data flow, from initial acquisition to end-user dissemination, following a logical progression through hardware interfacing, cloud integration, and predictive modeling. The workflow demonstrates the transition from raw sensor acquisition to the generation of agricultural insights.
+	
+	The primary stage of the workflow involves the high-fidelity collection of soil parameters at the physical layer. The system utilizes a multi-parameter soil sensor to monitor Nitrogen (N), Phosphorus (P), Potassium (K), pH, moisture, salinity, and temperature, all of which are interfaced with an ESP32 microcontroller. To ensure data integrity during local transmission, a MAX485 module is employed to convert RS-485 differential signals to TTL-compatible logic for the microcontroller. These data packets are subsequently encapsulated and transmitted via the LoRa (Long Range) protocol to a central gateway. This modulation technique is specifically selected to ensure reliable connectivity in topographically challenging or remote agricultural zones where traditional cellular infrastructure is often insufficient.
 	
 	Upon receipt at the gateway, the data is forwarded to a Firebase cloud database for centralized management and refinement. During this phase, the system performs rigorous data cleaning by executing filtering algorithms to mitigate electrical noise and remove statistical outliers from the raw sensor readings. Furthermore, a data fusion process contextualizes the real-time sensor data by integrating it with secondary datasets. These include meteorological information, such as precipitation and humidity acquired via external APIs, and geospatial zoning maps provided by the Department of Agriculture (DA) Region 10.
 	
 	The analytical core of the system leverages a LightGBM algorithm, a gradient boosting framework utilized for its high efficiency and superior performance with tabular agricultural datasets. The process begins with metaheuristic-based feature selection to identify the most significant soil and climatic variables, thereby reducing dimensionality and improving model generalization. The predictive engine then performs dual-task analytics, which include classifying soil health status based on established agronomic thresholds and forecasting crop suitability to optimize regional yield performance.
 	
 \section{System Design}
-In this section, the flow of the overall system is defined with detailed descriptions on how the system will work on implementing the IoT-based ML integration system. This involves a comprehensive overview of the system design and architecture, and the flowchart of the hardware and software that will be used in this system. The design ensures seamless integration of hardware components for  data acquisition, software modules for data analysis and prediction, and user interfaces for monitoring and control.
+In this section, the flow of the overall system is defined with detailed descriptions on how the system will work on implementing the IoT-based ML integration system. This involves a comprehensive overview of the system design and architecture, and the flowchart of the hardware and software that was used in this system. The design ensures seamless integration of hardware components for  data acquisition, software modules for data analysis and prediction, and user interfaces for monitoring and control.
 	
 	\subsection{System Architecture}
 	\begin{figure}[H]
@@ -331,7 +331,7 @@ The TANIM Web App is built for agricultural authorities. It uses Supabase for th
 		\centering
 		\caption{System Flowchart}
 		\label{fig:SystemFlowchart}
-		\includegraphics[width=1\textwidth]{figures/SystemFlowchart.pdf}
+		\includegraphics[width=0.9\textwidth]{figures/SystemFlowchart.pdf}
 	\end{figure}
 	
 The figure \ref{fig:SystemFlowchart} presents the operational workflow of the proposed soil health monitoring and recommendation system, highlighting the data flow from the field device to the end-user applications. The process initiates at the sensing stage, where the ESP32 microcontroller, powered through a solar energy management unit, interfaces with soil sensors to capture essential soil parameters, including Nitrogen, Phosphorus, and Potassium (NPK), pH, moisture, temperature, and soil salinity. These parameters are critical indicators of soil fertility and crop suitability. Once collected, the data is processed locally by the ESP32 to ensure efficient packaging before transmission. Leveraging LoRa technology, the device transmits the data wirelessly over long distances to a gateway, which serves as the intermediary link between the sensing unit and the cloud infrastructure. The gateway then forwards the collected data to a cloud database, ensuring reliable and scalable data storage for subsequent analysis.
@@ -349,16 +349,14 @@ An integral component of the workflow is the feedback mechanism incorporated wit
 		\includegraphics[width=1\textwidth]{figures/softFlow.pdf}
 	\end{figure}
 	
-The figure \ref{fig:MobileFlowchart} illustrates the workflow of the farming recommendation system, highlighting the interaction between farmers and the application in obtaining crop suggestions tailored to soil and weather conditions. The process begins with user authentication, wherein the farmer logs into the system using their credentials. The application validates these credentials against the stored records in the database, ensuring secure access. If the credentials are incorrect, the system prompts the user to re-enter valid information, thereby safeguarding the platform against unauthorized access. Upon successful login, the farmer is redirected to the dashboard, which serves as the central interface for accessing personalized farm data and system functionalities.
-	
-From the dashboard, the farmer navigates to the “My Farms” section, where the application consolidates and displays farm-specific data. This includes soil health parameters gathered from IoT-enabled sensors and environmental information derived from integrated weather forecasting services. The system then processes this combined dataset using its analytical and decision-making algorithms to generate a list of recommended crops that are most suitable for the prevailing soil and weather conditions. By leveraging both real-time and contextual data, the system ensures that the recommendations are accurate, adaptive, and relevant to the farmer’s specific location and situation. 
-	
-In areas where internet connectivity is limited, the application supports an offline mode that allows farmers to continue accessing previously stored data and recommendations. This feature ensures uninterrupted usability by caching essential farm information, soil records, and the most recent crop recommendations on the device. Once the connection is restored, the system automatically synchronizes any new data and updates the stored records in the cloud. Through this mechanism, farmers in remote areas can still make informed decisions and manage their farms effectively, even without continuous internet access.
-	
-Once the recommendations are presented, the farmer can review the options and select the crop that aligns with their goals, preferences, and available resources. Following this selection, the system provides advanced features designed to further support farm management. These include multicrop suggestions, which propose crop diversification strategies for risk mitigation and sustainable land use, as well as a detailed crop planting timeline that outlines optimal planting and cultivation schedules. Such features are aimed at enhancing farming efficiency, improving resource allocation, and maximizing yield potential.
-	
-The final stage of the workflow involves the farmer applying the recommendations provided by the system. By combining data-driven crop selection with structured guidance on crop management, the system enables farmers to initiate the farming process with greater confidence and scientific support. This workflow underscores the system’s capacity to guide users from initial login and farm data access to informed decision-making and implementation in the field. Ultimately, the integration of secure user access, real-time soil and weather data, intelligent recommendation algorithms, and decision support tools demonstrates how the farming recommendation system contributes to improved agricultural productivity and long-term sustainability.
-	
+The figure \ref{fig:MobileFlowchart} illustrates the workflow of the TANIM mobile application for farmers, highlighting how the farmer and the app interact from sign-in through farm choice, session handling, and crop management steps. The process begins with user authentication, wherein the farmer logs in with their credentials. The app checks whether the login is successful. If it is not, the user is returned to the login step so that only a verified session can proceed, which helps protect the account. Upon successful login, the farmer is taken to the My farms area and from there must select a specific farm, which sets the context for the rest of the path.
+
+The flow then tests whether the farmer has already started farming for that selection. If farming has not started, the app guides the farmer to select a crop from recommendations informed by soil health, and that choice is treated as the selected crop in the system. The user then uses the Start farming action, after which the illustrated workflow reaches its end. This path describes the situation where a new session of work is opened on a plot. If farming has already started, the app first presents soil health, the selected crop, and fertilizer data for the current farming session, so the user can see the state of active work before any further action.
+
+A second question appears at this point, asking whether the farmer wants to end farming. If the answer is no, the flow goes directly to the end without passing again through crop selection and start. If the answer is yes, the farmer is steered back through selection of a crop on the basis of soil health, again as the selected crop, followed by Start farming, and then the same end of the run as in the new-session branch. In effect, the diagram shows two ways to move from login to closure: a straight path for someone who is only beginning, and a longer path for someone who is already in a session and can either close the run after viewing data or end farming in a way that lines up with choosing a crop and starting again.
+
+Viewed as a whole, the workflow underlines the order in which the app enforces access, then farm scope, then whether a session is active, and only then the mix of data views, the decision to end farming, and the steps for crop choice and the start of farming. This sequence clarifies how TANIM links secure entry, per-farm navigation, and session state to the screens that either introduce the selected crop and a new start, or let the user finish without repeating those steps when they choose not to end farming. The figure therefore supports a reading of the system as structured around the farmer’s situation at each point rather than a single static screen, from first login through the possible loop that connects ongoing sessions to the next round of selection and the start of farming.
+
 	\begin{figure}[H]
 		\centering
 		\caption{Web Application Flowchart}
@@ -366,11 +364,11 @@ The final stage of the workflow involves the farmer applying the recommendations
 		\includegraphics[width=1\textwidth]{figures/webFlow.pdf}
 	\end{figure}
 	
-	Figure \ref{fig:WebFlowchart} illustrates the workflow of the Farm Management Web Application, which is designed to support agricultural administrators in managing and monitoring farming activities at a regional scale. The process begins with a secure login mechanism, where the administrator is required to enter valid credentials. The system verifies these credentials against stored records to ensure authorized access. If the credentials are invalid, the administrator is redirected back to the login page to re-enter the correct information. Upon successful authentication, the administrator is directed to the dashboard, which serves as the central navigation interface of the system.
+	Figure \ref{fig:WebFlowchart} illustrates the structured administrative workflow of the TANIM Web Application, which is designed to facilitate regional agricultural oversight and data management. The process initiates at the Start node, leading the administrator to a secure Login portal. At this stage, the system executes a verification protocol to determine if the entered credentials are correct. If the authentication fails, represented by the No path, the user is redirected to the login interface to re-attempt entry. Upon a successful Yes confirmation, the administrator is granted access to the primary Dashboard, which serves as the central hub for all subsequent system interactions.
 	
-	From the dashboard, the administrator can access four primary modules represented by the decision nodes in the flowchart. The GIS Map module provides geospatial visualization of registered farms, enabling spatial analysis and regional monitoring. The Farms module supports the management of farm-related information, including farm locations and farm overviews, ensuring accurate documentation of farm records. The Farmers module focuses on farmer management, allowing administrators to organize farmer profiles and maintain farmer-related data. The Crop Rules module facilitates the administration of agricultural policies by enabling the addition of new crop rules and the review of existing crop regulations.
+	From the central dashboard, the administrator can navigate through a series of functional modules governed by sequential decision nodes. The first available path is Fertilizer Management, which, when selected, directs the user to the Fertilizer Guide and Application for Farms module. Moving further into the system, the GIS Mapping node allows for the generation of a Farm GIS Map, providing essential geospatial visualization for regional monitoring. For direct management of agricultural assets and personnel, the Select Farms node provides access to specific Farm Locations and comprehensive Farm Overviews, while the Select Farmers node opens the Farmer Management interface for profile and data administration.
 	
-	Each module is seamlessly integrated with the dashboard, allowing administrators to navigate efficiently between system functions. After completing tasks within a selected module, the administrator may return to the dashboard or securely terminate the session through the logout function. This workflow highlights the system’s structured approach to access control, centralized administration, and policy management, supporting effective monitoring, data-driven decision-making, and sustainable agricultural governance for the Department of Agriculture.
+	The workflow also features an analytical branch through a secondary Dashboard decision point. By entering this view, the administrator can monitor longitudinal data such as Soil Health Trends and review a chronological log of Recent Activities within the system. To maintain high standards of data security and session integrity, all functional paths are integrated with a terminal Logout function. Once the administrator triggers this command, the session is formally concluded at the End node, ensuring that unauthorized access is prevented after the administrative tasks are completed.
 	
 \subsection{Context Level Diagram}
 The Context-Level Diagram provides a high-level view of how the TANIM system interacts with its primary stakeholders: Agricultural Authorities and Farmers. It illustrates how data flows into and out of the system without detailing internal processes.
@@ -382,7 +380,9 @@ The Context-Level Diagram provides a high-level view of how the TANIM system int
 		\includegraphics[width=1\textwidth]{figures/CFD_FINAL.pdf}
 	\end{figure}
 	
-	The Context-Level Diagram illustrates the integrated interaction of the TANIM system with both Agricultural Authorities and Farmers through its unified web and mobile applications. Agricultural Authorities do not directly generate raw data, instead, they receive processed insights derived from IoT devices deployed in the field, including soil analysis reports, GIS-based farm visualizations, farmer profiles, and crop recommendation results. These outputs support evidence-based policymaking, targeted resource allocation, compliance monitoring, and improved agricultural planning. At the same time, IoT devices serve as primary data sources by providing soil and environmental information to the system, while farmers contribute essential inputs such as crop yield feedback, farming activity logs, fertilizer usage records, and crop preferences. TANIM processes this continuous exchange of data to produce actionable outputs such as planting schedules, fertilizer guidance, crop recommendations, and farming practice records. Through this unified data flow, the system transforms raw field data into actionable intelligence that supports sustainable farming practices, enhances farmer productivity, and enables informed, timely decision-making that contributes to national food security goals.
+	The Context Level Diagram shows how the TANIM system connects Agricultural Authorities and Farmers through web and mobile applications. Agricultural Authorities do not create the raw data themselves. Instead, they receive important information from IoT devices installed in the fields. This includes soil reports, farm maps based on location data, farmer profiles, and crop recommendation results. With this information, they can create better guidelines, manage resources properly, monitor farming practices, and improve planning.
+	At the same time, IoT devices provide the system with real time soil and environmental data. Farmers also contribute by adding key information such as harvest results, farm activity logs, fertilizer usage, and the crops they plan to grow.
+	TANIM gathers all of this information and turns it into useful outputs like planting schedules, fertilizer recommendations, crop suggestions, and organized farm records. By doing this, the system transforms raw field data into practical guidance. This helps farmers follow better practices, improve crop production, and make faster and more informed decisions to support a stable food supply.
 	
 \subsection{Data Flow Diagram}
 The Data Flow Diagram visually represents how data flows within the TANIM system. It highlights the interactions between IoT devices, farmers/agricultural authorities, and the system’s core processes, demonstrating how data is retrieved, stored, and analyzed to provide soil health insights and crop/fertilizer recommendations.
@@ -395,25 +395,36 @@ The Data Flow Diagram visually represents how data flows within the TANIM system
 	\end{figure}
 	
 
-	Figure 3.9 shows the Data Flow Diagram (DFD) of the TANIM system. The data flow between the user and the system is divided into two main processes which is the retrieval and analysis process. The “retrieve” process is responsible for collecting soil and farm data from toT devices,. This includinges specific  readings of NpH, moisture, salinity, and temperature, as well as crop and fertilizer inputs provided by the users. These data are validated, preprocessed, and stored in the system’s database to ensure consistency, accuracy, and ease of access for subsequent processingfor moisture, temperature, soil pH, sae system applies machine learning algoriCache Storage, the data flow branches into two distinct pathms to evaluate the stored data, identifying patterns and relationships among soil properties, environmental factoserve the end users. First, it directly supplies a Soil Data Analysis Report to the Farmers, and crop performance. The outputs of this analysis include predictions on soil healAgricultural Authorities. Second, it feeds “Real-time Metrics” into the status, crop suitability, and potential yield. Based on these predictions, the system generevaluates tailored crop and fertilizer recommendations that consider both environmental conditions and expected productivity, enabling farmers to make infhese real-time metrics to generate actionable agricultural insights. The direct output of this process is a tailormed decisions that opCrop and Fertimlize resource utilization.
+	Figure 3.8 shows the Data Flow Diagram (DFD) of the TANIM system. The data flow is divided into two main processes: server integration and the analysis engine.
 	
-	Finally, the processed results are delivered to farmers and agricultural aAuthoities through a user-friendly interface in the form of soil data analysis reports, visual dashboards, and actionable recommendations. These outputs facilitate practical decision-making, support strategic crop planning, and contribute to more efficient and sustainable agricultural practices across Region~10. Togesubsection{Use Case Diagram}
+	The server integration process is responsible for collecting environmental data directly from the IoT devices. This includes specific sensor readings for moisture, temperature, soil pH, salinity, and NPK levels. Once received, this raw information is passed as continuous soil data and stored within the system's cache storage.
+	
+	From the cache storage, the data flow branches into two distinct paths to serve the end users. First, it directly supplies a soil data analysis report to the Farmers and Agricultural Authorities. Second, it feeds “Real-time Metrics” into the system's analysis engine process.
+	
+	In the analysis engine process, the system evaluates these real-time metrics to generate actionable agricultural insights. The direct output of this process is a tailored crop and fertilizer recommendation report, which is subsequently delivered to the farmers and agricultural authorities. Together, these reporting outputs enable farmers to make informed, data-driven decisions that optimize resource utilization and support strategic crop planning.
+	
+	The system also includes a secondary data store, the Database, which links cache storage and the Analysis Engine. The cache storage passes the soil data analysis Report to the database for persistent storage, and the database in turn provides the real-time metrics consumed by the analysis engine.
+	
+	\subsection{Use Case Diagram}
 	The Use Case Diagram illustrates how different actors interact with the TANIM system. It presents the system’s primary functionalities and shows how users access and utilize agricultural data for farm management and monitoring. The diagram emphasizes the roles of both Farmers and the Department of Agriculture in supporting efficient and data-driven agricultural practices.
 	
 	\begin{figure}[H]
 		\centering
 		\caption{Use Case Diagram}
 		\label{fig:UseCase}
-		\includegraphics[width=1\textwidth]{figures/usecase.pdf}
+		\includegraphics[width=0.6\textwidth]{figures/usecase.pdf}
 	\end{figure}
 	
 
-	Figure \ref{fig:UseCase} shows the interactions of the Farmer with the system. Farmers can view a list of their own farms, which includes information about the current crops being cultivated. This feature helps farmers organize and monitor their farming activities. Farmers are also able to view the soil health status of their farms, allowing them to assess land condition and make informed decisions regarding crop management. In addition, the system provides access to weather forecasts, enabling farmers to plan daily operations and prepare for potential weather-related risks. The system also offers crop recommendations tailored to soil health data, weather conditions, and existing farm information to support improved agricultural productivity.
+	Figure \ref{fig:UseCase} illustrates the interactions between the primary actors—the Farmer and the Department of Agriculture—and the TANIM system.
 	
-	The figure also illustrates the interactions of the Department of Agriculture with the system. The Department can access an overview dashboard that presents soil health trends and weather conditions, providing insights into agricultural conditions across different farms. Farm information is integrated into the dashboard to support monitoring and analysis. The Department can also view farm locations through the Farm GIS feature, enabling spatial visualization of agricultural areas. Furthermore, the system allows the Department to view registered farmers and oversee crop rules and regulations, ensuring compliance with established agricultural policies and standards.
+	The Farmer interacts with the system to manage day-to-day agricultural operations. They can access a List of own Farms, which automatically includes the ability to view Current Crops currently under cultivation. To aid in decision-making, Farmers can View Soil Health Status, View Weather Forecasts, and access a View Fertilizer Application Guide. Furthermore, the system allows them to Get Crop Recommendations, which leverages data from soil health and weather forecasts to suggest the most productive crops and necessary fertilizer adjustments.
 	
-
-	The Use Case Diagram demonstrates how TANIM supports both farm-level management and institutional oversight. By providing relevant tools and information to different users, the system enhances coordination, monitoring, and decision-making in agricultural management.
+	The Department of Agriculture utilizes the system for high-level monitoring and regional oversight. They can View Registered Farmers and access a View Overview of Dashboard to monitor agricultural trends. Through the View GIS Mapping feature, the Department can visualize farm locations spatially. Additionally, the Department can View Farms Information, a functionality that includes access to both Crop History and Soil Health Test History, providing a comprehensive longitudinal view of land use and soil viability.
+	
+	By bridging the gap between individual farm management and institutional data analysis, the TANIM system facilitates a data-driven approach to agricultural productivity and sustainability.
+	
+	The Use Case Diagram demonstrates how TANIM supports both farm level management and institutional oversight. By providing relevant tools and information to different users, the system enhances coordination, monitoring, and decision-making in agricultural management
 	
 	\subsection{Use Case Table}
 	
@@ -421,7 +432,7 @@ The Data Flow Diagram visually represents how data flows within the TANIM system
 	
 	The use cases associated with the \textit{Farmer} focus on farm-level management and decision support. These include viewing a list of registered farms and current crops, monitoring soil health status, accessing weather forecasts, and receiving crop recommendations. These functionalities enable farmers to effectively manage their farming activities, assess environmental conditions, and make informed decisions to improve agricultural productivity. Certain use cases depend on related system features, such as soil health and weather data, which support the generation of crop recommendations.
 	
-	The use cases associated with the \textit{Department of Agriculture} emphasize monitoring, analysis, and regulatory oversight. These include viewing an overview dashboard that integrates soil health trends, weather conditions, and farm information, accessing farm locations through the Farm GIS feature, and viewing registered farmers. The Department may also view crop rules to ensure compliance with agricultural standards and policies. 
+	The use cases associated with the \textit{Department of Agriculture} emphasize monitoring, analysis, and regulatory oversight. These include viewing an overview dashboard that integrates soil health trends, weather conditions, and farm information, accessing farm locations through the Farm GIS feature, and viewing registered farmers. The Department may also view crop history and soil health history from testing soil.
 	
 	\begin{table}[H]
 		\centering
@@ -439,11 +450,13 @@ The Data Flow Diagram visually represents how data flows within the TANIM system
 				
 				List Own Farms & Enables farmers to view their registered farms. & \checkmark &  \\ \hline
 				
-				View Soil Health Status & Allows users to view soil condition data such as nutrients, fertility, and health indicators. & \checkmark &  \\ \hline
+				View Soil Health Status & Allows users to view soil condition data such as nutrients, fertility, and health indicators. & \checkmark &  \checkmark \\ \hline
 				
 				View Weather Forecast & Provides weather forecasts relevant to farm locations. & \checkmark &  \\ \hline
 				
 				Get Crop Recommendations & Provides crop recommendations based on soil health, weather, and farm data. & \checkmark &  \\ \hline
+				
+				View Fertilizer Recommendations & Provides fertilizer application guide and timeline & \checkmark & \checkmark \\ \hline
 				
 				View Dashboard Overview & Allows users to view a summarized overview of agricultural data for monitoring and analysis. & & \checkmark \\ \hline
 				
@@ -475,11 +488,9 @@ The Data Flow Diagram visually represents how data flows within the TANIM system
 				
 				View Current Crops & Allows farmers to view crops currently cultivated on their farms. & \checkmark &  \\ \hline
 				
-				View Soil Health Trends & Enables monitoring of soil health changes over time across regions. &  & \checkmark \\ \hline
+				View Soil Health History & Allows Admins to view soil health history & & \checkmark \\ \hline
 				
-				View Weather Conditions & Allows the Department to view current and historical weather data. &  & \checkmark \\ \hline
-			
-				View Farm Information & Enables the Department to access detailed information about farms. &  & \checkmark \\ \hline
+				View Crop History & Allows Admins to view crop history & & \checkmark \\ \hline
 				
 			\end{tabular}
 		}
@@ -489,7 +500,7 @@ The Data Flow Diagram visually represents how data flows within the TANIM system
 	
 	
 	\subsection{Entity Relationship Diagram}
-	The relational architecture of the database is designed to provide a structured and scalable environment for managing agricultural data through four primary entities: \textbf{Admin}, \textbf{Farmer}, \textbf{Farm}, and \textbf{Farming Session}. As illustrated in \textbf{Figure \ref{fig:ERD}}, the \textbf{Admin} entity serves as the administrative oversight layer, storing unique identification and authentication credentials for system-wide management. The \textbf{Farmer} entity represents the primary end-users of the platform, containing detailed profile information including full names, contact numbers, and secure login credentials. This entity is linked to the \textbf{Farm} table through a foreign key ($farmer\_id$), establishing a one-to-many relationship that allows a single farmer to register and monitor multiple distinct agricultural plots. Each farm record preserves critical metadata such as the plot name, physical area measurement, and precise geographic coordinates (latitude and longitude) to support spatial mapping.
+	The relational architecture of the database is designed to provide a structured and scalable environment for managing agricultural data through four primary entities: Admin, Farmer, Farm, and Farming Session. As illustrated in Figure \ref{fig:ERD}, the Admin entity serves as the administrative oversight layer, storing unique identification and authentication credentials for system-wide management. The Farmer entity represents the primary endusers of the platform, containing detailed profile information including full names, contact numbers, and secure login credentials. This entity is linked to the Farm table through a foreign key ($farmer\_id$), establishing a one-to-many relationship that allows a single farmer to register and monitor multiple distinct agricultural plots. Each farm record preserves critical metadata such as the plot name, physical area measurement, and precise geographic coordinates (latitude and longitude) to support spatial mapping
 	
 	\begin{figure}[H]
 		\centering
@@ -498,7 +509,9 @@ The Data Flow Diagram visually represents how data flows within the TANIM system
 		\includegraphics[width=1\textwidth]{figures/erd.pdf}
 	\end{figure}
 	
-	Operational data and model-driven insights are managed within the \textbf{Farming Session} entity, which functions as a temporal log of field activity. This table acts as the nexus of the system, linking a specific farmer to a specific farm for the duration of a planting cycle. Rather than storing soil data as static attributes of a land plot, the system archives discrete ``soil snapshots,'' fertilizer recommendations, and model-generated top crop probabilities within the session record. This design allows the system to maintain a historical archive of soil health and decision-making for every visit or cycle. The session record also captures the user's final decision in the $selected\_crop$ field and tracks the timing of the cycle through start, end, and creation timestamps. This normalized structure ensures data integrity while supporting complex longitudinal queries regarding farm performance and historical soil trends.
+	The Soil Health Test entity stores discrete, time-stamped soil measurements for a given farm. Each test row is identified by a primary key ($test\_id$) and is linked to the Farm table by a foreign key ($farm\_id$), in a one-to-many relationship: one farm can have many soil health tests over time. The entity records macronutrients—nitrogen, phosphorus, and potassium—together with pH, salinity, temperature, and moisture, and it maintains created\_at and updated\_at timestamps for each record so the system can keep a verifiable history of how soil conditions evolve for that plot.
+	
+	Operational data and model-driven insights are managed within the Farming Session entity, which functions as a temporal log of field activity. This table acts as the nexus of the system, linking a specific farmer to a specific farm for the duration of a planting cycle. Rather than storing soil data as static attributes of a land plot, the system archives discrete “soil snapshots,” fertilizer recommendations, and model-generated top crop probabilities within the session record. This design allows the system to maintain a historical archive of soil health and decision-making for every visit or cycle. The session record also captures the user’s final decision in the selected crop field and 93 tracks the timing of the cycle through start, end, and creation timestamps. This normalized structure ensures data integrity while supporting complex longitudinal queries regarding farm performance and historical soil trends.
 	
 \subsection{Hardware Design Flowchart}
 	\begin{figure}[H]
@@ -508,7 +521,7 @@ The Data Flow Diagram visually represents how data flows within the TANIM system
 		\includegraphics[width=1\textwidth]{figures/hardwarediagram.pdf}
 	\end{figure}
 	
-Figure \textbackslash{}ref\{fig:HardwareFlowchart\} illustrates the workflow of the hardware components. The process begins with the initialization of the ESP32 microcontroller, which serves as the central control unit of the system. The GPS module provides location data to the ESP32, while the sensor module collects environmental data required for monitoring.
+Figure \ref{fig:HardwareFlowchart} illustrates the workflow of the hardware components. The process begins with the initialization of the ESP32 microcontroller, which serves as the central control unit of the system. The GPS module provides location data to the ESP32, while the sensor module collects environmental data required for monitoring.
 
 Once the sensor data is acquired, it is passed to the transceiver module, which facilitates communication between the sensing unit and the ESP32. The ESP32 processes the received data and forwards it to the transmitter module. Finally, the transmitter module sends the processed data to the designated external system, completing the hardware operation cycle.
 
@@ -524,20 +537,19 @@ This section presents the overall arrangement of the system’s hardware compone
 	\includegraphics[width=1\textwidth]{figures/MainSystem.pdf}
 \end{figure}
 
- \textbf{Figure \ref{fig:main_system}} shows the hardware layout of the transmitter unit. The transmitter circuit is powered by four 3.7V lithium-ion batteries, rechargeable via a three 5V 1A solar panels setup. The transmitter includes the ZTS-3001-TR-ECMOISTPHTEMPNPK-N01 Soil Health Sensor health sensor powered by the 4 batteries, then the sensor is connected to a transceiver which is the TTL to RS485 module the module serves as the bridge between the sensor and the ESP32 communication. Another component connected to the ESP32 is the GY-NEO6MV2 GPS module which provides the latitude and longitude of the tested area. The I2C-LCD is also connected to the ESP32 as its purpose is to show the real-time sensor reading, Latitude and Longitude, and the data transmission status. And  the last component is the LoRa-01 module which is used for wireless transmission of the sensor reading and the GPS reading and each packet will be sent every minute after the 5 minute soak time.
+ Figure \ref{fig:main_system} shows the hardware layout of the transmitter unit. The transmitter circuit is powered by four 3.7V lithium-ion batteries, rechargeable via a three 5V 1A solar panels setup. The transmitter includes the ZTS-3001-TR-ECMOISTPHTEMPNPK-N01 Soil Health Sensor health sensor powered by the 4 batteries, then the sensor is connected to a transceiver which is the TTL to RS485 module the module serves as the bridge between the sensor and the ESP32 communication. Another component connected to the ESP32 is the GY-NEO6MV2 GPS module which provides the latitude and longitude of the tested area. The I2C-LCD is also connected to the ESP32 as its purpose is to show the real-time sensor reading, Latitude and Longitude, and the data transmission status. And  the last component is the LoRa-01 module which is used for wireless transmission of the sensor reading and the GPS reading and each packet will be sent every minute after the 5 minute soak time.
  
  \begin{figure}[H]
  	\centering
  	\caption{Receiver System Hardware Layout}
  	\label{fig:receiver_system}
- 	\includegraphics[width=0.85\textwidth]{figures/ReceiverSystem.pdf}
+ 	\includegraphics[width=0.5\textwidth]{figures/ReceiverSystem.pdf}
  \end{figure}
  
- \textbf{Figure \ref{fig:receiver_system}} shows the hardware layout of the receiver unit which is only connected to a LoRa-01 module. Its only purpose is to collect data from the three transmitter nodes then average it and the averaged data will be sent to the database. This unit requires Wi-Fi connection to send the averaged data to the database.
+ Figure \ref{fig:receiver_system} shows the hardware layout of the receiver unit which is only connected to a LoRa-01 module. Its only purpose is to collect data from the three transmitter nodes then average it and the averaged data will be sent to the database. This unit requires Wi-Fi connection to send the averaged data to the database.
  
  Building upon the hardware design layout, the schematic layout further details the electrical connections between components. It visualizes the signal paths and power distribution across the system, ensuring that each component is properly integrated for optimal performance and reliability.
- 
- \textbf{Figure \ref{fig:main_schematic}} shows the main transmitter circuit’s detailed schematic, illustrating the integration of the central processing unit with environmental sensors and positioning modules
+
  
  \begin{figure}[H]
  	\centering
@@ -546,23 +558,26 @@ This section presents the overall arrangement of the system’s hardware compone
  	\includegraphics[width=0.85\textwidth]{figures/MainSchematic.pdf}
  \end{figure}
  
- \textbf{Figure \ref{fig:other_schematic}} shows the node 2 and 3 circuit’s detailed schematic, illustrating a modular design focused on localized environmental monitoring
+  Figure \ref{fig:main_schematic} shows the main transmitter circuit’s detailed schematic, illustrating the integration of the central processing unit with environmental sensors and positioning modules
  
  \begin{figure}[H]
  	\centering
  	\caption{Node 2 and 3 Transmitter Schematic Diagram}
  	\label{fig:other_schematic}
- 	\includegraphics[width=0.85\textwidth]{figures/OtherSchematic.pdf}
+ 	\includegraphics[width=1\textwidth]{figures/OtherSchematic.pdf}
  \end{figure}
  
- \textbf{Figure \ref{fig:receiver_schematic}} shows the receiver circuit’s detailed schematic, illustrating the high-speed SPI connection between the ESP32 and the LoRa Ra-01 communication module.
+  Figure \ref{fig:other_schematic} shows the node 2 and 3 circuit’s detailed schematic, illustrating a modular design focused on localized environmental monitoring.
+ 
  
  \begin{figure}[H]
  	\centering
- 	\caption{Node 2 and 3 Transmitter Schematic Diagram}
+ 	\caption{Receiver Schematic Diagram}
  	\label{fig:receiver_schematic}
- 	\includegraphics[width=0.85\textwidth]{figures/ReceiverSchematic.pdf}
+ 	\includegraphics[width=0.5\textwidth]{figures/ReceiverSchematic.pdf}
  \end{figure}
+ 
+  Figure \ref{fig:receiver_schematic} shows the receiver circuit’s detailed schematic, illustrating the high-speed SPI connection between the ESP32 and the LoRa Ra-01 communication module.
  
 	
 \subsection{3D Design}
@@ -573,39 +588,65 @@ This section presents the overall arrangement of the system’s hardware compone
 		\includegraphics[width=1\textwidth]{figures/3D.pdf}
 	\end{figure}
 	
-\textbf{Figure \ref{fig:3D}} displays the 3D container design that will be 3D printed for the container of the hardware. This will contain the hardware components which are etched in a PCB board that will be used in this system. The container should be durable to ensure that it can secure the hardware components inside of it.
+Figure \ref{fig:3D} displays the 3D container design that was used for the container of the hardware. This contains the hardware components which are etched in a PCB board that was used in this system. The container should be durable to ensure that it can secure the hardware components inside of it.
 
-\subsection{Graphical User Interface (GUI)}
 	
 \subsection{Materials and Cost}	
-	\begin{table}[H]
-		\centering
-		\caption{Materials and Cost Breakdown of the Hardware System}
-		\label{tab:materials_cost}
-		
-		\small
-		\renewcommand{\arraystretch}{1.2}
-		
-		\begin{tabularx}{\textwidth}{p{5cm} p{3cm} c X}
-			\toprule
-			\textbf{Component} & \textbf{Quantity} & \textbf{Cost (PHP)} & \textbf{Amount (PHP)} \\ 
-			\midrule
-			ZTS-3001-TR-ECMOISTPHTEMPNPK-N01 Soil Health Sensor & 3 & 1,862 & 5,586 \\ 
-			ESP32 & 4 & 400 & 1,600 \\ 
-			TTL to RS485 Module & 3 & 57 & 171 \\ 
-			GY-NEO6MV2 NEO-6M GPS Module & 1 & 300 & 300 \\ 
-			SX1278 LoRa Ra-01 Module (433MHz) & 4 & 289 & 1,156 \\ 
-			I2C Serial Interface 1602 LCD Module & 3 & 400 & 1,200 \\ 
-			5V 1A Solar Panel & 9 & 220 & 1,980 \\ 
-			Solar Charge Controller & 3 & 145 & 435 \\ 
-			Lithium-Ion 18650 2500mAh Battery & 12 & 400 & 4,800 \\ 
-			Miscellaneous (Cables, Mounts) & -- & 3,000 & 3,000 \\ 
-			\midrule
-			\textbf{Total Cost} & & & \textbf{20,000} \\ 
-			\bottomrule
-		\end{tabularx}
-		
-	\end{table}
+\begin{table}[H]
+	\centering
+	\caption{Materials and Cost Breakdown of the Hardware System}
+	\label{tab:materials_cost}
+	
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	
+	\begin{tabularx}{\textwidth}{p{5cm} p{3cm} c X}
+		\toprule
+		\textbf{Component} & \textbf{Quantity} & \textbf{Cost (PHP)} & \textbf{Amount (PHP)} \\ 
+		\midrule
+		ZTS-3001-TR-ECMOISTPHTEMPNPK-N01 Soil Health Sensor &   3 & 1,862 & 5,586 \\ 
+		ESP32 & 4 & 400 & 1,600 \\ 
+		TTL to RS485 Module & 3 & 57 & 171 \\ 
+		GY-NEO6MV2 NEO-6M GPS Module & 1 & 300 & 300 \\ 
+		SX1278 LoRa Ra-01 Module (433MHz) & 4 & 289 & 1,156 \\ 
+		I2C Serial Interface 1602 LCD Module & 3 & 400 & 1,200 \\ 
+		5V 1A Solar Panel & 9 & 220 & 1,980 \\ 
+		Solar Charge Controller & 3 & 145 & 435 \\ 
+		Lithium-Ion 18650 2500mAh Battery & 12 & 400 & 4,800 \\ 
+		Miscellaneous (Cables, Mounts) & -- & 3,000 & 3,000 \\ 
+		\midrule
+		\textbf{Total Cost} & & & \textbf{20,000} \\ 
+		\bottomrule
+	\end{tabularx}
+	
+\end{table}
+
+\subsection{Graphical User Interface (GUI)}
+This section describes the graphical user interface (GUI) of the TANIM application, which is designed to be user-friendly and facilitate efficient agricultural management. The GUI consists of several screens, including the Admin Dashboard and the Soil Health Analysis screen.
+
+\begin{figure}[H]
+	\centering
+	\caption{Admin Dashboard}
+	\includegraphics[width=0.9\textwidth]{figures/WebGUI}
+	\label{fig:admin_dashboard}
+\end{figure}
+
+Figure \ref{fig:admin_dashboard} displays the Admin Dashboard, which provides a comprehensive overview of the farm's soil health data and allows for the management of various agricultural activities. The dashboard features a sidebar with navigation links to key sections, such as "Dashboard", "Farms", "Farmers", "GIS Mapping", and "Fertilizer Management". The main content area showcases essential metrics, including "Total Farmers" and "Total Farms", along with a "Soil Health Trends" chart that tracks soil parameter trends over time.
+
+The "Soil Health Trends" chart in Figure \ref{fig:admin_dashboard} provides a visual representation of nitrogen, phosphorus, potassium, pH, moisture, temperature, and salinity levels, allowing users to monitor soil health changes and make informed decisions about fertilizer application and other management practices. The dashboard also includes a "Recent Activity" feed that displays latest farm registrations and soil test results, providing real-time updates on farm-related activities.
+
+\begin{figure}[H]
+	\centering
+	\caption{Soil Health Analysis}
+	\includegraphics[width=0.35\textwidth]{figures/MobileGUI}
+	\label{fig:soil_health_analysis}
+\end{figure}
+
+Figure \ref{fig:soil_health_analysis} shows the Soil Health Analysis screen, which provides a more detailed breakdown of soil nutrient levels and pH. This screen displays a bar chart illustrating the amounts of nitrogen, phosphorus, and potassium, along with pH and salinity levels. Each soil parameter is labeled with its status, such as "Good" or "Low", and the exact measurement in mg/kg for nutrients and dS/m for salinity. This granular data enables farmers to accurately assess soil health and implement targeted soil management strategies.
+
+The Soil Health Analysis screen also features a notification bar at the bottom, indicating "Farming started" for specific farms and crops. This feature helps farmers stay organized and keep track of their planting and harvesting schedules.
+
+The TANIM mobile application's GUI is designed to provide farmers with an intuitive and efficient way to manage their agricultural data and make informed decisions about soil health and crop management. The Admin Dashboard offers a high-level overview of key metrics and trends, while the Soil Health Analysis screen provides detailed information on soil nutrient levels and pH. Together, these features empower farmers to optimize their crop yields and enhance their agricultural practices.
 	
 \section{Implementation}
 The Implementation phase involves developing the software and hardware components. Each function was ensured to function according to the design specifications.This phase intends to transform the conceptual design into a working prototype that can perform data acquisition, processing, and output for TANIM.
@@ -620,10 +661,12 @@ Both user interfaces interact with a shared backend developed in Flask, which ce
 \subsection{Hardware Implementation}
 The hardware implementation of the TANIM system is centered on an IoT-based device designed to collect soil data and send it to the cloud for processing and analysis. The core of the device is the ESP32 microcontroller, selected for its high processing capability, built-in Wi-Fi and Bluetooth connectivity, low power consumption, and compatibility with multiple sensor modules. These features make it ideal for continuous field monitoring and data transmission in remote agricultural areas.
 	
-A soil sensor is used to measure key soil parameters such as pH, NPK, moisture, temperature, and salinity. This sensor was chosen because it provides accurate and real-time soil data essential for evaluating soil health and guiding fertilizer and crop recommendations.
+A 7 in 1 soil sensor was used to measure key soil parameters such as pH, NPK, moisture, temperature, and salinity. This sensor was chosen because it provides accurate and real-time soil data essential for evaluating soil health and guiding fertilizer and crop recommendations.
+
+A GPS module provides geographical localization data, essential for mapping sensor readings to specific field coordinates. For long-range data transmission in remote agricultural areas, a LoRa module is integrated as the system's transmitter, enabling robust, low-power wireless communication. Additionally, an I2C-LCD displays instantaneous sensor readings locally for immediate field-level monitoring.
 	
 \subsection{Machine Learning Model}
-The TANIM project uses a LightGBM model because it processes data quickly and accurately sorts information into different categories. Since regional soil data often has uneven amounts of information for various soil types, the system applies a K-Means method to address this imbalance. This method generates additional data for the underrepresented groups, creating a balanced dataset for the model to learn effectively.
+The TANIM project used a LightGBM model because it processes data quickly and accurately sorts information into different categories. Since regional soil data often has uneven amounts of information for various soil types, the system applies a K-Means method to address this imbalance. This method generates additional data for the underrepresented groups, creating a balanced dataset for the model to learn effectively.
 
 The program evaluates key soil elements, specifically organic matter, phosphorus, potassium, and pH levels, to assess soil health and predict the most suitable crops for a given area. By combining the LightGBM model with a balanced dataset, the system improves prediction performance and provides reliable agricultural recommendations.
 
@@ -634,43 +677,79 @@ The program evaluates key soil elements, specifically organic matter, phosphorus
 	\label{fig:lightgbm}
 \end{figure}
 
-The integration of LightGBM with a balanced dataset enhances classification accuracy and ensures fair representation of all soil categories. As shown in \textbf{Figure \ref{fig:lightgbm}}, the LightGBM architecture uses an ensemble of decision trees that aggregate predictions to produce final crop classifications. This structure allows the system to efficiently process soil parameters and generate accurate crop recommendations, ultimately helping improve harvest yields and optimize resource utilization.
+The integration of LightGBM with a balanced dataset enhances classification accuracy and ensures fair representation of all soil categories. As shown in Figure \ref{fig:lightgbm}, the LightGBM architecture uses an ensemble of decision trees that aggregate predictions to produce final crop classifications. This structure allows the system to efficiently process soil parameters and generate accurate crop recommendations, ultimately helping improve harvest yields and optimize resource utilization.
 	
 \section{Test and Evaluation}
-Testing and evaluation will be conducted to verify the system’s effectiveness, accuracy, and usability for crop recommendation and soil health monitoring. This process will be designed to ensure that the hardware components, software components, and machine learning models will function according to what we aim for this study, which involves hardware testing and calibration, functional testing, system integration testing, performance testing, and usability testing. Hardware testing and calibration will focus on verifying the accuracy of the sensors to ensure reliable soil data. Functional testing will examine whether the mobile and web applications operate correctly and deliver the expected outputs of each feature. To ensure that the hardware, cloud database, machine learning, and applications works together with proper data flow and error handling, system integration will be implemented. For measuring the responsiveness of the system and to evaluate the system’s predictive accuracy of the machine learning models using various performance metrics we will be conducting performance testing. Moreover, usability testing will assess the practicality and user-friendliness of the system by involving farmers and agricultural experts in field trial and feedback collection.
+Testing and evaluation was conducted to verify the system’s effectiveness, accuracy, and usability for crop recommendation and soil health monitoring. This process was designed to ensure that the hardware components, software components, and machine learning models functions according to what we aim for this study, which involves hardware testing and calibration, functional testing, system integration testing, performance testing, and usability testing. Hardware testing and calibration focuses on verifying the accuracy of the sensors to ensure reliable soil data. Functional testing examines whether the mobile and web applications operate correctly and deliver the expected outputs of each feature. To ensure that the hardware, cloud database, machine learning, and applications works together with proper data flow and error handling, system integration was implemented. For measuring the responsiveness of the system and to evaluate the system’s predictive accuracy of the machine learning models using various performance metrics we be conducting performance testing. Moreover, usability testing was used to assess the practicality and user-friendliness of the system by involving farmers and agricultural experts in field trial and feedback collection.
 	
 \subsection{Hardware Testing and Calibration}
-Hardware testing and calibration will ensure that the IoT sensors will provide accurate measurements of soil health parameters such as nitrogen, phosphorus, potassium, pH, moisture, salinity, and temperature. To conduct this testing, the sensors will be deployed in field testing on the actual farms in Region 10, also to ensure consistency under varying field conditions the readings will be recorded at different time and day. Cross checking will be applied by using the Department of Agriculture’s soil testing laboratory and soil test kits of the same soil samples from the same farms to ensure reliability and accuracy.
-	
-Through statistical measures such as Mean Absolute Error (MAE) the sensor readings will be compared against laboratory results. a maximum allowable error threshold of ±5 will be set, if the difference between the sensor and laboratory values exceeds this threshold error, calibration adjustments will be applied to the sensors until acceptable accuracy will be achieved. It will be calculated by:
-	\begin{equation}
-		\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
-		\label{eq:mae}
-	\end{equation}
-	\myequation{Mean Absolute Error (MAE)}
-	
-This process ensures that the data generated by the hardware is reliable enough to be used in machine learning models and the recommendation system.
+The soil sensor pH parameter was submitted to the Department of Science and Technology (DOST) for formal calibration using three certified buffer solutions at pH 4.0, 7.0, and 10.0. The raw sensor readings recorded at each reference point were 4.8, 5.7, and 9.0, respectively. \ref{tab:calibration} presents the raw sensor output against the known buffer values and the corresponding error at each point.
+
+\begin{table}[h]
+	\centering
+	\caption{pH Sensor Raw Readings and Required Corrections}
+	\label{tab:calibration}
+	\begin{adjustbox}{max width=\textwidth, center}
+		\small 
+		\begin{tabular}{lccc}
+			\toprule
+			Buffer Solution & Raw Sensor & Error & Required \\
+			(True pH) & Reading & (Sensor $-$ True) & Correction \\
+			\midrule
+			4  & 4.8 & +0.8 & -0.8 \\
+			7  & 5.7 & -1.3 & +1.3 \\
+			10 & 9.0 & -1.3 & +1.3 \\
+			\bottomrule
+		\end{tabular}
+	\end{adjustbox}
+\end{table}
+
+The error pattern was non-uniform: the sensor over-read at pH 4.0 but under-read at pH 7.0 and pH 10.0 which indicates a non-linear response characteristic across the measurement range. This ruled out a single constant offset as a sufficient correction method. Three calibration approaches were evaluated and compared: a single constant offset, linear regression, and a three-point quadratic fit.
+
+Single Constant Offset. A uniform correction of +0.5 pH units was derived by averaging the three required corrections 
+$(-0.8 + 1.3 + 1.0) \div 3 = +0.5$
+This method produced the corrected values shown in \ref{tab:corrected}.
+
+\begin{table}[h]
+	\centering
+	\caption{Applied Correction (Sensor + 0.5) and Resulting Residual Error}
+	\label{tab:corrected}
+	\begin{adjustbox}{max width=\textwidth, center}
+		\small
+		\begin{tabular}{lccc}
+			\toprule
+			Buffer Solution & Raw Sensor & Corrected Value & Error \\
+			(True pH) & Reading & (Sensor + 0.5) & \\
+			\midrule
+			4  & 4.8 & 5.30 & +1.30 \\
+			7  & 5.7 & 6.20 & -0.80 \\
+			10 & 9.0 & 9.50 & -0.50 \\
+			\bottomrule
+		\end{tabular}
+	\end{adjustbox}
+\end{table}
+
+On the other hand, To validate the nutrient measurements, the team employed a Soil Test Kit (STK) method to compare sensor output against established agronomic thresholds. Specifically, sensor readings for Nitrogen, Phosphorus, and Potassium were cross-referenced with the STK results to see if they consistently fell within the same qualitative categories of low, medium, or high. For instance, a sensor reading for Potassium would be evaluated against a predefined range where values below 117 ppm are categorized as low and those above 235 ppm are considered high. This threshold-based verification allowed the team to confirm that the hardware system provides reliable categorical data suitable for crop recommendation despite the lack of high-level technical calibration tools.
+
 	
 \subsection{Functional Testing}
-Functional testing involves verifying whether each feature of the mobile and web applications operates correctly according to the system design. For the mobile application, the following features will be tested: secure login and authentication, retrieval of soil health readings, display of crop recommendations for multi-cropping, fertilizer optimization, and offline data synchronization. For the web application, features such as farm visualization, farmer profile management, and crop rule configuration will be tested.
+Functional testing involves verifying whether each feature of the mobile and web applications operates correctly according to the system design. For the mobile application, the following features was tested: secure login and authentication, retrieval of soil health readings, display of crop recommendations for multi-cropping, fertilizer optimization, and offline data synchronization. For the web application, features such as farm visualization, farmer profile management, and farms GIS mapping was tested.
 	
-In addition, synchronization between the database, mobile, and web applications will be tested to ensure that all data are accurately updated and consistent across platforms. This includes verifying that soil readings, user information, and crop recommendations are properly synchronized when data are sent or retrieved from the cloud.
+In addition, synchronization between the database, mobile, and web applications was tested to ensure that all data are accurately updated and consistent across platforms. This includes verifying that soil readings, user information, and crop recommendations are properly synchronized when data are sent or retrieved from the cloud.
 	
-Both black-box testing and white-box testing approaches will be applied to evaluate the system’s functionality. Black-box testing will focus on verifying the system’s external behavior without examining its internal code. Testers will input various data to check if the outputs match the expected results, ensuring that all functions operate as intended from a user’s perspective. Meanwhile, white-box testing will be conducted by examining the internal logic, data flow, and code structure of the applications. This will help identify hidden logical errors, broken functions, or inefficient code implementations.
-	
-Stress testing will also be performed by simulating multiple user logins and concurrent farm entries to evaluate system performance under heavy load. Through these testing activities, the TANIM system aims to ensure accurate functionality, reliable synchronization between components, and stable performance in real-world agricultural applications.
+Both black-box testing and white-box testing approaches was applied to evaluate the system’s functionality. Black-box testing focuses on verifying the system’s external behavior without examining its internal code. Testers inputs various data to check if the outputs match the expected results, ensuring that all functions operate as intended from a user’s perspective. Meanwhile, white-box testing was conducted by examining the internal logic, data flow, and code structure of the applications. This helps identify hidden logical errors, broken functions, or inefficient code implementations.
 	
 \subsection{System Integration Testing}
-System integration testing will evaluate whether the hardware, software, cloud database, and machine learning model communicates seamlessly with each other as a single system. The system integration testing will be tested by following the full flow of the system: soil health readings captured by the sensor and processed by the ESP32 microcontroller, then transmitted by via the LoRa module to the gateway, forwarded to the cloud database, then processed by the machine learning models, and finally displayed on the mobile and web applications. 
+System integration testing evaluates whether the hardware, software, cloud database, and machine learning model communicates seamlessly with each other as a single system. The system integration testing was tested by following the full flow of the system: soil health readings captured by the sensor and processed by the ESP32 microcontroller, then transmitted by via the LoRa module to the gateway, forwarded to the cloud database, then processed by the machine learning models, and finally displayed on the mobile and web applications. 
 	
-This process confirms that the system works together as one reliable system. Furthermore, tests will be conducted to observe how the system handles incomplete or corrupted data to ensure that it can manage error to prevent misleading recommendations to farmers.
+This process confirms that the system works together as one reliable system. Furthermore, several test was conducted to observe how the system handles incomplete or corrupted data to ensure that it can manage error to prevent misleading recommendations to farmers.
 	
 \subsection{Performance Testing}
-For the system level performance, it is to determine if the system could handle multiple data acquisition and provide timely feedback to the users. The data transmission success rate will be monitored by comparing the successful sensor to cloud uploads against the attempted uploads over multiple trials. Latency tests measure the time from the sensor data capture to its display in the mobile and web application, with an acceptable range set to 30 seconds. Scalability will be evaluated by simulating multiple farms connected simultaneously to ensure that the cloud database and applications could handle increased workloads without delays and crashes. These will ensure that the system is reliable and efficient under real-world agricultural conditions where multiple users operate.
+For the system level performance, it is to determine if the system could handle multiple data acquisition and provide timely feedback to the users. The data transmission success rate was monitored by comparing the successful sensor to cloud uploads against the attempted uploads over multiple trials. Latency tests measure the time from the sensor data capture to its display in the mobile and web application, with an acceptable range set to 30 seconds. Scalability was evaluated by simulating multiple farms connected simultaneously to ensure that the cloud database and applications could handle increased workloads without delays and crashes. These ensures that the system is reliable and efficient under real-world agricultural conditions where multiple users operate.
 	
 For the machine learning evaluation, it verifies the predictive capability of the machine learning models that will be used on crop recommendation for multi-cropping and fertilizer optimization. The dataset will be split into 70-15-15 for training, evaluation, and testing for maximizing the predictive accuracy and avoiding overfitting. 
 	
-For the crop recommendation, the machine learning models will be evaluated using accuracy, precision, recall, F1-score, and confusion matrices to determine the effectiveness of the system. The following formulas are going to be use:
+For the crop recommendation, the machine learning models was evaluated using accuracy, precision, recall, F1-score, and confusion matrices to determine the effectiveness of the system. The following formulas are going to be use:
 	
 	\begin{equation}
 		\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
@@ -710,10 +789,10 @@ For the crop recommendation, the machine learning models will be evaluated using
 	These evaluation steps confirm that the machine learning models provide scientifically sound predictions and deliver crop and fertilizer recommendations that are consistent, reliable, and effective under different scenarios.
 	
 \subsection{Usability Testing}
-	The usability testing will assess the practicality, accessibility, and user satisfaction of the system. For this, farmers will be asked to log into the mobile application, review soil health data, view crop and fertilizer recommendations, and simulate updating their farm records. Meanwhile, DA officials will use the web dashboard to access farmer profiles, view GIS-based maps, and manage crop rules.
+	The usability testing assesses the accessibility, and user satisfaction of the system. For this, farmers was asked to use the mobile application, review soil health data, view crop and fertilizer recommendations, and simulate updating their farm records. Meanwhile, DA officials use the web dashboard to access farmer profiles, view GIS-based maps, and farm profiles.
 	
-	A total of 10 participants will be involved in the usability testing, consisting of 7 farmers from Region 10 and 3 agricultural technicians or DA employees. Farmers were selected based on their familiarity with basic smartphone usage and their active involvement in small- to medium-scale farming. The DA personnel were chosen because they represent the system’s administrative users responsible for monitoring and validating agricultural data. This mix of participants ensures that both end-user and administrative perspectives are considered during evaluation.
+	A total of 10 participants was involved in the usability testing, consisting of 7 farmers from Region 10 and 3 agricultural technicians or DA employees. Farmers were selected based on their familiarity with basic smartphone usage and their active involvement in small- to medium-scale farming. The DA personnel were chosen because they represent the system’s administrative users responsible for monitoring and validating agricultural data. This mix of participants ensures that both end-user and administrative perspectives are considered during evaluation.
 	
-	After completing the navigation of the system, the System Usability Scale (SUS) developed by Brooke (1995) will be employed to quantitatively measure user satisfaction. The interactions of the users will be observed, and any difficulties they encounter will be recorded. In addition to the SUS scores, qualitative feedback will be collected through short interviews and observation notes to gain insights into which features are most useful and which aspects require improvement. The evaluation criteria will determine the user satisfaction based on the SUS scores and user feedback. The result of this testing will determine the system's usability rating and this will be a guide for further refinement to ensure that the TANIM system is accessible, user-friendly, and beneficial to the users.
+	After completing the navigation of the system, the System Usability Scale (SUS) developed by Brooke (1995) was employed to quantitatively measure user satisfaction. The interactions of the users was observed, and any difficulties they encounter was recorded. In addition to the SUS scores, qualitative feedback was collected through short interviews and observation notes to gain insights into which features are most useful and which aspects require improvement. The evaluation criteria determines the user satisfaction based on the SUS scores and user feedback. The result of this testing determines the system's usability rating and this will be a guide for further refinement to ensure that the TANIM system is accessible, user-friendly, and beneficial to the users.
 	
 }

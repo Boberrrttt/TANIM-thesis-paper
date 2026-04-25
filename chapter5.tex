@@ -5,52 +5,33 @@ This chapter provides the summary of the results obtained in this study and give
 
 \section{Summary of Findings}
 
-The study’s findings address the initial research questions by confirming the effectiveness, reliability, and diverse applications of telemetry systems.
-The "Summary of Findings" section provides a concise overview of the key results from your research. This section should be factual and focus on presenting the data without interpretation. It should include:
+This study developed and evaluated an IoT-based crop recommender system integrated with machine learning for agricultural applications in Bukidnon. The findings demonstrate that the system successfully integrated hardware and software components, including soil sensors, a machine learning model, and web and mobile applications, to provide a functional decision-support tool for farmers. The system was able to measure key soil parameters such as pH, nitrogen (N), phosphorus (P), potassium (K), salinity, moisture, and temperature, and transmit these data to a centralized platform for processing and visualization.
 
-Key Results:
+The calibration results of the soil pH sensor revealed a non-linear response across different buffer solutions, indicating that a single constant offset correction is insufficient for achieving accurate readings. Validation results further showed that while the sensor outputs were generally aligned with qualitative classifications from Soil Test Kit (STK) results, there were significant numerical discrepancies when compared to laboratory measurements from the Department of Agriculture. Error analysis confirmed the presence of noticeable offsets, particularly in nutrient and pH values, suggesting limitations in achieving laboratory-grade precision. Despite this, the system demonstrated reliability in categorical classification (low, medium, high), which is essential for practical crop recommendation.
 
-Briefly summarize the most significant findings.
-Use bullet points or numbered lists for clarity if appropriate.
-Present the data as it was found, highlighting major patterns, relationships, or trends.
-Data Presentation:
+The machine learning model achieved an accuracy of 82.29\%, with consistent performance across evaluation metrics, indicating its capability to generate reliable crop and fertilizer recommendations based on soil health data. Additionally, the developed mobile application enabled farmers to monitor soil conditions, crop predictions, and fertilizer schedules, while the web application provided administrative functionalities such as farm zoning, farmer data management, and timeline tracking. The system also achieved a System Usability Scale (SUS) score of 84.25, which corresponds to an “excellent” rating, indicating that users found the system intuitive and effective for agricultural use.
 
-Include tables, graphs, or charts that succinctly summarize the data.
-Make sure each visual aid is clearly labeled and includes a brief description.
-Coverage of Research Questions:
-
-Address each of the research questions or hypotheses posed at the beginning of the study.
-Summarize the results relevant to each question.
+Overall, the results confirm that all the objectives of the study were successfully achieved. The implementation of the IoT system, along with the development of both mobile and web applications and the integration of a machine learning model, demonstrates the feasibility of the proposed system as a comprehensive agricultural decision-support platform.
 
 \section{Conclusion}
-The "Conclusions" section interprets the findings and discusses their implications. This section should:
+Based on the findings of the study, it can be concluded that the developed IoT-based crop recommender system is a functional and effective tool for supporting data-driven agricultural practices in Bukidnon. The system successfully achieved its primary objective of integrating IoT, machine learning, and software platforms to provide real-time soil monitoring and crop recommendation. Each of the specific objectives was attained, including the implementation of a machine learning model for crop and fertilizer recommendation, the development of a mobile application for farmer use, the creation of a web-based monitoring system for administrative purposes, and the evaluation of system accuracy and usability in actual agricultural settings.
 
-Interpret Findings:
+The results highlight that while the system performs well in terms of usability, system integration, and predictive capability, there are limitations in the numerical accuracy of the soil sensor readings. The presence of significant offsets when compared to laboratory readings from the Department of Agriculture - Region 10 farm data it indicates that the system cannot fully replace traditional laboratory testing for precise soil analysis. However, the system remains effective as a field-level decision-support tool, particularly due to its ability to provide reliable categorical interpretations of soil health data.
 
-Provide an interpretation of the data summarized in the previous section.
-Discuss what the results mean in the context of the research questions or hypotheses.
-Implications:
+In comparison to existing studies, this research addresses several gaps by providing an end-to-end integrated system that combines real-time IoT sensing, machine learning-based recommendation, and dual-platform accessibility through both web and mobile applications. While many related studies focus only on simulation models, isolated sensor systems, or standalone applications, this study contributes a more comprehensive and deployable solution. Nevertheless, similar to other studies utilizing low-cost sensors, limitations in sensor accuracy remain a challenge, indicating an area that requires further improvement.
 
-Explain the significance of the findings.
-Discuss how the results contribute to the field of study or practical applications.
-Limitations:
+Overall, the TANIM system demonstrates strong potential in advancing precision agriculture by enabling accessible, real-time, and data-driven decision-making for farmers, especially in regions with limited access to laboratory facilities.
 
-Acknowledge any limitations in the study that may affect the results or their interpretation.
-%---------------------------------------------------------------------------------------------
-\newpage
 \section{Recommendations}
+Based on the conclusions of the study, several recommendations are proposed to further enhance the system and guide future research. First, improvements in sensor calibration are strongly recommended, particularly through the use of multi-point or non-linear calibration techniques to address the observed inaccuracies and offsets in sensor readings. The implementation of polynomial or regression-based calibration models, along with periodic recalibration, may significantly improve measurement accuracy. Additionally, software-based correction mechanisms may be applied to minimize systematic errors and improve alignment with laboratory results.
 
-The "Recommendations" section provides actionable suggestions based on the study's findings and conclusions. This section should:
+For the machine learning model, further enhancements are recommended to improve the accuracy and robustness of crop and fertilizer recommendations. It is suggested to expand the training dataset by incorporating more diverse and laboratory-validated soil samples to ensure better generalization across different soil conditions. The integration of calibration-adjusted sensor data into the training process is also important to reduce the impact of sensor inaccuracies on prediction outcomes. Furthermore, exploring advanced techniques such as ensemble learning, hybrid models, or deep learning approaches may help improve classification performance and reduce misclassification among crops with similar nutrient requirements. Continuous retraining of the model using newly collected field data is also recommended to maintain its accuracy and adaptability over time.
 
-Practical Applications:
+In terms of hardware improvements, it is recommended to utilize higher-precision sensors and expand the range of measurable soil parameters, including micronutrients and soil organic matter, to provide a more comprehensive soil analysis. Integrating additional environmental factors, such as weather conditions, rainfall patterns, and seasonal variations, may further improve both the sensor system and the predictive capability of the machine learning model.
 
-Offer specific recommendations for practitioners, policymakers, or other stakeholders based on the findings.
-Future Research:
+For practical implementation, the system should be positioned as a preliminary soil assessment and decision-support tool rather than a replacement for laboratory testing. Collaboration with agricultural agencies may support standardization and wider adoption, particularly in rural areas where access to laboratory facilities is limited. Training programs should also be conducted to help users effectively interpret both numerical and categorical outputs of the system. 
 
-Suggest areas for further investigation that could address the study’s limitations or build on its findings.
-Implementation:
+Finally, future research may explore the integration of artificial intelligence techniques for real-time sensor calibration and adaptive learning systems. Further studies may also evaluate the long-term impact of the system on crop yield, fertilizer efficiency, and sustainability to fully establish its effectiveness in real-world agricultural applications.
 
-Provide guidance on how the recommendations can be implemented effectively.
-%---------------------------------------------------------------------------------------
-
+\newpage
 }

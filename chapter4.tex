@@ -10,7 +10,15 @@ This section presents the results of the sensor hardware testing and calibration
 The testing phase aimed to (1) verify the correctness of sensor readings, (2) calibrate the sensors against reference values, and (3) evaluate the performance of the sensing unit under controlled conditions. The results obtained from this phase serve as the foundation for validating the reliability of the entire system.
 
 \subsection{Hardware and Specifications}
-The developed system utilizes three 5V, 1A solar panels connected in series, generating approximately 15V. This configuration successfully meets the minimum input requirement of the solar charge controller, which regulates the incoming power and ensures proper battery charging. Energy is stored in four 18650 lithium-ion batteries configured to supply at least 12V, enabling stable operation of all components.
+
+\begin{figure}[H]
+	\centering
+	\caption{Soil Health Monitoring Device}
+	\includegraphics[width=1\textwidth]{figures/FinalHardwareSystem.pdf}
+	\label{fig:hardware_system}
+\end{figure}	
+
+Figure \ref{fig:hardware_system} presents the developed system that utilizes three 5V, 1A solar panels connected in series, generating approximately 15V. This configuration successfully meets the minimum input requirement of the solar charge controller, which regulates the incoming power and ensures proper battery charging. Energy is stored in four 18650 lithium-ion batteries configured to supply at least 12V, enabling stable operation of all components.
 
 A buck converter was implemented to reduce the output voltage from the charge controller to 10V, which serves as the primary input for the ESP32 expansion board. This ensured a consistent and reliable power supply throughout system operation.
 
@@ -23,21 +31,182 @@ The ESP32 microcontroller, paired with an expansion board, served as the central
 An I2C LCD was integrated to display real-time sensor readings. The display operated at 5V and communicated with the ESP32 via the I2C protocol, providing immediate feedback during system testing.
 
 \subsection{Accuracy and Reliability Evaluation}
+To assess the accuracy and reliability of the calibrated soil health sensor under actual field conditions, validation testing was conducted using soil samples collected from farms in Libona and Lingion, Bukidnon. These locations were selected based on farm data provided by the Department of Agriculture - Region 10, ensuring representative soil conditions across the region. The validation process involved cross-checking calibrated sensor readings against two reference standards: the Department of Agriculture's Soil Test Kit (STK) results and laboratory analysis results obtained from the Department of Agriculture's Regional Soils Laboratory using the same farm data samples they provided form multiple farms.
+
+Three soil samples from Libona Bukidnon were analyzed using the Soil Tests Kits (STK) methodology (see Appendix \ref{app:stk_results}), while three additional samples from Lingion Bukidnon were processed through the Department of Agriculture laboratory as part of their ongoing soil monitoring program. The laboratory reference values used in this comparison were extracted directly from the Department of Agriculture Region 10's soil database, ensuring consistency with established regional soil health records. This dual-reference approach provided both qualitative (color-based) and quantitative validation of the sensor performance across different soil types and nutrient conditions found in the target agricultural areas.
+
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.6}
+	\caption{Comparative Analysis of Soil Health Measurements}
+	\label{tab:soil_comparison}
+	
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			\multirow{3}{*}{Sample} 
+			& \multicolumn{4}{c|}{Soil Test Kit Results} 
+			& \multicolumn{4}{c|}{Sensor Readings} 
+			& \multicolumn{4}{c|}{DA Laboratory Results} \\ \cline{2-13}
+			
+			& \multicolumn{4}{c|}{(Libona Samples)} 
+			& \multicolumn{4}{c|}{(Libona Samples)} 
+			& \multicolumn{4}{c|}{(Lingion Samples)} \\ \cline{2-13}
+			
+			& N & P & K & pH 
+			& N & P & K & pH 
+			& N & P & K & pH \\ \hline
+			
+			1 
+			& MEDIUM & HIGH & LOW & 5.8 
+			& \shortstack{1\\(LOW)} 
+			& \shortstack{21.5\\(HIGH)} 
+			& \shortstack{65\\(LOW)} 
+			& 5.65 
+			& \shortstack{2.60\\(MEDIUM)} 
+			& \shortstack{9.50\\(LOW)} 
+			& \shortstack{335.00\\(HIGH)} 
+			& 7.0 \\ \hline
+			
+			2 
+			& LOW & HIGH & MEDIUM & 5.8 
+			& \shortstack{1.5\\(LOW)} 
+			& \shortstack{21\\(HIGH)} 
+			& \shortstack{105\\(LOW)} 
+			& 5.3 
+			& \shortstack{2.60\\(MEDIUM)} 
+			& \shortstack{4.10\\(LOW)} 
+			& \shortstack{72.00\\(LOW)} 
+			& 6.78 \\ \hline
+			
+			3 
+			& MEDIUM & HIGH & MEDIUM & 5.8 
+			& \shortstack{0\\(LOW)} 
+			& \shortstack{7\\(LOW)} 
+			& \shortstack{26\\(LOW)} 
+			& 5.7 
+			& \shortstack{3.0\\(HIGH)} 
+			& \shortstack{1.5\\(LOW)} 
+			& \shortstack{235\\(HIGH)} 
+			& 5.33 \\ \hline
+			
+		\end{tabular}
+	}
+	
+\end{table}
+
+The validation results revealed varying degrees of agreement between the sensor readings and reference methods. For the Libona samples compared against STK results, the sensor demonstrated strong categorical alignment for phosphorus and pH parameters, with readings consistently falling within the same qualitative ranges (LOW, MEDIUM, HIGH). However, some discrepancies were observed in nitrogen and potassium classifications, particularly in Sample 3 where the sensor underestimated phosphorus levels compared to the STK indication.
+
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Validation Assessment Summary}
+	\label{tab:validation_summary}
+	
+	\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+			\hline
+			\multirow{2}{*}{Sample} & \multicolumn{4}{c|}{STK vs Sensor Agreement} & \multicolumn{4}{c|}{Lab vs Sensor Agreement} \\ \cline{2-9}
+			& N & P & K & pH & N & P & K & pH \\ \hline
+			
+			1 & Partial & Exact & Exact & Exact & Partial & Divergent & Partial & Exact \\ \hline
+			2 & Exact & Exact & Partial & Exact & Partial & Divergent & Partial & Exact \\ \hline
+			3 & Partial & Divergent & Partial & Exact & Exact & Divergent & Partial & Exact \\ \hline
+			
+		\end{tabular}
+	\end{adjustbox}
+	
+\end{table}
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.3}
+	\caption*{\textbf{Legend:}}
+	\begin{tabular}{p{3cm} p{10cm}}
+		\textbf{Exact} & Sensor reading falls within the same categorical range as reference method. \\[4pt]
+		\textbf{Partial} & Sensor reading is within one categorical level of the reference (e.g., LOW vs MEDIUM). \\[4pt]
+		\textbf{Divergent} & Sensor reading differs by two or more categorical levels from the reference. \\
+	\end{tabular}
+\end{table}
+
+
+
+Table \ref{tab:validation_summary} presents the validation assessment results of the proposed system by comparing sensor-derived soil measurements against two reference methods, namely Soil Test Kit (STK) readings and laboratory-based soil analysis. The evaluation focuses on four key soil parameters: Nitrogen (N), Phosphorus (P), Potassium (K), and pH, and classifies the level of agreement into Exact, Partial, and Divergent categories to determine the reliability of the sensor outputs in both field-level and laboratory contexts.
+
+For the STK vs Sensor comparison, the results indicate generally strong alignment across most parameters. Nitrogen shows a mixed performance, with both Exact and Partial agreements across samples, suggesting minor variability in sensor estimation but still within acceptable categorical proximity. Phosphorus demonstrates consistently high agreement, achieving Exact matching in two out of three samples, indicating that the sensor closely replicates STK-based interpretations for this nutrient. Potassium exhibits more variability, with one instance of Partial agreement and two Exact or near-Exact classifications, reflecting moderate sensitivity to environmental fluctuations in potassium measurement. Meanwhile, pH consistently achieves Exact agreement across all samples, confirming high stability and strong calibration accuracy of the sensor for acidity measurement when compared to STK results.
+
+In contrast, the Lab vs Sensor comparison reveals a more challenging alignment due to the higher precision and quantitative nature of laboratory measurements. Nitrogen shows a combination of Partial and Exact agreement, indicating that while the sensor can approximate laboratory trends, minor deviations in absolute concentration values still occur. Phosphorus consistently records Divergent outcomes across all samples, suggesting significant discrepancies between sensor readings and laboratory measurements, likely due to differences in detection sensitivity or calibration scale. When compared to DA laboratory results from Lingion samples, the sensor showed consistent accuracy for pH measurements (100\% exact agreement) but revealed systematic differences in nutrient readings. The phosphorus measurements showed the greatest divergence, with the sensor consistently reading higher values than laboratory results. This pattern suggests potential calibration drift or methodological differences between sensor chemistry and laboratory analytical procedures. Potassium also shows predominantly Partial agreement, indicating that while general trends are captured, numerical precision remains limited compared to laboratory standards. Despite this, pH continues to maintain Exact agreement across all samples, reinforcing its reliability as the most stable and accurately measured parameter within the system.
+
+Table \ref{tab:validation_summary} demonstrates that the proposed sensing system performs strongly in categorical classification, particularly for pH and partially for Nitrogen, while showing moderate limitations in accurately matching laboratory-grade precision for Phosphorus and Potassium. However, the consistent occurrence of Exact and Partial agreements suggests that the system is still effective for decision-support purposes in agricultural applications, where categorical interpretation is often more critical than exact numerical equivalence.
+
+\begin{figure}[H] \centering \caption{Comparison of Calibrated Sensor Readings and Soil Test Kit Values} \includegraphics[width=1\textwidth]{figures/CalibratedSensor.pdf} \label{fig:calibrated_sensor} \end{figure}
+
+Figure \ref{fig:calibrated_sensor} presents a detailed comparison between the calibrated sensor readings and Soil Test Kit results for each soil parameter across the three Libona samples. The visual representation demonstrates the sensor's performance in categorical classification, with notable consistency in pH measurements and varying degrees of alignment in nutrient parameters.
+
+\begin{figure}[H] \centering \caption{Comparison of Calibrated Sensor Readings and Laboratory Reference Values} \includegraphics[width=1\textwidth]{figures/LaboratoryValues.pdf} \label{fig:laboratory_values} \end{figure}
+
+Figure \ref{fig:laboratory_values} illustrates the comparison between calibrated sensor readings and laboratory reference values from the DA Region 10 database for the Lingion samples. The graphical analysis reveals systematic differences between sensor and laboratory measurements, particularly evident in the phosphorus and potassium parameters, while maintaining strong agreement in pH values.
+
+To quantify the average deviation between the sensor output and the laboratory values, the Mean Absolute Error (MAE) and Root Mean Square Error (RMSE) were calculated for each parameter.
+
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\caption{Error Metrics for Soil Sensor Parameters}
+	\label{tab:soil_sensor_error_metrics}
+	
+	\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{Sensor Parameter} & \textbf{Mean Absolute Error} & \textbf{Root Mean Squared Error} \\ \hline
+			
+			Nitrogen   & 1.10  & 1.11  \\ \hline
+			Phosphorous & 36.33 & 38.74 \\ \hline
+			Potassium  & 108.00 & 118.21 \\ \hline
+			pH         & 0.49  & 0.51  \\ \hline
+			
+		\end{tabular}
+	\end{adjustbox}
+	
+\end{table}
+
+Potassium exhibited the highest prediction error among all measured nutrients, with a Mean Absolute Error (MAE) of 108.00 and a Root Mean Squared Error (RMSE) of 118.21. This relatively large deviation, including a recorded peak difference of 174 ppm in certain comparisons, indicates significant variability in potassium estimation between the sensor outputs and the reference laboratory values. Despite this numerical discrepancy, the model still maintained correct qualitative classification in terms of categorical interpretation (e.g., LOW, MEDIUM, HIGH), suggesting that while absolute precision is limited, the system remains reliable for decision-level interpretation in agricultural applications.
+
+Phosphorus also demonstrated relatively high error values, with an MAE of 36.33 and RMSE of 38.74, reflecting moderate inconsistency in predicting exact concentration levels. The variation may be attributed to the sensitivity of phosphorus measurements to soil heterogeneity and environmental sampling differences. However, the system still achieved agreement in two out of three samples when evaluated categorically, indicating that despite numerical deviations, the predictive model retains acceptable performance in class-based fertilizer recommendation contexts.
+
+Nitrogen showed comparatively lower error levels, with an MAE of 1.10 and RMSE of 1.11, indicating strong alignment between sensor readings and reference values. This consistency resulted in correct categorical matching in two out of three samples, demonstrating that nitrogen estimation is relatively stable and reliable within the implemented sensing and modeling framework. The reduced error suggests better sensor calibration or stronger model learning patterns for nitrogen compared to other macronutrients.
+
+Among all measured parameters, pH exhibited the highest accuracy, with an MAE of 0.49 and RMSE of 0.51. The minimal deviation between predicted and reference values reflects strong sensor stability and effective calibration for hydrogen ion concentration measurement. pH achieved a 100\% categorical match rate across all samples, confirming its reliability as a highly dependable indicator within the system. Overall, these results highlight that while certain nutrients such as potassium and phosphorus present challenges in precise numerical estimation, the system remains effective for practical agricultural decision-making through accurate categorical classification.
+
 
 \section{Machine Learning Model}
 This section describes the data processing pipeline and predictive model used for crop recommendation. The model takes processed soil measurements as input and outputs a recommended crop and fertilizer guidance.
 
 \subsection{Data Integration and Cleaning}
-Multiple data sources were consolidated to form the training dataset. Historical records (the Consolidated Soil Info RSL 2023–2025) provided soil profiles (pH, organic matter \%, phosphorus ppm, potassium ppm) linked to crops previously grown on those farms. These records were combined with simulated IoT sensor samples to create a uniform table. Irrelevant metadata and text annotations were removed so that each entry consists only of the agronomic variables and a single target crop label. For example, entries RSL-001 through RSL-005 in \textbf{Figure \ref{fig:integrated_data}} show specific soil chemical properties aligned with their zoned crops (Corn, Eggplant, etc.), demonstrating how fragmented spreadsheet data was transformed into a structured format for learning.
+Multiple data sources were consolidated to form the training dataset. Historical records (the Consolidated Soil Info RSL 2023–2025) provided soil profiles (pH, organic matter \%, phosphorus ppm, potassium ppm) linked to crops previously grown on those farms. These records were combined with simulated IoT sensor samples to create a uniform table. Irrelevant metadata and text annotations were removed so that each entry consists only of the agronomic variables and a single target crop label. For example, entries RSL-001 through RSL-005 in Table \ref{tab:soil_data_records} show specific soil chemical properties aligned with their zoned crops (Corn, Eggplant, etc.), demonstrating how fragmented spreadsheet data was transformed into a structured format for learning.
 
-\begin{figure}[H]
+\begin{table}[H]
 	\centering
+	\renewcommand{\arraystretch}{1.5}
 	\caption{Sample Integrated Soil Data Records}
-	\includegraphics[width=1\textwidth]{figures/IntegratedData.pdf}
-	\label{fig:integrated_data}
-\end{figure}	
+	\label{tab:soil_data_records}
+	
+	\begin{adjustbox}{max width=\textwidth}
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			\textbf{Record ID} & \textbf{Soil pH} & \textbf{Organic Matter (\%)} & \textbf{Phosphorus (ppm)} & \textbf{Potassium (ppm)} & \textbf{Zoned Target Crop} \\ \hline
+			
+			RSL-001 & 7.22 & 2.80 & 34.60 & 47.00 & Corn \\ \hline
+			RSL-002 & 5.09 & 4.70 & 1.00 & 121.00 & Camote (Sweet Potato) \\ \hline
+			RSL-003 & 5.09 & 4.70 & 1.00 & 121.00 & Corn \\ \hline
+			RSL-004 & 5.09 & 4.70 & 1.00 & 121.00 & Eggplant \\ \hline
+			RSL-005 & 5.09 & 4.70 & 1.00 & 121.00 & Tomato \\ \hline
+			
+		\end{tabular}
+	\end{adjustbox}
+	
+\end{table}
 
-Data cleaning ensured dataset quality: entries with missing or invalid values (non-numeric, out-of-range) were dropped. Numerical features were bounded to agronomically realistic limits (e.g. soil pH restricted to 3–9) to eliminate outliers. A critical issue was class imbalance. In the raw data, common crops like Corn had thousands of records while rare crops (Ampalaya, Sweet Pepper) had very few. To prevent bias, synthetic oversampling was applied to minority classes. Using a K-Means–based approach, we grouped minority samples and generated perturbed examples around each cluster center. This produced a balanced dataset, as visualized in \textbf{Figure \ref{fig:data_augmentation}}. Before augmentation (red), the class distribution is skewed; after augmentation (green), each of the 10 crops has roughly 2,400 samples, yielding about 8,694 total records (1,191 original + 7,503 synthetic).
+Data cleaning ensured dataset quality: entries with missing or invalid values (non-numeric, out-of-range) were dropped. Numerical features were bounded to agronomically realistic limits (e.g. soil pH restricted to 3–9) to eliminate outliers. A critical issue was class imbalance. In the raw data, common crops like Corn had thousands of records while rare crops (Ampalaya, Sweet Pepper) had very few. To prevent bias, synthetic oversampling was applied to minority classes. Using a K-Means–based approach, we grouped minority samples and generated perturbed examples around each cluster center. This produced a balanced dataset, as visualized in Figure \ref{fig:data_augmentation}. Before augmentation (red), the class distribution is skewed; after augmentation (green), each of the 10 crops has roughly 2,400 samples, yielding about 8,694 total records (1,191 original + 7,503 synthetic).
 
 \begin{figure}[H]
 	\centering
@@ -49,7 +218,7 @@ Data cleaning ensured dataset quality: entries with missing or invalid values (n
 \subsection{Feature Engineering}
 In addition to the four raw inputs, four derived features were computed to capture agronomic relationships. Two features are ratios: the Phosphorus-to-Potassium ratio $P/K$ and the Phosphorus-to-Organic Matter ratio $P/\mathrm{OM}$. The other two are interaction terms: $\mathrm{OM} \times \mathrm{pH}$ and $K \times \mathrm{pH}$. These encode how nutrient availability changes with soil acidity or organic content. For instance, a low $K \times \mathrm{pH}$ simulates potassium lock-up in acidic soils. The engineered features substantially improved model insight: in the trained LightGBM, the $K \times \mathrm{pH}$ term was the third most important feature, and the phosphorus ratios together contributed nearly $20\%$ of total importance.
 
-These algorithmically derived features, summarized in \textbf{Table \ref{tab:feature_engineering}}, mirror physiological nutrient constraints and bio-availability dynamics that are critical for accurate soil-health assessment.
+These algorithmically derived features, summarized in Table \ref{tab:feature_engineering}, mirror physiological nutrient constraints and bio-availability dynamics that are critical for accurate soil-health assessment.
 
 \begin{table}[H]
 	\centering
@@ -95,7 +264,7 @@ These algorithmically derived features, summarized in \textbf{Table \ref{tab:fea
 The prediction engine is a Light Gradient Boosting Machine (LightGBM) classifier. LightGBM is an efficient gradient-boosting framework optimized for speed and handling complex feature interactions. It was chosen for its ability to train quickly and run on modest hardware, making it suitable for IoT integration. The eight features (4 raw + 4 engineered) are fed into the classifier, which outputs probabilities for each of the 10 crop classes. Data splits were 70\% training, 15\% validation, 15\% testing (stratified to preserve class ratios). To fine-tune performance, we used Bayesian hyperpa- rameter optimization (Optuna, 50 trials) with 5-fold stratified cross-validation on the training set. We optimized tree depth, number of leaves, learning rate, feature/bagging fractions, and L1/L2 regularization. Early stopping was applied if validation log-loss did not improve for 20 rounds. This process ensured a well-generalized model without overfitting.
 
 \subsection{Performance Metrics and Results}
-The final model achieved a test-set accuracy of 83.2\%. Its balanced accuracy (the macro-average recall across classes) was 82.5\%, indicating robust performance on both common and rare crops. The weighted F1-score was 0.831. \textbf{Figure \ref{fig:classification_report}} presents precision, recall, and F1-score per crop. The model performed particularly well on Tobacco ($F_1 \approx 0.96$) and Sorghum, while Eggplant was the most challenging ($F_1 \approx 0.66$), consistent with its confusion with similar crops.
+The final model achieved a test-set accuracy of 83.2\%. Its balanced accuracy (the macro-average recall across classes) was 82.5\%, indicating robust performance on both common and rare crops. The weighted F1-score was 0.831. Figure \ref{fig:classification_report} presents precision, recall, and F1-score per crop. The model performed particularly well on Tobacco ($F_1 \approx 0.96$) and Sorghum, while Eggplant was the most challenging ($F_1 \approx 0.66$), consistent with its confusion with similar crops.
 
 \begin{figure}[H]
 	\centering
@@ -104,7 +273,7 @@ The final model achieved a test-set accuracy of 83.2\%. Its balanced accuracy (t
 	\label{fig:classification_report}
 \end{figure}
 
-The confusion matrix as illustrated in \textbf{Figure \ref{fig:confusion_matrix}}shows the detailed prediction outcomes. Diagonal entries are highest, indicating correct predictions; only a few off- diagonal cells occur (e.g. 81 instances of Eggplant predicted as Tomato). Overall, the classifier’s predictions align well with ground truth, which is crucial for reliable recommendations.
+The confusion matrix as illustrated in Figure \ref{fig:confusion_matrix} shows the detailed prediction outcomes. Diagonal entries are highest, indicating correct predictions; only a few off- diagonal cells occur (e.g. 81 instances of Eggplant predicted as Tomato). Overall, the classifier’s predictions align well with ground truth, which is crucial for reliable recommendations.
 
 \begin{figure}[H]
 	\centering
@@ -113,7 +282,7 @@ The confusion matrix as illustrated in \textbf{Figure \ref{fig:confusion_matrix}
 	\label{fig:confusion_matrix}
 \end{figure}
 
-\textbf{Figure \ref{fig:per_class_metrics}} confirms these metrics. All crop classes achieve reasonably high precision and recall, with Tobacco and Sorghum highest, and Eggplant lowest. The model thus successfully identifies both majority and minority crops.
+Figure \ref{fig:per_class_metrics} confirms these metrics. All crop classes achieve reasonably high precision and recall, with Tobacco and Sorghum highest, and Eggplant lowest. The model thus successfully identifies both majority and minority crops.
 
 \begin{figure}[H]
 	\centering
@@ -122,7 +291,7 @@ The confusion matrix as illustrated in \textbf{Figure \ref{fig:confusion_matrix}
 	\label{fig:per_class_metrics}
 \end{figure}
 
-The model’s predicted class probabilities were generally high-confidence. \textbf{Figure \ref{fig:confidence_distribution}} shows that the mean prediction confidence is about 0.83, with many predictions above 0.90. High confidence suggests the model is decisive, which builds trust that recommendations are statistically supported.
+The model’s predicted class probabilities were generally high-confidence. Figure \ref{fig:confidence_distribution} shows that the mean prediction confidence is about 0.83, with many predictions above 0.90. High confidence suggests the model is decisive, which builds trust that recommendations are statistically supported.
 
 \begin{figure}[H]
 	\centering
@@ -131,7 +300,7 @@ The model’s predicted class probabilities were generally high-confidence. \tex
 	\label{fig:confidence_distribution}
 \end{figure}
 
-Finally, \textbf{Figure \ref{fig:performance_comparison}} compares performance before and after our optimizations. A baseline model on the unaugmented, imbalanced data had only about 42\% balanced accuracy. After oversampling and tuning, balanced accuracy rose to 82.5\%, demonstrating the necessity of data augmentation and hyperparameter search to achieve meaningful accuracy.
+Finally, Figure \ref{fig:performance_comparison} compares performance before and after our optimizations. A baseline model on the unaugmented, imbalanced data had only about 42\% balanced accuracy. After oversampling and tuning, balanced accuracy rose to 82.5\%, demonstrating the necessity of data augmentation and hyperparameter search to achieve meaningful accuracy.
 
 \begin{figure}[H]
 	\centering
@@ -141,7 +310,7 @@ Finally, \textbf{Figure \ref{fig:performance_comparison}} compares performance b
 \end{figure}
 
 \subsection{Feature Importance Analysis}
-To validate the role of each input, we extracted LightGBM feature importances (information gain). \textbf{Figure \ref{fig:feature_importance}} shows that soil potassium (Kppm) and pH are the top raw predictors, as expected. Notably, the engineered K × pH feature is the third most important (15.1\% of total gain), and the phosphorus ratios also contribute significantly (10.0\% and 9.3\%). This confirms that the model effectively leverages both raw and engineered features to capture complex agronomic relationships.
+To validate the role of each input, we extracted LightGBM feature importances (information gain). Figure \ref{fig:feature_importance} shows that soil potassium (Kppm) and pH are the top raw predictors, as expected. Notably, the engineered K × pH feature is the third most important (15.1\% of total gain), and the phosphorus ratios also contribute significantly (10.0\% and 9.3\%). This confirms that the model effectively leverages both raw and engineered features to capture complex agronomic relationships.
 
 \begin{figure}[H]
 	\centering
@@ -159,79 +328,133 @@ The system architecture is designed to serve as the primary gateway for the TANI
  \begin{figure}[H]
  	\centering
  	\caption{TANIM Mobile Application Login Page}
- 	\includegraphics[width=0.85\textwidth]{figures/FarmerLogin.pdf}
+ 	\includegraphics[width=0.6\textwidth]{figures/FarmerLogin.pdf}
  	\label{fig:farmer_login}
  \end{figure}
  
- \textbf{Figure \ref{fig:farmer_login}} shows the login interface, it  serves as the entry point of the mobile application. It includes the username input field (1), where the user enters their unique identification, and the password input field (2), which securely captures the user’s credentials and includes a show or hide feature for usability. The login button (3) allows users to authenticate and proceed to the main dashboard upon successful verification.
+ Figure \ref{fig:farmer_login} shows the login interface, it  serves as the entry point of the mobile application. It includes the username input field (1), where the user enters their unique identification, and the password input field (2), which securely captures the user’s credentials and includes a show or hide feature for usability. The login button (3) allows users to authenticate and proceed to the main dashboard upon successful verification.
 
 \subsection{Core Functionalities}
 
-The core functionalities of the application begin with user authentication via the Farmer Login Interface, which utilizes a username input field and a secure password field that includes a usability feature to show or hide the credentials. Upon successful login, users can proceed to the main dashboard to view the My Farms page as illustrated in \textbf{Figure \ref{fig:my_farms}}, which provides a card-based view of registered farms and their respective land areas. For a selected farm, the application displays detailed soil health parameters including Nitrogen, Phosphorus, Potassium, salinity, pH, moisture, and temperature, all of which are collected via hardware sensors as shown in \textbf{Figure \ref{fig:selected_farms}}. 
+The core functionalities of the application begin with user authentication via the Farmer Login Interface, which utilizes a username input field and a secure password field that includes a usability feature to show or hide the credentials. Upon successful login, users can proceed to the main dashboard to view the My Farms page as illustrated in Figure \ref{fig:my_farms}, which provides a card-based view of registered farms and their respective land areas. For a selected farm, the application displays detailed soil health parameters including Nitrogen, Phosphorus, Potassium, salinity, pH, moisture, and temperature, all of which are collected via hardware sensors as shown in Figure \ref{fig:selected_farms}. 
 
 \begin{figure}[H]
 	\centering
 	\caption{TANIM Mobile Application My Farms Page}
-	\includegraphics[width=0.85\textwidth]{figures/MyFarms.pdf}
+	\includegraphics[width=0.7\textwidth]{figures/MyFarms.pdf}
 	\label{fig:my_farms}
 \end{figure}
 
-\textbf{Figure \ref{fig:my_farms}} presents the My Farms dashboard, this screen displays a personalized greeting through the user name (1), creating a user-centered experience. A logout button (2) is provided for secure exit from the application. The main component of this page is the list of farms (3), which presents a card-based view of the user’s registered farms, including relevant details such as farm names and land area.
+Figure \ref{fig:my_farms} presents the My Farms dashboard, this screen displays a personalized greeting through the user name (1), creating a user-centered experience. A logout button (2) is provided for secure exit from the application. The main component of this page is the list of farms (3), which presents a card-based view of the user’s registered farms, including relevant details such as farm names and land area.
 
 \begin{figure}[H]
 	\centering
 	\caption{TANIM Mobile Application Selected Farms Page}
-	\includegraphics[width=0.85\textwidth]{figures/SelectedFarms.pdf}
+	\includegraphics[width=0.7\textwidth]{figures/SelectedFarms.pdf}
 	\label{fig:selected_farms}
 \end{figure}
 
-\textbf{Figure \ref{fig:selected_farms}}. shows the soil health parameters of the tested soil, it provides detailed information collected from soil sensors. This includes a list of parameters (1) such as Nitrogen, Phosphorus, Potassium, salinity, pH, moisture, and temperature. Each parameter is visually represented using color-coded indicators to classify levels as low, medium, or high, allowing users to quickly assess soil conditions.
+Figure \ref{fig:selected_farms} shows the soil health parameters of the tested soil, it provides detailed information collected from soil sensors. This includes a list of parameters (1) such as Nitrogen, Phosphorus, Potassium, salinity, pH, moisture, and temperature. Each parameter is visually represented using color-coded indicators to classify levels as low, medium, or high, allowing users to quickly assess soil conditions.
 
-The system further utilizes Machine Learning to provide predictive insights through the Weather and Suggested Crops screen as shown in \textbf{Figure \ref{fig:weather_crop}}, which offers a ranked list of crops suitable for current soil conditions along with compatibility percentages. To support the selected crop, the Fertilizer Suggestions and Timeline screen in \textbf{Figure \ref{fig:fertilier_suggestion}} provides a calendar-based planting schedule and a detailed phase schedule covering sowing, vegetative growth, flowering, and harvest. Comprehensive nutrient recommendations are provided through multiple fertilizer options as shown in \textbf{Figure \ref{fig:farm_summary}} and \textbf{Figure \ref{fig:guide}}, allowing users to select the most appropriate combination based on availability. Finally, the user can initiate the monitoring process by engaging the start farming session button.
+The system further utilizes Machine Learning to provide predictive insights through the Weather and Suggested Crops screen as shown in Figure \ref{fig:weather_crop}, which offers a ranked list of crops suitable for current soil conditions along with compatibility percentages. To support the selected crop, the Fertilizer Suggestions and Timeline screen in Figure \ref{fig:fertilier_suggestion} provides a calendar-based planting schedule and a detailed phase schedule covering sowing, vegetative growth, flowering, and harvest. Comprehensive nutrient recommendations are provided through multiple fertilizer options as shown in Figure \ref{fig:farm_summary} and Figure \ref{fig:guide}, allowing users to select the most appropriate combination based on availability. Finally, the user can initiate the monitoring process by engaging the start farming session button.
 
 \begin{figure}[H]
 	\centering
 	\caption{TANIM Mobile Application Weather and Crop Selection}
-	\includegraphics[width=0.85\textwidth]{figures/WeatherCrop.pdf}
+	\includegraphics[width=0.7\textwidth]{figures/WeatherCrop.pdf}
 	\label{fig:weather_crop}
 \end{figure}
 
-\textbf{Figure \ref{fig:weather_crop}} illustrates the Weather and Suggested Crops screen, it provides environmental context and predictive insights. The weather forecast (1) displays current conditions, including temperature and general weather status, along with practical recommendations for farm activities. The generated suggested crops (2) section presents a Machine Learning - based ranking of crops suitable for the current soil conditions, including percentage-based compatibility indicators that help users identify the most viable crop options.
+Figure \ref{fig:weather_crop} illustrates the Weather and Suggested Crops screen, it provides environmental context and predictive insights. The weather forecast (1) displays current conditions, including temperature and general weather status, along with practical recommendations for farm activities. The generated suggested crops (2) section presents a Machine Learning - based ranking of crops suitable for the current soil conditions, including percentage-based compatibility indicators that help users identify the most viable crop options.
 
 \begin{figure}[H]
 	\centering
 	\caption{TANIM Mobile Application Fertilizer Suggestion and Timeline}
-	\includegraphics[width=0.85\textwidth]{figures/FertilizerSuggestions.pdf}
+	\includegraphics[width=0.7\textwidth]{figures/FertilizerSuggestions.pdf}
 	\label{fig:fertilier_suggestion}
 \end{figure}
 
-\textbf{Figure \ref{fig:fertilier_suggestion}} shows the Fertilizer Suggestions and Timeline screen, it offers structured planning tools for selected crops. The fertilizer suggestion with crop (1) explains the basis of nutrient recommendations using soil data. The planting timeline (2) presents a calendar-based schedule indicating key dates such as planting and expected harvest. Additionally, the phase schedule (3) divides the crop cycle into stages such as sowing, vegetative growth, flowering, and harvest, providing a clear overview of the farming process.
+Figure \ref{fig:fertilier_suggestion} shows the Fertilizer Suggestions and Timeline screen, it offers structured planning tools for selected crops. The fertilizer suggestion with crop (1) explains the basis of nutrient recommendations using soil data. The planting timeline (2) presents a calendar-based schedule indicating key dates such as planting and expected harvest. Additionally, the phase schedule (3) divides the crop cycle into stages such as sowing, vegetative growth, flowering, and harvest, providing a clear overview of the farming process.
 
 \begin{figure}[H]
 	\centering
 	\caption{TANIM Mobile Application Farm Summary and Option 1}
-	\includegraphics[width=0.85\textwidth]{figures/FarmSummary.pdf}
+	\includegraphics[width=0.7\textwidth]{figures/FarmSummary.pdf}
 	\label{fig:farm_summary}
 \end{figure}
 
-\textbf{Figure \ref{fig:farm_summary}} presents the Farm Summary and Option 1 screen, it  summarizes the current farming plan and introduces a recommended fertilizer approach. The current phase cycle (1) indicates the present stage of crop development. The farm summary (2) provides key details such as selected crop, soil pH, and required NPK values per hectare. The first fertilizer option (3) outlines a specific combination of fertilizers and application rates based on the system’s recommendation.
+Figure \ref{fig:farm_summary} presents the Farm Summary and Option 1 screen, it  summarizes the current farming plan and introduces a recommended fertilizer approach. The current phase cycle (1) indicates the present stage of crop development. The farm summary (2) provides key details such as selected crop, soil pH, and required NPK values per hectare. The first fertilizer option (3) outlines a specific combination of fertilizers and application rates based on the system’s recommendation.
 
 \begin{figure}[H]
 	\centering
 	\caption{TANIM Mobile Application Option 2, Guide, and Start Button}
-	\includegraphics[width=0.85\textwidth]{figures/Guide.pdf}
+	\includegraphics[width=0.7\textwidth]{figures/Guide.pdf}
 	\label{fig:guide}
 \end{figure}
 
-\textbf{Figure \ref{fig:guide}} show the Option 2, Guide, and Start Session screen, it provides alternative solutions and execution steps. The second fertilizer option (1) offers an alternative combination of fertilizer inputs in case the primary option is unavailable. The application guide (2) provides practical instructions for proper fertilizer application in the field. The start farming session button (3) allows users to finalize the plan and initiate the monitoring process for the selected farm.
+Figure \ref{fig:guide} show the Option 2, Guide, and Start Session screen, it provides alternative solutions and execution steps. The second fertilizer option (1) offers an alternative combination of fertilizer inputs in case the primary option is unavailable. The application guide (2) provides practical instructions for proper fertilizer application in the field. The start farming session button (3) allows users to finalize the plan and initiate the monitoring process for the selected farm.
 
 These figures collectively demonstrate how the TANIM mobile application supports users throughout the farming workflow, from data input and analysis to decision-making and execution. The structured interface and clearly labeled components enable users to navigate the system efficiently and apply data-driven agricultural practices in real-world conditions.
 
 
 \subsection{User Interface and Interactions}
-The user interface is centered on accessibility and clear communication of technical data to ensure a user-centered experience. A primary interactive element includes the color-coded indicators on the soil health parameters page, which classify levels as low, medium, or high to allow for rapid visual assessment of soil status as shown in \textbf{Figure \ref{fig:selected_farms}}. Interactions are further enhanced by practical instructions, such as the application guide shown in \textbf{Figure \ref{fig:guide}}, which provides specific field instructions for applying fertilizer treatments. These interface elements collectively ensure that the user can navigate the system and apply data-driven practices under real-world conditions. 
+The user interface is centered on accessibility and clear communication of technical data to ensure a user-centered experience. A primary interactive element includes the color-coded indicators on the soil health parameters page, which classify levels as low, medium, or high to allow for rapid visual assessment of soil status as shown in Figure \ref{fig:selected_farms}. Interactions are further enhanced by practical instructions, such as the application guide shown in Figure \ref{fig:guide}, which provides specific field instructions for applying fertilizer treatments. These interface elements collectively ensure that the user can navigate the system and apply data-driven practices under real-world conditions. 
 
 \subsection{Performance and Responsiveness}
+The TANIM mobile application was evaluated to determine its performance during real-world usage. The primary goal was to assess whether the app can handle requests promptly and display results without causing user delays. This evaluation is critical because the application relies on live data from backend services and machine learning models to provide farmers with actionable insights about soil health, crops, and fertilizer recommendations.
+
+Testing was conducted under standard conditions using a typical internet connection on a mobile device. The evaluated features included farmer login, retrieval of farm and farming records, fetching soil health data, obtaining weather information, and receiving crop and fertilizer predictions. Response times were logged through the backend, capturing the duration of each request.
+
+Table \ref{tab:api_logs} summarizes the performance metrics for each endpoint. As shown, response times varied depending on the complexity of the operation. Lightweight requests, such as fertilizer predictions, completed in as little as 263 ms, whereas more data-intensive operations, such as fetching all farming records for a farmer, required up to 1,840 ms. The login process averaged 1,687 ms, which is reasonable given that it involves credential verification and authentication. Weather and soil health requests had intermediate response times, reaching up to 1,365 ms, which is acceptable considering the need to pull external data and sensor readings.
+
+\begin{table}[H]
+	\centering
+	\caption{API and Machine Learning Endpoint Performance Logs}
+	\label{tab:api_logs}
+	
+	\small
+	\renewcommand{\arraystretch}{1.5}
+	
+	% X makes the URL column flexible; p{4cm} fixes the Notes width
+	\begin{tabularx}{\textwidth}{l l X l p{3.5cm}}
+		\toprule
+		\textbf{Type} & \textbf{Method} & \textbf{Endpoint / URL} & \textbf{Time (ms)} & \textbf{Notes} \\
+		\midrule
+		
+		API & POST & \url{/api/v1/auth/login-farmer} & 1687 & Farmer authentication \\
+		
+		\addlinespace[3pt]
+		
+		API & GET & \url{/api/v1/farm/2f5fc3ff-f01f-42ea-bf3f-6595a0f39150} & 979 & Fetch farm by ID \\
+		
+		\addlinespace[3pt]
+		
+		API & GET & \url{/api/v1/farm/farming/by-farmer/2f5fc3ff-f01f-42ea-bf3f-6595a0f39150} & 1840 & Fetch farming records by farmer \\
+		
+		\addlinespace[3pt]
+		
+		API & GET & \url{/api/v1/farm/farming/0b2f84db-678c-4da1-8c2c-2a6aacd01304} & 968 & Fetch specific farming record \\
+		
+		\addlinespace[3pt]
+		
+		ML & GET & \url{/pending/soil} & 1299 & Soil health data fetch \\
+		
+		\addlinespace[3pt]
+		
+		API & GET & \url{/api/v1/weather?lat=14.5995&lon=120.9842} & 1365 & Weather fetch for Manila coordinates \\
+		
+		\addlinespace[3pt]
+		
+		ML & POST & \url{/predict/fertilizer} & 263 & Fertilizer prediction \\
+		
+		\bottomrule
+	\end{tabularx}
+	
+\end{table}
+
+The results in Table \ref{tab:api_logs} indicate that the application handled all tested features without errors or crashes. During evaluation, the interface remained responsive, with no noticeable lag, freezes, or failed requests. While certain endpoints naturally required more processing time, none of the response times negatively impacted the user experience. Optimization of heavier endpoints, such as fetching farming records, may further improve responsiveness and enhance usability for everyday farm management.
+
+Overall, the TANIM mobile application demonstrates stable and efficient performance, confirming its suitability for real-time farm data management and decision support.
 
 \section{Web Application}
 A user-friendly and functional web application was developed to support the Department of Agriculture administrators in monitoring soil health, managing farmer and farm data, and visualizing farm locations through an integrated mapping system. The web application serves as the administrative interface of the TANIM system, enabling efficient data management and decision-making.
@@ -243,7 +466,7 @@ The TANIM web application functions as a centralized platform for managing agric
 
 The architecture of the web application follows a client-server model, where the frontend interface communicates with backend services hosted on Supabase. Data collected from IoT sensor nodes is transmitted to the server and stored in the database, which is then accessed by the web application for visualization and management. This integration ensures near real-time synchronization between field data and the administrative interface.
 
-To access the system, administrators are required to log in using their credentials. \textbf{Figure \ref{fig:login_page}} illustrates the login page layout, which includes the main functional components of the interface. Component (1) represents the email input field used to enter the administrator’s registered email address, (2) represents the password input field for secure authentication, and (3) represents the login button, which, when clicked, redirects the administrator to the system dashboard upon successful authentication.
+To access the system, administrators are required to log in using their credentials. Figure \ref{fig:login_page} illustrates the login page layout, which includes the main functional components of the interface. Component (1) represents the email input field used to enter the administrator’s registered email address, (2) represents the password input field for secure authentication, and (3) represents the login button, which, when clicked, redirects the administrator to the system dashboard upon successful authentication.
 
 \begin{figure}[H]
 	\centering
@@ -253,7 +476,7 @@ To access the system, administrators are required to log in using their credenti
 \end{figure}
 
 \subsection{Dashboard and Data Visualization}
-The dashboard serves as the central command hub of the TANIM web application, providing administrators with a comprehensive overview of agricultural metrics and overall system activity. It is designed to transform raw data collected from IoT sensor nodes into meaningful and actionable insights through visual summaries and real-time updates. \textbf{Figure \ref{fig:web_dashboard}} illustrates the layout of the admin dashboard, where the components are labeled for clarity.
+The dashboard serves as the central command hub of the TANIM web application, providing administrators with a comprehensive overview of agricultural metrics and overall system activity. It is designed to transform raw data collected from IoT sensor nodes into meaningful and actionable insights through visual summaries and real-time updates. Figure \ref{fig:web_dashboard} illustrates the layout of the admin dashboard, where the components are labeled for clarity.
 
 \begin{figure}[H]
 	\centering
@@ -275,7 +498,7 @@ Additionally, the dashboard includes administrative controls and profile managem
 Overall, the dashboard and data visualization features of the TANIM web application enhance the ability of administrators to monitor, analyze, and manage agricultural data efficiently. By presenting complex datasets in an organized and visually intuitive manner, the system supports informed decision-making and improves operational efficiency.
 
 \subsection{Administrative Functionalities}
-The TANIM web application provides comprehensive dashboard and data visualization features across multiple pages, enabling administrators to effectively manage agricultural resources, personnel, and system operations. These include the Farms Management page, Farmers Management page, GIS Mapping page, Fertilizer Management page, and Administrative Management page, each designed to present data in an organized and interactive format. \textbf{Figure \ref{fig:farms_management}} to \textbf{\ref{fig:admin_management}} illustrate the interfaces of these pages, with labeled components to guide interpretation.
+The TANIM web application provides comprehensive dashboard and data visualization features across multiple pages, enabling administrators to effectively manage agricultural resources, personnel, and system operations. These include the Farms Management page, Farmers Management page, GIS Mapping page, Fertilizer Management page, and Administrative Management page, each designed to present data in an organized and interactive format. Figure \ref{fig:farms_management} to \ref{fig:admin_management} illustrate the interfaces of these pages, with labeled components to guide interpretation.
 
 \begin{figure}[H]
 	\centering
@@ -284,7 +507,7 @@ The TANIM web application provides comprehensive dashboard and data visualizatio
 	\label{fig:farms_management}
 \end{figure}
 
-The Farms Management page, shown in \textbf{Figure \ref{fig:farms_management}}, is designed to monitor and manage land assets across the Bukidnon region. The interface presents a page overview (1) displaying the total managed land area and growth metrics, allowing administrators to assess system scale and expansion. Table controls (2) are provided to filter and sort farm records based on status or recency. A soil health distribution indicator (3) categorizes farms into conditions such as optimal, requiring attention, critical, or with no available data. The page also includes an add farm button (4) for registering new land parcels and an export registry button (5) for downloading farm data. A registered farm data table (6) lists detailed information such as farm name, location, owner, and soil status, with corresponding control buttons (7) for editing and deleting individual records.
+The Farms Management page, shown in Figure \ref{fig:farms_management}, is designed to monitor and manage land assets across the Bukidnon region. The interface presents a page overview (1) displaying the total managed land area and growth metrics, allowing administrators to assess system scale and expansion. Table controls (2) are provided to filter and sort farm records based on status or recency. A soil health distribution indicator (3) categorizes farms into conditions such as optimal, requiring attention, critical, or with no available data. The page also includes an add farm button (4) for registering new land parcels and an export registry button (5) for downloading farm data. A registered farm data table (6) lists detailed information such as farm name, location, owner, and soil status, with corresponding control buttons (7) for editing and deleting individual records.
 
 \begin{figure}[H]
 	\centering
@@ -293,7 +516,7 @@ The Farms Management page, shown in \textbf{Figure \ref{fig:farms_management}}, 
 	\label{fig:farmers_management}
 \end{figure}
 
-The Farmers Management page, illustrated in \textbf{Figure \ref{fig:farmers_management}}, focuses on managing farmer profiles and associated information. The page overview (1) displays the total number of registered farmers along with growth indicators. Table controls (2) allow administrators to sort records, such as by recently added entries. A geographic coverage component (3) presents the distribution of farmers across different areas of Bukidnon. The page provides a register new farmer button (4) for adding personnel and an export registry button (5) for downloading farmer data. A registered farmer table (6) displays key information including identification details, contact information, and associated farms, while control buttons (7) allow for updating or removing records.
+The Farmers Management page, illustrated in Figure \ref{fig:farmers_management}, focuses on managing farmer profiles and associated information. The page overview (1) displays the total number of registered farmers along with growth indicators. Table controls (2) allow administrators to sort records, such as by recently added entries. A geographic coverage component (3) presents the distribution of farmers across different areas of Bukidnon. The page provides a register new farmer button (4) for adding personnel and an export registry button (5) for downloading farmer data. A registered farmer table (6) displays key information including identification details, contact information, and associated farms, while control buttons (7) allow for updating or removing records.
 
 \begin{figure}[H]
 	\centering
@@ -302,7 +525,7 @@ The Farmers Management page, illustrated in \textbf{Figure \ref{fig:farmers_mana
 	\label{fig:gis_mapping}
 \end{figure}
 
-The GIS Mapping page, as shown in \textbf{Figure \ref{fig:gis_mapping}}, provides a spatial representation of farm locations through an interactive map interface. The farm mapping component (1) displays GPS-based pin locations of each farm, allowing administrators to visualize distribution and density. A quick-action add farmer button (2) is available within the interface for registering users directly from the map view. Additionally, a list of farms panel (3) presents the GPS status of each farm, confirming whether location data has been successfully recorded.
+The GIS Mapping page, as shown in Figure \ref{fig:gis_mapping}, provides a spatial representation of farm locations through an interactive map interface. The farm mapping component (1) displays GPS-based pin locations of each farm, allowing administrators to visualize distribution and density. A quick-action add farmer button (2) is available within the interface for registering users directly from the map view. Additionally, a list of farms panel (3) presents the GPS status of each farm, confirming whether location data has been successfully recorded.
 
 \begin{figure}[H]
 	\centering
@@ -311,7 +534,7 @@ The GIS Mapping page, as shown in \textbf{Figure \ref{fig:gis_mapping}}, provide
 	\label{fig:fertilizer_management}
 \end{figure}
 
-The Fertilizer Management page, presented in \textbf{Figure \ref{fig:fertilizer_management}}, serves as a decision-support feature by providing system-generated fertilizer recommendations based on soil data. The interface includes a list of farms panel (1), which allows administrators to select specific farms and identify those with available recommendations. Sorting controls (2), including a search bar and crop filter, are used to quickly locate relevant data. The fertilizer suggestion panel (3) displays detailed information for a selected farm, including soil profile data such as pH and NPK values, recommended fertilizer types, application timing, and dosage guidelines.
+The Fertilizer Management page, presented in Figure \ref{fig:fertilizer_management}, serves as a decision-support feature by providing system-generated fertilizer recommendations based on soil data. The interface includes a list of farms panel (1), which allows administrators to select specific farms and identify those with available recommendations. Sorting controls (2), including a search bar and crop filter, are used to quickly locate relevant data. The fertilizer suggestion panel (3) displays detailed information for a selected farm, including soil profile data such as pH and NPK values, recommended fertilizer types, application timing, and dosage guidelines.
 
 \begin{figure}[H]
 	\centering
@@ -320,41 +543,31 @@ The Fertilizer Management page, presented in \textbf{Figure \ref{fig:fertilizer_
 	\label{fig:admin_management}
 \end{figure}
 
-The Administrative Management page, illustrated in \textbf{Figure \ref{fig:admin_management}}, functions as the control center for system access and user management. The admin information table (1) lists all administrators along with their assigned roles and account details, including protected accounts such as the super administrator. Control actions such as edit and delete are available for authorized accounts, while protected accounts cannot be modified. An add admin button (2) is provided to allow authorized users to register new administrators, ensuring controlled expansion of system access.
+The Administrative Management page, illustrated in Figure \ref{fig:admin_management}, functions as the control center for system access and user management. The admin information table (1) lists all administrators along with their assigned roles and account details, including protected accounts such as the super administrator. Control actions such as edit and delete are available for authorized accounts, while protected accounts cannot be modified. An add admin button (2) is provided to allow authorized users to register new administrators, ensuring controlled expansion of system access.
 
 These pages collectively enhance the dashboard and data visualization capabilities of the TANIM web application by presenting complex agricultural and administrative data in a structured, interactive, and user-friendly manner. The consistent interface design, combined with clearly labeled components, supports efficient navigation and informed decision-making for administrators.
 
 \subsection{System Performance}
 The performance of the TANIM web application was evaluated to assess its responsiveness, stability, and efficiency during typical user interactions. Testing was conducted under normal operating conditions using standard internet connectivity, focusing on key system functions such as farm selection, farmer data retrieval, farming session queries, and administrative operations. Response times were measured using browser developer tools, specifically the network monitoring feature.
 
-As presented in \textbf{Table \ref{tab:api_latency}}, the majority of API requests returned a 200 status code, indicating reliable communication between the frontend and backend. Core system functionalities demonstrated consistent performance, with response times generally ranging from 200 ms to 330 ms. Farm and farmer data requests were completed within 246 ms to 329 ms, while farming session queries averaged between 260 ms and 310 ms. Administrative requests, including authentication processes, also showed stable performance, with response times between 205 ms and 308 ms.
+As presented in Table \ref{tab:api_latency}, the majority of API requests returned a 200 status code, indicating reliable communication between the frontend and backend. Core system functionalities demonstrated consistent performance, with response times generally ranging from 200 ms to 330 ms. Farm and farmer data requests were completed within 246 ms to 329 ms, while farming session queries averaged between 260 ms and 310 ms. Administrative requests, including authentication processes, also showed stable performance, with response times between 205 ms and 308 ms.
 
 \begin{table}[ht]
 	\centering
-	\caption{TANIM System API Network Response and Latency Log}
+	\caption{TANIM System API and Machine Learning Endpoint Response Times}
 	\label{tab:api_latency}
 	\begin{adjustbox}{max width=\textwidth}
-		\begin{tabular}{l c c c r}
+		\begin{tabular}{l c l r l}
 			\toprule
-			\textbf{Endpoint Name} & \textbf{Status} & \textbf{Type} & \textbf{Size} & \textbf{Time} \\ 
+			\textbf{Endpoint Name} & \textbf{Method} & \textbf{Type} & \textbf{Time (ms)} & \textbf{Notes} \\
 			\midrule
-			forecast?latitude=8.4542\&longitude=... & 200 & fetch & 0.8 kB & 1.59 s \\ 
-			farm?select=farm\_id,farm\_name,... & 200 & fetch & 1.4 kB & 329 ms \\ 
-			farmer?select=* & 200 & fetch & 1.4 kB & 246 ms \\ 
-			farming\_session?select=*\&order=... & 200 & fetch & 5.5 kB & 294 ms \\ 
-			farming\_session?select=*\&order=... & 200 & fetch & 5.8 kB & 310 ms \\ 
-			admin?select=admin\_id,username,... & 200 & fetch & 0.7 kB & 611 ms \\ 
-			farming\_session?farm\_id=eq... & 200 & fetch & 0.7 kB & 217 ms \\ 
-			farming\_session?select=*\&order=... & 200 & fetch & 5.5 kB & 261 ms \\ 
-			farming\_session?select=*\&order=... & 200 & fetch & 5.5 kB & 292 ms \\ 
-			farming\_session?farm\_id=eq... & 200 & fetch & 2.2 kB & 262 ms \\ 
-			farmer?select=* & 200 & fetch & 1.5 kB & 301 ms \\ 
-			farm?select=farm\_id,farm\_name,... & 200 & fetch & 1.6 kB & 294 ms \\ 
-			farming\_session?select=*\&order=... & 200 & fetch & 5.7 kB & 290 ms \\ 
-			farming\_session?select=*\&order=... & 200 & fetch & 5.8 kB & 307 ms \\ 
-			interactive\_balloon.css & 200 & fetch & 1.5 kB & 9 ms \\ 
-			admin?username=eq.admin@... & 200 & fetch & 0.6 kB & 308 ms \\ 
-			admin?username=eq.admin@... & 200 & fetch & 0.6 kB & 205 ms \\ 
+			/api/v1/auth/login-farmer & POST & API & 1687 & Farmer authentication \\
+			/api/v1/farm/2f5fc3ff-f01f-42ea-bf3f-6595a0f39150 & GET & API & 979 & Fetch farm by ID \\
+			/api/v1/farm/farming/by-farmer/2f5fc3ff-f01f-42ea-bf3f-6595a0f39150 & GET & API & 1840 & Fetch farming records by farmer \\
+			/api/v1/farm/farming/0b2f84db-678c-4da1-8c2c-2a6aacd01304 & GET & API & 968 & Fetch specific farming record \\
+			/pending/soil & GET & ML & 1299 & Soil health data fetch \\
+			/api/v1/weather?lat=14.5995\&lon=120.9842 & GET & API & 1365 & Weather fetch for Manila coordinates \\
+			/predict/fertilizer & POST & ML & 263 & Fertilizer prediction \\
 			\bottomrule
 		\end{tabular}
 	\end{adjustbox}
@@ -367,53 +580,17 @@ Overall, the results indicate that the TANIM web application delivers fast and c
 \subsection{Accessibility and Responsiveness}
 The responsiveness and accessibility of the TANIM web application were evaluated to determine how effectively the system adapts to different devices while ensuring ease of use for a wide range of users, particularly farmers accessing the platform in field environments. This combined evaluation focuses on the system’s ability to dynamically adjust its interface across varying screen sizes and resolutions, while also maintaining clarity, usability, and user-friendly interaction.
 
-The testing process involved accessing the system using multiple devices, including desktop computers, laptops, tablets, and mobile phones. Screen resolutions such as 1920×1080 for desktops, 1920x1080 for laptops in \textbf{Figure \ref{fig:desktop}} and \textbf{Figure \ref{fig:laptop}}, 2560×1600 for tablets in \textbf{Figure \ref{fig:tablet}}, 2400×1080 for android devices in \textbf{Figure \ref{fig:android}}, and 1792x828 for IOS devices in \textbf{Figure \ref{fig:ios}} were considered to represent a wide range of user environments. In addition, the system was tested using different web browsers, including Google Chrome, Brave, Safari, and Microsoft Edge, to ensure cross-browser compatibility. During testing, key functionalities such as admin and superadmin login, viewing soil data and  crops planted, navigating between pages, and interacting with dashboard components were performed on each device.
-
-\begin{figure}[H]
-	\centering
-	\caption{TANIM Web Application in Desktop}
-	\includegraphics[width=1\textwidth]{figures/Desktop.pdf}
-	\label{fig:desktop}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\caption{TANIM Web Application in Laptop}
-	\includegraphics[width=1\textwidth]{figures/Laptop.pdf}
-	\label{fig:laptop}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\caption{TANIM Web Application in Tablet}
-	\includegraphics[width=1\textwidth]{figures/Tablet.pdf}
-	\label{fig:tablet}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\caption{TANIM Web Application in Android}
-	\includegraphics[width=.5\textwidth]{figures/Android.pdf}
-	\label{fig:android}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\caption{TANIM Web Application in IOS}
-	\includegraphics[width=.5\textwidth]{figures/IOS.pdf}
-	\label{fig:ios}
-\end{figure}
-
-The device compatibility testing demonstrated that the TANIM web application is capable of providing a consistent and user-friendly experience across a wide range of devices and environments. The implementation of responsive design ensures accessibility for users, including those using mobile devices in field conditions, thereby supporting the overall usability and effectiveness of the system.
+The testing process involved accessing the system using multiple devices, including desktop computers, laptops, tablets, and mobile phones. Screen resolutions such as 1920×1080 for desktops, 1920x1080 for laptops, 2560×1600 for tablets, 2400×1080 for android devices, and 1792x828 for IOS devices in were considered to represent a wide range of user environments. In addition, the system was tested using different web browsers, including Google Chrome, Brave, Safari, and Microsoft Edge, to ensure cross-browser compatibility. During testing, key functionalities such as admin and superadmin login, viewing soil data and  crops planted, navigating between pages, and interacting with dashboard components were performed on each device.
 
 \section{System and Functional Evaluation}
+This section presents the evaluation of the developed system in terms of its functionality, performance, and overall usability. The purpose of this evaluation is to determine whether the system meets its intended objectives and satisfies user requirements.
 
 \subsection{Crop Recommendation Validation}
 The validation of the rule-based recommendation engine of the TANIM system was conducted by comparing system outputs against established agricultural standards and expert guidelines provided by the Department of Agriculture and the Bureau of Soils and Water Management. To ensure the reliability and agricultural accuracy of the system, the validation process focused on verifying the translation of qualitative Soil Test Kit results into quantitative limits. This included crop-specific fertilizer rates, modes of application protocols, and soil pH preference modeling.
 
 The core fertilizer and crop suitability logic of the system is based entirely on protocols from the Bureau of Soils and Water Management. Validation was performed by ensuring that the programmed logic strictly follows these published standards, thereby eliminating arbitrary decision-making within the recommendation engine. The system recommendations were cross-checked against reference manuals to confirm that every combination of soil sensor data results in agriculturally sound outputs.
 
-A critical aspect of the validation involved converting qualitative color-based results into actionable quantitative limits. The classification logic of the system was validated against official quantitative value references, as summarized in \textbf{Table~\ref{tab:soil_nutrient_reference}}. As shown in the table, nutrient thresholds for nitrogen, phosphorus, and potassium were categorized into low, medium, and high levels based on standardized testing conditions. These thresholds served as the basis for ensuring that the system’s interpretation of soil data aligns with scientifically accepted agricultural practices.
+A critical aspect of the validation involved converting qualitative color-based results into actionable quantitative limits. The classification logic of the system was validated against official quantitative value references, as summarized in Table~\ref{tab:soil_nutrient_reference}. As shown in the table, nutrient thresholds for nitrogen, phosphorus, and potassium were categorized into low, medium, and high levels based on standardized testing conditions. These thresholds served as the basis for ensuring that the system’s interpretation of soil data aligns with scientifically accepted agricultural practices.
 
 \begin{table}[H]
 	\centering
@@ -517,7 +694,6 @@ The effectiveness of this approach is more evident when compared to the baseline
 
 These results highlight the critical role of the refined preprocessing and optimization steps in stabilizing and improving the overall predictive performance of the system. Furthermore, the system's weighted precision, recall, and F1-score all exceeded 82\%, indicating that the model maintains consistent performance across all ten target crop classes without disproportionately favoring precision over recall or vice versa.
 
-\subsection{Test Cases}
 To systematically validate the crop recommendation system under varying field conditions, six test case scenarios were shown in Table \ref{tab:validation_test_cases}. These scenarios represent soil properties encountered in Region 10, Philippines, as recorded in the Regional Soils Laboratory (RSL) dataset from 2023 to 2025. This approach ensures the system is evaluated across a spectrum ranging from nutrient-deficient acidic soils to fertile neutral soils.
 
 The model processes four primary inputs---Organic Matter (OM\%), Phosphorus (P), Potassium (K), and pH---while internally computing four interaction features: P/K ratio, OM$\times$pH, K$\times$pH, and P/OM ratio. As illustrated in Table \ref{tab:validation_test_cases}, these scenarios cover majority and minority crop classes, nutrient-deficient profiles, and boundary edge cases to ensure recommendation accuracy and robustness.
@@ -543,11 +719,6 @@ The model processes four primary inputs---Organic Matter (OM\%), Phosphorus (P),
 		\bottomrule
 	\end{tabularx}
 \end{table}
-
-\subsection{Functional Evaluation}
-
-
-\subsection{Results and Discussion}
 
 The practical application of the crop recommendation engine was validated by comparing expected outcomes against actual system outputs across twenty test cases. As shown in Table \ref{tab:results_comparison}, the system analyzed four core soil parameters: Organic Matter (\%), Phosphorus (ppm), Potassium (ppm), and pH. The model achieved an overall accuracy of 85.0\%, successfully predicting the correct crop in 17 out of 20 instances.
 
@@ -587,14 +758,31 @@ The practical application of the crop recommendation engine was validated by com
 	\end{tabularx}
 \end{table}
 
-The evaluation reveals a robust model calibrated for Region 10's unique agronomic conditions. Key strengths include:
-\begin{itemize}
-	\item \textbf{Equitable Performance:} K-Means augmentation successfully mitigated minority class bias, ensuring consistent accuracy across all ten crops.
-	\item \textbf{Feature Efficacy:} Engineered features, particularly the P/K ratio and OM$\times$pH interaction, served as pivotal predictors.
-	\item \textbf{Reliability:} Most predictions exceeded a 70\% confidence threshold; lower scores effectively flagged ambiguous profiles for further review.
-\end{itemize}
+The evaluation revealed a robust model calibrated for Region 10's unique agronomic conditions. Key strengths included equitable performance, where K-Means augmentation successfully mitigated minority class bias, ensuring consistent accuracy across all ten crops. The model also demonstrated strong feature efficacy, as engineered features, particularly the P/K ratio and OM$\times$pH interaction, served as pivotal predictors. In terms of reliability, most predictions exceeded a 70\% confidence threshold, while lower scores effectively flagged ambiguous profiles for further review.
+
 
 Despite these strengths, misclassifications occurred in crops with overlapping nutrient requirements (e.g., Tomato vs. Eggplant). Furthermore, the model's current focus on soil-only features lacks climatic context such as elevation and seasonality. Future iterations should integrate environmental IoT sensor data and periodic retraining with fresh laboratory results to maintain long-term precision.
+
+\subsection{System Testing}
+The system testing phase was conducted to evaluate the functional performance and reliability of the TANIM hardware in a real-world agricultural environment. This phase focused on the integration between the sensor probes, the processing unit, and the cloud-based data transmission system. 
+
+As shown in Figure \ref{fig:field_testing}, the hardware unit was deployed in a field setting. The sensor was inserted into a prepared soil pit to ensure direct contact with the substrate for accurate data acquisition.
+
+\begin{figure}[H]
+	\centering
+	\caption{System Field Testing}
+	\includegraphics[width=1\textwidth]{figures/FieldTesting.pdf}
+	\label{fig:field_testing}
+\end{figure}
+
+These results were successfully transmitted and displayed on the digital interface, confirming the end-to-end connectivity of the system. This testing phase ensures that the environmental data gathered is both consistent and reflective of the actual field conditions, providing a solid foundation for the management recommendations generated by the TANIM application as shown in Figure \ref{fig:system_testing}.
+
+\begin{figure}[H]
+	\centering
+	\caption{System Logs}
+	\includegraphics[width=1\textwidth]{figures/SystemTesting.pdf}
+	\label{fig:system_testing}
+\end{figure}
 
 \section{Usability Evaluation}
 This section presents a rigorous usability evaluation of the developed system, employing a structured, user-centered assessment framework to measure its effectiveness, efficiency, and user satisfaction across identified user groups. The evaluation was conducted using purposefully selected participants, consisting of a total of ten (10) respondents, specifically seven (7) farmers as primary end-users and three (3) Department of Agriculture (DA) officials as administrative users. This 7:3 distribution ensures adequate representation of both operational and managerial perspectives in system interaction.
@@ -606,11 +794,37 @@ The respondent from the Department of Agriculture (DA) has been serving the inst
 
 In terms of professional role, the respondent holds the position of Senior Agriculturist, indicating a higher level of expertise and responsibility within the organization. As an agriculturist, their primary area of focus revolves around crop production, soil management, and the provision of technical assistance to farmers. This role typically involves advising on best farming practices, evaluating soil and crop conditions, and contributing to the development and implementation of agricultural programs aimed at improving productivity and sustainability.
 
-\subsection{Evaluation Instrument}
-
 \subsection{Results and Analysis}
+The usability of the TANIM system was evaluated using the System Usability Scale (SUS) to determine user satisfaction and the overall efficiency of the interface. As illustrated in Figure \ref{fig:sus_evaluation}, a total of ten (10) participants evaluated the system, providing individual scores that reflect their interaction experience.
+
+\begin{figure}[H]
+	\centering
+	\caption{System Usability Scale (SUS) Evaluation Results}
+	\includegraphics[width=0.9\textwidth]{figures/SUSEvaluation.pdf}
+	\label{fig:sus_evaluation}
+\end{figure}
+
+The participants recorded scores of 80.0, 92.5, 70.0, 87.5, 80.0, 80.0, 87.5, 87.5, 87.5, and 90.0. Based on these results, the system achieved an average SUS score of 84.2. According to standard SUS benchmarks, this score indicates an "Excellent" rating and a high level of usability as perceived by the respondents. Most participants provided scores categorized as "Good" ($\ge$ 80), suggesting that the system is intuitive, well-integrated, and effective in supporting complex agricultural tasks.
+
+While one respondent provided a relatively lower score of 70.0, this value still falls within the "Acceptable" usability range (68-79). The consistency of high scores among the majority of respondents demonstrates that users were able to interact with the TANIM system efficiently and with minimal difficulty. Overall, the evaluation confirms that the system provides a positive user experience and meets the high usability expectations required for its deployment.
 
 \subsection{Interpretation}
+\begin{table}[h]
+	\centering
+	\caption{Summary of Usability Evaluation Results}
+	\label{tab:SUS}
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Average SUS Score & Grade & Adjectival Rating & Remarks \\ \hline
+		84.25 & A+ & Excellent & Acceptable \\ \hline
+	\end{tabular}
+\end{table}
 
+As shown in the Table \ref{tab:SUS} and based on the SUS interpretation scale, the average score of 84.25 corresponds to an “Excellent” rating and falls within the acceptable to high usability range. This score also indicates that the system is likely to be well accepted by users and demonstrates strong usability performance.
+
+The high SUS score suggests that the TANIM system is easy to learn, efficient to use, and provides a smooth interaction experience for its users. The consistency of scores above the standard benchmark of 68 further confirms that the system exceeds the minimum usability requirements.
+
+The usability evaluation validates that the TANIM system is user-friendly and suitable for real-world agricultural applications, supporting both technical and non-technical users in performing their tasks effectively.
 
 }
