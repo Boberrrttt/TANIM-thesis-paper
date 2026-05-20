@@ -20,83 +20,162 @@
 	\textbf{APPENDIX B}\\[1em]
 	\textbf{FUNCTIONAL TESTING FORM}
 	
+	% ========================= A =========================
 	\begin{table}[H]
 		\centering
-		\renewcommand{\arraystretch}{1.3}
+		\renewcommand{\arraystretch}{1.2}
 		\caption*{\textbf{A. Hardware and Data Capture}}
-		\resizebox{\textwidth}{!}{%
-			\begin{tabular}{|p{1.2cm}|p{4.2cm}|p{4.2cm}|p{2cm}|p{2cm}|}
-				\hline
-				\textbf{Test Case No.} & \textbf{Test Description} & \textbf{Expected Result} &
-				\multicolumn{2}{|c|}{\textbf{Does it achieve the expected result?}} \\ \cline{4-5}
-				& & & \textbf{Yes} & \textbf{No} \\ \hline
-				1 & Sensor powers on and initializes correctly. & Sensor activates and displays readiness. & & \\ \hline
-				2 & The sensor captures soil parameters (N, P, K, pH, salinity, temperature, moisture). & Accurate readings displayed on serial monitor or app. & & \\ \hline
-				3 & Multiple readings under the same conditions are consistent. & Readings show minimal variance (±5\%). & & \\ \hline
-				4 & ESP32 collects and processes sensor data properly. & Data packets successfully generated. & & \\ \hline
-				5 & The LoRa module transmits data to the gateway. & Data successfully received at gateway. & & \\ \hline
-				6 & Data stored correctly in the Firebase database. & Database shows complete and valid entries. & & \\ \hline
+		
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{p{2cm}p{3cm}p{3cm}p{3cm}p{4cm}p{4cm}p{1.5cm}}
+				\toprule
+				\textbf{Test Case ID} & \textbf{Scenario} & \textbf{Pre-condition} & \textbf{Test Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+				\midrule
+				HW-UAT-01 & Sensor Initialization & Device powered & Turn on sensor & Sensor activates and displays readiness & & \\
+				HW-UAT-02 & Soil Parameter Capture & Sensor operational & Capture N, P, K, pH, salinity, temperature, moisture & Accurate readings displayed & & \\
+				HW-UAT-03 & Reading Consistency & Stable environment & Take multiple readings & Minimal variance (±5\%) & & \\
+				HW-UAT-04 & ESP32 Data Processing & Sensor connected to ESP32 & Process sensor data & Data packets generated & & \\
+				HW-UAT-05 & LoRa Transmission & LoRa configured & Transmit data & Data received at gateway & & \\
+				HW-UAT-06 & Database Storage & Firebase connected & Send data to database & Valid entries stored & & \\
+				\bottomrule
 			\end{tabular}
-		}
+		\end{adjustbox}
 	\end{table}
 	
+	
+	% ========================= B =========================
 	\begin{table}[H]
 		\centering
-		\renewcommand{\arraystretch}{1.3}
-		\caption*{\textbf{B. Mobile Application (Farmer Side)}}
-		\resizebox{\textwidth}{!}{%
-			\begin{tabular}{|c|p{4.5cm}|p{4.5cm}|c|c|}
-				\hline
-				\textbf{Test Case No.} & \textbf{Test Description} & \textbf{Expected Result} &
-				\multicolumn{2}{|c|}{\textbf{Does it achieve the expected result?}} \\ \cline{4-5}
-				& & & \textbf{Yes} & \textbf{No} \\ \hline
-				1 & User login and authentication. & Users can log in using valid credentials. & & \\ \hline
-				2 & Soil health readings display correctly. & Dashboard shows latest sensor readings. & & \\ \hline
-				3 & Crop recommendation generation. & App suggests appropriate crops based on soil data. & & \\ \hline
-				4 & Fertilizer recommendation with dosage and schedule. & Correct fertilizer type and amount displayed. & & \\ \hline
-				5 & Multiple crop recommendations work without error. & The system handles multiple queries smoothly. & & \\ \hline
-				6 & Offline mode and data synchronization. & Data syncs automatically once reconnected. & & \\ \hline
-				7 & Farm information update. & Farmers can add/edit farm details successfully. & & \\ \hline
+		\renewcommand{\arraystretch}{1.2}
+		\caption*{\textbf{B. System-Wide Features}}
+		
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{p{2cm}p{3cm}p{3cm}p{3cm}p{4cm}p{4cm}p{1.5cm}}
+				\toprule
+				\textbf{Test Case ID} & \textbf{Scenario} & \textbf{Pre-condition} & \textbf{Test Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+				\midrule
+				SYS-UAT-01 & End-to-End Data Flow & All components active & Trigger full system process & Data flows sensor → gateway → Firebase → apps & & \\
+				SYS-UAT-02 & Error Handling & Invalid or missing data & Trigger error scenario & System shows error or retries & & \\
+				SYS-UAT-03 & Security and Access Control & User roles defined & Attempt restricted access & Only authorized users allowed & & \\
+				SYS-UAT-04 & Multi-user Capability & Multiple users active & Simultaneous system usage & No crashes; stable operation & & \\
+				\bottomrule
 			\end{tabular}
-		}
+		\end{adjustbox}
 	\end{table}
 	
+	
+	% ========================= C =========================
 	\begin{table}[H]
 		\centering
-		\renewcommand{\arraystretch}{1.3}
-		\caption*{\textbf{C. Web Application (DA / Administrator Side)}}
-		\resizebox{\textwidth}{!}{%
-			\begin{tabular}{|c|p{4.5cm}|p{4.5cm}|c|c|}
-				\hline
-				\textbf{Test Case No.} & \textbf{Test Description} & \textbf{Expected Result} &
-				\multicolumn{2}{|c|}{\textbf{Does it achieve the expected result?}} \\ \cline{4-5}
-				& & & \textbf{Yes} & \textbf{No} \\ \hline
-				1 & Admin login and authentication. & DA officials can securely log in. & & \\ \hline
-				2 & Real-time soil health dashboard. & Data from sensors updates in real time. & & \\ \hline
-				3 & GIS mapping visualization. & Farm locations shown accurately on the map. & & \\ \hline
-				4 & Farmer profile management. & Officials can view and edit farmer data. & & \\ \hline
-				5 & Crop rules and recommendation management. & Admins can modify rules and save updates. & & \\ \hline
-				6 & Web responsiveness. & The system is accessible and functional on all devices. & & \\ \hline
+		\renewcommand{\arraystretch}{1.2}
+		\caption*{\textbf{C. Authentication}}
+		
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{p{2cm}p{3cm}p{3cm}p{3cm}p{4cm}p{4cm}p{1.5cm}}
+				\toprule
+				\textbf{Test Case ID} & \textbf{Scenario} & \textbf{Pre-condition} & \textbf{Test Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+				\midrule
+				AUT-UAT-01 & Admin logs in with valid credentials & System available; user has required access & Enter valid username and password & Matches expected behavior & & \\
+				AUT-UAT-02 & Admin login fails with invalid username \& password & System available; user has required access & Enter invalid username and password & Matches expected behavior & & \\
+				AUT-UAT-03 & Farmer logs in with valid credentials & System available; user has required access & Enter valid username and password & Matches expected behavior & & \\
+				AUT-UAT-04 & Farmer login fails with invalid username \& password & System available; user has required access & Enter invalid username and password & Matches expected behavior & & \\
+				\bottomrule
 			\end{tabular}
-		}
+		\end{adjustbox}
 	\end{table}
 	
+	
+	% ========================= D =========================
 	\begin{table}[H]
 		\centering
-		\renewcommand{\arraystretch}{1.3}
-		\caption*{\textbf{D. System-Wide Features}}
-		\resizebox{\textwidth}{!}{%
-			\begin{tabular}{|c|p{4.5cm}|p{4.5cm}|c|c|}
-				\hline
-				\textbf{Test Case No.} & \textbf{Test Description} & \textbf{Expected Result} &
-				\multicolumn{2}{|c|}{\textbf{Does it achieve the expected result?}} \\ \cline{4-5}
-				& & & \textbf{Yes} & \textbf{No} \\ \hline
-				1 & End-to-end data flow. & Data moves seamlessly from sensor → gateway → Firebase → apps. & & \\ \hline
-				2 & Error handling for missing/corrupt data. & System displays proper error messages or retries. & & \\ \hline
-				3 & Security and access control. & Only authorized users can access restricted features. & & \\ \hline
-				4 & Multi-user capability. & Multiple users can operate simultaneously without system crash. & & \\ \hline
+		\renewcommand{\arraystretch}{1.2}
+		\caption*{\textbf{D. Admin Management}}
+		
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{p{2cm}p{3cm}p{3cm}p{3cm}p{4cm}p{4cm}p{1.5cm}}
+				\toprule
+				\textbf{Test Case ID} & \textbf{Scenario} & \textbf{Pre-condition} & \textbf{Test Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+				\midrule
+				WEB-UAT-1 & Add Admin (Super Admin Only) & Logged in as Super Admin & Click Add Admin → Enter details → Submit & System allows only Super Admin to add new admin & & \\
+				WEB-UAT-2 & Restrict Admin Creation & Logged in as Regular Admin & Attempt to access Add Admin & System restricts access & & \\
+				WEB-UAT-3 & Edit Admin & Logged in as Super Admin & Select admin → Edit → Save & System updates admin information & & \\
+				WEB-UAT-4 & Delete Admin & Logged in as Super Admin & Select admin → Delete → Confirm & System deletes selected admin & & \\
+				\bottomrule
 			\end{tabular}
-		}
+		\end{adjustbox}
+	\end{table}
+	
+	
+	% ========================= E =========================
+	\begin{table}[H]
+		\centering
+		\renewcommand{\arraystretch}{1.2}
+		\caption*{\textbf{E. GIS Mapping}}
+		
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{p{2cm}p{3cm}p{3cm}p{3cm}p{4cm}p{4cm}p{1.5cm}}
+				\toprule
+				\textbf{Test Case ID} & \textbf{Scenario} & \textbf{Pre-condition} & \textbf{Test Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+				\midrule
+				WEB-UAT-01 & Admin Login (Success) & DA account exists & Enter valid credentials & Access granted to dashboard & & \\
+				WEB-UAT-02 & Admin Login (Invalid Password) & Valid username exists & Enter wrong password & Show error and stay on login & & \\
+				WEB-UAT-03 & Role-Based Restriction & Farmer uses admin portal & Enter farmer credentials & Access restricted & & \\
+				WEB-UAT-04 & GIS Map Visualization & Farms with GPS exist & Click GIS Map & Map shows farm pins & & \\
+				WEB-UAT-05 & View Farm Details & Farms exist & Click map pin & Show farm details & & \\
+				WEB-UAT-06 & Admin Logout & Session active & Click logout & Redirect to login & & \\
+				\bottomrule
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	
+	% ========================= F =========================
+	\begin{table}[H]
+		\centering
+		\renewcommand{\arraystretch}{1.2}
+		\caption*{\textbf{F. Crop Recommendation}}
+		
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{p{2cm}p{3cm}p{3cm}p{3cm}p{4cm}p{4cm}p{1.5cm}}
+				\toprule
+				\textbf{Test Case ID} & \textbf{Scenario} & \textbf{Pre-condition} & \textbf{Test Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+				\midrule
+				MOB-UAT-01 & Farmer Login (Success) & Valid account exists & Enter credentials → Login & Access dashboard & & \\
+				MOB-UAT-02 & Invalid Login & Wrong password & Enter incorrect password & Deny access & & \\
+				MOB-UAT-03 & Non-existent Account & Account not registered & Enter unregistered credentials & Reject login & & \\
+				MOB-UAT-04 & Soil Data Retrieval & IoT active & Open My Farms → Select farm & Display soil data & & \\
+				MOB-UAT-05 & Crop Recommendation & Soil data available & View recommendations & Suggest crops & & \\
+				MOB-UAT-06 & Crop Selection & Recommendations exist & Select crop & Record selection & & \\
+				WEB-UAT-07 & Farmer Logout & Session active & Click logout & Redirect to login & & \\
+				\bottomrule
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	
+	% ========================= G =========================
+	\begin{table}[H]
+		\centering
+		\renewcommand{\arraystretch}{1.2}
+		\caption*{\textbf{G. Fertilizer Management}}
+		
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{p{2cm}p{3cm}p{3cm}p{3cm}p{4cm}p{4cm}p{1.5cm}}
+				\toprule
+				\textbf{Test Case ID} & \textbf{Scenario} & \textbf{Pre-condition} & \textbf{Test Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+				\midrule
+				MOB-UAT-01 & Farmer Login (Success) & Valid account exists & Enter credentials → Login & Access dashboard & & \\
+				MOB-UAT-02 & Invalid Login & Wrong password & Enter incorrect password & Deny access & & \\
+				MOB-UAT-03 & Non-existent Account & Not registered & Enter credentials & Reject login & & \\
+				MOB-UAT-04 & Soil Data Retrieval & IoT active & Select farm & Show soil data & & \\
+				MOB-UAT-05A & Crop Recommendation & Soil data available & View recommendations & Suggest crops & & \\
+				MOB-UAT-05B & Crop Selection & Recommendation exists & Select crop & Record selection & & \\
+				MOB-UAT-06 & Fertilizer Suggestions & Crop selected & View fertilizer & Show correct schedule & & \\
+				MOB-UAT-07 & Apply Fertilizer & Fertilizer selected & Apply fertilizer & Store selection & & \\
+				WEB-UAT-08 & Farmer Logout & Session active & Logout & Redirect & & \\
+				\bottomrule
+			\end{tabular}
+		\end{adjustbox}
 	\end{table}
 	
 	\newpage
@@ -231,60 +310,89 @@
 	
 	\textbf{APPENDIX H}\\[1em]
 	\textbf{INTERVIEW QUESTIONS}
-	\begin{longtable}{|p{3cm}|p{5cm}|p{7cm}|}
-	\caption{Interview with DA Senior Agriculturist}
-	\label{tab:da_interview_full} \\
-	
-	\hline
-	\textbf{Category} & \textbf{Item} & \textbf{Details} \\ \hline
-	\endfirsthead
-	
-	\hline
-	\textbf{Category} & \textbf{Item} & \textbf{Details} \\ \hline
-	\endhead
-	
-	\hline
-	\multicolumn{3}{|r|}{\textit{Continued on next page}} \\ \hline
-	\endfoot
-	
-	\hline
-	\endlastfoot
-	
-	\multicolumn{3}{|c|}{Interview Information} \\ \hline
-	
-	Info & Interviewers & Apuya, Christian James E.; Bantaculo, Ray Simon; Diaz, Albert Jhon; Guardaquivil, Alex Jr; Salvo, Robert Roy \\ \hline
-	Info & Location & Department of Agriculture, Regional Field Office 10 \\ \hline
-	Info & Date & January 27, 2026; February 23, 2026; March 13, 2026 \\ \hline
-	Info & Name & Karl Roman Wong \\ \hline
-	Info & Address & DA-10 \\ \hline
-	Info & Sex & Male \\ \hline
-	Info & Occupation & DA Senior Agriculturist \\ \hline
-	
-	\multicolumn{3}{|c|}{Interview Questions and Responses} \\ \hline
-	
-	Q1 & How do farmers know the soil nutrients in their agricultural lands? & Ang pag test sa yuta naa tay duha ka methods which is ang Laboratory Results Testing and the Soil Test Kits (STK) for testing, and the output lang ga differ. Sa Laboratory is naa gyud didto ang quantitative nga result sa pH, and NPK, then sa STK purely qualitative to based from the color nga result which is LOW, MEDIUM, HIGH. \\ \hline
-	
-	Q2 & If ever magpa test ang farmer, unsa ilang method for both ways? & Pag STK lang ang gusto sa farmer, need lang nila ug agreement with the DA to borrow the STK. Meanwhile, sa laboratory results, they will need to transport or bring ilang soil sample diri sa atung laboratory para ma test ilang soil pero naa lang payment since ga involve na siya ug instruments. \\ \hline
-	
-	Q3 & What is the proper method in order to test a soil sample? & Per hectare mana sila gapa test then need lang nila mag kalut ug atleast 3 ka bangag for atleast 12 inches or 1 foot, and didto kuha sila ug soil sample then mix it with the other soil sample from other holes. Pero ga depende ang ka lalom sa crops nga itanom nila kay naa man tay classification sa crops which is shallow rooted and deep rooted nga mga crops or plants. Pero sa part ninyo focus raman mo sa mga shallow rooted. Also, naa pud tay classification if lowland or highland ang lugar, but since you mentioned nga bukidnon mo so most of it is highland lang siya. \\ \hline
-	
-	Q5 & How often should our system monitor soil conditions to provide reliable crop recommendations? & Kung laboratory testing, okay ra siya for 1--2 years, pero kung gusto gyud updated ang data, mas maayo every cropping cycle, which is pre and post planting. \\ \hline
-	
-	Q6 & What type of data should be collected to improve its crop recommendation accuracy? & Kinahanglan naay baseline data sa soil ug crops. Pareha sa among ginagamit nga apps, ang data gikan sa field trials ug techno demo. Importante pud ang historical data para mas accurate ang recommendations. \\ \hline
-	
-	Q7 & Which crops should TANIM prioritize when recommending based on soil conditions? & Sa among region, priority ang rice ug corn ug cassave, pero dapat various crops maapil kay lain-lain man silag nutrient requirements. \\ \hline
-	
-	Q8 & What challenges might be face in terms of farmer adoption of soil monitoring systems? & Bisan naa nay mga apps karon, gamay ra ang nag adopt. Lisod pud usahay kay ang farmers naanad na sa ilang sariling pamaagi. Kinahanglan ang system kay simple ug dali masabtan. \\ \hline
-	
-	Q9 & How do farmers currently decide on fertilizer application, and how can Fertright improve this process? & Kasagaran sa farmers kay experience-based ra ilang pag apply ug fertilizer. Usahay dili sila musunod sa recommendations kay naanad na sila sa ilang style. Makatabang ang Fertright kung makahatag siya ug klaro, sakto, ug masaligan nga guide. \\ \hline
-	
-	Q10 & How can Fertright ensure that its fertilizer recommendations are practical for farmers? & Dapat ang recommendations kay precise ug accurate. Dili dapat komplikado kay ang farmers ganahan ug simple nga instructions nga dali masunod. \\ \hline
-	
-	Q11 & What features should be included to be usable for farmers in rural areas? & Importante nga naa siyay offline functionality kay daghan farmers walay internet. Dapat pud user-friendly ug dili lisod gamiton. \\ \hline
-	
-	Q12 & What improvements in fertilizer management to promote sustainable farming? & Pwede siya makatabang sa balanced fertilization, paggamit ug organic fertilizers, ug soil conservation practices. Importante ni para magdugay ang kaayo sa yuta ug mudako ang ani. \\ \hline
-	
-\end{longtable}
+	\begin{longtable}{p{1.8cm}p{3.5cm}p{7.5cm}}
+		\caption{Interview with DA Senior Agriculturist}
+		\label{tab:da_interview_full} \\
+		
+		\toprule
+		\textbf{Category} & \textbf{Item} & \textbf{Details} \\
+		\midrule
+		\endfirsthead
+		
+		\toprule
+		\textbf{Category} & \textbf{Item} & \textbf{Details} \\
+		\midrule
+		\endhead
+		
+		\midrule
+		\multicolumn{3}{r}{\textit{Continued on next page}} \\
+		\endfoot
+		
+		\bottomrule
+		\endlastfoot
+		
+		\multicolumn{3}{c}{\textbf{Interview Information}} \\
+		\midrule
+		
+		Info & Interviewers & 
+		Apuya, Christian James E.; Bantaculo, Ray Simon; Diaz, Albert John; Guardaquivil, Alex Jr.; Salvo, Robert Roy \\
+		
+		Info & Location & 
+		Department of Agriculture, Regional Field Office 10 \\
+		
+		Info & Date & 
+		January 27, 2026; February 23, 2026; March 13, 2026 \\
+		
+		Info & Interviewee & 
+		Karl Roman Wong \\
+		
+		Info & Address & 
+		DA-10 \\
+		
+		Info & Sex & 
+		Male \\
+		
+		Info & Occupation & 
+		DA Senior Agriculturist \\
+		
+		\midrule
+		\multicolumn{3}{c}{\textbf{Interview Questions and Responses}} \\
+		\midrule
+		
+		Q1 & How do farmers know the soil nutrients in their agricultural lands? & 
+		Ang pag test sa yuta naa tay duha ka methods which is ang Laboratory Results Testing and the Soil Test Kits (STK) for testing, and the output lang ga differ. Sa Laboratory is naa gyud didto ang quantitative nga result sa pH and NPK, then sa STK purely qualitative to based from the color nga result which is LOW, MEDIUM, HIGH. \\
+		
+		Q2 & If ever magpa test ang farmer, unsa ilang method for both ways? & 
+		Pag STK lang ang gusto sa farmer, need lang nila ug agreement with the DA to borrow the STK. Meanwhile, sa laboratory results, they will need to transport or bring ilang soil sample diri sa atung laboratory para ma test ilang soil pero naa lang payment since ga involve na siya ug instruments. \\
+		
+		Q3 & What is the proper method in order to test a soil sample? & 
+		Per hectare mana sila gapa test then need lang nila mag kalut ug atleast 3 ka bangag for atleast 12 inches or 1 foot, and didto kuha sila ug soil sample then mix it with the other soil sample from other holes. Pero ga depende ang ka lalom sa crops nga itanom nila kay naa man tay classification sa crops which is shallow rooted and deep rooted nga mga crops or plants. Pero sa part ninyo focus raman mo sa mga shallow rooted. Also, naa pud tay classification if lowland or highland ang lugar, but since you mentioned nga Bukidnon mo so most of it is highland lang siya. \\
+		
+		Q5 & How often should our system monitor soil conditions to provide reliable crop recommendations? & 
+		Kung laboratory testing, okay ra siya for 1--2 years, pero kung gusto gyud updated ang data, mas maayo every cropping cycle, which is pre and post planting. \\
+		
+		Q6 & What type of data should be collected to improve its crop recommendation accuracy? & 
+		Kinahanglan naay baseline data sa soil ug crops. Pareha sa among ginagamit nga apps, ang data gikan sa field trials ug techno demo. Importante pud ang historical data para mas accurate ang recommendations. \\
+		
+		Q7 & Which crops should TANIM prioritize when recommending based on soil conditions? & 
+		Sa among region, priority ang rice ug corn ug cassava, pero dapat various crops maapil kay lain-lain man silag nutrient requirements. \\
+		
+		Q8 & What challenges might be faced in terms of farmer adoption of soil monitoring systems? & 
+		Bisan naa nay mga apps karon, gamay ra ang nag adopt. Lisod pud usahay kay ang farmers naanad na sa ilang sariling pamaagi. Kinahanglan ang system kay simple ug dali masabtan. \\
+		
+		Q9 & How do farmers currently decide on fertilizer application, and how can Fertright improve this process? & 
+		Kasagaran sa farmers kay experience-based ra ilang pag apply ug fertilizer. Usahay dili sila musunod sa recommendations kay naanad na sila sa ilang style. Makatabang ang Fertright kung makahatag siya ug klaro, sakto, ug masaligan nga guide. \\
+		
+		Q10 & How can Fertright ensure that its fertilizer recommendations are practical for farmers? & 
+		Dapat ang recommendations kay precise ug accurate. Dili dapat komplikado kay ang farmers ganahan ug simple nga instructions nga dali masunod. \\
+		
+		Q11 & What features should be included to be usable for farmers in rural areas? & 
+		Importante nga naa siyay offline functionality kay daghan farmers walay internet. Dapat pud user-friendly ug dili lisod gamiton. \\
+		
+		Q12 & What improvements in fertilizer management promote sustainable farming? & 
+		Pwede siya makatabang sa balanced fertilization, paggamit ug organic fertilizers, ug soil conservation practices. Importante ni para magdugay ang kaayo sa yuta ug mudako ang ani. \\
+		
+	\end{longtable}
 	
 	\newpage
 	\textbf{APPENDIX I}\\[1em]
@@ -364,6 +472,144 @@
 		\includegraphics[width=0.85\textwidth]{figures/SUS10.pdf}
 	\end{figure}
 	
+	\begin{table}[H]
+		\centering
+		\caption{INTERNAL UAT – Hardware and Data Capture}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{p{2cm}p{3cm}p{3cm}p{3cm}p{4cm}p{4cm}p{1.5cm}}
+				\toprule
+				\textbf{Test Case ID} & \textbf{Scenario} & \textbf{Pre-condition} & \textbf{Test Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+				\midrule
+				HW-UAT-01 & Sensor Initialization & Device powered & Turn on sensor & Sensor activates and displays readiness & Matches expected behavior & Pass \\
+				HW-UAT-02 & Soil Parameter Capture & Sensor operational & Capture N, P, K, pH, salinity, temp, moisture & Accurate readings displayed & Matches expected behavior & Pass \\
+				HW-UAT-03 & Reading Consistency & Stable environment & Take multiple readings & Minimal variance (±5\%) & Matches expected behavior & Pass \\
+				HW-UAT-04 & ESP32 Data Processing & Sensor connected to ESP32 & Process sensor data & Data packets generated & Matches expected behavior & Pass \\
+				HW-UAT-05 & LoRa Transmission & LoRa configured & Transmit data & Data received at gateway & Matches expected behavior & Pass \\
+				HW-UAT-06 & Database Storage & Firebase connected & Send data to database & Valid entries stored & Matches expected behavior & Pass \\
+				\bottomrule
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\caption{INTERNAL UAT – System-Wide Features}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{p{2cm}p{3cm}p{3cm}p{3cm}p{4cm}p{4cm}p{1.5cm}}
+				\toprule
+				\textbf{Test Case ID} & \textbf{Scenario} & \textbf{Pre-condition} & \textbf{Test Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+				\midrule
+				SYS-UAT-01 & End-to-End Data Flow & All components active & Trigger full system process & Data flows sensor → gateway → Firebase → apps & Matches expected behavior & Pass \\
+				SYS-UAT-02 & Error Handling & Invalid or missing data & Trigger error scenario & System shows error or retries & Matches expected behavior & Pass \\
+				SYS-UAT-03 & Security and Access Control & User roles defined & Attempt restricted access & Only authorized users allowed & Matches expected behavior & Pass \\
+				SYS-UAT-04 & Multi-user Capability & Multiple users active & Simultaneous system usage & No crashes; stable operation & Matches expected behavior & Pass \\
+				\bottomrule
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\caption{INTERNAL UAT – Authentication}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{p{2cm}p{3cm}p{3cm}p{3cm}p{4cm}p{4cm}p{1.5cm}}
+				\toprule
+				\textbf{Test Case ID} & \textbf{Scenario} & \textbf{Pre-condition} & \textbf{Test Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+				\midrule
+				AUT-UAT-01 & Admin logs in with valid credentials & System available; user has required access & Enter valid username and password & Matches expected behavior (no error; correct access; correct data) & Matches expected behavior (no error; correct access; correct data) & Pass \\
+				AUT-UAT-02 & Admin login fails with invalid username \& password & System available; user has required access & Enter invalid username and password & Matches expected behavior (no error; correct access; correct data) & Matches expected behavior (no error; correct access; correct data) & Pass \\
+				AUT-UAT-03 & Farmer logs in with valid credentials & System available; user has required access & Enter valid username and password & Matches expected behavior (no error; correct access; correct data) & Matches expected behavior (no error; correct access; correct data) & Pass \\
+				AUT-UAT-04 & Farmer login fails with invalid username \& password & System available; user has required access & Enter invalid username and password & Matches expected behavior (no error; correct access; correct data) & Matches expected behavior (no error; correct access; correct data) & Pass \\
+				\bottomrule
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\caption{INTERNAL UAT – Admin Management}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{p{2cm}p{3cm}p{3cm}p{3cm}p{4cm}p{4cm}p{1.5cm}}
+				\toprule
+				\textbf{Test Case ID} & \textbf{Scenario} & \textbf{Pre-condition} & \textbf{Test Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+				\midrule
+				WEB-UAT-1 & Add Admin (Super Admin Only) & Logged in as Super Admin & Click Add Admin → Enter details → Submit & System allows only Super Admin to add new admin & Admin account successfully created & Pass \\
+				WEB-UAT-2 & Restrict Admin Creation & Logged in as Regular Admin & Attempt to access Add Admin & System restricts access & Access denied for regular admin & Pass \\
+				WEB-UAT-3 & Edit Admin & Logged in as Super Admin & Select admin → Edit → Save & System updates admin information & Admin details updated successfully & Pass \\
+				WEB-UAT-4 & Delete Admin & Logged in as Super Admin & Select admin → Delete → Confirm & System deletes selected admin & Admin account deleted successfully & Pass \\
+				\bottomrule
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\caption{INTERNAL UAT – GIS Mapping}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{p{2cm}p{3cm}p{3cm}p{3cm}p{4cm}p{4cm}p{1.5cm}}
+				\toprule
+				\textbf{Test Case ID} & \textbf{Scenario} & \textbf{Pre-condition} & \textbf{Test Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+				\midrule
+				WEB-UAT-01 & Admin Login (Success) & DA account exists & Enter valid credentials & Access granted to dashboard & Successfully logged in and redirected & Pass \\
+				WEB-UAT-02 & Admin Login (Invalid Password) & Valid username exists & Enter wrong password & Show error and stay on login & Invalid credentials message shown & Pass \\
+				WEB-UAT-03 & Role-Based Restriction & Farmer uses admin portal & Enter farmer credentials & Access restricted & Login rejected and access denied & Pass \\
+				WEB-UAT-04 & GIS Map Visualization & Farms with GPS exist & Click GIS Map & Map shows farm pins & Map loaded with farm locations & Pass \\
+				WEB-UAT-05 & View Farm Details & Farms exist & Click map pin & Show farm details & Details panel displayed correctly & Pass \\
+				WEB-UAT-06 & Admin Logout & Session active & Click logout & Redirect to login & Session terminated successfully & Pass \\
+				\bottomrule
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\caption{INTERNAL UAT – Crop Recommendation}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{p{2cm}p{3cm}p{3cm}p{3cm}p{4cm}p{4cm}p{1.5cm}}
+				\toprule
+				\textbf{Test Case ID} & \textbf{Scenario} & \textbf{Pre-condition} & \textbf{Test Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+				\midrule
+				MOB-UAT-01 & Farmer Login (Success) & Valid account exists & Enter credentials → Login & Access dashboard & Successfully logged in & Pass \\
+				MOB-UAT-02 & Invalid Login & Wrong password & Enter incorrect password & Deny access & Invalid credentials shown & Pass \\
+				MOB-UAT-03 & Non-existent Account & Account not registered & Enter unregistered credentials & Reject login & Error message shown & Pass \\
+				MOB-UAT-04 & Soil Data Retrieval & IoT active & Open My Farms → Select farm & Display soil data & Data displayed correctly & Pass \\
+				MOB-UAT-05 & Crop Recommendation & Soil data available & View recommendations & Suggest crops & 3 crops displayed & Pass \\
+				MOB-UAT-06 & Crop Selection & Recommendations exist & Select crop & Record selection & Crop successfully selected & Pass \\
+				WEB-UAT-07 & Farmer Logout & Session active & Click logout & Redirect to login & Session terminated & Pass \\
+				\bottomrule
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\caption{INTERNAL UAT – Fertilizer Management}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{tabular}{p{2cm}p{3cm}p{3cm}p{3cm}p{4cm}p{4cm}p{1.5cm}}
+				\toprule
+				\textbf{Test Case ID} & \textbf{Scenario} & \textbf{Pre-condition} & \textbf{Test Steps} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Status} \\
+				\midrule
+				MOB-UAT-01 & Farmer Login (Success) & Valid account exists & Enter credentials → Login & Access dashboard & Successfully logged in & Pass \\
+				MOB-UAT-02 & Invalid Login & Wrong password & Enter incorrect password & Deny access & Invalid credentials shown & Pass \\
+				MOB-UAT-03 & Non-existent Account & Not registered & Enter credentials & Reject login & Error displayed & Pass \\
+				MOB-UAT-04 & Soil Data Retrieval & IoT active & Select farm & Show soil data & Data displayed correctly & Pass \\
+				MOB-UAT-05A & Crop Recommendation & Soil data available & View recommendations & Suggest crops & Crops displayed & Pass \\
+				MOB-UAT-05B & Crop Selection & Recommendation exists & Select crop & Record selection & Selection saved & Pass \\
+				MOB-UAT-06 & Fertilizer Suggestions & Crop selected & View fertilizer & Show correct schedule & Fertilizer shown correctly & Pass \\
+				MOB-UAT-07 & Apply Fertilizer & Fertilizer selected & Apply fertilizer & Store selection & Stored successfully & Pass \\
+				WEB-UAT-08 & Farmer Logout & Session active & Logout & Redirect & Session ended & Pass \\
+				\bottomrule
+			\end{tabular}
+		\end{adjustbox}
+	\end{table}
+	
 	\newpage
 
 	
@@ -382,11 +628,146 @@
 	\newpage
 	
 	\textbf{APPENDIX M}\\[1em]
-	\textbf{TURNITIN RESULTS}
+	\textbf{USER MANUAL}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=1,width=0.9\textwidth]{figures/UserManual.pdf}
+		\label{fig:user_manual1}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=2,width=0.9\textwidth]{figures/UserManual.pdf}
+		\label{fig:user_manual2}
+	\end{figure}
 	
 	\newpage
 	
 	\textbf{APPENDIX N}\\[1em]
+	\textbf{GRAMMARLY RESULTS}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{figures/report.pdf}
+		\label{fig:grammarly_report}
+	\end{figure}
+	\newpage
+	
+	\textbf{APPENDIX O}\\[1em]
+	\textbf{TURNITIN RESULTS}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{figures/TurnitinResults.pdf}
+		\label{fig:turnitin_results}
+	\end{figure}
+	\newpage
+	
+	\textbf{APPENDIX P}\\[1em]
 	\textbf{GRAMMARIAN RESULTS}
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=1,width=0.9\textwidth]{figures/Grammarian.pdf}
+		\label{fig:grammarian}
+	\end{figure}
+	
+	\newpage
+	
+	\textbf{APPENDIX Q}\\[1em]
+	\textbf{NOMINATION OF PANEL MEMBERS}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=3,width=0.9\textwidth]{figures/Application_Nomination_Defense.pdf}
+		\label{fig:NominationOfPanel}
+	\end{figure}
+	\newpage
+	
+	\textbf{APPENDIX R}\\[1em]
+	\textbf{APPLICATION FOR ORAL DEFENSE}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=1,width=0.9\textwidth]{figures/Application_Nomination_Defense.pdf}
+		\label{fig:ApplicationOfDefenseConcept}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=2,width=0.9\textwidth]{figures/Application_Nomination_Defense.pdf}
+		\label{fig:ApplicationOfDefenseProposal}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=4,width=0.9\textwidth]{figures/Application_Nomination_Defense.pdf}
+		\label{fig:ApplicationOfDefenseFinals}
+	\end{figure}
+	\newpage
+	
+	
+	\textbf{APPENDIX S}\\[1em]
+	\textbf{REVISION MATRIX}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=1,width=0.9\textwidth]{figures/RevisionMatrixFinals.pdf}
+		\label{fig:revisionsPage1}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=2,width=0.9\textwidth]{figures/RevisionMatrixFinals.pdf}
+		\label{fig:revisionsPage2}
+	\end{figure}
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=3,width=0.9\textwidth]{figures/RevisionMatrixFinals.pdf}
+		\label{fig:revisionsPage3}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=4,width=0.9\textwidth]{figures/RevisionMatrixFinals.pdf}
+		\label{fig:revisionsPage4}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=5,width=0.9\textwidth]{figures/RevisionMatrixFinals.pdf}
+		\label{fig:revisionsPage5}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=6,width=0.9\textwidth]{figures/RevisionMatrixFinals.pdf}
+		\label{fig:revisionsPage6}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=7,width=0.9\textwidth]{figures/RevisionMatrixFinals.pdf}
+		\label{fig:revisionsPage7}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=8,width=0.9\textwidth]{figures/RevisionMatrixFinals.pdf}
+		\label{fig:revisionsPage8}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=9,width=0.9\textwidth]{figures/RevisionMatrixFinals.pdf}
+		\label{fig:revisionsPage9}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[page=1,width=0.9\textwidth]{figures/RevisionSignature.pdf}
+		\label{fig:revisions_signature}
+	\end{figure}
+	\newpage
 }

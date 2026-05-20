@@ -1,11 +1,9 @@
-%\chapter*{ABSTRACT}
-\begin{center}
-{\bf ABSTRACT}\\[36pt]
-\end{center}
+\chapter*{ABSTRACT}
 \addcontentsline{toc}{chapter}{ABSTRACT}
-{\baselineskip=2.0\baselineskip
+{\setlength{\baselineskip}{22pt}
 
-*to be followed*
+Farmers in Bukidnon face significant challenges in making informed crop and fertilizer decisions due to limited access to soil testing methods and facilities, resulting to suboptimal yields and inefficient resource use. This study aimed to design, develop, and evaluate TANIM, an IoT-based agricultural system integrating soil health monitoring hardware, machine learning-based crop recommendation, and software applications for farmers and Department of Agriculture officials.
+The system employed a solar-powered IoT device with a soil sensor (pH, nitrogen, phosphorous, potassium, moisture, temperature, and salinity) transmitting data via LoRa wireless communication to the cloud database. A LightGBM classifier was trained using the Department of Agriculture - Region 10 Regional Soils Laboratory dataset to recommend crops across ten crop varieties. The machine learning model achieved a global accuracy of 82.29\% and an 85\% prediction accuracy across twenty test cases. Soil sensor calibration revealed strong categorical alignment with Soil Test Kit results, with pH yielding the highest accuracy (MAE = 0.49), while phosphorus (MAE = 36.33 mg/kg) and potassium (MAE = 108.00 mg/kg) showed deviations consistent with manufacturer tolerances. All UAT test cases passed with a 100\% success rate, and the system achieved an "Excellent" SUS score of 84.25, confirming TANIM as a viable decision-support tool for precision agriculture in areas with limited soil health monitoring capabilities.\\ 
+
+\noindent{\textbf{Keywords:} \textit{precision agriculture, crop recommendation, soil health monitoring, Internet of Things, LightGBM, machine learning, fertilizer recommendation, GIS mapping}}
 }
-\bigskip
-\textbf{Keywords:} \textit{Agriculture,...}
